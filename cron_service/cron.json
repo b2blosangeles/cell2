@@ -1,0 +1,3 @@
+[
+	{"id":"_auto_server_code_pull_","schedule":"10 * * * * *", "script":"autoCodePullService.js"}
+]
