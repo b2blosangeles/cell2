@@ -10,7 +10,7 @@ client.connect(function(err) {
   let sqlStr = 'SELECT datname FROM pg_database WHERE datistemplate = false'; 
   // SELECT * FROM pg_catalog.pg_tables;
   // SELECT datname FROM pg_database WHERE datistemplate = false;
-  client.query(sqlStr,
+  client.query([sqlStr],
       function(err, result) {
             if(err) {
               res.send(err.message);
