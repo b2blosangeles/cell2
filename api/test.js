@@ -36,7 +36,7 @@ client.connect(function(err) {
       res.send(err.message);
       return true;
     }
-    res.send(result.rows[0].theTime);
+    res.send('Success !!' + result.rows[0].theTime);
     //output: Tue Jan 15 2013 19:12:47 GMT-600 (CST)
     client.end();
   });
