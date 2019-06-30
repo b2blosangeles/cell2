@@ -7,7 +7,7 @@ client.connect(function(err) {
     res.send(err.message);
     return true;
   }
-  client.query('\dt;',
+  client.query('dt;',
       function(err, result) {
             if(err) {
               res.send(err.message);
