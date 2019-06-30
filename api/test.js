@@ -7,7 +7,7 @@ const client = new Client({
 })
 client.connect((err) => {
   if (err) {
-    res.send('ERR');
+    res.send(err.message);
     // console.error('connection error', err.stack)
   } else {
     res.send('connected');
