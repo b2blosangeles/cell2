@@ -7,7 +7,7 @@ client.connect(function(err) {
     res.send(err.message);
     return true;
   }
-  client.query('SHOW TABLES', function(err, result) {
+  client.query('\dt', function(err, result) {
     if(err) {
       res.send(err.message);
       return true;
