@@ -7,7 +7,7 @@ client.connect(function(err) {
     res.send(err.message);
     return true;
   }
-  client.query('SELECT * FROM pg_catalog.pg_tables WHERE schemaname != "pg_catalog" AND schemaname != "information_schema";',
+  client.query('show databases;',
       function(err, result) {
             if(err) {
               res.send(err.message);
