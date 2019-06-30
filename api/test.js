@@ -7,7 +7,7 @@ client.connect(function(err) {
     res.send(err.message);
     return true;
   }
-  client.query('\dt',
+  client.query('SELECT * FROM pg_catalog.pg_tables;',
       function(err, result) {
             if(err) {
               res.send(err.message);
