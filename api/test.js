@@ -17,10 +17,12 @@ client.connect((err) => {
 })
 */
 var pg = require(env.site_path + '/api/inc/pg/node_modules/pg');
+var setting =  require(env.config_path + '/dbSetting.json');
+
 //or native libpq bindings
 //var pg = require('pg').native
 
-var prodUrl = "postgres://evergreen:Gotao4!@209.97.145.234:5432/ebiztiedb";
+var prodUrl = setting.dev.PG;
 var conString = process.env.ELEPHANTSQL_URL || prodUrl;
 
 // var conString = process.env.ELEPHANTSQL_URL || "postgres://postgres:5432@localhost/postgres";
