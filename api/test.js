@@ -23,6 +23,8 @@ var pg = require(env.site_path + '/api/inc/pg/node_modules/pg');
 var prodUrl = "postgres://evergreen:Gotaobase1!@209.97.145.234:5432/ebiztiedb";
 var conString = process.env.ELEPHANTSQL_URL || prodUrl;
 
+// var conString = process.env.ELEPHANTSQL_URL || "postgres://postgres:5432@localhost/postgres";
+
 var client = new pg.Client(conString);
 client.connect(function(err) {
   if(err) {
