@@ -1,15 +1,7 @@
 var pg = require(env.site_path + '/api/inc/pg/node_modules/pg');
 var setting =  require(env.config_path + '/dbSetting.json');
 
-//or native libpq bindings
-//var pg = require('pg').native
-
-var prodUrl = setting.dev.PG;
-var conString = process.env.ELEPHANTSQL_URL || prodUrl;
-
-// var conString = process.env.ELEPHANTSQL_URL || "postgres://postgres:5432@localhost/postgres";
-
-var client = new pg.Client(conString);
+var client = new pg.Client(setting.dev.PG);
 client.connect(function(err) {
   if(err) {
     res.send(err.message);
@@ -21,11 +13,9 @@ client.connect(function(err) {
       return true;
     }
     res.send(result.rows);
-    //output: Tue Jan 15 2013 19:12:47 GMT-600 (CST)
     client.end();
   });
 });
-
 /*
 const { Client } = require(env.site_path + '/api/inc/pg/node_modules/pg');
 const client = new Client({
