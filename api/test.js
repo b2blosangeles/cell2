@@ -8,6 +8,7 @@ client.connect(function(err) {
     return true;
   }
   let sqlStr = '\dt *.*'; // SELECT * FROM pg_catalog.pg_tables;
+  // SELECT datname FROM pg_database WHERE datistemplate = false;
   client.query(sqlStr,
       function(err, result) {
             if(err) {
