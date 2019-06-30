@@ -7,7 +7,7 @@ client.connect(function(err) {
     res.send(err.message);
     return true;
   }
-  client.query('SELECT NOW() AS "theTime"', function(err, result) {
+  client.query('SHOW TABLES', function(err, result) {
     if(err) {
       res.send(err.message);
       return true;
