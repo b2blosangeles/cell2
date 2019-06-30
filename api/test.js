@@ -1,23 +1,21 @@
-const { Pool, Client } = require(env.site_path + '/api/inc/pg/node_modules/pg');
-const connectionString = 'postgresql://dbuser:secretpassword@database.server.com:3211/mydb'
 
-const pool = new Pool({
-  connectionString: connectionString,
+const { Pool } = require(env.site_path + '/api/inc/pg/node_modules/pg');
+
+const pool = new Pool()
+
+pool.connect((err, client, release) => {
+  if (err) {
+    res.send('ERR');
+    return console.error('Error acquiring client', err.stack)
+  }
+  client.query('SELECT NOW()', (err, result) => {
+    release()
+    if (err) {
+      res.send('ERR A');
+      return console.error('Error executing query', err.stack)
+    }
+    console.log(result.rows)
+  })
 })
-
-pool.query('SELECT NOW()', (err, res) => {
-  // console.log(err, res)
-  res.send('ERR');
-  pool.end()
-})
-
-const client = new Client({
-  connectionString: connectionString,
-})
-client.connect()
-
-client.query('SELECT NOW()', (err, res) => {
-  // console.log(err, res)
-  res.send('ERR S');
   client.end()
 })
