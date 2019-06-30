@@ -1,21 +1,11 @@
-
-const { Pool } = require(env.site_path + '/api/inc/pg/node_modules/pg');
-
-const pool = new Pool()
-
-pool.connect((err, client, release) => {
+const { Client } = require(env.site_path + '/api/inc/pg/node_modules/pg');
+const client = new Client()
+client.connect((err) => {
   if (err) {
     res.send('ERR');
-    return console.error('Error acquiring client', err.stack)
+    // console.error('connection error', err.stack)
+  } else {
+    res.send('connected');
+    // console.log('connected')
   }
-  client.query('SELECT NOW()', (err, result) => {
-    release()
-    if (err) {
-      res.send('ERR A');
-      return console.error('Error executing query', err.stack)
-    }
-    console.log(result.rows)
-  })
-})
-  client.end()
 })
