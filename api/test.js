@@ -7,20 +7,32 @@ client.connect(function(err) {
     res.send(err.message);
     return true;
   }
-  let sqlStr = 'SELECT datname FROM pg_database WHERE datistemplate = false; ' +  '';
+  let sqlStr1 = 'SELECT datname FROM pg_database WHERE datistemplate = false; ';
+  let sqlStr2 = 'SELECT * FROM pg_catalog.pg_tables; ';
    //   'SELECT * FROM pg_catalog.pg_tables; ';
   // SELECT * FROM pg_catalog.pg_tables;
   // SELECT datname FROM pg_database WHERE datistemplate = false;
-  client.query(sqlStr,
+  let q_result = {};
+  client.query(sqlStr1,
       function(err, result) {
             if(err) {
-              res.send(err.message);
-              return true;
+              q_result.i0 = err.message;
+            } else {
+              q_result.i0 = result.rows;
             }
-            res.send(result.rows);
-            client.end();
+            client.query(sqlStr2,
+                  function(err, result) {
+                        if(err) {
+                          q_result.i1 = err.message;
+                          return true;
+                        }
+                        q_result.i1 = result.rows;
+                        client.end();
+                        res.send(q_result);
+                  });
+             });
       });
-});
+ });
 /*
 const { Client } = require(env.site_path + '/api/inc/pg/node_modules/pg');
 const client = new Client({
@@ -38,4 +50,28 @@ client.connect((err) => {
     // console.log('connected')
   }
 })
+
+pg.connect(pgConString, function (err, client, done) {
+    if (err) {
+        callBack("DB connection failed. " + err, null);
+        return;
+    }
+    client.query({
+        text: "INSERT INTO COMPANY (ID,NAME) VALUES (1, 'Paul');",
+        values: [1, "Poul1"],
+        name: "insertQuery"
+    });
+
+    client.query({
+        text: "DELETE FROM  COMPANY WHERE ID='12';",
+        name: "deleteQuery"
+    });
+
+    client.on("error", function (err) {
+        callBack("DB insertion failed. Error Message: " + err, null);
+        return;
+    });
+
+
+});
 */
