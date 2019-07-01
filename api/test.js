@@ -13,7 +13,7 @@ client.connect(function(err) {
   let sqlStr1 = 'SELECT datname FROM pg_database WHERE datistemplate = false; ';
   let sqlStr2 = 'SELECT * FROM pg_catalog.pg_tables; ';
 
-  let q_result = {kk: setting.dev.PG};
+  let q_result = {};
   client.query(sqlStr1,
       function(err, result) {
             if(err) {
