@@ -1,6 +1,6 @@
 var elasticsearch = require(env.site_path + '/api/inc/elasticsearch/node_modules/elasticsearch');
 var client = new elasticsearch.Client({
-  host: 'search-ebitietest-2fe3gbehhusko6gpdceqbzxnaq.us-west-1.es.amazonaws.com:9200',
+  host: 'search-ebitietest-2fe3gbehhusko6gpdceqbzxnaq.us-west-1.es.amazonaws.com',
   log: 'trace'
 });
 // 'pgdb.dev.shusiou.win:9200'
