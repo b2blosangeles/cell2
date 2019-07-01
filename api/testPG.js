@@ -1,4 +1,3 @@
-delete require.cache[env.root_path + '/vendor/pg/node_modules/pg'];
 var pg = require(env.root_path + '/vendor/pg/node_modules/pg');
 
 var setting =  require(env.config_path + '/dbSetting.json');
