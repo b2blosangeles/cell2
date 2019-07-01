@@ -9,9 +9,7 @@ client.connect(function(err) {
   }
   let sqlStr1 = 'SELECT datname FROM pg_database WHERE datistemplate = false; ';
   let sqlStr2 = 'SELECT * FROM pg_catalog.pg_tables; ';
-   //   'SELECT * FROM pg_catalog.pg_tables; ';
-  // SELECT * FROM pg_catalog.pg_tables;
-  // SELECT datname FROM pg_database WHERE datistemplate = false;
+
   let q_result = {};
   client.query(sqlStr1,
       function(err, result) {
@@ -32,45 +30,3 @@ client.connect(function(err) {
               });
       });
  });
-/*
-const { Client } = require(env.site_path + '/api/inc/pg/node_modules/pg');
-const client = new Client({
-  host: 'my.database-server.com',
-  port: 5334,
-  user: 'database-user',
-  password: 'secretpassword!!',
-})
-client.connect((err) => {
-  if (err) {
-    res.send(err.message);
-    // console.error('connection error', err.stack)
-  } else {
-    res.send('connected');
-    // console.log('connected')
-  }
-})
-
-pg.connect(pgConString, function (err, client, done) {
-    if (err) {
-        callBack("DB connection failed. " + err, null);
-        return;
-    }
-    client.query({
-        text: "INSERT INTO COMPANY (ID,NAME) VALUES (1, 'Paul');",
-        values: [1, "Poul1"],
-        name: "insertQuery"
-    });
-
-    client.query({
-        text: "DELETE FROM  COMPANY WHERE ID='12';",
-        name: "deleteQuery"
-    });
-
-    client.on("error", function (err) {
-        callBack("DB insertion failed. Error Message: " + err, null);
-        return;
-    });
-
-
-});
-*/
