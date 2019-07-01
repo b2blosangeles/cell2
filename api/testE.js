@@ -1,4 +1,4 @@
-var elasticsearch = require(env.site_path + '/api/inc/elasticsearch/node_modules/elasticsearch');
+var elasticsearch = require(env.root_path + '/vendor/elasticsearch/node_modules/elasticsearch');
 var client = new elasticsearch.Client({
   host: 'search-ebiztieprod-ywa24bvy6tjusrpec3dqc3elry.us-west-1.es.amazonaws.com',
   log: 'trace'
