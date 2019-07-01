@@ -19,10 +19,10 @@ client.ping({
 */
 
 try {
-  const response =  client.search({
+  client.search({
     q: 'pants'
   });
-  console.logres.send((response.hits.hits)
+ // console.logres.send((response.hits.hits)
 } catch (error) {
   res.send(error.message)
 }
