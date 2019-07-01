@@ -2,6 +2,9 @@ var pg = require(env.site_path + '/api/inc/pg/node_modules/pg');
 var setting =  require(env.config_path + '/dbSetting.json');
 
 var client = new pg.Client(setting.dev.PG);
+res.send(setting.dev.PG);
+return true;
+
 client.connect(function(err) {
   if(err) {
     res.send(err.message);
