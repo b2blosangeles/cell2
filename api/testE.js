@@ -21,6 +21,11 @@ client.ping({
 try {
   client.search({
     q: 'pants'
+  }, (err, result) => {
+      if (err) res.send(error.message);
+      else { 
+        res.send(result); 
+      }
   });
  // console.logres.send((response.hits.hits)
 } catch (error) {
