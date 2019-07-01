@@ -1,6 +1,8 @@
 var elasticsearch = require(env.root_path + '/vendor/elasticsearch/node_modules/elasticsearch');
+var setting =  require(env.config_path + '/dbSetting.json');
+
 var client = new elasticsearch.Client({
-  host: 'search-ebiztieprod-ywa24bvy6tjusrpec3dqc3elry.us-west-1.es.amazonaws.com',
+  host: setting.dev.elasticsearch,
   log: 'trace'
 });
 // 'pgdb.dev.shusiou.win:9200'
