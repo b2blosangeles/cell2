@@ -10,7 +10,7 @@ client.ping({
   requestTimeout: 1000
 }, function (error) {
   if (error) {
-    res.send('elasticsearch cluster is down!');
+    res.send('elasticsearch cluster is down 1!');
   } else {
     res.send('All is well');
   }
