@@ -17,6 +17,7 @@ client.ping({
   }
 });
 */
+/*
 try {
   const response =  client.search({
     q: 'pants'
@@ -25,6 +26,7 @@ try {
 } catch (error) {
   res.send(error.message)
 }
+*/
 client.search({
   index: 'my-index',
   body: { foo: 'bar' }
