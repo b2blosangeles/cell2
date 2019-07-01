@@ -3,7 +3,7 @@ var pg = require(env.site_path + '/api/inc/pg/node_modules/pg');
 
 var setting =  require(env.config_path + '/dbSetting.json');
 
-var client = new pg.Client(setting.dev.PG_evergreen);
+var client = new pg.Client(setting.dev.PG_ebiztiedb);
 
 client.connect(function(err) {
   if(err) {
