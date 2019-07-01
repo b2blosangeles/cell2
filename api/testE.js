@@ -1,9 +1,10 @@
 var elasticsearch = require(env.site_path + '/api/inc/elasticsearch/node_modules/elasticsearch');
 var client = new elasticsearch.Client({
-  host: 'pgdb.dev.shusiou.win:9200',
+  host: 'search-ebitietest-2fe3gbehhusko6gpdceqbzxnaq.us-west-1.es.amazonaws.com:9200',
   log: 'trace'
 });
-
+// 'pgdb.dev.shusiou.win:9200'
+// https://search-ebitietest-2fe3gbehhusko6gpdceqbzxnaq.us-west-1.es.amazonaws.com/
 client.ping({
   // ping usually has a 3000ms timeout
   requestTimeout: 1000
