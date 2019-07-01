@@ -20,7 +20,7 @@ client.ping({
 
 try {
   client.search({
-    q: 'taobase'
+    q: 'san jose'
   }, (err, result) => {
       if (err) res.send(err.message);
       else { 
