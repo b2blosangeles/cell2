@@ -22,7 +22,7 @@ try {
   client.search({
     q: 'pants'
   }, (err, result) => {
-      if (err) res.send(error.message);
+      if (err) res.send(err.message);
       else { 
         res.send(result); 
       }
