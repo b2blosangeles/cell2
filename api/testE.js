@@ -18,7 +18,7 @@ client.ping({
 });
 */
 try {
-  const response = await client.search({
+  const response =  client.search({
     q: 'pants'
   });
   console.logres.send((response.hits.hits)
