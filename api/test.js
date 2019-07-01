@@ -27,7 +27,7 @@ client.connect(function(err) {
                           q_result.i1 = err.message;
                           return true;
                         }
-                        q_result.i1 = result.rows;
+                        q_result.i1 = result.rows.length;
                         client.end();
                         res.send(q_result);
               });
