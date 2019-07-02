@@ -1,1 +1,1 @@
-res.send(GLOBAL.env);
+TAO.res.send(TAO.env);
