@@ -6,7 +6,7 @@ var setting =  TAO.require(TAO.env.config_path + '/dbSetting.json');
 
 var client = new elasticsearch.Client({
   host: setting.dev.elasticsearch,
-  log: 'trace'
+  requestTimeout: 6000
 });
 
 try {
