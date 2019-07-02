@@ -1,8 +1,8 @@
 var elasticsearch = require(env.root_path + '/vendor/elasticsearch/node_modules/elasticsearch');
 var setting =  require(env.config_path + '/dbSetting.json');
 
-res.send(setting.dev.elasticsearch);
-return true;
+// res.send(setting.dev.elasticsearch);
+// return true;
 
 var client = new elasticsearch.Client({
   host: setting.dev.elasticsearch,
