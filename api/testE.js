@@ -1,5 +1,5 @@
-var elasticsearch = require(env.root_path + '/vendor/elasticsearch/node_modules/elasticsearch');
-var setting =  require(env.config_path + '/dbSetting.json');
+var elasticsearch = TAO.require(env.root_path + '/vendor/elasticsearch/node_modules/elasticsearch');
+var setting =  TAO.require(env.config_path + '/dbSetting.json');
 
 // res.send(setting.dev.elasticsearch);
 // return true;
