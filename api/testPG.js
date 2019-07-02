@@ -1,5 +1,7 @@
+delete TAO.require.cache[TAO.env.root_path + '/vendor/pg/node_modules/pg'];
 var pg = TAO.require(TAO.env.root_path + '/vendor/pg/node_modules/pg');
 
+delete TAO.require.cache[TAO.env.config_path + '/dbSetting.json'];
 var setting =  TAO.require(TAO.env.config_path + '/dbSetting.json');
 
 var client = new pg.Client(setting.dev.PG_evergreen);
