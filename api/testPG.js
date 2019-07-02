@@ -1,12 +1,12 @@
-var pg = require(env.root_path + '/vendor/pg/node_modules/pg');
+var pg = TAO.require(env.root_path + '/vendor/pg/node_modules/pg');
 
-var setting =  require(env.config_path + '/dbSetting.json');
+var setting =  TAO.require(env.config_path + '/dbSetting.json');
 
 var client = new pg.Client(setting.dev.PG_evergreen);
 
 client.connect(function(err) {
   if(err) {
-    res.send(err.message);
+    TAO.res.send(err.message);
     return true;
   }
   let sqlStr1 = 'SELECT datname FROM pg_database WHERE datistemplate = false; ';
@@ -28,7 +28,7 @@ client.connect(function(err) {
                         }
                         q_result.i1 = result.rows;
                         client.end();
-                        res.send(q_result);
+                        TAO.res.send(q_result);
               });
       });
  });
