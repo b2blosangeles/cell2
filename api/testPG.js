@@ -1,6 +1,6 @@
-var pg = TAO.require(env.root_path + '/vendor/pg/node_modules/pg');
+var pg = TAO.require(TAO.env.root_path + '/vendor/pg/node_modules/pg');
 
-var setting =  TAO.require(env.config_path + '/dbSetting.json');
+var setting =  TAO.require(TAO.env.config_path + '/dbSetting.json');
 
 var client = new pg.Client(setting.dev.PG_evergreen);
 
