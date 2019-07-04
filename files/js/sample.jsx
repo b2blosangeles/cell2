@@ -24,7 +24,7 @@ $(document).ready(function() {
 	     success: function(resultData){
 		  var val = resultData.data.val;
 		  ReactDOM.render(
-		    <HelloMessage name={val} />,
+		    <HelloMessage name="val" />,
 		    document.getElementById('bob')
 		  );
 			
