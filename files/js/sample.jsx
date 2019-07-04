@@ -7,7 +7,7 @@ class HelloMessage extends React.Component {
 	     url: '/api/testRestful.api',
 	     data: {},
 	     dataType: 'JSON',
-	     timeout: (cfg.timeout) ? cfg.timeout : (6 * 1000),
+	     timeout: (6 * 1000),
 	     success: function(resultData){
 		     console.log('---resultData--->');
 		     console.log(resultData);
