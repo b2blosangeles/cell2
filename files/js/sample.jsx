@@ -1,7 +1,7 @@
 class HelloMessage extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {};
+	super(props);
+	this.state = {};
 	this.val = 1234;
   }
   render() {
