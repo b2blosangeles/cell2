@@ -9,16 +9,6 @@ class HelloMessage extends React.Component {
       <div>
         Hello {this.props.name}
         <hr/>{this.val}<hr/>
-        <PelloMessage/>
-      </div>
-    );
-  }
-}
-class PelloMessage extends React.Component {
-  render() {
-    return (
-      <div>
-        PelloMessage
       </div>
     );
   }
