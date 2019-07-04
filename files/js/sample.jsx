@@ -11,6 +11,7 @@ class HelloMessage extends React.Component {
 	     timeout: (6 * 1000),
 	     success: function(resultData){
 		     console.log('---resultData--->');
+		     console.log(resultData.data.val);
 		     me.val = resultData.data.val;
 	     },
 	     error : function(xhr, textStatus, error) { 
