@@ -1,5 +1,5 @@
 $(document).ready(
   function() {
-      $('#doc').html(new Date())
+      $('#doc').html((<div>niu</div>))
   }
 );
