@@ -2,6 +2,10 @@ class HelloMessage extends React.Component {
   constructor(props) {
 	super(props);
 	this.state = {};
+	
+
+  }
+  componentDidMount() {
 	var me = this;
 	$.ajax({
 	     type: 'POST',
@@ -12,16 +16,13 @@ class HelloMessage extends React.Component {
 	     success: function(resultData){
 		  var val = resultData.data.val;
 		  me.setState(resultData.data);
-		  ReactDOM.render(
-		    <HelloMessage name={} />,
-		    document.getElementById('bob')
-		  );
+
 			
 
 	     },
 	     error : function(xhr, textStatus, error) { 
 	     }
-	  }); 
+	  });   
   }
   render() {
     return (
@@ -33,24 +34,9 @@ class HelloMessage extends React.Component {
   }
 }
 $(document).ready(function() {
-	$.ajax({
-	     type: 'POST',
-	     url: '/api/testRestful.api',
-	     data: {},
-	     dataType: 'JSON',
-	     timeout: (6 * 1000),
-	     success: function(resultData){
-		  var val = resultData.data.val;
-		  ReactDOM.render(
-		    <HelloMessage name={resultData.data} />,
-		    document.getElementById('bob')
-		  );
-			
-
-	     },
-	     error : function(xhr, textStatus, error) { 
-	     }
-	  }); 
-
+	ReactDOM.render(
+		<HelloMessage name={} />,
+		document.getElementById('bob')
+	);
 });
 
