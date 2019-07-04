@@ -1,1 +1,5 @@
-document.getElementById('doc').innerHTML = new Date();
+$(document).ready(
+  function() {
+      $('#doc').html('nnpp')
+  }
+);
