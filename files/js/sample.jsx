@@ -14,7 +14,7 @@ $(document).ready(function() {
   );
 /*---*/
   ReactDOM.render(
-    <HelloMessage name="DOC" />,
+    <HelloMessage name="DOC" />-,
     document.getElementById('doc')
   );
 });
