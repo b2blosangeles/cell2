@@ -1,9 +1,11 @@
 class HelloMessage extends React.Component {
+  let me = this;
+  me.val = 1234;
   render() {
     return (
       <div>
         Hello {this.props.name}
-        <hr/>
+        <hr/>{this.val}<hr/>
         <PelloMessage/>
       </div>
     );
@@ -20,15 +22,8 @@ class PelloMessage extends React.Component {
 }
 
 $(document).ready(function() {
-  let me = this;
-  me.val = 1234;
   ReactDOM.render(
-    <HelloMessage name={val} />,
+    <HelloMessage name="AA" />,
     document.getElementById('bob')
-  );
-/*---8---*/
-  ReactDOM.render(
-    <HelloMessage name="DOCr" />,
-    document.getElementById('doc')
   );
 });
