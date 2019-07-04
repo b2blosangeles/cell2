@@ -12,7 +12,6 @@ class TAOApp extends React.Component {
 	     dataType: 'JSON',
 	     timeout: (6 * 1000),
 	     success: function(resultData){
-		  var val = resultData.data.val;
 		  me.setState(resultData.data);
 	     },
 	     error : function(xhr, textStatus, error) { 
@@ -21,10 +20,10 @@ class TAOApp extends React.Component {
   }
   render() {
     return (
-      <div>
+      <span>
         Hello {this.state.hello}
         <hr/> {this.state.v} <hr/>
-      </div>
+      </span>
     );
   }
 }
