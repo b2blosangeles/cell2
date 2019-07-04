@@ -1,1 +1,1 @@
-alert(123);
+document.getElementById('doc').innerHTML = new Date();
