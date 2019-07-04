@@ -1,1 +1,1 @@
-document.getElementById('doc').innerHTML = new Date();
+document.getElementById('doc').innerHTML = 'new Date()';
