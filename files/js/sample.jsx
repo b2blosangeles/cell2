@@ -12,7 +12,7 @@ $(document).ready(function() {
     <HelloMessage name="BOB" />,
     document.getElementById('bob')
   );
-/*---3---*/
+/*---4---*/
   ReactDOM.render(
     <HelloMessage name="DOCr" />,
     document.getElementById('doc')
