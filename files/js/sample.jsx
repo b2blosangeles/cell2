@@ -14,9 +14,6 @@ class HelloMessage extends React.Component {
 	     success: function(resultData){
 		  var val = resultData.data.val;
 		  me.setState(resultData.data);
-
-			
-
 	     },
 	     error : function(xhr, textStatus, error) { 
 	     }
