@@ -8,8 +8,8 @@ class HelloMessage extends React.Component {
   render() {
     return (
       <div>
-        Hello {this.props.name}
-        <hr/>{this.val}<hr/>
+        Hello {this.props.name.val}
+        <hr/> CCC <hr/>
       </div>
     );
   }
@@ -24,7 +24,7 @@ $(document).ready(function() {
 	     success: function(resultData){
 		  var val = resultData.data.val;
 		  ReactDOM.render(
-		    <HelloMessage name="val" />,
+		    <HelloMessage name={resultData.data} />,
 		    document.getElementById('bob')
 		  );
 			
