@@ -13,11 +13,17 @@ class HelloMessage extends React.Component {
 		     console.log('---resultData--->');
 		     console.log(resultData.data.val);
 		     me.val = resultData.data.val;
+		     $(document).ready(function() {
+			  ReactDOM.render(
+			    <HelloMessage name="" />,
+			    document.getElementById('bob')
+			  );
+			});
 	     },
 	     error : function(xhr, textStatus, error) { 
 	     }
 	  }); 
-	this.val = 1234;
+	// this.val = 1234;
   }
   render() {
     return (
@@ -29,9 +35,4 @@ class HelloMessage extends React.Component {
   }
 }
 
-$(document).ready(function() {
-  ReactDOM.render(
-    <HelloMessage name="" />,
-    document.getElementById('bob')
-  );
-});
+
