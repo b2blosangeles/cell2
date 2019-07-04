@@ -2,6 +2,7 @@ class HelloMessage extends React.Component {
   constructor(props) {
 	super(props);
 	this.state = {};
+	var me = this;
 	$.ajax({
 	     type: 'POST',
 	     url: '/api/testRestful.api',
@@ -10,7 +11,7 @@ class HelloMessage extends React.Component {
 	     timeout: (6 * 1000),
 	     success: function(resultData){
 		     console.log('---resultData--->');
-		     this.val = resultData.data.val;
+		     me.val = resultData.data.val;
 	     },
 	     error : function(xhr, textStatus, error) { 
 	     }
