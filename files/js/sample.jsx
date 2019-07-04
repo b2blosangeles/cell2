@@ -15,6 +15,6 @@ $(document).ready(function() {
 
   ReactDOM.render(
     <HelloMessage name="DOC" />,
-    document.getElementById('DOC')
+    document.getElementById('doc')
   );
 });
