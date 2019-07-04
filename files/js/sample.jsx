@@ -1,7 +1,7 @@
 class HelloMessage extends React.Component {
   constructor(props) {
 	super(props);
-	this.state = {};
+	this.state = {val : '111'};
   }
   componentDidMount() {
 	var me = this;
