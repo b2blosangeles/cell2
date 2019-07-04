@@ -1,8 +1,8 @@
 class HelloMessage extends React.Component {
   getInitialState: function() {
-		var me = this;
-    me.val = 1234;
-    return {}
+	var me = this;
+	me.val = 1234;
+	return {}
   },
   render() {
     return (
