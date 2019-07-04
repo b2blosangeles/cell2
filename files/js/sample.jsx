@@ -12,3 +12,7 @@ ReactDOM.render(
   <HelloMessage name="Taylor" />,
   document.getElementById('doc')
 );
+ReactDOM.render(
+  <HelloMessage name="BOB" />,
+  document.getElementById('bob')
+);
