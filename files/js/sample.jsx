@@ -1,5 +1,5 @@
 $(document).ready(
   function() {
-      $('#doc').html(<div>niu</div>)
+      $('#doc').html('<div>niu</div>')
   }
 );
