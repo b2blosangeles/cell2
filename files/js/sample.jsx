@@ -1,4 +1,4 @@
-class HelloMessage extends React.Component {
+class TAOApp extends React.Component {
   constructor(props) {
 	super(props);
 	this.state = {val : '111'};
@@ -30,7 +30,7 @@ class HelloMessage extends React.Component {
 }
 $(document).ready(function() {
 	ReactDOM.render(
-		<HelloMessage name={{}} />,
+		<TAOApp name={{}} />,
 		document.getElementById('bob')
 	);
 });
