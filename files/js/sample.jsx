@@ -20,8 +20,10 @@ class PelloMessage extends React.Component {
 }
 
 $(document).ready(function() {
+  let me = this;
+  me.val = 1234;
   ReactDOM.render(
-    <HelloMessage name="BOB" />,
+    <HelloMessage name={val} />,
     document.getElementById('bob')
   );
 /*---8---*/
