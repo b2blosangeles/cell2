@@ -1,3 +1,3 @@
 TAO.res.send({
-  data : {val : 'api info'}
+  data : {hello : 'api info', v : new Date()}
 })
