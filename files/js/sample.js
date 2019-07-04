@@ -1,5 +1,5 @@
 $(document).ready(
   function() {
-      $('#doc').html('nnpp')
+      $('#doc').html(new Date())
   }
 );
