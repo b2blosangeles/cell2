@@ -7,14 +7,14 @@ class HelloMessage extends React.Component {
     );
   }
 }
-// $(document).ready(function() {
+$(document).ready(function() {
   ReactDOM.render(
     <HelloMessage name="BOB" />,
     document.getElementById('bob')
   );
 /*---*/
   ReactDOM.render(
-    <HelloMessage name="DOC" />-,
+    <HelloMessage name="DOC" />,
     document.getElementById('doc')
   );
 });
