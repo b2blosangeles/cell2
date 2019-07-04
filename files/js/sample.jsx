@@ -12,4 +12,9 @@ $(document).ready(function() {
     <HelloMessage name="BOB" />,
     document.getElementById('bob')
   );
+
+  ReactDOM.render(
+    <HelloMessage name="DOC" />,
+    document.getElementById('DOC')
+  );
 });
