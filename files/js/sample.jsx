@@ -33,7 +33,7 @@ class HelloMessage extends React.Component {
 }
 $(document).ready(function() {
 	ReactDOM.render(
-		<HelloMessage name={} />,
+		<HelloMessage name={{}} />,
 		document.getElementById('bob')
 	);
 });
