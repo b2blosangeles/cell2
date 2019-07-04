@@ -8,8 +8,8 @@ class HelloMessage extends React.Component {
   render() {
     return (
       <div>
-        Hello {this.props.name.val}
-        <hr/> CCC <hr/>
+        Hello {this.props.name.hello}
+        <hr/> {this.props.name.v} <hr/>
       </div>
     );
   }
