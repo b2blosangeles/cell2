@@ -7,6 +7,18 @@ class TAORoot extends React.Component {
   }
   componentDidMount() {
 	var me = this;  
+	ReactDOM.TAO.ajax({
+	     type: 'POST',
+	     url: '/api/testRestful.api',
+	     data: {},
+	     dataType: 'JSON',
+	     timeout: (6 * 1000),
+	     success: function(resultData){
+		  ReactDOM.TAO.setState('*', resultData.data);
+	     },
+	     error : function(err) { 
+	     }
+	  });   
   }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
@@ -16,7 +28,7 @@ class TAORoot extends React.Component {
       <span>
         TAORoot 
         <hr/>
-	{/*(this.state._TAOstate) ? this.state._TAOstate.bb : ''*/}
+	{(this.state._TAOstate) ? this.state._TAOstate.bb : ''}
 	<hr/>
       </span>
     );
