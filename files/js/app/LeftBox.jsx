@@ -27,7 +27,7 @@ class LeftBox extends React.Component {
   render() {
     return (
       <span>
-        TopMenu
+        LeftBox
 	<hr/>	        
 	{(this.state._TAOstate) ? this.state._TAOstate.hello : ''}
       </span>
