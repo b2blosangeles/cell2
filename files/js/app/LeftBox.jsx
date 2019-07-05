@@ -26,11 +26,15 @@ class LeftBox extends React.Component {
   }
   render() {
     return (
-      <span>
-        LeftBox
-	<hr/>	        
-	{(this.state._TAOstate) ? this.state._TAOstate.hello : ''}
-      </span>
+      <div>
+        <ul>
+          {
+           this.state.list.map(function(item, i){
+             <li>{item.tablename}</li>
+           })
+         }
+        </ul>
+      </div>
     );
   }
 }
