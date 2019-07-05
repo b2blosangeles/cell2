@@ -50,7 +50,7 @@ class COMApp extends React.Component {
   render() {
     return (
       <span>
-        Hello {this.state.hello}
+        COMMAPP {this.state.hello}
         <hr/> {this.state.v} <hr/>
       </span>
     );
