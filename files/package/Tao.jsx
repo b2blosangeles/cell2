@@ -12,6 +12,6 @@
 		"/js/app/TAORoot.jsx",
 		"/js/app/TopMenu.jsx",
 		"/js/app/LeftBox.jsx",
-		"/js/app/TAOIndex.jsx"
+		"/js/app/TAOindex.jsx"
 	]
 }
