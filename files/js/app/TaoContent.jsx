@@ -13,7 +13,7 @@ class TaoContent extends React.Component {
   }
   render() {
     return (
-      <div className="border border-secondary alert-secondary rounded  m-0 ml-1 p-2">
+      <div className="border border-secondary alert-secondary rounded  m-0 p-2">
         <h3>Tao Content</h3>        
 	{(this.state._TAOstate) ? this.state._TAOstate.hello : ''}
       </div>
