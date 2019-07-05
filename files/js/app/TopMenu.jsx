@@ -14,7 +14,6 @@ class TopMenu extends React.Component {
 	     dataType: 'JSON',
 	     timeout: (6 * 1000),
 	     success: function(resultData){
-		     console.log(resultData.data.length);
 		  me.setState({list : resultData.data, _TM : new Date().getTime()});
 	     },
 	     error : function(err) { 
