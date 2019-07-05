@@ -63,8 +63,6 @@ class COMApp extends React.Component {
   }
 }
 $(document).ready(function() {
-	ReactDOM.TAOController = new Object();
-	
 	ReactDOM.render(
 		<TAOApp param={{}} />,
 		document.body.appendChild( document.createElement( 'div' ) )
