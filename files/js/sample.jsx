@@ -42,7 +42,7 @@ var COMApp = class COMApp extends React.Component {
 	     timeout: (6 * 1000),
 	     success: function(resultData){
 		  me.setState(resultData.data);
-		  COMApp.setState({v : 'VVVVV'});   
+		  TAOApp.setState({v : 'VVVVV'});   
 	     },
 	     error : function(xhr, textStatus, error) { 
 	     }
