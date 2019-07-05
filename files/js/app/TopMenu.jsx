@@ -14,7 +14,7 @@ class TopMenu extends React.Component {
   render() {
     return (
       <div className="border border-success alert-success rounded  m-0 mb-1 p-2">
-        <h1>Tao Admin</h1>        
+        <h1>Tao Development</h1>        
 	{(this.state._TAOstate) ? this.state._TAOstate.hello : ''}
       </div>
     );
