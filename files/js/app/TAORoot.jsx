@@ -24,13 +24,6 @@ class TAORoot extends React.Component {
 	var me = this;
   }
   render() {
-    return (
-      <span>
-        TAORoot 
-        <hr/>
-	{(this.state._TAOstate) ? this.state._TAOstate.hello : ''}
-	<hr/>
-      </span>
-    );
+    return (<span></span>);
   }
 }
