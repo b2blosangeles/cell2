@@ -9,7 +9,7 @@ class LeftBox extends React.Component {
 	var me = this;  
 	ReactDOM.TAO.ajax({
 	     type: 'POST',
-	     url: '/api/Tao/API_PG.api',
+	     url: '/api/Tao/API_PG.api?code=PGtables',
 	     data: {},
 	     dataType: 'JSON',
 	     timeout: (6 * 1000),
