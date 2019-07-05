@@ -19,12 +19,10 @@
                 }
             } else if (Array.isArray(id)) {
                 for (var i = 0; i < id.length; i++) {
-                     if (ReactDOM.TAO.list[id[i]]) {
+                     if (typeof ReactDOM.TAO.list[id[i]] === 'object') {
                          ReactDOM.TAO.list[id[i]].setState({_TTM: new Date().getTime(), _TDATA: data});
                      }
                 }
-            } else if (ReactDOM.TAO.list[id]) {
-                 ReactDOM.TAO.list[id].setState({_TTM: new Date().getTime(), _TDATA: data});
             }
         }
     }
