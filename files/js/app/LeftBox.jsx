@@ -18,6 +18,7 @@ class LeftBox extends React.Component {
 		  me.setState({list : resultData.data, _TM : new Date().getTime()});
 	     },
 	     error : function(err) { 
+		     console.log('err');
 	     }
 	  });   
 	  
