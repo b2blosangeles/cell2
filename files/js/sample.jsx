@@ -48,7 +48,7 @@ class COMApp extends React.Component {
 	     timeout: (6 * 1000),
 	     success: function(resultData){
 		me.setState(resultData.data);
-		ReactDOM.TAO.setState('Tao', {bb : 'CCCCMMM'});
+		ReactDOM.TAO.setState('*', {bb : 'CCCCMMM'});
 	     },
 	     error : function(xhr, textStatus, error) { 
 	     }
