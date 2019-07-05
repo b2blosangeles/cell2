@@ -1,4 +1,4 @@
-class topMenu extends React.Component {
+class TopMenu extends React.Component {
   constructor(props) {
 	super(props);
 	this.props = props;
