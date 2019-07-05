@@ -21,19 +21,11 @@ client.connect(function(err) {
   client.query(sqlStr1,
       function(err, result) {
             if(err) {
-              q_result.i0 = err.message;
+              q_result.data  = [];
             } else {
-              q_result.i0 = result.rows;
+              q_result.data = result.rows;
             }
-            client.query(sqlStr2,
-                  function(err, result) {
-                        if(err) {
-                          q_result.i1 = err.message;
-                          return true;
-                        }
-                        q_result.i1 = result.rows;
-                        client.end();
-                        TAO.res.send(q_result);
-              });
+            client.end();
+            TAO.res.send(q_result);
       });
  });
