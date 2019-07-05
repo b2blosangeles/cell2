@@ -16,7 +16,7 @@ class TAORoot extends React.Component {
       <span>
         TAORoot 
         <hr/>
-	{(this.state._TAOstate) ? this.state._TAOstate.bb : ''}
+	{/*(this.state._TAOstate) ? this.state._TAOstate.bb : ''*/}
 	<hr/>
       </span>
     );
