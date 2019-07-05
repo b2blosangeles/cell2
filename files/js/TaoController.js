@@ -15,12 +15,12 @@
         setState : function(id, data) {
             if (id === '*') {
                 for (o in this.list) {
-                    this.list[id[i]].setState({_TAOUPDATE: new Date().getTime(), _TAODATA: data});
+                    this.list[o].setState({_TAOTM: new Date().getTime(), _TAOstat: data});
                 }
             } else if (Array.isArray(id)) {
                 for (var i = 0; i < id.length; i++) {
                      if (typeof this.list[id[i]] === 'object') {
-                         this.list[id[i]].setState({_TAOUPDATE: new Date().getTime(), _TAODATA: data});
+                         this.list[id[i]].setState({_TAOTM: new Date().getTime(), _TAOstat: data});
                      }
                 }
             }
