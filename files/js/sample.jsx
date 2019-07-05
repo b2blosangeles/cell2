@@ -3,9 +3,8 @@ var master = new Object();
 class TAOApp extends React.Component {
   constructor(props) {
 	super(props);
-	  alert(this.constructor.name);
 	  this.props = props;
-	  master.TAOApp = this;
+	  master[this.constructor.name] = this;
 	this.state = {val : '111', bb : 'AAA'};
   }
   componentDidMount() {
@@ -36,7 +35,7 @@ class TAOApp extends React.Component {
 class COMApp extends React.Component {
   constructor(props) {
 	super(props);
-	 master.COMApp = this;
+	master[this.constructor.name] = this;
 	this.state = {val : '111', bb : 'BBB'};
   }
   componentDidMount() {
