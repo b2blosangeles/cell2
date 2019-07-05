@@ -1,6 +1,8 @@
 class TAOApp extends React.Component {
   constructor(props) {
 	super(props);
+	console.log('====props===>');
+	  console.log(props);
 	this.props = props;
 	ReactDOM.TAO.list[this.constructor.name] = this;
 	this.state = {val : '111', bb : 'AAA'};
