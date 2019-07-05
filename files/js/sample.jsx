@@ -24,7 +24,7 @@ var TAOApp = class TAOApp extends React.Component {
   render() {
     return (
       <span>
-        Hello {this.state.hello} =--=> {this.props.param.aa}
+        Hello {this.state.hello} =--=> {this.props.param}
         <hr/> {this.state.v} <hr/>
       </span>
     );
@@ -63,13 +63,13 @@ var COMApp = class COMApp extends React.Component {
 }
 $(document).ready(function() {
 	ReactDOM.render(
-		<TAOApp param={niu} />,
+		<TAOApp param={niu.aa} />,
 		document.body.appendChild( document.createElement( 'div' ) )
 		// document.getElementById('bob')
 	);
 	
 	ReactDOM.render(
-		<COMApp param={niu} />,
+		<COMApp param={niu.aa} />,
 		document.body.appendChild( document.createElement( 'div' ) )
 		// document.getElementById('bob')
 	);
