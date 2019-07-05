@@ -1,0 +1,1 @@
+ReactDOM.TAOController = new Object();
