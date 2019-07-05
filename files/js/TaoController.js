@@ -26,7 +26,7 @@
             }
         },
         ajax : function(cfg) {
-          $ajax({
+          $.ajax({
              type: (cfg.type) ? cfg.type : 'POST',
              url: cfg.url,
              data: (cfg.data) ? cfg.data : {},
