@@ -31,10 +31,11 @@ switch( TAO.req.query.code) {
                     TAO.res.send(q_result);
               });
          });
-    break;
+         return true;
+         break;
   default:
         TAO.res.send('Missing code!');
-        return true;
+        
 }
 
 
