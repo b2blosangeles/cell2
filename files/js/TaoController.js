@@ -13,6 +13,12 @@ ReactDOM.TAO.setState = function(id, data) {
         for (o in ReactDOM.TAO.list) {
             ReactDOM.TAO.list[o].setState(data);
         }
+    } else if (Array.isArray(id)) {
+        for (var i = 0; i < id.length; i++) {
+             if (ReactDOM.TAO.list[id[i]]) {
+                 ReactDOM.TAO.list[id[i]].setState(data);
+             }
+        }
     } else if (ReactDOM.TAO.list[id]) {
          ReactDOM.TAO.list[id].setState(data);
     }
