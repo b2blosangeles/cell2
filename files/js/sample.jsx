@@ -1,3 +1,4 @@
+var niu = {aa: 123};
 var TAOApp = class TAOApp extends React.Component {
   constructor(props) {
 	super(props);
@@ -54,7 +55,7 @@ var COMApp = class COMApp extends React.Component {
   render() {
     return (
       <span>
-        COMMAPP {this.state.hello}
+        COMMAPP {this.state.hello} == {this.props.aa}
         <hr/> {this.state.v} <hr/>
       </span>
     );
@@ -62,13 +63,13 @@ var COMApp = class COMApp extends React.Component {
 }
 $(document).ready(function() {
 	ReactDOM.render(
-		<TAOApp param={{}} />,
+		<TAOApp param={niu} />,
 		document.body.appendChild( document.createElement( 'div' ) )
 		// document.getElementById('bob')
 	);
 	
 	ReactDOM.render(
-		<COMApp param={{}} />,
+		<COMApp param={niu} />,
 		document.body.appendChild( document.createElement( 'div' ) )
 		// document.getElementById('bob')
 	);
