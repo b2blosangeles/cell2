@@ -1,4 +1,4 @@
-var master = {};
+var master = new Object();
 
 class TAOApp extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class TAOApp extends React.Component {
   render() {
     return (
       <span>
-        Hello {this.state.hello} --- {this.state.bb} 
+        Hello {this.state.hello} -XX- {this.state.bb} 
         <hr/> {this.state.v} <hr/>
       </span>
     );
@@ -58,7 +58,7 @@ class COMApp extends React.Component {
   render() {
     return (
       <span>
-        COMMAPP {this.state.hello} --- {this.state.bb} 
+        COMMAPP {this.state.hello} -&&- {this.state.bb} 
         <hr/> {this.state.v} <hr/>
       </span>
     );
