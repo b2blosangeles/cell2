@@ -13,7 +13,7 @@ ReactDOM.TAO.setState = function(id, data) {
         for (o in ReactDOM.TAO.list) {
             ReactDOM.TAO.list[o].setState(data);
         }
-    } else (if (ReactDOM.TAO.list[id]) ) {
+    } else if (ReactDOM.TAO.list[id]) ) {
          ReactDOM.TAO.list[id].setState(data);
     }
 }
