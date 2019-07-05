@@ -10,6 +10,7 @@
 
 		"/js/app/TaoController.jsx",
 		"/js/app/TAORoot.jsx",
-		"/js/app/sample.jsx"
+		"/js/app/topMenu.jsx",
+		"/js/app/TAOIDX.jsx"
 	]
 }
