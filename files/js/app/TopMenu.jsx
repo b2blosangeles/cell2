@@ -29,7 +29,7 @@ class TopMenu extends React.Component {
     return (
       <div className="border border-success alert-success rounded  m-0 mt-3 mb-2 p-2">
         <h1>Tao Development</h1>
-	<div className="float-none p-1">
+	<div className="wrapper p-1">
 	{this.state.list.map(function(item, i){
              return (<div className="float-left mr-3">{item.tablename}</div>)
            })}
