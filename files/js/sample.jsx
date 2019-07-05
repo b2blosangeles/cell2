@@ -1,5 +1,3 @@
-var master = new Object();
-
 class TAOApp extends React.Component {
   constructor(props) {
 	super(props);
