@@ -8,6 +8,11 @@ ReactDOM.TAO.load = function(id, obj, pobj) {
     obj.props._TID = id;
     ReactDOM.render(obj, pobj);
 }
+
+ReactDOM.TAO.register = function(obj) {
+    ReactDOM.TAO.list[obj.props._TID] = obj;
+}
+
 ReactDOM.TAO.setState = function(id, data) {
     if (id === '*') {
         for (o in ReactDOM.TAO.list) {
