@@ -9,5 +9,5 @@ ReactDOM.TAO.load = function(id, obj, pobj) {
     ReactDOM.render(obj, pobj);
 }
 ReactDOM.TAO.setState = function(id, data) {
-    ReactDOM.TAO[id].setState(data);
+    ReactDOM.TAO.list[id].setState(data);
 }
