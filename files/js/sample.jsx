@@ -4,7 +4,7 @@ class TAOApp extends React.Component {
 	this.props = props;
 	  console.log('---props--->')
 	   console.log(props);
-	ReactDOM.TAO.list[props._TID] = this;
+	ReactDOM.TAO.register(this);
 	this.state = {val : '111', bb : 'AAA'};
   }
   componentDidMount() {
@@ -34,7 +34,7 @@ class TAOApp extends React.Component {
 class COMApp extends React.Component {
   constructor(props) {
 	super(props);
-	ReactDOM.TAO.list[props._TID] = this;
+	ReactDOM.TAO.register(this);
 	this.state = {val : '111', bb : 'BBB'};
   }
   componentDidMount() {
@@ -47,7 +47,7 @@ class COMApp extends React.Component {
 	     timeout: (6 * 1000),
 	     success: function(resultData){
 		me.setState(resultData.data);
-		ReactDOM.TAO.setState(['Tao', 'COM'], {bb : 'CCCCJJJJJ'});
+		ReactDOM.TAO.setState(['Tao', 'COM'], {bb : 'CCCCWWW'});
 	     },
 	     error : function(xhr, textStatus, error) { 
 	     }
