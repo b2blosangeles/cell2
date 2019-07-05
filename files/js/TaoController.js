@@ -10,17 +10,17 @@
             ReactDOM.render(obj, pobj);
         },
         register : function(obj) {
-            ReactDOM.TAO.list[obj.props._TID] = obj;
+            this.list[obj.props._TID] = obj;
         },
         setState : function(id, data) {
             if (id === '*') {
                 for (o in ReactDOM.TAO.list) {
-                    ReactDOM.TAO.list[o].setState({_TTM: new Date().getTime(), _TDATA: data});
+                    this.list[id[i]].setState({_TAOUPDATE: new Date().getTime(), _TAODATA: data});
                 }
             } else if (Array.isArray(id)) {
                 for (var i = 0; i < id.length; i++) {
-                     if (typeof ReactDOM.TAO.list[id[i]] === 'object') {
-                         ReactDOM.TAO.list[id[i]].setState({_TTM: new Date().getTime(), _TDATA: data});
+                     if (typeof this.list[id[i]] === 'object') {
+                         this.list[id[i]].setState({_TAOUPDATE: new Date().getTime(), _TAODATA: data});
                      }
                 }
             }
