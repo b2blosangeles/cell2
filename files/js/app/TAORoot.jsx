@@ -12,8 +12,8 @@ class TAORoot extends React.Component {
 	var me = this;
 	console.log('---prevStat-->');
 	console.log(prevState);
-	  console.log('---me.State-->');
-	console.log(me.State);
+	  console.log('---me.state-->');
+	console.log(me.state);
   }
   render() {
     return (
