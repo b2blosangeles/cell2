@@ -13,7 +13,7 @@ class TopContent extends React.Component {
   }
   render() {
     return (
-      <div className="border border-success alert-success rounded  m-0 mt-3 mb-2 p-2">
+      <div className="border border-secondary alert-secondary rounded  m-0 ml-3 p-2">
         <h1>Tao Development</h1>        
 	{(this.state._TAOstate) ? this.state._TAOstate.hello : ''}
       </div>
