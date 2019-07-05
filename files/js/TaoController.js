@@ -16,15 +16,15 @@ ReactDOM.TAO.register = function(obj) {
 ReactDOM.TAO.setState = function(id, data) {
     if (id === '*') {
         for (o in ReactDOM.TAO.list) {
-            ReactDOM.TAO.list[o].setState(data);
+            ReactDOM.TAO.list[o].setState({_TTM: new Date().getTime(), _TDATA: data});
         }
     } else if (Array.isArray(id)) {
         for (var i = 0; i < id.length; i++) {
              if (ReactDOM.TAO.list[id[i]]) {
-                 ReactDOM.TAO.list[id[i]].setState(data);
+                 ReactDOM.TAO.list[id[i]].setState({_TTM: new Date().getTime(), _TDATA: data});
              }
         }
     } else if (ReactDOM.TAO.list[id]) {
-         ReactDOM.TAO.list[id].setState(data);
+         ReactDOM.TAO.list[id].setState({_TTM: new Date().getTime(), _TDATA: data});
     }
 }
