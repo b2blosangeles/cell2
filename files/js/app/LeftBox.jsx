@@ -31,7 +31,7 @@ class LeftBox extends React.Component {
       <div>
         <ul>
           {this.state.list.map(function(item, i){
-             <li>{item.tablename}</li>
+             return (<li>{item.tablename}</li>)
            })}
         </ul>
       </div>
