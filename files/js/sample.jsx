@@ -3,8 +3,8 @@ var master = new Object();
 class TAOApp extends React.Component {
   constructor(props) {
 	super(props);
-	  this.props = props;
-	  master[this.constructor.name] = this;
+	this.props = props;
+	ReactDOM.TAOController[this.constructor.name] = this;
 	this.state = {val : '111', bb : 'AAA'};
   }
   componentDidMount() {
@@ -35,7 +35,7 @@ class TAOApp extends React.Component {
 class COMApp extends React.Component {
   constructor(props) {
 	super(props);
-	master[this.constructor.name] = this;
+	ReactDOM.TAOController[this.constructor.name] = this;
 	this.state = {val : '111', bb : 'BBB'};
   }
   componentDidMount() {
@@ -48,7 +48,7 @@ class COMApp extends React.Component {
 	     timeout: (6 * 1000),
 	     success: function(resultData){
 		  me.setState(resultData.data);
-		  master.TAOApp.setState({bb : 'CCCC'});
+		  ReactDOM.TAOController.TAOApp.setState({bb : 'CCCC'});
 		//  TAOApp.alert();   
 	     },
 	     error : function(xhr, textStatus, error) { 
@@ -65,6 +65,8 @@ class COMApp extends React.Component {
   }
 }
 $(document).ready(function() {
+	ReactDOM.TAOController = new Object();
+	
 	ReactDOM.render(
 		<TAOApp param={{}} />,
 		document.body.appendChild( document.createElement( 'div' ) )
