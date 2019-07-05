@@ -14,11 +14,11 @@ client.connect(function(err) {
     TAO.res.send(err.message);
     return true;
   }
-  let sqlStr1 = 'SELECT datname FROM pg_database WHERE datistemplate = false; ';
-  let sqlStr2 = 'SELECT * FROM pg_catalog.pg_tables; ';
+  
+  let sqlStr = 'SELECT * FROM pg_catalog.pg_tables; ';
 
   let q_result = {};
-  client.query(sqlStr1,
+  client.query(sqlStr,
       function(err, result) {
             if(err) {
               q_result.data  = [];
