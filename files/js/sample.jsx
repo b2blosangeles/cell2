@@ -23,7 +23,7 @@ var TAOApp = class TAOApp extends React.Component {
   render() {
     return (
       <span>
-        Hello {this.state.hello} ==> {this.props.aa}
+        Hello {this.state.hello} ==> {this.props.param.aa}
         <hr/> {this.state.v} <hr/>
       </span>
     );
