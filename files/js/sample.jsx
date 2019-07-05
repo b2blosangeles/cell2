@@ -30,7 +30,8 @@ class TAOApp extends React.Component {
 $(document).ready(function() {
 	ReactDOM.render(
 		<TAOApp param={{}} />,
-		document.getElementById('bob')
+		document.body.appendChild( document.createElement( 'div' ) )
+		// document.getElementById('bob')
 	);
 });
 
