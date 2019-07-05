@@ -9,5 +9,11 @@ ReactDOM.TAO.load = function(id, obj, pobj) {
     ReactDOM.render(obj, pobj);
 }
 ReactDOM.TAO.setState = function(id, data) {
-    ReactDOM.TAO.list[id].setState(data);
+    if (id === '*') {
+        for (o in ReactDOM.TAO.list) {
+            ReactDOM.TAO.list[o].setState(data);
+        }
+    } else (if (ReactDOM.TAO.list[id]) ) {
+         ReactDOM.TAO.list[id].setState(data);
+    }
 }
