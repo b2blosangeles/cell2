@@ -15,6 +15,7 @@ class TopMenu extends React.Component {
     return (
       <span>
         TopMenu 
+	{(this.state._TAOstate) ? this.state._TAOstate.bb : ''}
       </span>
     );
   }
