@@ -7,7 +7,7 @@ class TAOApp extends React.Component {
   }
   componentDidMount() {
 	var me = this;
-	$.ajax({
+	ReactDOM.TAO.ajax({
 	     type: 'POST',
 	     url: '/api/testRestful.api',
 	     data: {},
@@ -38,7 +38,7 @@ class COMApp extends React.Component {
   }
   componentDidMount() {
 	var me = this;
-	$.ajax({
+	ReactDOM.TAO.ajax({
 	     type: 'POST',
 	     url: '/api/testRestful.api',
 	     data: {},
