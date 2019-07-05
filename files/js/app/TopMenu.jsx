@@ -13,11 +13,10 @@ class TopMenu extends React.Component {
   }
   render() {
     return (
-      <span>
-        TopMenu
-	<hr/>	        
+      <div className="border border-success alert-success rounded  m-1 p-1">
+        TopMenu        
 	{(this.state._TAOstate) ? this.state._TAOstate.hello : ''}
-      </span>
+      </div>
     );
   }
 }
