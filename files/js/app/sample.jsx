@@ -16,7 +16,7 @@ class TAOApp extends React.Component {
 	     success: function(resultData){
 		  me.setState(resultData.data);
 	     },
-	     error : function(xhr, textStatus, error) { 
+	     error : function(err) { 
 	     }
 	  });   
   }
@@ -48,7 +48,7 @@ class COMApp extends React.Component {
 		me.setState(resultData.data);
 		ReactDOM.TAO.setState(['Tao', 'COM'], {bb : 'CCCCWWW'});
 	     },
-	     error : function(xhr, textStatus, error) { 
+	     error : function(err) { 
 	     }
 	  });   
   }
