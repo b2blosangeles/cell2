@@ -32,7 +32,7 @@ class TAOApp extends React.Component {
       <span>
         Hello {this.state.hello} -XX- {this.state.bb} 
         <hr/> {this.state.v} <hr/>
-	{(this.state._TAODATA) ? this.state._TAODATA.bb : ''}
+	{(this.state._TAOstate) ? this.state._TAOstate.bb : ''}
       </span>
     );
   }
@@ -64,7 +64,7 @@ class COMApp extends React.Component {
       <span>
         COMMAPP {this.state.hello} -&&- {this.state.bb} 
         <hr/> {this.state.v} <hr/>
-	{(this.state._TAODATA) ? this.state._TAODATA.bb : ''}
+	{(this.state._TAOstate) ? this.state._TAOstate.bb : ''}
       </span>
     );
   }
