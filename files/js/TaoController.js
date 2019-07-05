@@ -24,6 +24,25 @@
                      }
                 }
             }
+        },
+        ajax : function(cfg) {
+          $ajax({
+             type: (cfg.type) ? cfg.type : 'POST',
+             url: cfg.url,
+             data: (cfg.data) ? cfg.data : {},
+             dataType: (cfg.dataType) ? cfg.dataType : 'JSON',
+             timeout: (cfg.timeout) ? cfg.timeout : 6000,
+             success: function(resultData){
+                if  (type cfg.success == 'function') {
+                    cfg.success(resultData)
+                }
+             },
+	        error : function(xhr, textStatus, error) { 
+                if  (type cfg.error == 'function') {
+                    cfg.error(error)
+                }
+	        }
+	      });
         }
     }
 })() 
