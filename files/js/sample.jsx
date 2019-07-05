@@ -1,8 +1,10 @@
-var niu = {aa: 123};
+var master = {};
+
 class TAOApp extends React.Component {
   constructor(props) {
 	super(props);
 	  this.props = props;
+	  master.TAOApp = this;
 	this.state = {val : '111'};
   }
   componentDidMount() {
@@ -15,7 +17,7 @@ class TAOApp extends React.Component {
 	     timeout: (6 * 1000),
 	     success: function(resultData){
 		  me.setState(resultData.data);
-		     niu.aa = 789;
+		  
 	     },
 	     error : function(xhr, textStatus, error) { 
 	     }
@@ -33,6 +35,7 @@ class TAOApp extends React.Component {
 class COMApp extends React.Component {
   constructor(props) {
 	super(props);
+	 master.COMApp = this;
 	this.state = {val : '111'};
   }
   componentDidMount() {
@@ -45,7 +48,7 @@ class COMApp extends React.Component {
 	     timeout: (6 * 1000),
 	     success: function(resultData){
 		  me.setState(resultData.data);
-		     niu.aa = 456;
+		  master.TAOApp.setState(resultData.data);
 		//  TAOApp.alert();   
 	     },
 	     error : function(xhr, textStatus, error) { 
