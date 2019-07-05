@@ -24,8 +24,8 @@ class TAOApp extends React.Component {
 	var me = this;
 	console.log('---prevStat-->');
 	console.log(prevState);
-	  console.log('---me.State-->');
-	console.log(me.State);
+	  console.log('---me.State-=->');
+	console.log(me.Stat);
   }
   render() {
     return (
