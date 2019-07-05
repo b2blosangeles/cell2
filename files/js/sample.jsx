@@ -15,7 +15,7 @@ class TAOApp extends React.Component {
 	     timeout: (6 * 1000),
 	     success: function(resultData){
 		  me.setState(resultData.data);
-		  
+		  ReactDOM.TAO.setState.setState('Tao', {bb : 'CCCCMMMtao'});
 	     },
 	     error : function(xhr, textStatus, error) { 
 	     }
@@ -46,7 +46,7 @@ class COMApp extends React.Component {
 	     timeout: (6 * 1000),
 	     success: function(resultData){
 		me.setState(resultData.data);
-		ReactDOM.TAO.list.Tao.setState({bb : 'CCCCMMM'});
+		ReactDOM.TAO.setState.setState('COM', {bb : 'CCCCMMM'});
 	     },
 	     error : function(xhr, textStatus, error) { 
 	     }
