@@ -8,3 +8,6 @@ ReactDOM.TAO.load = function(id, obj, pobj) {
     obj.props._TID = id;
     ReactDOM.render(obj, pobj);
 }
+ReactDOM.TAO.setState = function(id, data) {
+    ReactDOM.TAO[id].setState(data);
+}
