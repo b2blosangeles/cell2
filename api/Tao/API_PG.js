@@ -1,6 +1,6 @@
 switch( TAO.req.query.code) {
   case 'PGtables':
-  case 'databases':
+  case 'PGdatabases':
         delete TAO.require.cache[TAO.env.root_path + '/vendor/pg/node_modules/pg'];
         var pg = TAO.require(TAO.env.root_path + '/vendor/pg/node_modules/pg');
 
