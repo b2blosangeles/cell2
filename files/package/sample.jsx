@@ -7,7 +7,9 @@
 	"/js/react/react-dom.min.js",
 	"/js/react/react-cookie.0.4.9.min.js",
 	"/js/react/ReactRouter/3.0.2/ReactRouter.min.js",
-	"/js/TaoController.js",
+	"/js/TaoController.jsx",
+		
+	"/js/app/TAORoot.jsx"
 	"/js/app/sample.jsx"
 	]
 }
