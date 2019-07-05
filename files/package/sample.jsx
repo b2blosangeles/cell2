@@ -9,7 +9,7 @@
 	"/js/react/ReactRouter/3.0.2/ReactRouter.min.js",
 	"/js/TaoController.jsx",
 		
-	"/js/app/TAORoot.jsx"
+	"/js/app/TAORoot.jsx",
 	"/js/app/sample.jsx"
 	]
 }
