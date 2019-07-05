@@ -37,12 +37,12 @@
                     cfg.success(resultData)
                 }
              },
-	        error : function(xhr, textStatus, error) { 
+	     error : function(xhr, textStatus, error) { 
                 if  (type cfg.error == 'function') {
                     cfg.error(error)
                 }
-	        }
-	      });
+	     }
+	   });
         }
     }
 })() 
