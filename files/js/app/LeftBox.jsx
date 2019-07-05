@@ -29,7 +29,7 @@ class LeftBox extends React.Component {
   render() {
     return (
       <div>
-	Tables :
+	ALL TABLES :
         <ul>
           {this.state.list.map(function(item, i){
              return (<li>{item.tablename}</li>)
