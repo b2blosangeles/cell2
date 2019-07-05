@@ -11,6 +11,6 @@
 		"/js/app/TaoController.jsx",
 		"/js/app/TAORoot.jsx",
 		"/js/app/topMenu.jsx",
-		"/js/app/TAOIDX.jsx"
+		"/js/app/TAOindex.jsx"
 	]
 }
