@@ -1,8 +1,8 @@
-var TAOController = {};
-TAOController.list = {};
-TAOController.append = function(obj, pobj) {
+ReactDOM.TAO = new Object();
+ReactDOM.TAO.list = {};
+ReactDOM.TAO.append = function(obj, pobj) {
     ReactDOM.render(obj, pobj.appendChild( document.createElement( 'div' )));
 }
-TAOController.load = function(obj, pobj) {
+ReactDOM.TAO.load = function(obj, pobj) {
     ReactDOM.render(obj, pobj);
 }
