@@ -5,7 +5,7 @@ class TAOApp extends React.Component {
 	super(props);
 	  this.props = props;
 	  master.TAOApp = this;
-	this.state = {val : '111'};
+	this.state = {val : '111', bb : 'AAA'};
   }
   componentDidMount() {
 	var me = this;
@@ -26,7 +26,7 @@ class TAOApp extends React.Component {
   render() {
     return (
       <span>
-        Hello {this.state.hello} =-**-=> {this.props.param}
+        Hello {this.state.hello} --- {this.state.bb} 
         <hr/> {this.state.v} <hr/>
       </span>
     );
@@ -36,7 +36,7 @@ class COMApp extends React.Component {
   constructor(props) {
 	super(props);
 	 master.COMApp = this;
-	this.state = {val : '111'};
+	this.state = {val : '111', bb : 'BBB'};
   }
   componentDidMount() {
 	var me = this;
@@ -58,7 +58,7 @@ class COMApp extends React.Component {
   render() {
     return (
       <span>
-        COMMAPP {this.state.hello} 
+        COMMAPP {this.state.hello} --- {this.state.bb} 
         <hr/> {this.state.v} <hr/>
       </span>
     );
