@@ -14,7 +14,8 @@ class TopMenu extends React.Component {
   render() {
     return (
       <span>
-        TopMenu 
+        TopMenu
+	<hr/>	        
 	{(this.state._TAOstate) ? this.state._TAOstate.hello : ''}
       </span>
     );
