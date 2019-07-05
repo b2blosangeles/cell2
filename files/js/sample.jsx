@@ -62,7 +62,7 @@ class COMApp extends React.Component {
   }
 }
 $(document).ready(function() {
-	ReactDOM.TAO.load(<TAOApp param={{}} />, document.getElementById('doc'));
-	ReactDOM.TAO.append(<COMApp param={{}} />, document.body);
+	ReactDOM.TAO.load('Tao', <TAOApp param={{}} />, document.getElementById('doc'));
+	ReactDOM.TAO.append('COM', <COMApp param={{}} />, document.body);
 });
 
