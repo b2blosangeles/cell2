@@ -1,5 +1,5 @@
 var niu = {aa: 123};
-var TAOApp = class TAOApp extends React.Component {
+class TAOApp extends React.Component {
   constructor(props) {
 	super(props);
 	  this.props = props;
@@ -30,7 +30,7 @@ var TAOApp = class TAOApp extends React.Component {
     );
   }
 }
-var COMApp = class COMApp extends React.Component {
+class COMApp extends React.Component {
   constructor(props) {
 	super(props);
 	this.state = {val : '111'};
