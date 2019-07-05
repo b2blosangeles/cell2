@@ -1,3 +1,11 @@
+switch(body.query.code) {
+  case 'tables':
+  case 'databases':
+    // code block
+    break;
+  default:
+    res.send('Missing code!')
+}
 
 delete TAO.require.cache[TAO.env.root_path + '/vendor/pg/node_modules/pg'];
 var pg = TAO.require(TAO.env.root_path + '/vendor/pg/node_modules/pg');
