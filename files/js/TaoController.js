@@ -1,5 +1,5 @@
 (function() {
-    var TAO = {
+    ReactDOM.TAO = {
         list    : {},
         append  : function(id, obj, pobj) {
             obj.props._TID = id;
@@ -28,5 +28,4 @@
             }
         }
     }
-    ReactDOM.TAO = TAO;
 })() 
