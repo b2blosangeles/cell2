@@ -28,7 +28,7 @@ class LeftBox extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="border border-warning alert-warning rounded m-0 p-2" ">
 	ALL TABLES :
         <ul>
           {this.state.list.map(function(item, i){
