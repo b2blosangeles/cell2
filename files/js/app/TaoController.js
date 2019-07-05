@@ -7,7 +7,9 @@
         },
         load : function(id, obj, pobj) {
             obj.props._TAOID = id;
-            ReactDOM.render(obj, pobj);
+            if (pobj) {
+		    ReactDOM.render(obj, pobj);
+	    }
         },
         register : function(obj) {
             this.list[obj.props._TAOID] = obj;
