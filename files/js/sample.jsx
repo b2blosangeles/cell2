@@ -66,13 +66,13 @@ class COMApp extends React.Component {
 }
 $(document).ready(function() {
 	ReactDOM.render(
-		<TAOApp param={niu.aa} />,
+		<TAOApp param={{}} />,
 		document.body.appendChild( document.createElement( 'div' ) )
 		// document.getElementById('bob')
 	);
 	
 	ReactDOM.render(
-		<COMApp param={niu.aa} />,
+		<COMApp param={{}} />,
 		document.body.appendChild( document.createElement( 'div' ) )
 		// document.getElementById('bob')
 	);
