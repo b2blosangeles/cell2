@@ -2,6 +2,7 @@ var niu = {aa: 123};
 var TAOApp = class TAOApp extends React.Component {
   constructor(props) {
 	super(props);
+	  this.props = props;
 	this.state = {val : '111'};
   }
   componentDidMount() {
@@ -52,7 +53,7 @@ var COMApp = class COMApp extends React.Component {
   render() {
     return (
       <span>
-        COMMAPP {this.state.hello} == {this.props.aa}
+        COMMAPP {this.state.hello} ==> {this.props.aa}
         <hr/> {this.state.v} <hr/>
       </span>
     );
