@@ -5,19 +5,7 @@ class TAORoot extends React.Component {
 	ReactDOM.TAO.register(this);
   }
   componentDidMount() {
-	var me = this;
-	ReactDOM.TAO.ajax({
-	     type: 'POST',
-	     url: '/api/testRestful.api',
-	     data: {},
-	     dataType: 'JSON',
-	     timeout: (6 * 1000),
-	     success: function(resultData){
-		  me.setState(resultData.data);
-	     },
-	     error : function(err) { 
-	     }
-	  });   
+	var me = this;  
   }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
