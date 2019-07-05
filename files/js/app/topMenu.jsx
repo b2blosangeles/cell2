@@ -30,9 +30,7 @@ class topMenu extends React.Component {
   render() {
     return (
       <span>
-        topMenu {this.state.hello} -XX- {this.state.bb} 
-        <hr/> {this.state.v} <hr/>
-	{(this.state._TAOstate) ? this.state._TAOstate.bb : ''}
+        topMenu 
       </span>
     );
   }
