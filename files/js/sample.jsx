@@ -3,6 +3,7 @@ var master = new Object();
 class TAOApp extends React.Component {
   constructor(props) {
 	super(props);
+	  alert(this.constructor.name);
 	  this.props = props;
 	  master.TAOApp = this;
 	this.state = {val : '111', bb : 'AAA'};
