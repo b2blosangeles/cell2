@@ -3,6 +3,7 @@ class TAORoot extends React.Component {
 	super(props);
 	this.props = props;
 	ReactDOM.TAO.register(this);
+	this.state = {};
   }
   componentDidMount() {
 	var me = this;  
@@ -12,7 +13,7 @@ class TAORoot extends React.Component {
 	console.log('---prevStat-->');
 	console.log(prevState);
 	  console.log('---me.Stat-->');
-	console.log(me.Stat);
+	console.log(me.State);
   }
   render() {
     return (
