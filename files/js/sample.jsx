@@ -44,6 +44,7 @@ var COMApp = class COMApp extends React.Component {
 	     timeout: (6 * 1000),
 	     success: function(resultData){
 		  me.setState(resultData.data);
+		     niu.aa = 456;
 		//  TAOApp.alert();   
 	     },
 	     error : function(xhr, textStatus, error) { 
