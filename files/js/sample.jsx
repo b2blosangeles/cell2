@@ -4,7 +4,7 @@ class TAOApp extends React.Component {
 	this.props = props;
 	  console.log('---props--->')
 	   console.log(props);
-	ReactDOM.TAO.list[props.TID] = this;
+	ReactDOM.TAO.list[props._TID] = this;
 	this.state = {val : '111', bb : 'AAA'};
   }
   componentDidMount() {
@@ -35,7 +35,7 @@ class TAOApp extends React.Component {
 class COMApp extends React.Component {
   constructor(props) {
 	super(props);
-	ReactDOM.TAO.list[props.TID] = this;
+	ReactDOM.TAO.list[props._TID] = this;
 	this.state = {val : '111', bb : 'BBB'};
   }
   componentDidMount() {
