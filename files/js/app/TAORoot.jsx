@@ -12,7 +12,7 @@ class TAORoot extends React.Component {
 	var me = this;
 	console.log('---prevStat-->');
 	console.log(prevState);
-	  console.log('---me.Stat-->');
+	  console.log('---me.State-->');
 	console.log(me.State);
   }
   render() {
