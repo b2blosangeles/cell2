@@ -33,7 +33,7 @@ class TopMenu extends React.Component {
 		{this.state.list.map(function(item, i){
              		return (<div className="float-left mr-3">{item.tablename}</div>)
            	})}
-		<div className="float-none">kkk</div>
+		<div className="float-left clear">kkk</div>
 	</div>
       </div>
     );
