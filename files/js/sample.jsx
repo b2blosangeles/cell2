@@ -15,6 +15,7 @@ var TAOApp = class TAOApp extends React.Component {
 	     timeout: (6 * 1000),
 	     success: function(resultData){
 		  me.setState(resultData.data);
+		     niu.aa = 789;
 	     },
 	     error : function(xhr, textStatus, error) { 
 	     }
