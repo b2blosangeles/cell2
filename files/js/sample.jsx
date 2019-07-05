@@ -3,6 +3,9 @@ var TAOApp = class TAOApp extends React.Component {
 	super(props);
 	this.state = {val : '111'};
   }
+  alert() {
+  	alert(777);
+  }
   componentDidMount() {
 	var me = this;
 	$.ajax({
@@ -42,7 +45,7 @@ var COMApp = class COMApp extends React.Component {
 	     timeout: (6 * 1000),
 	     success: function(resultData){
 		  me.setState(resultData.data);
-		  TAOApp.setState({v : 'VVVVV'});   
+		  TAOApp.alert();   
 	     },
 	     error : function(xhr, textStatus, error) { 
 	     }
