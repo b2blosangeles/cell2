@@ -30,7 +30,7 @@ class TopMenu extends React.Component {
   render() {
     return (
       <span>
-        topMenu 
+        TopMenu 
       </span>
     );
   }
