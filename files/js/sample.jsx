@@ -68,11 +68,6 @@ $(document).ready(function() {
 		document.body.appendChild( document.createElement( 'div' ) )
 		// document.getElementById('bob')
 	);
-	
-	ReactDOM.render(
-		<COMApp param={{}} />,
-		document.body.appendChild( document.createElement( 'div' ) )
-		// document.getElementById('bob')
-	);
+	ReactDOM.TAOController.append(<COMApp param={{}} />, document.body);
 });
 
