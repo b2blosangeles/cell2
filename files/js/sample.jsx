@@ -45,9 +45,8 @@ class COMApp extends React.Component {
 	     dataType: 'JSON',
 	     timeout: (6 * 1000),
 	     success: function(resultData){
-		  me.setState(resultData.data);
-		//  ReactDOM.TAOController.list.TAOApp.setState({bb : 'CCCC'});
-		//  TAOApp.alert();   
+		me.setState(resultData.data);
+		ReactDOM.TAOController.list.TAOApp.setState({bb : 'CCCC'});
 	     },
 	     error : function(xhr, textStatus, error) { 
 	     }
