@@ -4,7 +4,11 @@
 
         load : function(id, obj, pobj) {
             obj.props._TAOID = id;
-            if (pobj) {
+		/*
+		if (!this.list.Root) {
+			this.loadRoot();
+		}*/
+            if (id !== 'Root' && (pobj)) {
 		    ReactDOM.render(obj, pobj);
 	    }
         },
