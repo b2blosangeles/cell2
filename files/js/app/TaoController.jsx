@@ -3,7 +3,7 @@
         list    : {},
 
         load : function(id, obj, pobj) {
-         //   obj.props._TAOID = id;
+            obj.props._TAOID = id;
 	//	if (!this.list.Root) {
 	//		this.loadRoot();
 	//	}
@@ -12,9 +12,9 @@
 	    }
         },
 	append  : function(id, obj, pobj) {
-            obj.props._TAOID = id;
+          //  obj.props._TAOID = id;
 	    var newObj = pobj.appendChild( document.createElement( 'div' ));
-            this.load(obj, newObj);
+            this.load(id, obj, newObj);
         },
         register : function(obj) {
             	this.list[obj.props._TAOID] = obj;
