@@ -27,7 +27,7 @@ class TopMenu extends React.Component {
   }
   render() {
     return (
-      <div className="border border-success alert-success rounded  m-0 mt-3 mb-2 p-2">
+      <div className="border border-success alert-success rounded  m-0 mt-3 mb-2 p-2 d-flex">
         <h1>Tao Development</h1>
 	<div className="p-1">
 		{this.state.list.map(function(item, i){
