@@ -200,7 +200,7 @@ class TAORoot extends React.Component {
 
 		if (!me.watchItv) {
 			// me.scanSpin();
-			me.watchItv = setInterval(me.scanSpin(me),100); 
+			me.watchItv = setInterval(me.scanSpin(),100); 
 		}
 		return code;
 	}
@@ -208,7 +208,8 @@ class TAORoot extends React.Component {
 		var me = this;
 		delete me.spinPool[code];
 	}
-	scanSpin(me) {
+	scanSpin() {
+		var me = this;
 		return function() {
 			var tm = new Date().getTime();
 			for (var v in me.spinPool) {
@@ -222,8 +223,9 @@ class TAORoot extends React.Component {
 					return true;
 				}
 			}
-			// if (me.state._spinStatus !== false) 
-			me.setState({_spinStatus : false});
+			if (me.state._spinStatus !== false) {
+				me.setState({_spinStatus : false});
+			}
 			clearInterval(me.watchItv);
 			delete me.watchItv;
 		}
