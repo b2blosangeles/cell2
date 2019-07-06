@@ -25,6 +25,9 @@ class TopMenu extends React.Component {
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
   }
+  handleClick() {
+    alert(123);
+  }
   render() {
     return (
       <div className="border border-success alert-success rounded  m-0 mt-3 mb-2 p-2">
@@ -32,7 +35,7 @@ class TopMenu extends React.Component {
 	<hr/>
 	<p className="p-2">
 		{this.state.list.map(function(item, i){
-             		return (<span className="mr-3"><a>{item.tablename}</a> </span>)
+             		return (<span className="mr-3"><a onclick="handleClick()">{item.tablename}</a> </span>)
            	})}
 	</p>
       </div>
