@@ -45,6 +45,7 @@ class TopMenu extends React.Component {
 				</span>)
            	})}
 	</p>
+	{ReactDOM.TAO.list.Root.showSpinner()}===
       </div>
     );
   }
