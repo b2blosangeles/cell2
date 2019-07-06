@@ -32,7 +32,7 @@ class TopMenu extends React.Component {
 	<hr/>
 	<p className="wrapper">
 		{this.state.list.map(function(item, i){
-             		return (<span>item.tablename </span>)
+             		return (<span>{item.tablename} </span>)
            	})}
 	</p>
       </div>
