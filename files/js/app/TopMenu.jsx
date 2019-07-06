@@ -7,11 +7,7 @@ class TopMenu extends React.Component {
   }
   componentDidMount() {
 	var me = this; 
-  }
-  componentDidUpdate(prevProps, prevState) {
-	var me = this;
-	  console.log('---LOAD--LEFT----');
-	  ReactDOM.TAO.ajax({
+	ReactDOM.TAO.ajax({
 	     type: 'POST',
 	     url: '/api/Tao/API_PG.api?code=PGdatabases',
 	     data: {},
@@ -23,7 +19,13 @@ class TopMenu extends React.Component {
 	     error : function(err) { 
 		     console.log('err');
 	     }
-	  }); 
+	}); 
+  }
+  componentDidUpdate(prevProps, prevState) {
+	var me = this;
+	  console.log('---LOAD--LEFT----');
+	   console.log(me.state);
+
   }
   handleClick(item) {
     alert(item.datname);
