@@ -222,6 +222,30 @@ class TAORoot extends React.Component {
 			<span className="overlay_spin_page"><span className="spinner"></span></span>
 			</span>) : (<span></span>)
 	}
+	spinOn (setting) {
+		var me = this;
+		me.setStatus({_spinStatus : true});
+		/*
+		var me = this, tm = new Date().getTime();
+		if (!setting) var setting = {};
+		var code = me.getSno();
+		var s = tm + ((setting.delay) ?  setting.delay : 0)
+		var e = s + ((setting.max) ?  setting.max : (600 * 1000))
+		me.spinPool[code] = {start : s, end : e};
+
+		if (!me.watchItv) {
+			me.scanSpin();
+			me.watchItv = setInterval(me.scanSpin,100); 
+		}
+		return code;*/
+	}
+	spinOff (code) {
+		var me = this;
+		me.setStatus({_spinStatus : false});
+		/*
+		var me = this;
+		delete me.spinPool[code];*/
+	},
 	render() {
 		var me = this;
 		return (<span>{me.showSpinner()}</span>);
