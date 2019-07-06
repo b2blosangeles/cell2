@@ -184,7 +184,7 @@ class TAORoot extends React.Component {
 	}
 	spinOn (setting) {
 		var me = this;
-		me.setStatus({_spinStatus : true});
+		me.setState({_spinStatus : true});
 		/*
 		var me = this, tm = new Date().getTime();
 		if (!setting) var setting = {};
@@ -201,7 +201,7 @@ class TAORoot extends React.Component {
 	}
 	spinOff (code) {
 		var me = this;
-		me.setStatus({_spinStatus : false});
+		me.setState({_spinStatus : false});
 		/*
 		var me = this;
 		delete me.spinPool[code];*/
