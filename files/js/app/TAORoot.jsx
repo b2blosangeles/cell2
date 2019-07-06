@@ -136,53 +136,13 @@ React.createClass({
 			</span>)                   
 	}
 })
-/*
-class TAOOverlay extends React.Component {
-  constructor(props) {
-	super(props);
-	var me = this;
-	me.popupSetting = '';
-	me.spinPool={};
-	me.sno = 0;
-	this.state = {_spinStatus : false};
-  }
-  componentDidMount() {
-	var me = this;    
-  }
-  loadData(cfg) {
-	  $.ajax({
-	     type: (cfg.type) ? cfg.type : 'POST',
-	     url: cfg.url,
-	     data: (cfg.data) ? cfg.data : {},
-	     dataType: (cfg.dataType) ? cfg.dataType : 'JSON',
-	     timeout: (cfg.timeout) ? cfg.timeout : 6000,
-	     success: function(resultData){
-		if  (typeof cfg.success == 'function') {
-		    cfg.success(resultData)
-		}
-	     },
-	     error : function(xhr, textStatus, error) { 
-		if  (typeof cfg.error == 'function') {
-		    cfg.error(error)
-		}
-	     }
-	   });
-  }
-  componentDidUpdate(prevProps, prevState) {
-	var me = this;
-  }
-  render() {
-    return (<span>{me.getOverLay()}</span>);
-  }
-}
-*/
 
 class TAORoot extends React.Component {
 	constructor(props) {
 		super(props);
 		this.props = props;
 		ReactDOM.TAO.register(this);
-		this.state = {_spinStatus : true};
+		this.state = {_spinStatus : false};
 	}
 	componentDidMount() {
 		var me = this;    
