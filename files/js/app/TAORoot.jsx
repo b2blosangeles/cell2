@@ -200,7 +200,7 @@ class TAORoot extends React.Component {
 
 		if (!me.watchItv) {
 			// me.scanSpin();
-			// me.watchItv = setInterval(me.scanSpin,100); 
+			me.watchItv = setInterval(me.scanSpin,100); 
 		}
 		return code;
 	}
