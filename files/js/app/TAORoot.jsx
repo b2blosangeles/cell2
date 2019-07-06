@@ -140,13 +140,13 @@ React.createClass({
 class TAORoot extends React.Component {
 	constructor(props) {
 		super(props);
-		var me = this; 
-		me.props = props;
-		ReactDOM.TAO.register(me);
-		me.popupSetting = '';
-		me.spinPool={};
-		me.sno = 0;
-		me.state = {_spinStatus : false};
+		// var me = this; 
+		this.props = props;
+		ReactDOM.TAO.register(this);
+		this.popupSetting = '';
+		this.spinPool={};
+		this.sno = 0;
+		this.state = {_spinStatus : false};
 	}
 	componentDidMount() {
 		var me = this;    
