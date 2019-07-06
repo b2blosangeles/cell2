@@ -209,7 +209,13 @@ class TAORoot extends React.Component {
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
   }
+  showSpinner : function() {
+	var me = this;
+	return (me.state._spinStatus) ? (<span><span className="overlay_spin_cover"></span>   
+	<span className="overlay_spin_page"><span className="spinner"></span></span>
+	</span>) : (<span></span>)
+  },
   render() {
-    return (<span><span className="overlay_popup_cover"></span>9999</span>);
+    return (<span>{me.showSpinner()}</span>);
   }
 }
