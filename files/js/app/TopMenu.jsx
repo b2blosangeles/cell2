@@ -34,8 +34,8 @@ class TopMenu extends React.Component {
   render() {
 	var me = this;
     return (
-      <div className="border border-success alert-success rounded  m-0 mt-3 mb-2 p-2">
-	{ReactDOM.TAO.list.Root.showBoxSpinner()}-8->
+      <div className="border border-success alert-success rounded  m-0 mt-3 mb-2 p-2 taobox">
+	{ReactDOM.TAO.list.Root.showBoxSpinner()}-9->
         <h1>Tao Development</h1>
 	<p className="p-2">
 		{this.state.list.map(function(item, i){
