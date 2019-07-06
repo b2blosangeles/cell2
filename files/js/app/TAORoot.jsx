@@ -20,6 +20,9 @@ class TAORoot extends React.Component {
 	     }
 	  });   
   }
+  loadData(cfg) {
+	  alert(1112);
+  }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
   }
