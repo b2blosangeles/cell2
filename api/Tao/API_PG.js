@@ -29,7 +29,12 @@ switch( TAO.req.query.code) {
                       q_result.data = result.rows;
                     }
                     client.end();
-                    TAO.res.send(q_result);
+                    setTimeout(
+                      function() {
+                        TAO.res.send(q_result);
+                      }, 6000
+                    );
+                    
               });
          });
          return true;
