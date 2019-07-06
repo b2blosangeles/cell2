@@ -232,6 +232,6 @@ class TAORoot extends React.Component {
 	}
 	render() {
 		var me = this;
-		return (<span>{me.showSpinner()}</span>);
+		return (<span>{/*me.showSpinner()*/}</span>);
 	}
 }
