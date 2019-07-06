@@ -202,7 +202,7 @@ class TAORoot extends React.Component {
 	}
 	spinOff(code) {
 		var me = this;
-		delete me.spinPool[code];*/
+		delete me.spinPool[code];
 	}
 	scanSpin() {
 		var me = this, tm = new Date().getTime();
