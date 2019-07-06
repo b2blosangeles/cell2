@@ -8,7 +8,7 @@
 		if (!this.list.Root) {
 			this.loadRoot();
 		}*/
-            if (id !== 'Root' && (pobj)) {
+            if (pobj) {
 		    ReactDOM.render(obj, pobj);
 	    }
         },
