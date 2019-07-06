@@ -203,12 +203,30 @@ class TAORoot extends React.Component {
 		}
 		return code;*/
 	}
-	spinOff (code) {
+	spinOff(code) {
 		var me = this;
 		me.setState({_spinStatus : false});
 		/*
 		var me = this;
 		delete me.spinPool[code];*/
+	}
+	scanSpin() {
+		var me = this, tm = new Date().getTime();
+		for (var v in me.spinPool) {
+			if ((tm - me.spinPool[v].end) > 0) {
+				delete me.spinPool[v];
+			}
+		}
+		for (var v in me.spinPool) {
+			if ((tm - me.spinPool[v].start) > 0) {
+				me.setState({_spinStatus: true});
+				return true;
+			}
+		}
+		if (me.state._spinStatus !== false) me.setState({_spinStatus : false});
+		clearInterval(me.watchItv);
+		delete me.watchItv;
+		
 	}
 	render() {
 		var me = this;
