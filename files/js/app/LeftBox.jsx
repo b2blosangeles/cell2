@@ -7,7 +7,7 @@ class LeftBox extends React.Component {
   }
   componentDidMount() {
 	var me = this;  
-	ReactDOM.TAO.ajax({
+	ReactDOM.TAO.list.Root.loadData({
 	     type: 'POST',
 	     url: '/api/Tao/API_PG.api?code=PGtables',
 	     data: {},
