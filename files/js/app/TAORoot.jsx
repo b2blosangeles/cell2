@@ -186,7 +186,7 @@ class TAORoot extends React.Component {
 		
 	showSpinner() {
 		var me = this;
-		return (me.state._spinStatus) ? (<span><span className="overlay_spin_cover"></span>   
+		return (me.state._spinStatus) ? (<span>   
 			<span className="overlay_spin_page"><span className="spinner"></span></span>
 			</span>) : (<span></span>)
 	}
