@@ -142,6 +142,9 @@ class TAORoot extends React.Component {
 		super(props);
 		this.props = props;
 		ReactDOM.TAO.register(this);
+		me.popupSetting = '';
+		me.spinPool={};
+		me.sno = 0;
 		this.state = {_spinStatus : false};
 	}
 	componentDidMount() {
