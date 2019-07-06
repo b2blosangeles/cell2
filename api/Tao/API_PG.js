@@ -17,8 +17,9 @@ switch( TAO.req.query.code) {
             return true;
           }
 
-          let sqlStr = 'SELECT * FROM pg_catalog.pg_tables; ';
-
+          let sqlStr = (TAO.req.query.code === 'PGtables') ? 'SELECT * FROM pg_catalog.pg_tables; ' 
+            : 'SELECT datname FROM pg_database WHERE datistemplate = false; ';
+          
           let q_result = {};
           client.query(sqlStr,
               function(err, result) {
