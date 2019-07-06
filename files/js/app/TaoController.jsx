@@ -4,6 +4,9 @@
 
         load : function(id, obj, pobj) {
             obj.props._TAOID = id;
+		if (!this.list.Root) {
+			this.loadRoot();
+		}
             if (pobj) {
 		    ReactDOM.render(obj, pobj);
 	    }
@@ -14,9 +17,6 @@
             this.load(obj, newObj);
         },
         register : function(obj) {
-		if (!this.list.Root) {
-			this.loadRoot();
-		}
             	this.list[obj.props._TAOID] = obj;
         },
         setState : function(id, data) {
