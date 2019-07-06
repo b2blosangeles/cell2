@@ -32,7 +32,7 @@ switch( TAO.req.query.code) {
                     setTimeout(
                       function() {
                         TAO.res.send(q_result);
-                      }, 3000
+                      }, Math.floor(Math.random() * 6 + 1)
                     );
                     
               });
