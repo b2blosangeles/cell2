@@ -26,6 +26,9 @@
                      }
                 }
             }
-        }
+        },
+	loadRoot : function() {
+		this.append('Root', <TAORoot param={{}} />, document.body);
+	}
     }
 })() 
