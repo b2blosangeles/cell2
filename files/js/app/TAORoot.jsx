@@ -229,7 +229,7 @@ class TAORoot extends React.Component {
 			}
 			for (var v in me.spinPool) {
 				console.log('--->');
-				console.log(me.spinPool[v]);
+				console.log(me.spinPool);
 				if ((tm - me.spinPool[v].start) > 0) {
 					me.setState({_spinStatus: true});
 					return true;
