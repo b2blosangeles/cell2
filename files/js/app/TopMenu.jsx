@@ -26,7 +26,7 @@ class TopMenu extends React.Component {
 	var me = this;
   }
   handleClick(item) {
-    alert(item.tablename);
+    alert(item.datname);
   }
   render() {
 	var me = this;
@@ -35,7 +35,11 @@ class TopMenu extends React.Component {
         <h1>Tao Development</h1>
 	<p className="p-2">
 		{this.state.list.map(function(item, i){
-             		return (<span className="mr-3"><a href="javascript:void(0);" onClick={me.handleClick.bind(me, item)}>{item.tablename}</a> </span>)
+             		return (<span className="mr-3">
+					<a href="javascript:void(0);" onClick={me.handleClick.bind(me, item)}>
+					{item.datname}
+					</a> 
+				</span>)
            	})}
 	</p>
       </div>
