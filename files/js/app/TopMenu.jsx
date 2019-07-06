@@ -35,7 +35,7 @@ class TopMenu extends React.Component {
 	<hr/>
 	<p className="p-2">
 		{this.state.list.map(function(item, i){
-             		return (<span className="mr-3"><a onClick={handleClick()}>{item.tablename}</a> </span>)
+             		return (<span className="mr-3"><a onClick={handleClick}>{item.tablename}</a> </span>)
            	})}
 	</p>
       </div>
