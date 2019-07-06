@@ -178,44 +178,45 @@ class TAOOverlay extends React.Component {
 */
 
 class TAORoot extends React.Component {
-  constructor(props) {
-	super(props);
-	this.props = props;
-	ReactDOM.TAO.register(this);
-	this.state = {_spinStatus : false};
-  }
-  componentDidMount() {
-	var me = this;    
-  }
-  loadData(cfg) {
-	  $.ajax({
-	     type: (cfg.type) ? cfg.type : 'POST',
-	     url: cfg.url,
-	     data: (cfg.data) ? cfg.data : {},
-	     dataType: (cfg.dataType) ? cfg.dataType : 'JSON',
-	     timeout: (cfg.timeout) ? cfg.timeout : 6000,
-	     success: function(resultData){
-		if  (typeof cfg.success == 'function') {
-		    cfg.success(resultData)
-		}
-	     },
-	     error : function(xhr, textStatus, error) { 
-		if  (typeof cfg.error == 'function') {
-		    cfg.error(error)
-		}
-	     }
-	   });
-  }
-  componentDidUpdate(prevProps, prevState) {
-	var me = this;
-  }
-  showSpinner : function() {
-	var me = this;
-	return (me.state._spinStatus) ? (<span><span className="overlay_spin_cover"></span>   
-	<span className="overlay_spin_page"><span className="spinner"></span></span>
-	</span>) : (<span></span>)
-  },
-  render() {
-    return (<span>{me.showSpinner()}</span>);
-  }
+	constructor(props) {
+		super(props);
+		this.props = props;
+		ReactDOM.TAO.register(this);
+		this.state = {_spinStatus : false};
+	}
+	componentDidMount() {
+		var me = this;    
+	}
+	loadData(cfg) {
+		$.ajax({
+			type: (cfg.type) ? cfg.type : 'POST',
+			url: cfg.url,
+			data: (cfg.data) ? cfg.data : {},
+			dataType: (cfg.dataType) ? cfg.dataType : 'JSON',
+			timeout: (cfg.timeout) ? cfg.timeout : 6000,
+			success: function(resultData){
+					if  (typeof cfg.success == 'function') {
+						cfg.success(resultData)
+					}
+			},
+			error : function(xhr, textStatus, error) { 
+					if  (typeof cfg.error == 'function') {
+						cfg.error(error)
+					}
+				}
+		});
+	}
+	componentDidUpdate(prevProps, prevState) {
+		var me = this;
+	}
+	showSpinner() {
+		var me = this;
+		return (me.state._spinStatus) ? (<span><span className="overlay_spin_cover"></span>   
+			<span className="overlay_spin_page"><span className="spinner"></span></span>
+			</span>) : (<span></span>)
+	}
+	render() {
+		var me = this;
+		return (<span>{me.showSpinner()}</span>);
+	}
 }
