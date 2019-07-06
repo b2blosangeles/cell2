@@ -32,7 +32,7 @@ class TopMenu extends React.Component {
 	<hr/>
 	<p className="p-1">
 		{this.state.list.map(function(item, i){
-             		return (<span className="float-left mr-3">{item.tablename}</span>)
+             		return (<span className="mr-3">{item.tablename}</span>)
            	})}
 	</p>
       </div>
