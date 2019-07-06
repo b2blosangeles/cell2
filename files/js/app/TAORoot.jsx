@@ -205,7 +205,7 @@ class TAORoot extends React.Component {
 		/*
 		var me = this;
 		delete me.spinPool[code];*/
-	},
+	}
 	render() {
 		var me = this;
 		return (<span>{me.showSpinner()}</span>);
