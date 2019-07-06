@@ -5,7 +5,7 @@ React.createClass({
 		me.popupSetting = '';
 		me.spinPool={};
 		me.sno = 0;
-		return {_spinStatus : false};
+		return {_spinStatus : true};
 	},
 	componentDidMount : function() {
 		var me = this;
