@@ -148,6 +148,8 @@ class TAORoot extends React.Component {
 		var me = this;    
 	}
 	loadData(cfg) {
+		var me = this;
+		me.showSpinner();
 		$.ajax({
 			type: (cfg.type) ? cfg.type : 'POST',
 			url: cfg.url,
@@ -155,15 +157,17 @@ class TAORoot extends React.Component {
 			dataType: (cfg.dataType) ? cfg.dataType : 'JSON',
 			timeout: (cfg.timeout) ? cfg.timeout : 6000,
 			success: function(resultData){
-					if  (typeof cfg.success == 'function') {
-						cfg.success(resultData)
-					}
-			},
-			error : function(xhr, textStatus, error) { 
-					if  (typeof cfg.error == 'function') {
-						cfg.error(error)
-					}
+				me.spinOff();
+				if  (typeof cfg.success == 'function') {
+					cfg.success(resultData)
 				}
+			},
+			error : function(xhr, textStatus, error) {
+				me.spinOff();
+				if  (typeof cfg.error == 'function') {
+					cfg.error(error)
+				}
+			}
 		});
 	}
 	componentDidUpdate(prevProps, prevState) {
