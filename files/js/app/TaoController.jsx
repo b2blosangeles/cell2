@@ -1,18 +1,23 @@
 (function() {
     ReactDOM.TAO = {
         list    : {},
-        append  : function(id, obj, pobj) {
-            obj.props._TAOID = id;
-            ReactDOM.render(obj, pobj.appendChild( document.createElement( 'div' )))
-        },
+
         load : function(id, obj, pobj) {
             obj.props._TAOID = id;
             if (pobj) {
 		    ReactDOM.render(obj, pobj);
 	    }
         },
+	append  : function(id, obj, pobj) {
+            obj.props._TAOID = id;
+	    var newObj = pobj.appendChild( document.createElement( 'div' ));
+            this.load(obj, newObj);
+        },
         register : function(obj) {
-            this.list[obj.props._TAOID] = obj;
+		if (!this.list.Root) {
+			this.loadRoot();
+		}
+            	this.list[obj.props._TAOID] = obj;
         },
         setState : function(id, data) {
             if (id === '*') {
