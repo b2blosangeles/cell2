@@ -8,7 +8,7 @@
 		"/js/react/react-cookie.0.4.9.min.js",
 		"/js/react/ReactRouter/3.0.2/ReactRouter.min.js",
 		
-		"/js/app/TaoController.js",
+		"/js/app/TaoController.jsx",
 		"/js/app/TAORoot.jsx",
 		"/js/app/TopMenu.jsx",
 		"/js/app/LeftBox.jsx",
