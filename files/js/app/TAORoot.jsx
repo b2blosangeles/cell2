@@ -209,6 +209,13 @@ class TAORoot extends React.Component {
 	componentDidUpdate(prevProps, prevState) {
 		var me = this;
 	}
+	
+	getSno() {
+		var me = this;
+		me.sno = (!me.sno || me.sno > 1000000) ? 1 : (me.sno + 1);
+		return 'SNO-' + me.sno + '-' + new Date().getTime();
+	}
+		
 	showSpinner() {
 		var me = this;
 		return (me.state._spinStatus) ? (<span><span className="overlay_spin_cover"></span>   
