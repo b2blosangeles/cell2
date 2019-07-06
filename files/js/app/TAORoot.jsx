@@ -190,6 +190,12 @@ class TAORoot extends React.Component {
 			<span className="overlay_spin_page"><span className="spinner"></span></span>
 			</span>) : (<span></span>)
 	}
+	showBoxSpinner() {
+		var me = this;
+		return (me.state._spinStatus) ? (<span><span className="overlay_spin_cover"></span>
+			<span className="overlay_spin_page"><span className="spinner"></span></span>
+			</span>) : (<span></span>)
+	}
 	spinOn (setting) {
 		var me = this, tm = new Date().getTime();
 		if (!setting) var setting = {};
