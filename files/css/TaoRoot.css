@@ -148,6 +148,9 @@ body {
     text-align: center;
     padding-top: 0;  opacity: 1
 }
+.taobox {
+  position:relative;
+}
 .overlay_spin_cover {
     position:fixed;
     top:0; left:0;
