@@ -210,6 +210,6 @@ class TAORoot extends React.Component {
 	var me = this;
   }
   render() {
-    return (<span><span className="overlay_popup_cover"></span></span>);
+    return (<span><span className="overlay_popup_cover"></span>9999</span>);
   }
 }
