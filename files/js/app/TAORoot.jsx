@@ -234,9 +234,9 @@ class TAORoot extends React.Component {
 					return true;
 				}
 			}
-			if (me.state._spinStatus !== false) {
+			// if (me.state._spinStatus !== false) {
 				me.setState({_spinStatus : false});
-			}
+			// }
 			clearInterval(me.watchItv);
 			delete me.watchItv;
 		}
