@@ -3,10 +3,10 @@
         list    : {},
 
         load : function(id, obj, pobj) {
-            obj.props._TAOID = id;
-		if (!this.list.Root) {
-			this.loadRoot();
-		}
+         //   obj.props._TAOID = id;
+	//	if (!this.list.Root) {
+	//		this.loadRoot();
+	//	}
             if (pobj) {
 		    ReactDOM.render(obj, pobj);
 	    }
