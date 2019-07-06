@@ -3,14 +3,13 @@
         list    : {},
 
         load : function(id, obj, pobj) {
-            obj.props._TAOID = id;
-		
+		obj.props._TAOID = id;
 		if (!this.list.Root && id !== 'Root') {
 			this.loadRoot();
 		}
-            if (pobj) {
-		    ReactDOM.render(obj, pobj);
-	    }
+		if (pobj) {
+			ReactDOM.render(obj, pobj);
+		}
         },
 	append  : function(id, obj, pobj) {
 	    var newObj = pobj.appendChild( document.createElement( 'div' ));
