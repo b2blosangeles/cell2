@@ -6,22 +6,26 @@ class TAORoot extends React.Component {
 	this.state = {};
   }
   componentDidMount() {
-	var me = this;  
-	ReactDOM.TAO.ajax({
-	     type: 'POST',
-	     url: '/api/testRestful.api',
-	     data: {},
-	     dataType: 'JSON',
-	     timeout: (6 * 1000),
-	     success: function(resultData){
-		  ReactDOM.TAO.setState('*', resultData.data);
-	     },
-	     error : function(err) { 
-	     }
-	  });   
+	var me = this;    
   }
   loadData(cfg) {
-	  alert(1112);
+	  $.ajax({
+	     type: (cfg.type) ? cfg.type : 'POST',
+	     url: cfg.url,
+	     data: (cfg.data) ? cfg.data : {},
+	     dataType: (cfg.dataType) ? cfg.dataType : 'JSON',
+	     timeout: (cfg.timeout) ? cfg.timeout : 6000,
+	     success: function(resultData){
+		if  (typeof cfg.success == 'function') {
+		    cfg.success(resultData)
+		}
+	     },
+	     error : function(xhr, textStatus, error) { 
+		if  (typeof cfg.error == 'function') {
+		    cfg.error(error)
+		}
+	     }
+	   });
   }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
