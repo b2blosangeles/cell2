@@ -9,7 +9,7 @@
 		}
 		if (pobj) {
 			var qq = ReactDOM.render(obj, pobj);
-			if (qq.al) alert(qq.al());
+			if (type qq.al == 'function') alert(qq.al());
 		}
         },
 	append  : function(id, obj, pobj) {
