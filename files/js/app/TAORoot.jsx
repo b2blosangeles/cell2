@@ -11,7 +11,6 @@ class TAORoot extends React.Component {
 	}
 	componentDidMount() {
 		var me = this; 
-		me.popup({data : 1234, closeIcon: true});
 	}
 	loadData(cfg) {
 		var me = this;
