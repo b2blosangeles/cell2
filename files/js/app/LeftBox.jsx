@@ -25,8 +25,6 @@ class LeftBox extends React.Component {
   }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
-	  	  console.log('---LOAD-2-LEFT----');
-	   console.log(me.state);
   }
   render() {
 	  var me = this;
