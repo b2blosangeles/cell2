@@ -4,11 +4,10 @@ class TopMenu extends React.Component {
 	this.props = props;
 	ReactDOM.TAO.register(this);
 	
-	this.state = {list : [], _spinStatus : 'KKK'};
+	this.state = {list : []};
   }
   componentDidMount() {
-	var me = this; 
-	this.niu = 'aaaa';  
+	var me = this;  
 	ReactDOM.TAO.list.Root.loadData({
 	     type: 'POST',
 	     url: '/api/Tao/API_PG.api?code=PGdatabases',
