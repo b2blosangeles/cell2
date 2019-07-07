@@ -155,8 +155,10 @@ class TAORoot extends React.Component {
 	loadData(cfg) {
 		var me = this;
 		var code = me.spinOn();
-		cfg.spinner.SPID = me.getSno();
-		console.log(cfg.spinner.SPID);
+		if (cfg.spinner) {
+			cfg.spinner.SPID = me.getSno();
+			console.log(cfg.spinner.SPID);
+		}
 		$.ajax({
 			type: (cfg.type) ? cfg.type : 'POST',
 			url: cfg.url,
