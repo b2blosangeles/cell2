@@ -148,18 +148,12 @@ class TAORoot extends React.Component {
 		delete me.spinPool[code];
 	}
 	isEquivalent(a, b) {
-	    var aProps = Object.getOwnPropertyNames(a);
-	    var bProps = Object.getOwnPropertyNames(b);
-
-	    if (aProps.length != bProps.length) {
-		return false;
-	    }
-
-	    for (var i = 0; i < aProps.length; i++) {
-		var propName = aProps[i];
-		if (a[propName] !== b[propName]) {
-		    return false;
-		}
+	    var aP = Object.getOwnPropertyNames(a);
+	    var bP = Object.getOwnPropertyNames(b);
+	    if (aP.length != bP.length) { return false; }
+	    for (var i = 0; i < aP.length; i++) {
+		var propName = aP[i];
+		if (a[propName] !== b[propName]) { return false; }
 	    }
 	    return true;
 	}
@@ -183,12 +177,16 @@ class TAORoot extends React.Component {
 					existSpinner = true;
 				}
 			}
-
+			/*
 			if (!existSpinner) {
 				clearInterval(me.watchItv);
 				delete me.watchItv;
-			} 
+			} */
 			if (!me.isEquivalent(spinner, oldSpinner)) {
+				if (Object.getOwnPropertyNames(spinner).length == 0) {
+					clearInterval(me.watchItv);
+					delete me.watchItv;
+				}
 				me.setState({_spinner: spinner});
 				ReactDOM.TAO.setState('*', {});
 			}
