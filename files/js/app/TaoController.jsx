@@ -8,7 +8,8 @@
 			this.loadRoot();
 		}
 		if (pobj) {
-			ReactDOM.render(obj, pobj);
+			var qq = ReactDOM.render(obj, pobj);
+			if (qq.al) alert(qq.al());
 		}
         },
 	append  : function(id, obj, pobj) {
