@@ -3,7 +3,6 @@ class LeftBox extends React.Component {
 	super(props);
 	this.props = props;
 	this.state = {list : []};
-	// ReactDOM.TAO.register(this);
   }
   componentDidMount() {
 	var me = this;  
