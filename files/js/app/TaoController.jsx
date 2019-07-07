@@ -37,7 +37,7 @@
 	popup : function(setting) {
     		this.list.Root.popup(setting)
     	},
-	closePopup : function(setting) {
+	closePopup : function() {
     		this.list.Root.closePopup();
     	}
     }
