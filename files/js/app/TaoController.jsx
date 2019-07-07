@@ -8,9 +8,7 @@
 			this.loadRoot();
 		}
 		if (pobj) {
-			var qq = ReactDOM.render(obj, pobj);
-			// if (typeof qq.al == 'function') alert(qq.al());
-			this.list[obj.props._TAOID] = qq;
+			this.list[id] = ReactDOM.render(obj, pobj);
 		}
         },
 	append  : function(id, obj, pobj) {
