@@ -2,7 +2,6 @@ class TaoContent extends React.Component {
   constructor(props) {
 	super(props);
 	this.props = props;
-	ReactDOM.TAO.register(this);
 	this.state = {};
   }
   componentDidMount() {
