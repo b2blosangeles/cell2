@@ -8,6 +8,7 @@
 			this.loadRoot();
 		}
 		if (pobj) {
+			pobj.append('niuup');
 			this.list[id] = ReactDOM.render(obj, pobj);
 		}
         },
