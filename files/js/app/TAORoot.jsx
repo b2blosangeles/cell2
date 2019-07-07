@@ -15,35 +15,7 @@ React.createClass({
 	componentDidUpdate : function() {
 		var me = this;
 	},
-	getSno : function() {
-		var me = this;
-		me.sno = (!me.sno || me.sno > 1000000) ? 1 : (me.sno + 1);
-		return 'SNO-' + me.sno + '-' + new Date().getTime();
-	},
-	scanSpin : function() {
-		var me = this, tm = new Date().getTime();
-		for (var v in me.spinPool) {
-			if ((tm - me.spinPool[v].end) > 0) {
-				delete me.spinPool[v];
-			}
-		}
-		for (var v in me.spinPool) {
-			if ((tm - me.spinPool[v].start) > 0) {
-				me.setState({_spinStatus: true});
-				return true;
-			}
-		}
-		if (me.state._spinStatus !== false) me.setState({_spinStatus : false});
-		clearInterval(me.watchItv);
-		delete me.watchItv;
-		
-	},
-	showSpinner : function() {
-		var me = this;
-		return (me.state._spinStatus) ? (<span><span className="overlay_spin_cover"></span>   
-			<span className="overlay_spin_page"><span className="spinner"></span></span>
-		    </span>) : (<span></span>)
-	},
+
 	showPopup : function() {
 		var me = this;
 		var v = me.popupSetting;
@@ -73,24 +45,7 @@ React.createClass({
 			</span>
 			</span>) : (<span></span>)		
 	},
-	spinOn : function(setting) {
-		var me = this, tm = new Date().getTime();
-		if (!setting) var setting = {};
-		var code = me.getSno();
-		var s = tm + ((setting.delay) ?  setting.delay : 0)
-		var e = s + ((setting.max) ?  setting.max : (600 * 1000))
-		me.spinPool[code] = {start : s, end : e};
 
-		if (!me.watchItv) {
-			me.scanSpin();
-			me.watchItv = setInterval(me.scanSpin,100); 
-		}
-		return code;
-	},
-	spinOff : function(code) {
-		var me = this;
-		delete me.spinPool[code];
-	},
 	animationIn : function() {
 		// 'puff', 'clip', 'explode', 'fold', 'slide'
 		// var Effect_a = ['puff', 'clip', 'fold', 'slide', 'drop'],
