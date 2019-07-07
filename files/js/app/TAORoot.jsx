@@ -250,7 +250,6 @@ class TAORoot extends React.Component {
 					delete me.spinPool[v];
 				}
 			}
-		console.log(me.spinPool);
 			for (var v in me.spinPool) {
 				if ((tm - me.spinPool[v].start) > 0) {
 					if (me.spinPool[v].spinner) {
@@ -266,8 +265,6 @@ class TAORoot extends React.Component {
 				clearInterval(me.watchItv);
 				delete me.watchItv;
 			} 
-			console.log('===>>>spinner===>');
-			console.log(spinner);
 			if (!me.isEquivalent(spinner, oldSpinner)) {
 				me.setState({_spinner: spinner});
 				ReactDOM.TAO.setState('*', {});
@@ -276,6 +273,6 @@ class TAORoot extends React.Component {
 	}
 	render() {
 		var me = this;
-		return (<span>{/*me.showSpinner()()*/}</span>);
+		return (<span>{me.showSpinner()}</span>);
 	}
 }
