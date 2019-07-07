@@ -8,8 +8,10 @@
 			this.loadRoot();
 		}
 		if (pobj) {
-			if (ReactDOM.TAO.list.Root) obj._spinner(o) = function() {
-				ReactDOM.TAO.list.Root.showSpinner(o);
+			if (ReactDOM.TAO.list.Root) {
+				obj._spinner(o) = function() {
+					ReactDOM.TAO.list.Root.showSpinner(o);
+				}
 			}	
 			this.list[id] = ReactDOM.render(obj, pobj);
 		}
