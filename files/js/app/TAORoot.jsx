@@ -192,13 +192,11 @@ class TAORoot extends React.Component {
 				</span>) : (<span></span>)
 		}
 	}
-	showBoxSpinner(obj) {
-		var ta = obj;
-		return function() {
-			return (ta.state._spinStatus) ? (<span><span className="section_spin_cover">
-					<span className="spinner"></span>4-{ta.state._spinStatus}-4</span>
-				</span>) : (<span>33</span>)
-		}
+	showBoxSpinner() {
+		var ta = this;
+		return (ta.state._spinStatus) ? (<span><span className="section_spin_cover">
+				<span className="spinner"></span>4-{ta.state._spinStatus}-4</span>
+			</span>) : (<span>33</span>)
 	}
 	spinOn (setting) {
 		var me = this, tm = new Date().getTime();
