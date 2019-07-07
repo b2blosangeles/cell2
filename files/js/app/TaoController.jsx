@@ -8,12 +8,12 @@
 			this.loadRoot();
 		}
 		if (pobj) {
+			this.list[id] = ReactDOM.render(obj, pobj);
 			if (ReactDOM.TAO.list.Root) {
-				obj._spinner = function(o) {
+				this.list[id]._spinner = function(o) {
 					ReactDOM.TAO.list.Root.showSpinner(o);
 				}
 			}	
-			this.list[id] = ReactDOM.render(obj, pobj);
 		}
         },
 	append  : function(id, obj, pobj) {
