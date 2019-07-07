@@ -243,7 +243,7 @@ class TAORoot extends React.Component {
 	}
 	scanSpin() {
 		var me = this;
-		//return function() {
+		return function() {
 			var tm = new Date().getTime();
 			var spinner = {}, existSpinner = false, SpinnerChanged = false, oldSpinner = me.state._spinner;
 			for (var v in me.spinPool) {
@@ -272,7 +272,7 @@ class TAORoot extends React.Component {
 				me.setState({_spinner: spinner});
 				ReactDOM.TAO.setState('*', {});
 			}
-		// }
+		}
 	}
 	render() {
 		var me = this;
