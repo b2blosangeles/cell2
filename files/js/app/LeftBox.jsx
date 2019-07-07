@@ -5,6 +5,7 @@ class LeftBox extends React.Component {
 	this.state = {list : []};
 	ReactDOM.TAO.register(this);
   }
+	al () {  alert(111) }
   componentDidMount() {
 	var me = this;  
 	ReactDOM.TAO.list.Root.loadData({
