@@ -16,7 +16,7 @@ class TopMenu extends React.Component {
 	     timeout: (6 * 1000),
 	     success: function(resultData){
 		  me.setState({list : resultData.data, _TM : new Date().getTime()});
-		  ReactDOM.TAO.popup({data : 'ABCD', closeIcon: true});
+		  // ReactDOM.TAO.popup({data : 'ABCD', closeIcon: true});
 	     },
 	     error : function(err) { 
 		     console.log('err');
