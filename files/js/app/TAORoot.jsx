@@ -187,7 +187,7 @@ class TAORoot extends React.Component {
 	showSpinner() {
 		var me = this;
 		return function() {
-			return (me.state._spinStatus) ? (<span><span className="overlay_spin_cover"></span>
+			return (me.state._spinStatus) ? (<span>-{me.state._spinStatus}-<span className="overlay_spin_cover"></span>
 				<span className="overlay_spin_page"><span className="spinner"></span></span>
 				</span>) : (<span></span>)
 		}
@@ -239,6 +239,7 @@ class TAORoot extends React.Component {
 			// if (me.state._spinStatus !== false) {
 			console.log('-set false-->');
 				me.setState({_spinStatus : false});
+				console.log(me.state._spinStatus);
 			// }
 			clearInterval(me.watchItv);
 			delete me.watchItv;
