@@ -28,7 +28,7 @@ class TopMenu extends React.Component {
 	var me = this;
   }
   handleClick(item) {
-    alert(item.datname);
+	ReactDOM.TAO.popup({data : item.datname, closeIcon: true});
   }
   render() {
 	var me = this;
