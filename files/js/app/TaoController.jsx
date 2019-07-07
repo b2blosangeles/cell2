@@ -36,6 +36,9 @@
 	},
 	popup : function(setting) {
     		this.list.Root.popup(setting)
+    	},
+	closePopup : function(setting) {
+    		this.list.Root.closePopup();
     	}
     }
 })() 
