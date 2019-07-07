@@ -5,7 +5,7 @@ React.createClass({
 		me.popupSetting = '';
 		me.spinPool={};
 		me.sno = 0;
-		me.niu = 'pppp';
+		
 		return {_spinStatus : true};
 	},
 	componentDidMount : function() {
@@ -148,6 +148,7 @@ class TAORoot extends React.Component {
 		this.spinPool={};
 		this.sno = 0;
 		this.state = {_spinStatus : false};
+		this.niu = 'pppp';
 	}
 	componentDidMount() {
 		var me = this;    
