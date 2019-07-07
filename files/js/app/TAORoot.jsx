@@ -214,8 +214,6 @@ class TAORoot extends React.Component {
 		} else {
 			me.spinPool[code] = {start : s, end : e};
 		}
-		console.log('---me.spinPool--->');
-		console.log(JSON.stringify(me.spinPool));
 		if (!me.watchItv) {
 			me.scanSpin()();
 			me.watchItv = setInterval(me.scanSpin(),100); 
@@ -268,7 +266,8 @@ class TAORoot extends React.Component {
 				clearInterval(me.watchItv);
 				delete me.watchItv;
 			} 
-			
+			console.log('===>>>spinner===>');
+			console.log(spinner);
 			if (me.isEquivalent(spinner, oldSpinner)) {
 				me.setState({_spinner: spinner});
 				ReactDOM.TAO.setState('*', {});
