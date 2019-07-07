@@ -6,7 +6,9 @@ class TopMenu extends React.Component {
 	this.state = {list : []};
   }
   componentDidMount() {
-	var me = this;  
+	var me = this;
+	  console.log(me);
+	  me.myDiv.append(ReactDOM.TAO.list.Root.showBoxSpinner());
 	ReactDOM.TAO.list.Root.loadData({
 	     type: 'POST',
 	     url: '/api/Tao/API_PG.api?code=PGdatabases',
@@ -32,7 +34,6 @@ class TopMenu extends React.Component {
   }
   render() {
 	var me = this;
-	me.myDiv.append(ReactDOM.TAO.list.Root.showBoxSpinner());
     return (
       <div className="border border-success alert-success rounded  m-0 mt-3 mb-2 p-2">
 	{/*ReactDOM.TAO.list.Root.showBoxSpinner()*/}
