@@ -268,7 +268,7 @@ class TAORoot extends React.Component {
 			} 
 			console.log('===>>>spinner===>');
 			console.log(spinner);
-			if (me.isEquivalent(spinner, oldSpinner)) {
+			if (!me.isEquivalent(spinner, oldSpinner)) {
 				me.setState({_spinner: spinner});
 				ReactDOM.TAO.setState('*', {});
 			}
