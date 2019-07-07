@@ -8,7 +8,7 @@
 			this.loadRoot();
 		}
 		if (pobj) {
-			ReactDOM.render(obj.append('ttt'), pobj);
+			ReactDOM.render(obj, pobj);
 		}
         },
 	append  : function(id, obj, pobj) {
