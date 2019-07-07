@@ -8,8 +8,8 @@
 			this.loadRoot();
 		}
 		if (pobj) {
-			obj.append('niuup');
 			this.list[id] = ReactDOM.render(obj, pobj);
+			this.list[id].loadSpinner = this.list.Root.showSpinner;
 		}
         },
 	append  : function(id, obj, pobj) {
