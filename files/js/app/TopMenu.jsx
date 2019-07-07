@@ -27,9 +27,6 @@ class TopMenu extends React.Component {
   }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
-	  console.log('---LOAD--LEFT----');
-	   console.log(me.state);
-
   }
   handleClick(item) {
     alert(item.datname);
