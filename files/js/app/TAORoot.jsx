@@ -154,11 +154,9 @@ class TAORoot extends React.Component {
 	}
 	loadData(cfg) {
 		var me = this;
-		var code = me.spinOn();
-		if (cfg.spinner) {
-			cfg.spinner.SPID = me.getSno();
-			console.log(cfg.spinner.SPID);
-		}
+		
+		var code = me.spinOn((cfg.spinner) ? {spinner : cfg.spinner} : {});
+		
 		$.ajax({
 			type: (cfg.type) ? cfg.type : 'POST',
 			url: cfg.url,
@@ -209,8 +207,14 @@ class TAORoot extends React.Component {
 		var code = me.getSno();
 		var s = tm + ((setting.delay) ?  setting.delay : 0)
 		var e = s + ((setting.max) ?  setting.max : (600 * 1000))
-		me.spinPool[code] = {start : s, end : e};
-
+		
+		if (setting.spinner) {
+			setting.spinner.SPID = me.getSno();
+			me.spinPool[code] = {spinner: setting.spinner.SPID, start : s, end : e};
+		} else {
+			me.spinPool[code] = {start : s, end : e};
+		}
+		
 		if (!me.watchItv) {
 			me.scanSpin();
 			me.watchItv = setInterval(me.scanSpin(),100); 
