@@ -157,6 +157,29 @@ class TAORoot extends React.Component {
 			me.setState({_popup : false})
 		});
 	}
+	animationIn() {
+		// 'puff', 'clip', 'explode', 'fold', 'slide'
+		// var Effect_a = ['puff', 'clip', 'fold', 'slide', 'drop'],
+		var Effect_a = ['clip', 'fold'],
+		    direction_a = ['up', 'down', 'left', 'right'],
+		    Effect = Effect_a[Math.floor(Math.random() * Effect_a.length)],
+		    direction = direction_a[Math.floor(Math.random() * direction_a.length)];		
+		$('.overlay_popup_page').hide().show( Effect,  600 )
+	}
+	animationOut(cbk) {
+		// 'puff', 'clip', 'explode', 'fold', 'slide'
+		// var Effect_a = ['puff', 'clip', 'fold', 'slide', 'drop'],
+		// $('.overlay_popup_page').toggle( Effect,  {direction: direction}, 600 ,
+		var Effect_a = ['clip', 'fold'],
+		    direction_a = ['up', 'down', 'left', 'right'],
+		    Effect = Effect_a[Math.floor(Math.random() * Effect_a.length)],
+		    direction = direction_a[Math.floor(Math.random() * direction_a.length)];
+		
+		$('.overlay_popup_page').toggle( Effect, 600 ,
+			function() {
+				cbk();
+			});
+	}
 	showPopup() {
 		var me = this;
 		var v = me.popupSetting;
