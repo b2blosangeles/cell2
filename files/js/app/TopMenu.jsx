@@ -16,11 +16,13 @@ class TopMenu extends React.Component {
 	     timeout: (6 * 1000),
 	     success: function(resultData){
 		  me.setState({list : resultData.data, _TM : new Date().getTime()});
+		  
+		     
 	     },
 	     error : function(err) { 
 		     console.log('err');
 	     }, 
-	     spinner : null	
+	     spinner : me	
 	});
   }
   componentDidUpdate(prevProps, prevState) {
