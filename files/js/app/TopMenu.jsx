@@ -15,8 +15,7 @@ class TopMenu extends React.Component {
 	     dataType: 'JSON',
 	     timeout: (6 * 1000),
 	     success: function(resultData){
-		  me.setState({list : resultData.data, _TM : new Date().getTime()});
-		  // ReactDOM.TAO.popup({data : 'ABCD', closeIcon: true});
+		  me.setState({list : resultData.data});
 	     },
 	     error : function(err) { 
 		     console.log('err');
