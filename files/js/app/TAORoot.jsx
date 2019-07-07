@@ -196,7 +196,7 @@ class TAORoot extends React.Component {
 		var me = this;
 		return (me.state._spinStatus) ? (<span><span className="section_spin_cover">
 				<span className="spinner"></span>6->{ReactDOM.TAO.list.Root.state._spinStatus}-6</span>
-			</span>) : (<span>3->{ReactDOM.TAO.list.Root.state._spinStatus}-3</span>)
+			</span>) : (<span>1->{me.state._spinStatus}-1</span>)
 	}
 	spinOn (setting) {
 		var me = this, tm = new Date().getTime();
