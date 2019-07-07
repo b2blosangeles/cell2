@@ -6,7 +6,7 @@ React.createClass({
 		me.spinPool={};
 		me.sno = 0;
 		
-		return {_spinStatus : true};
+		return {_spinStatus : true, _spinner : {}};
 	},
 	componentDidMount : function() {
 		var me = this;
@@ -147,7 +147,7 @@ class TAORoot extends React.Component {
 		this.popupSetting = '';
 		this.spinPool={};
 		this.sno = 0;
-		this.state = {_spinStatus : false};
+		this.state = {_spinStatus : false, _spinner : {}};
 	}
 	componentDidMount() {
 		var me = this;    
@@ -225,10 +225,27 @@ class TAORoot extends React.Component {
 		var me = this;
 		delete me.spinPool[code];
 	}
+	isEquivalent(a, b) {
+	    var aProps = Object.getOwnPropertyNames(a);
+	    var bProps = Object.getOwnPropertyNames(b);
+
+	    if (aProps.length != bProps.length) {
+		return false;
+	    }
+
+	    for (var i = 0; i < aProps.length; i++) {
+		var propName = aProps[i];
+		if (a[propName] !== b[propName]) {
+		    return false;
+		}
+	    }
+	    return true;
+	}
 	scanSpin() {
 		var me = this;
 		return function() {
 			var tm = new Date().getTime();
+			var spinner = {}, existSpinner = false, SpinnerChanged = false, oldSpinner = me.state._spinner;
 			for (var v in me.spinPool) {
 				if ((tm - me.spinPool[v].end) > 0) {
 					delete me.spinPool[v];
@@ -236,18 +253,24 @@ class TAORoot extends React.Component {
 			}
 			for (var v in me.spinPool) {
 				if ((tm - me.spinPool[v].start) > 0) {
-					me.setState({_spinStatus: true});
-					return true;
+					if (me.spinPool[v].spinner) {
+						spinner[me.spinPool[v].spinner] = true;
+					} else {
+						spinner.ALL = true;
+					}
+					existSpinner = true;
 				}
 			}
-			if (me.state._spinStatus !== false) {
-				console.log('-set false-->');
-				me.setState({_spinStatus : false});
-				console.log(me.state._spinStatus);
+
+			if (!existSpinner) {
+				clearInterval(me.watchItv);
+				delete me.watchItv;
+			} 
+			
+			if (me.isEquivalent(spinner, oldSpinner)) {
+				me.setState({_spinner: spinner});
 				ReactDOM.TAO.setState('*', {});
 			}
-			clearInterval(me.watchItv);
-			delete me.watchItv;
 		}
 	}
 	render() {
