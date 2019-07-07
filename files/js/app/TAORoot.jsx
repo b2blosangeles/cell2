@@ -228,20 +228,17 @@ class TAORoot extends React.Component {
 				}
 			}
 			for (var v in me.spinPool) {
-				console.log('--->');
-				console.log(me.spinPool);
 				if ((tm - me.spinPool[v].start) > 0) {
 					me.setState({_spinStatus: true});
 					return true;
 				}
-				console.log('- 2 huo-->');
 			}
-			// if (me.state._spinStatus !== false) {
-			console.log('-set false-->');
+			if (me.state._spinStatus !== false) {
+				console.log('-set false-->');
 				me.setState({_spinStatus : false});
 				console.log(me.state._spinStatus);
 				ReactDOM.TAO.setState('*', {});
-			// }
+			}
 			clearInterval(me.watchItv);
 			delete me.watchItv;
 		}
