@@ -238,6 +238,7 @@ class TAORoot extends React.Component {
 			console.log('-set false-->');
 				me.setState({_spinStatus : false});
 				console.log(me.state._spinStatus);
+				ReactDOM.TAO.setState('*', {});
 			// }
 			clearInterval(me.watchItv);
 			delete me.watchItv;
