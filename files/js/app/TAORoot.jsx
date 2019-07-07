@@ -2,7 +2,7 @@ class TAORoot extends React.Component {
 	constructor(props) {
 		super(props);
 		this.props = props;
-		ReactDOM.TAO.register(this);
+		// ReactDOM.TAO.register(this);
 		this.popupSetting = '';
 		this.spinPool={};
 		this.sno = 0;
