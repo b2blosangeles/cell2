@@ -30,21 +30,21 @@ class TopMenu extends React.Component {
   }
   render() {
 	var me = this;
-    return (
-      <div className="border border-success alert-success rounded  m-0 mt-3 mb-2 p-2">
-	{ReactDOM.TAO.list.Root.showSpinner(me)}
-        <h1>Tao Development</h1>
-	<p className="p-2">
-		{this.state.list.map(function(item, i){
-             		return (<span className="mr-3">
-					<a href="javascript:void(0);" onClick={me.handleClick.bind(me, item)}>
-					{item.datname}
-					</a> 
-				</span>)
-           	})}
-	</p>
-	
-      </div>
-    );
+	return (
+		<div className="border border-success alert-success rounded  m-0 mt-3 mb-2 p-2">
+		{me.showSpinner(me)}
+		<h1>Tao Development</h1>
+		<p className="p-2">
+			{this.state.list.map(function(item, i){
+				return (<span className="mr-3">
+						<a href="javascript:void(0);" onClick={me.handleClick.bind(me, item)}>
+						{item.datname}
+						</a> 
+					</span>)
+			})}
+		</p>
+
+		</div>
+	);
   }
 }
