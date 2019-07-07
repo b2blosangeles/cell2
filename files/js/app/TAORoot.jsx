@@ -1,7 +1,6 @@
 class TAORoot extends React.Component {
 	constructor(props) {
 		super(props);
-		// var me = this; 
 		this.props = props;
 		ReactDOM.TAO.register(this);
 		this.popupSetting = '';
