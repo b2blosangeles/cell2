@@ -105,7 +105,8 @@ class TAORoot extends React.Component {
 		this.state = {_spinner : {}};
 	}
 	componentDidMount() {
-		var me = this;    
+		var me = this; 
+		me.popup();
 	}
 	loadData(cfg) {
 		var me = this;
@@ -140,6 +141,21 @@ class TAORoot extends React.Component {
 		var me = this;
 		me.sno = (!me.sno || me.sno > 1000000) ? 1 : (me.sno + 1);
 		return 'SNO-' + me.sno + '-' + new Date().getTime();
+	}
+	popup(setting) {
+		var me = this;
+		me.popupSetting = setting;
+		me.setState({_popup : true})
+		setTimeout(function() { 
+			me.animationIn();
+		});
+	}
+	closePopup() {
+		var me = this;
+		me.popupSetting = null;
+		me.animationOut(function() {
+			me.setState({_popup : false})
+		});
 	}
 	showPopup() {
 		var me = this;
