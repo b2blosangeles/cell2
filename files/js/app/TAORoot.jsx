@@ -5,6 +5,7 @@ React.createClass({
 		me.popupSetting = '';
 		me.spinPool={};
 		me.sno = 0;
+		me.niu = 'pppp';
 		return {_spinStatus : true};
 	},
 	componentDidMount : function() {
@@ -195,8 +196,8 @@ class TAORoot extends React.Component {
 	showBoxSpinner() {
 		var me = this;
 		return (me.state._spinStatus) ? (<span><span className="section_spin_cover">
-				<span className="spinner"></span>6->{me.state._spinStatus}-6</span>
-			</span>) : (<span>1->{me.state._spinStatus}-1</span>)
+				<span className="spinner"></span>6->{me.state._spinStatus}-6=>{me.niu}</span>
+			</span>) : (<span>1->{me.state._spinStatus}-1=>{me.niu}</span>)
 	}
 	spinOn (setting) {
 		var me = this, tm = new Date().getTime();
