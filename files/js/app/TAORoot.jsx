@@ -141,7 +141,35 @@ class TAORoot extends React.Component {
 		me.sno = (!me.sno || me.sno > 1000000) ? 1 : (me.sno + 1);
 		return 'SNO-' + me.sno + '-' + new Date().getTime();
 	}
+	showPopup() {
+		var me = this;
+		var v = me.popupSetting;
 		
+		var classType = (!v || !v.type) ? 'light' : v.type;
+		var className = ((!v || !v.class) ? 
+			    (' shadow rounded border border-secondary alert-' + classType) : v.class + ' ') +
+			    ' p-2';
+		var style = (!v || !v.style) ? {'min-height' : '28em'} : v.style;
+		var closeIcon = (!v || !v.closeIcon) ? (<span/>) : (<button type="button" 
+				className="close pull-right" onClick={me.closePopup.bind(me)}>
+							  <span>&times;</span>
+							</button>);
+		return (me.state._popup) ? (<span><span className="overlay_popup_cover"></span>   
+			<span id={'nnuu'} className="overlay_popup_page">
+				<div className="container">
+				<div className="row ">
+					<div className="col-sm-12">
+						<div className={className} style={style}>{closeIcon}
+						{(typeof v.data === 'string') ? 
+						(<span dangerouslySetInnerHTML={{__html: v.data}}/>)
+						: v.data}
+						</div>
+					</div>
+				</div>
+				</div>				
+			</span>
+			</span>) : (<span></span>)		
+	}		
 	showSpinner(spinner) {
 		var me = this;
 		if (!spinner) {
@@ -226,6 +254,6 @@ class TAORoot extends React.Component {
 	}
 	render() {
 		var me = this;
-		return (<span>{me.showSpinner()}</span>);
+		return (<span>{me.showSpinner()} {me.showPopup()}</span>);
 	}
 }
