@@ -32,7 +32,7 @@ class LeftBox extends React.Component {
 	  var me = this;
     return (
       <div className="border border-warning alert-warning rounded m-0 p-2">
-	{ReactDOM.TAO.list.Root.showBoxSpinner(me)}
+	{ReactDOM.TAO.list.Root.showSpinner(me)}
 	ALL TABLES :
         <ul>
           {this.state.list.map(function(item, i){
