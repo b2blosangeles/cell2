@@ -8,7 +8,7 @@
 			this.loadRoot();
 		}
 		if (pobj) {
-			ReactDOM.render(obj, pobj.appendChild(ReactDOM.TAO.list.Root.showBoxSpinner()));
+			ReactDOM.render(obj.append('ttt'), pobj);
 		}
         },
 	append  : function(id, obj, pobj) {
