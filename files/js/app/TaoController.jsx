@@ -21,7 +21,7 @@
             this.load(id, obj, newObj);
         },
 	_spinner : function(o) {
-		if (this.list.Root) this.list.Root.showSpinner(o);
+		// if (this.list.Root) this.list.Root.showSpinner(o);
 	},
         setState : function(id, data) {
             if (id === '*') {
