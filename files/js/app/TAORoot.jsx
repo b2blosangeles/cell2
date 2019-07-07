@@ -198,7 +198,7 @@ class TAORoot extends React.Component {
 		var me = this;
 		return (me.state._spinStatus) ? (<span><span className="section_spin_cover">
 				<span className="spinner"></span>6->{me.state._spinStatus.toString()}-6=>{me.niu}</span>
-			</span>) : (<span>1->{me.state._spinStatus.toString()}-1=>{me.niu}-3{true.toString()}</span>)
+			</span>) : (<span></span>)
 	}
 	spinOn (setting) {
 		var me = this, tm = new Date().getTime();
