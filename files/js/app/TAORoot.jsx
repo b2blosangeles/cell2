@@ -148,12 +148,11 @@ class TAORoot extends React.Component {
 		delete me.spinPool[code];
 	}
 	isEquivalent(a, b) {
-	    var aP = Object.getOwnPropertyNames(a);
-	    var bP = Object.getOwnPropertyNames(b);
+	    var aP = Object.keys(a), bP = Object.keys(b);
 	    if (aP.length != bP.length) { return false; }
 	    for (var i = 0; i < aP.length; i++) {
-		var propName = aP[i];
-		if (a[propName] !== b[propName]) { return false; }
+		var n = aP[i];
+		if (a[n] !== b[n]) { return false; }
 	    }
 	    return true;
 	}
@@ -161,7 +160,7 @@ class TAORoot extends React.Component {
 		var me = this;
 		return function() {
 			var tm = new Date().getTime();
-			var spinner = {}, existSpinner = false, SpinnerChanged = false, oldSpinner = me.state._spinner;
+			var spinner = {}, SpinnerChanged = false, oldSpinner = me.state._spinner;
 			for (var v in me.spinPool) {
 				if ((tm - me.spinPool[v].end) > 0) {
 					delete me.spinPool[v];
@@ -174,16 +173,10 @@ class TAORoot extends React.Component {
 					} else {
 						spinner.ALL = true;
 					}
-					existSpinner = true;
 				}
 			}
-			/*
-			if (!existSpinner) {
-				clearInterval(me.watchItv);
-				delete me.watchItv;
-			} */
 			if (!me.isEquivalent(spinner, oldSpinner)) {
-				if (Object.getOwnPropertyNames(spinner).length == 0) {
+				if (Object.keys(spinner).length == 0) {
 					clearInterval(me.watchItv);
 					delete me.watchItv;
 				}
