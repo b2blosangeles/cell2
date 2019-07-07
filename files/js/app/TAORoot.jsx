@@ -148,7 +148,6 @@ class TAORoot extends React.Component {
 		this.spinPool={};
 		this.sno = 0;
 		this.state = {_spinStatus : false};
-		this.niu = 'pppp';
 	}
 	componentDidMount() {
 		var me = this;    
@@ -196,8 +195,8 @@ class TAORoot extends React.Component {
 	}
 	showBoxSpinner() {
 		var me = this;
-		return (me.state._spinStatus) ? (<span><span className="section_spin_cover">
-				<span className="spinner"></span>6->{me.state._spinStatus.toString()}-6=>{me.niu}</span>
+		return (me.state._spinStatus) ? (<span>
+				<span className="section_spin_cover"><span className="spinner"></span></span>
 			</span>) : (<span></span>)
 	}
 	spinOn (setting) {
