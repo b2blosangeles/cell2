@@ -15,9 +15,6 @@
 	    var newObj = pobj.appendChild( document.createElement( 'div' ));
             this.load(id, obj, newObj);
         },
-        register : function(obj) {
-            //	this.list[obj.props._TAOID] = obj;
-        },
         setState : function(id, data) {
             if (id === '*') {
                 for (o in this.list) {
