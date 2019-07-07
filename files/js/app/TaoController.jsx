@@ -9,7 +9,7 @@
 		}
 		if (pobj) {
 			if (ReactDOM.TAO.list.Root) {
-				obj._spinner(o) = function() {
+				obj._spinner = function(o) {
 					ReactDOM.TAO.list.Root.showSpinner(o);
 				}
 			}	
