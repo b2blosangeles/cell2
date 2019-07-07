@@ -187,19 +187,17 @@ class TAORoot extends React.Component {
 		return 'SNO-' + me.sno + '-' + new Date().getTime();
 	}
 		
-	showSpinner() {
+	showSpinner(spinner) {
 		var me = this;
-		return function() {
+		if (!spinner) {
 			return (me.state._spinner.ALL) ? (<span>-{me.state._spinStatus}-<span className="overlay_spin_cover"></span>
 				<span className="overlay_spin_page"><span className="spinner"></span></span>
+				</span>) : (<span></span>)			
+		} else {
+			return (me.state._spinner.ALL) ? (<span></span>) : (me.state._spinner[spinner.SPID]) ? (<span>
+				<span className="section_spin_cover"><span className="spinner"></span></span>
 				</span>) : (<span></span>)
 		}
-	}
-	showBoxSpinner(spinner) {
-		var me = this;
-		return (me.state._spinner[spinner.SPID]) ? (<span>
-				<span className="section_spin_cover"><span className="spinner"></span></span>
-			</span>) : (<span>=={spinner.SPID}=-=</span>)
 	}
 	spinOn (setting) {
 		var me = this, tm = new Date().getTime();
