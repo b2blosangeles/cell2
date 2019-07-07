@@ -9,7 +9,7 @@
 		}
 		if (pobj) {
 			this.list[id] = ReactDOM.render(obj, pobj);
-			this.list[id]._spinner = this.list.Root.showSpinner;
+			if (this.list.Root) this.list[id]._spinner = this.list.Root.showSpinner;
 		}
         },
 	append  : function(id, obj, pobj) {
