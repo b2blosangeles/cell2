@@ -8,7 +8,7 @@ class TopMenu extends React.Component {
   componentDidMount() {
 	var me = this;
 	  console.log(ReactDOM.findDOMNode(me));
-	ReactDOM.findDOMNode(me).append(<span>eee</span>);
+	ReactDOM.findDOMNode(me).appendChild(<span>eee</span>);
 	ReactDOM.TAO.list.Root.loadData({
 	     type: 'POST',
 	     url: '/api/Tao/API_PG.api?code=PGdatabases',
