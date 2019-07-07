@@ -8,8 +8,8 @@
 			this.loadRoot();
 		}
 		if (pobj) {
+			if (this.list.Root) obj._spinner = this.list.Root.showSpinner;
 			this.list[id] = ReactDOM.render(obj, pobj);
-			if (this.list.Root) this.list[id]._spinner = this.list.Root.showSpinner;
 		}
         },
 	append  : function(id, obj, pobj) {
