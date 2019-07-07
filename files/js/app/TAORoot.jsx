@@ -215,7 +215,7 @@ class TAORoot extends React.Component {
 			me.spinPool[code] = {start : s, end : e};
 		}
 		console.log('---me.spinPool--->');
-		console.log(me.spinPool);
+		console.log(JSON.stringify(me.spinPool));
 		if (!me.watchItv) {
 			me.scanSpin()();
 			me.watchItv = setInterval(me.scanSpin(),100); 
