@@ -3,7 +3,7 @@ class TopMenu extends React.Component {
 	super(props);
 	this.props = props;
 	ReactDOM.TAO.register(this);
-	  me.niu = 'aaaa';
+	this.niu = 'aaaa';
 	this.state = {list : [], _spinStatus : 'KKK'};
   }
   componentDidMount() {
