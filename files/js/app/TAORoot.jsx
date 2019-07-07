@@ -234,6 +234,7 @@ class TAORoot extends React.Component {
 					me.setState({_spinStatus: true});
 					return true;
 				}
+				console.log('- 2 huo-->');
 			}
 			// if (me.state._spinStatus !== false) {
 			console.log('-set false-->');
