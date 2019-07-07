@@ -217,7 +217,7 @@ class TAORoot extends React.Component {
 		
 		if (!me.watchItv) {
 			me.scanSpin();
-			me.watchItv = setInterval(me.scanSpin(),100); 
+			me.watchItv = setInterval(me.scanSpin,100); 
 		}
 		return code;
 	}
@@ -243,7 +243,7 @@ class TAORoot extends React.Component {
 	}
 	scanSpin() {
 		var me = this;
-		return function() {
+		//return function() {
 			var tm = new Date().getTime();
 			var spinner = {}, existSpinner = false, SpinnerChanged = false, oldSpinner = me.state._spinner;
 			for (var v in me.spinPool) {
@@ -251,6 +251,7 @@ class TAORoot extends React.Component {
 					delete me.spinPool[v];
 				}
 			}
+		console.log(me.spinPool);
 			for (var v in me.spinPool) {
 				if ((tm - me.spinPool[v].start) > 0) {
 					if (me.spinPool[v].spinner) {
@@ -271,7 +272,7 @@ class TAORoot extends React.Component {
 				me.setState({_spinner: spinner});
 				ReactDOM.TAO.setState('*', {});
 			}
-		}
+		// }
 	}
 	render() {
 		var me = this;
