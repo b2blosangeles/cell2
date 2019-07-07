@@ -11,7 +11,7 @@ class TAORoot extends React.Component {
 	}
 	componentDidMount() {
 		var me = this; 
-		// me.popup();
+		me.popup({data : 1234});
 	}
 	loadData(cfg) {
 		var me = this;
@@ -41,7 +41,6 @@ class TAORoot extends React.Component {
 	componentDidUpdate(prevProps, prevState) {
 		var me = this;
 	}
-	
 	getSno() {
 		var me = this;
 		me.sno = (!me.sno || me.sno > 1000000) ? 1 : (me.sno + 1);
@@ -117,7 +116,7 @@ class TAORoot extends React.Component {
 	showSpinner(spinner) {
 		var me = this;
 		if (!spinner) {
-			return (me.state._spinner.ALL) ? (<span>-{me.state._spinStatus}-<span className="overlay_spin_cover"></span>
+			return (me.state._spinner.ALL) ? (<span><span className="overlay_spin_cover"></span>
 				<span className="overlay_spin_page"><span className="spinner"></span></span>
 				</span>) : (<span></span>)			
 		} else {
