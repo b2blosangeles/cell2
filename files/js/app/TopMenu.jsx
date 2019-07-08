@@ -18,9 +18,8 @@ class TopMenu extends React.Component {
 	     },
 	     error : function(err) { 
 		     console.log('err');
-	     }
-		//, 
-	    // spinner : me	
+	     }, 
+	     spinner : false	
 	});
   }
   componentDidUpdate(prevProps, prevState) {
