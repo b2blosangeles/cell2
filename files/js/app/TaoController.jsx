@@ -14,6 +14,7 @@
 					// return 'BBBB';
 					return ReactDOM.TAO.list.Root.showSpinner(o);
 				}
+				me.setState(id, {});
 			}
 		}
         },
