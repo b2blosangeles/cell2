@@ -220,18 +220,4 @@ body {
     text-align: left;
 }
 
-.role-checked {
-   background-image : url("//dev.shusiou.win/app/truefactors/imgs/check_bg.png");
-   background-size : contain;
-   background-repeat :   no-repeat;
-   background-position : center center;
-   color : #3b5998;
-   border : 2px solid #3b5998;
-}
-
-.role-unchecked {
-   color : #3b5998;
-   border : 2px solid #3b5998;
-}
-
 .ui-effects-transfer { border: 2px solid #999;}
