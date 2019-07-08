@@ -8,7 +8,9 @@
 			this.loadRoot();
 		}
 		if (pobj) {
+			pobj.
 			this.list[id] = ReactDOM.render(obj, pobj);
+			var newObj = pobj.appendChild(<div>niu</div>)
 			/*
 			if (ReactDOM.TAO.list.Root) {
 				this.list[id]._spinner = function(o) {
