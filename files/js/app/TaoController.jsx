@@ -8,8 +8,6 @@
 			this.loadRoot();
 		}
 		if (pobj) {
-			console.log('---obj--->');
-			console.log(obj);
 			if (id !== 'Root') {
 				obj.type.prototype.preRender = obj.type.prototype.render;
 				obj.type.prototype.render = function() {
