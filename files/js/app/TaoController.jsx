@@ -8,13 +8,17 @@
 			this.loadRoot();
 		}
 		if (pobj) {
+			obj._spinner = function(o) {
+				return 'KKK';
+					// return ReactDOM.TAO.list.Root.showSpinner(o);
+				}
 			this.list[id] = ReactDOM.render(obj, pobj);
+			/*
 			if (ReactDOM.TAO.list.Root) {
 				this.list[id]._spinner = function(o) {
 					return ReactDOM.TAO.list.Root.showSpinner(o);
 				}
-				// this.setState(id, {});
-			}
+			}*/
 		}
         },
 	append  : function(id, obj, pobj) {
