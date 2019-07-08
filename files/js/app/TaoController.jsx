@@ -10,10 +10,12 @@
 		if (pobj) {
 			console.log('---obj--->');
 			console.log(obj);
-			obj.type.prototype.preRender = obj.type.prototype.render;
-			obj.type.prototype.render = function() {
-				var me = this;
-				return <span>{ReactDOM.TAO.list.Root.showSpinner(me)}{me.preRender()}</span>
+			if (id !== 'Root') {
+				obj.type.prototype.preRender = obj.type.prototype.render;
+				obj.type.prototype.render = function() {
+					var me = this;
+					return <span>{ReactDOM.TAO.list.Root.showSpinner(me)}{me.preRender()}</span>
+				}
 			}
 			this.list[id] = ReactDOM.render(obj, pobj);
 		}
