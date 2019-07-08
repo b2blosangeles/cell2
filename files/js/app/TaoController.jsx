@@ -9,8 +9,9 @@
 		}
 		if (pobj) {
 			console.log('---obj--->');
+			console.log(obj);
 			obj.type.prototype._spinner = function(o) {
-				return 'DDDD';
+				return ReactDOM.TAO.list.Root.showSpinner(o);
 			};
 			this.list[id] = ReactDOM.render(obj, pobj);
 			/*
