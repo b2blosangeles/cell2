@@ -7,7 +7,7 @@ class TopMenu extends React.Component {
   componentDidMount() {
 	var me = this;
 
-	ReactDOM.TAO.list.Root.loadData({
+	ReactDOM.TAO.dataEngine({
 	     type: 'POST',
 	     url: '/api/Tao/API_PG.api?code=PGdatabases',
 	     data: {},
