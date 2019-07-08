@@ -9,7 +9,7 @@
 		}
 		if (pobj) {
 			console.log('---obj--->');
-			console.log(obj);
+			console.log(obj.type.prototype);
 			this.list[id] = ReactDOM.render(obj, pobj);
 			/*
 			if (ReactDOM.TAO.list.Root) {
