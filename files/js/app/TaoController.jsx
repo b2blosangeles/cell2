@@ -11,10 +11,9 @@
 			this.list[id] = ReactDOM.render(obj, pobj);
 			if (ReactDOM.TAO.list.Root) {
 				this.list[id]._spinner = function(o) {
-					// return 'BBBB';
 					return ReactDOM.TAO.list.Root.showSpinner(o);
 				}
-				this.setState(id, {});
+				// this.setState(id, {});
 			}
 		}
         },
