@@ -10,20 +10,12 @@
 		if (pobj) {
 			console.log('---obj--->');
 			console.log(obj);
-			obj.type.prototype._spinner = function(o) {
-				return ReactDOM.TAO.list.Root.showSpinner(o);
-			};
 			obj.type.prototype.preRender = obj.type.prototype.render;
 			obj.type.prototype.render = function() {
-				return <span>iii---{this.preRender()}</span>
+				var me = this;
+				return <span>{ReactDOM.TAO.list.Root.showSpinner(me)}{me.preRender()}</span>
 			}
 			this.list[id] = ReactDOM.render(obj, pobj);
-			/*
-			if (ReactDOM.TAO.list.Root) {
-				this.list[id]._spinner = function(o) {
-					return ReactDOM.TAO.list.Root.showSpinner(o);
-				}
-			}*/
 		}
         },
 	append  : function(id, obj, pobj) {
