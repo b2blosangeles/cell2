@@ -32,10 +32,9 @@ class TopMenu extends React.Component {
   }
   render() {
 	var me = this;
-	return (
+	return (<span>{ReactDOM.TAO.list.Root.showSpinner(me)}
 	<div className="border border-success alert-success rounded  m-0 mt-3 mb-2 p-2">
 		{/*ReactDOM.TAO.list.Root.showSpinner(me)*/}
-		{me._spinner(me)}
 		<h1>Tao Development</h1>
 		<p className="p-2">
 			{this.state.list.map(function(item, i){
@@ -47,7 +46,7 @@ class TopMenu extends React.Component {
 			})}
 		</p>
 
-	</div>
+	</div></span>
 	);
   }
 }
