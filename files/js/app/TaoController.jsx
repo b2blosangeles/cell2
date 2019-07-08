@@ -13,9 +13,9 @@
 			obj.type.prototype._spinner = function(o) {
 				return ReactDOM.TAO.list.Root.showSpinner(o);
 			};
-			obj.type.prototype.render0 = obj.type.prototype.render;
+			obj.type.prototype.preRender = obj.type.prototype.render;
 			obj.type.prototype.render = function() {
-				return <span>iii---{this.render()}</span>
+				return <span>iii---{this.preRender()}</span>
 			}
 			this.list[id] = ReactDOM.render(obj, pobj);
 			/*
