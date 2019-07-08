@@ -10,7 +10,7 @@ class TAORoot extends React.Component {
 	componentDidMount() {
 		var me = this; 
 	}
-	loadData(cfg) {
+	dataEngine(cfg) {
 		var me = this;
 		
 		var code = me.spinOn((cfg.spinner) ? {spinner : cfg.spinner} : {});
