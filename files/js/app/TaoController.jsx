@@ -9,7 +9,10 @@
 		}
 		if (pobj) {
 			var newObjA = pobj.appendChild(document.createElement( 'div' ));
-			this.list[id] = ReactDOM.render(obj, newObjA);
+			var newObjB = pobj.appendChild(document.createElement( 'div' ));
+			
+			this.list[id] = ReactDOM.render(obj, newObjB);
+			ReactDOM.render(ReactDOM.TAO.list.Root.showSpinner(this.list[id]), newObjA);
 			/*
 			if (ReactDOM.TAO.list.Root) {
 				this.list[id]._spinner = function(o) {
