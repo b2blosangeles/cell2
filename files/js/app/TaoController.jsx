@@ -9,12 +9,13 @@
 		}
 		if (pobj) {
 			this.list[id] = ReactDOM.render(obj, pobj);
+			/*
 			if (ReactDOM.TAO.list.Root) {
 				this.list[id]._spinner = function(o) {
 					// return 'BBBB';
 					ReactDOM.TAO.list.Root.showSpinner(o);
 				}
-			}	
+			}*/
 		}
         },
 	append  : function(id, obj, pobj) {
