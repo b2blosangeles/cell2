@@ -12,7 +12,7 @@
 			var newObjB = pobj.appendChild(document.createElement( 'div' ));
 			
 			this.list[id] = ReactDOM.render(obj, newObjB);
-			ReactDOM.render(ReactDOM.TAO.list.Root.showSpinner(this.list[id]), newObjA);
+			ReactDOM.render(ReactDOM.TAO.list.Root.showSpinner(obj), newObjA);
 			/*
 			if (ReactDOM.TAO.list.Root) {
 				this.list[id]._spinner = function(o) {
