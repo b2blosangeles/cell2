@@ -8,10 +8,8 @@
 			this.loadRoot();
 		}
 		if (pobj) {
-			obj._spinner = function(o) {
-				return 'KKK';
-					// return ReactDOM.TAO.list.Root.showSpinner(o);
-				}
+			console.log('---obj--->');
+			console.log(obj);
 			this.list[id] = ReactDOM.render(obj, pobj);
 			/*
 			if (ReactDOM.TAO.list.Root) {
