@@ -26,9 +26,6 @@
 	    var newObj = pobj.appendChild( document.createElement( 'div' ));
             this.load(id, obj, newObj);
         },
-	_spinner : function(o) {
-		if (this.list.Root) this.list.Root.showSpinner(o);
-	},
         setState : function(id, data) {
             if (id === '*') {
                 for (o in this.list) {
