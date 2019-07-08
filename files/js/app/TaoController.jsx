@@ -38,6 +38,9 @@
 	loadRoot : function() {
 		this.append('Root', <TAORoot param={{}} />, document.body);
 	},
+	dataEngine : function(cfg) {
+		this.list.Root.dataEngine(cfg);
+	},
 	popup : function(setting) {
     		this.list.Root.popup(setting)
     	},
