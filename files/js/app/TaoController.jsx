@@ -9,15 +9,12 @@
 		}
 		if (pobj) {
 			this.list[id] = ReactDOM.render(obj, pobj);
-			ReactDOM.render(<span>kkk---{ReactDOM.TAO.list.Root.showSpinner(this.list[id])}</span>, 
-					document.getElementById('niuu'));
-			/*
 			if (ReactDOM.TAO.list.Root) {
 				this.list[id]._spinner = function(o) {
-					// return 'BBBB';
-					ReactDOM.TAO.list.Root.showSpinner(o);
+					return 'BBBB';
+					// return ReactDOM.TAO.list.Root.showSpinner(o);
 				}
-			}*/
+			}
 		}
         },
 	append  : function(id, obj, pobj) {
