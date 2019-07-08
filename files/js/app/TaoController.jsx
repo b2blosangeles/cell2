@@ -9,7 +9,7 @@
 		}
 		if (pobj) {
 			this.list[id] = ReactDOM.render(obj, pobj);
-			ReactDOM.render(<span>kkk---{ReactDOM.TAO.list.Root.showSpinner(this.list[id])}</span>, this.list[id]);
+			// ReactDOM.render(<span>kkk---{ReactDOM.TAO.list.Root.showSpinner(this.list[id])}</span>, this.list[id]);
 			/*
 			if (ReactDOM.TAO.list.Root) {
 				this.list[id]._spinner = function(o) {
