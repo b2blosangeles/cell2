@@ -27,17 +27,12 @@ class TopMenu extends React.Component {
   }
   handleClick(item) {
 	ReactDOM.TAO.popup({data : item.datname, closeIcon: true});
-  }
-  _spinner(o) {
-  	return "SSSS"
   }	
   render() {
 	var me = this;
 	return (
 	<div className="border border-success alert-success rounded  m-0 mt-3 mb-2 p-2">
-		
-		{/*ReactDOM.TAO.list.Root.showSpinner(me)*/}
-			{me._spinner(me)}
+		{(me._spinner) ? me._spinner(me) : ''}
 		<h1>Tao Development</h1>
 		<p className="p-2">
 			{this.state.list.map(function(item, i){
