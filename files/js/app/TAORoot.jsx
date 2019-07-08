@@ -12,9 +12,9 @@ class TAORoot extends React.Component {
 	}
 	dataEngine(cfg) {
 		var me = this;
-		
-		var code = me.spinOn((cfg.spinner) ? {spinner : cfg.spinner} : {});
-		
+		if (cfg.spinner !== false) {
+			var code = me.spinOn((cfg.spinner) ? {spinner : cfg.spinner} : {});
+		}
 		$.ajax({
 			type: (cfg.type) ? cfg.type : 'POST',
 			url: cfg.url,
@@ -22,13 +22,17 @@ class TAORoot extends React.Component {
 			dataType: (cfg.dataType) ? cfg.dataType : 'JSON',
 			timeout: (cfg.timeout) ? cfg.timeout : 8000,
 			success: function(resultData){
-				me.spinOff(code);
+				if (cfg.spinner !== false) {
+					me.spinOff(code);
+				}
 				if  (typeof cfg.success == 'function') {
 					cfg.success(resultData)
 				}
 			},
 			error : function(xhr, textStatus, error) {
-				me.spinOff(code);
+				if (cfg.spinner !== false) {
+					me.spinOff(code);
+				}
 				if  (typeof cfg.error == 'function') {
 					cfg.error(error)
 				}
