@@ -29,11 +29,13 @@ class TopMenu extends React.Component {
 	ReactDOM.TAO.popup({data : item.datname, closeIcon: true});
   }
   _spinner(o) {
+	  return 'AAAA'
   }
   render() {
 	var me = this;
 	return (
 	<div className="border border-success alert-success rounded  m-0 mt-3 mb-2 p-2">
+			{me. _spinner(me)}
 		{ReactDOM.TAO.list.Root.showSpinner(me)}
 		<h1>Tao Development</h1>
 		<p className="p-2">
