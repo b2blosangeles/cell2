@@ -45,7 +45,12 @@
           console.log('<<<-----clientRequestCBK---');
       
       });
-    
+        socket.on('hubService', function(data){
+          console.log('=====hubService=====>>>');
+          console.log(data);
+          console.log('<<<-----hubService---');
+      
+      });  
   });
 
 
