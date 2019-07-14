@@ -38,6 +38,14 @@
           console.log('<<<-----clientMessage---');
       
       });
+
+      socket.on('clientRequestCBK', function(data){
+          console.log('=====clientRequestCBK=====>>>');
+          console.log(data);
+          console.log('<<<-----clientRequestCBK---');
+      
+      });
+    
   });
 
 
