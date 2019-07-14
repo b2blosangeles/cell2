@@ -20,7 +20,7 @@
 <script>
   const socket = io('/?_code=eda.js&param=as');
   
-  socket.on('connect', function(){
+  socket.on('connect', function(socket){
       console.log('--connnected-->');
     console.log(socket);
     socket.join('NNBB');
