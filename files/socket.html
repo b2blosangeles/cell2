@@ -24,8 +24,7 @@
       console.log('--connnected-->');
     console.log(socket.id);
   
-      socket.emit('clientRequest', 
-          {
+      socket.emit('clientRequest', {
             cmd : 'sendToRoom',
             room : 'NNBB',
             data : '1234'
