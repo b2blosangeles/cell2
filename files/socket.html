@@ -20,4 +20,13 @@
 <script>
   const socket = io('/?_code=eda.js&param=as');
   console.log(socket);
+    socket.emit('clientRequest', 
+          {
+            cmd : 'sendToRoom',
+            room : 'NNBB',
+            data : '1234'
+          }, (data) => {
+            console.log(data); // data will be 'woot'
+          });
+
 </script>
