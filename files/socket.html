@@ -20,10 +20,10 @@
 <script>
   const socket = io('/?_code=eda.js&param=as');
   
-  socket.on('connect', function(socket){
+  socket.on('connect', function(){
       console.log('--connnected-->');
     console.log(socket);
-    socket.join('NNBB');
+    socket.emit('room', 'NNBB');
       socket.emit('clientRequest', 
           {
             cmd : 'sendToRoom',
