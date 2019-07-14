@@ -23,6 +23,7 @@
   socket.on('connect', function(){
       console.log('--connnected-->');
     console.log(socket);
+    socket.join('NNBB');
       socket.emit('clientRequest', 
           {
             cmd : 'sendToRoom',
