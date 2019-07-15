@@ -21,9 +21,10 @@
   var clients = {NNBB : []};
   const socket = io('//comm6_dev.shusiou.win/?_code=eda.js&param=as');
   
-  socket.on('connect', function(s){
-      console.log('--connnected-a->');
+  socket.on('connect', function(s, uu){
+      console.log('--connnected-b->');
     console.log(s)
+     console.log(uu)
     console.log(socket.id);
   
       socket.emit('clientRequest', {
