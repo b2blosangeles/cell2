@@ -43,6 +43,13 @@
       
       });
 
+       socket.on('roomClents', function(data){
+          console.log('=====roomClents=**====>>>');
+          console.log(data);
+          console.log('<<<-----roomClents---');
+      
+      });
+    
       socket.on('clientRequestCBK', function(data){
           console.log('=====clientRequestCBK=====>>>');
           console.log(data);
