@@ -32,10 +32,14 @@
           }, (data) => {
             console.log(data); // data will be 'woot'
           });
- 
-      socket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {
-            console.log(data); // data will be 'woot'
-      });    
+    
+      setInterval(
+          function() {
+              socket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {}); 
+              console.log(clients);
+          }, 3000
+      )
+         
     
       socket.on('clientMessage', function(data){
           console.log('=====clientMessage=====>>>');
@@ -44,14 +48,10 @@
       
       });
 
-       socket.on('hubRoomCilents', function(data){
+      socket.on('hubRoomCilents', function(data){
           for (var i = 0; i < data.clients.length; i++) {
              clients[data.room].push(data.clients[i]);
           }
-         
-          console.log('=====hubRoomCilents====>>>');
-          console.log( clients[data.room]);
-         console.log(data);
       });
     
       socket.on('clientRequestCBK', function(data){
