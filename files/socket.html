@@ -46,7 +46,7 @@
 
        socket.on('hubRoomCilents', function(data){
           for (var i = 0; i < data.clients; i++) {
-             clients[data.room].merge(data.clients[i]);
+             clients[data.room].push(data.clients[i]);
           }
          
           console.log('=====hubRoomCilents====>>>');
