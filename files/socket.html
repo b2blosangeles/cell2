@@ -31,6 +31,10 @@
           }, (data) => {
             console.log(data); // data will be 'woot'
           });
+ 
+      socket.emit('roomClents', 'NNBB'}, (data) => {
+            console.log(data); // data will be 'woot'
+      });    
     
       socket.on('clientMessage', function(data){
           console.log('=====clientMessage=====>>>');
