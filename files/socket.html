@@ -45,7 +45,7 @@
       });
 
        socket.on('hubRoomCilents', function(data){
-          for (var i = 0; i < data.clients; i++) {
+          for (var i = 0; i < data.clients.length; i++) {
              clients[data.room].push(data.clients[i]);
           }
          
