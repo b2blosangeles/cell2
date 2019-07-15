@@ -45,7 +45,10 @@
       });
 
        socket.on('hubRoomCilents', function(data){
-          clients[data.room].merge(data.clients);
+          for (var i = 0; i < data.clients; i++) {
+             clients[data.room].merge(data.clients[i]);
+          }
+         
           console.log('=====hubRoomCilents====>>>');
           console.log( clients[data.room]);
       });
