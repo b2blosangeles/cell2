@@ -32,7 +32,17 @@
           }, (data) => {
             console.log(data); // data will be 'woot'
           });
+        
     
+      socket.on('hubRoomCilents', function(data){
+          for (var i = 0; i < data.clients.length; i++) {
+              if (clients[data.room].indexOf(data.clients[i]) == -1) {
+                  clients[data.room].push(data.clients[i]);
+              }
+          }
+      });    
+    
+
       setInterval(
           function() {
               socket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {}); 
@@ -48,13 +58,7 @@
       
       });
 
-      socket.on('hubRoomCilents', function(data){
-          for (var i = 0; i < data.clients.length; i++) {
-              if (clients[data.room].indexOf(data.clients[i]) == -1) {
-                  clients[data.room].push(data.clients[i]);
-              }
-          }
-      });
+
     
       socket.on('clientRequestCBK', function(data){
           console.log('=====clientRequestCBK=====>>>');
