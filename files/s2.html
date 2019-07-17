@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script src="/package/socket.jsx"></script>
+<link rel="stylesheet" href="/package/Tao.css">
+</head>
+<body class="bg-secondary">
+<div class="container bg-light">
+  <div class="row">
+    <div class="col-sm-12 p-0 pl-2 pr-2" id="topMenu"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3 p-0 pl-2 pr-1" id="leftBox"></div>
+    <div class="col-sm-9 p-0 pl-1 pr-2" id="rightBox"></div>
+  </div>
+</div>
+</body>
+</html>
+<script>
+  var getUniqueId = function(socket, cbk) {
+      socket.emit('askUniqueId'); 
+       socket.on('uniqueId', function(data){
+          console.log('--uuiddd->');
+           cbk(data);
+      });  
+  }
+  var clients = {NNBB : []};
+  const socket = io('//comm6_dev.shusiou.win/?_code=eda.js&param=as');
+  
+  socket.on('connect', function(){
+      console.log('--connnected-b->');
+      console.log(socket.id);
+  
+      socket.emit('clientRequest', {
+            cmd : 'sendToRoom',
+            room : 'NNBB',
+            data : '1234'
+          }, (data) => {
+            console.log(data); // data will be 'woot'
+          });
+    
+     
+
+      socket.on('hubRoomCilents', function(data){
+          for (var i = 0; i < data.clients.length; i++) {
+              if (clients[data.room].indexOf(data.clients[i]) == -1) {
+                  clients[data.room].push(data.clients[i]);
+              }
+          }
+      });    
+      
+      getUniqueId(socket, function(uuid) {
+        console.log(uuid);
+      });
+
+      setInterval(
+          function() {
+              socket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {}); 
+            //  console.log(clients);
+          }, 3000
+      )
+         
+    
+      socket.on('clientMessage', function(data){
+          console.log('=====clientMessage=====>>>');
+          console.log(data);
+          console.log('<<<-----clientMessage---');
+      
+      });
+
+
+    
+      socket.on('clientRequestCBK', function(data){
+          console.log('=====clientRequestCBK=====>>>');
+          console.log(data);
+          console.log('<<<-----clientRequestCBK---');
+      
+      });
+  });
+
+  socket.on('disconnect', function(){
+    clients = {NNBB : []};
+  });
+
+</script>
