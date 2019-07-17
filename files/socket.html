@@ -18,6 +18,12 @@
 </body>
 </html>
 <script>
+  var getUniqueId = function(socket, cbk) {
+      socket.emit('askUniqueId'); 
+       socket.on('uniqueId', function(data){
+           cbk(data);
+      });  
+  }
   var clients = {NNBB : []};
   const socket = io('//comm6_dev.shusiou.win/?_code=eda.js&param=as');
   
@@ -33,14 +39,8 @@
             console.log(data); // data will be 'woot'
           });
     
-      socket.emit('askUniqueId', {}, (data) => {
-         console.log('--->>>askUniqueId');
-          console.log(data); 
-       });      
-     socket.on('uniqueId', function(data){
-          console.log('-->>--uniqueId coming');
-           console.log(data);
-      });  
+     
+
       socket.on('hubRoomCilents', function(data){
           for (var i = 0; i < data.clients.length; i++) {
               if (clients[data.room].indexOf(data.clients[i]) == -1) {
@@ -48,7 +48,10 @@
               }
           }
       });    
-    
+      
+      getUniqueId(socket, function(uuid) {
+        console.log(uuid);
+      });
 
       setInterval(
           function() {
