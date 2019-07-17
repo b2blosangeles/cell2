@@ -21,6 +21,7 @@
   var getUniqueId = function(socket, cbk) {
       socket.emit('askUniqueId'); 
        socket.on('uniqueId', function(data){
+          console.log('--uuiddd->');
            cbk(data);
       });  
   }
