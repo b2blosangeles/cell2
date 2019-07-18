@@ -7,6 +7,7 @@
   <script>
     function checkFirstVisit() {
       socket.disconnect();
+      alert("Goodbye!");
     }
     </script>
 </head>
@@ -94,12 +95,6 @@
     alert('dis');
     clients = {NNBB : []};
   });
-  
-  $(document).ready(function(){
-      $(document).unload(function(){
-        alert("Goodbye!");
-      });
-   });
   
 
 </script>
