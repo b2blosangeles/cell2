@@ -4,8 +4,13 @@
 <title>Page Title</title>
 <script src="/package/socket.jsx"></script>
 <link rel="stylesheet" href="/package/Tao.css">
+  <script>
+    function checkFirstVisit() {
+      alert('checkFirstVisit()');
+    }
+    </script>
 </head>
-<body class="bg-secondary">
+<body class="bg-secondary" onload="checkFirstVisit()">
 <div class="container bg-light">
   <div class="row">
     <div class="col-sm-12 p-0 pl-2 pr-2" id="topMenu"></div>
