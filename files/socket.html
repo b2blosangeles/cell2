@@ -91,10 +91,10 @@
   });
   
   $(document).ready(function(){
-      alert(888);
+      $(window).unload(function(){
+        alert("Goodbye!");
+      });
    });
   
-$(window).unload(function(){
-  alert("Goodbye!");
-});
+
 </script>
