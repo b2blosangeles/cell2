@@ -68,7 +68,7 @@
     
       socket.on('clientMessage', function(data){
           console.log('=====clientMessage=====>>>');
-          console.log(data);
+          console.log( decodeURIComponent(data.text));
           console.log('<<<-----clientMessage---');
       
       });
