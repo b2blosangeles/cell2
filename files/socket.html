@@ -61,7 +61,7 @@
       setInterval(
           function() {
               socket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {}); 
-            //  console.log(clients);
+              console.log(clients);
           }, 3000
       )
          
