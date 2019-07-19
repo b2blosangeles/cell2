@@ -66,12 +66,12 @@
         console.log(uuid);
       });
 
-      setInterval(
-          function() {
+    //  setInterval(
+    //      function() {
               socket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {}); 
-              console.log(clients);
-          }, 10000
-      )
+     //         console.log(clients);
+     //     }, 10000
+     // )
          
     
       socket.on('clientMessage', function(data){
