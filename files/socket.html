@@ -35,7 +35,7 @@
   const socket = io('//comm6_dev.shusiou.win/?_code=eda.js&param=as');
   
   socket.on('connect', function(){
-      socket.emit('setClientId', new Date.getTime());
+      socket.emit('setClientId', new Date().getTime());
     
    //   socket.io.engine.id = 'AAA1234';
       console.log('--connnected-b->');
