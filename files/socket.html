@@ -51,16 +51,6 @@
           });
     
      
-
-      socket.on('hubRoomCilents', function(data){
-        console.log('---hubRoomCilents--->');
-        console.log(data);
-          for (var i = 0; i < data.clients.length; i++) {
-              if (clients[data.room].indexOf(data.clients[i]) == -1) {
-                  clients[data.room].push(data.clients[i]);
-              }
-          }
-      });    
       
       getUniqueId(socket, function(uuid) {
         console.log(uuid);
