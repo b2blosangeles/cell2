@@ -82,6 +82,15 @@
           console.log('<<<-----clientRequestCBK---');
       
       });
+    
+    
+      socket.on('ioAppError', function(data){
+          console.log('------ioAppError------>>>');
+          console.log(data);
+          console.log('<<<------------');
+      
+      });
+    
   });
 
   socket.on('disconnected', function(){
