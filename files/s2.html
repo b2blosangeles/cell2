@@ -20,8 +20,9 @@
 </html>
 <script>
   var tSocket = new TSocketClient();
-  console.log(tSocket);
-  tSocket.getRoomClients();
+  
+  tSocket.connection('A', '//comm1_dev.shusiou.win/?_code=eda.js&param=as');
+ // tSocket.getRoomClients();
   
   var getUniqueId = function(socket, cbk) {
       socket.emit('askUniqueId'); 
