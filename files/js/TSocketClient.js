@@ -7,16 +7,18 @@
         var me = this;
         me.socket = io(url);
         me.socket.on('connect', function(){
-          console.log('--connnected-b->');
-          console.log(me.socket.id);
-          cbk();
+          if (typeof cbk == 'function') { 
+            cbk();
+          }    
         });
       }
                        
       this.getUniqueId = function(cbk) {
         this.socket.emit('askUniqueId'); 
         this.socket.on('uniqueId', function(data){
-             cbk(data);
+             if (typeof cbk == 'function') { 
+               cbk(data);
+             }
         });  
        }
     
