@@ -4,10 +4,11 @@
       this.socket = null;
 
       this.connection = function(url, cbk) {
-        this.socket = io(url);
-        this.socket.on('connect', function(){
+        var me = this;
+        me.socket = io(url);
+        me.socket.on('connect', function(){
           console.log('--connnected-b->');
-          console.log(this.socket.id);
+          console.log(me.socket.id);
           cbk();
         });
       }
