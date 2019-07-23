@@ -1,7 +1,13 @@
 (function () { 
   var obj =  function () {
+    
+    this.socket = null;
+    
+    this.connection = function(url) {
+      this.socket = io(url);
+    }
     this.getRoomClients = function() {
-      alert('TSocketClient');
+    //  alert('TSocketClient');
     }
   }
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
