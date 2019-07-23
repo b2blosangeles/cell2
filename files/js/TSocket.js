@@ -5,7 +5,7 @@
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
       module.exports = obj;
   } else {
-      window.taoSocket = function() {
+      window.TSocket = function() {
         return obj; 
       }
   }
