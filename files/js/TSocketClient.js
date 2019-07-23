@@ -22,17 +22,27 @@
         });  
        }
     
-      this.getRoomClients = function() {
-        var cp = new crowdProcess(), _f = {};
-       _f['A'] = function(cbk) {
-          cbk(true);
-       }      
-       cp.serial(
-          _f,
-         function() {
-           alert('TSocketClient2');
-         }, 6000
-       )
+      this.getRoomClients = function(cbk) { 
+          var me = this;
+          socket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {}); 
+          this.socket.on('hubRoomCilents', function(data){
+             if (typeof cbk == 'function') { 
+               cbk(data);
+             }           
+          })
+   
+          /*
+          var cp = new crowdProcess(), _f = {};
+         _f['A'] = function(cbk) {
+            cbk(true);
+         }      
+         cp.serial(
+            _f,
+           function() {
+             alert('TSocketClient2');
+           }, 6000
+         )
+         */
       }
   }
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
