@@ -3,8 +3,9 @@
     
       this.socket = null;
 
-      this.connection = function(url) {
+      this.connection = function(url, cbk) {
         this.socket = io(url);
+        cbk();
       }
     
       this.getUniqueId = function(cbk) {
