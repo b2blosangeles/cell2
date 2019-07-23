@@ -7,8 +7,6 @@
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
       module.exports = obj;
   } else {
-      window.TSocketClient = function() {
-        return obj; 
-      }
+      window.TSocketClient = obj; 
   }
 })();
