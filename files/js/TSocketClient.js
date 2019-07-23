@@ -35,6 +35,28 @@
                 console.log(data); // data will be 'woot'
               });
       }
+      this.sendToRoom = function(cbk) { 
+          var me = this;
+          me.socket.emit('clientRequest', {
+                cmd : 'sendToRoom',
+                room : 'NNBB',
+                data : {
+                  client_id : 1,
+                  user_name : 'John Xu',
+                  text : encodeURIComponent('how are you')
+                }
+              }, (data) => {
+                console.log(data); // data will be 'woot'
+              });
+        
+           me.socket.on('clientMessage', function(data){
+                console.log('=====clientMessage=====>>>');
+                console.log( decodeURIComponent(data.data.text));
+                console.log('<<<-----clientMessage---');
+
+           });
+      }
+    
       this.getRoomClients = function(cbk) { 
           var me = this;
           me.socket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {}); 
