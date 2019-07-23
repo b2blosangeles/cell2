@@ -20,10 +20,10 @@
 </html>
 <script>
   var tSocket = new TSocketClient();
-  
-  tSocket.connection('A', '//comm1_dev.shusiou.win/?_code=eda.js&param=as');
+  console.log(tSocket);
+  tSocket.connection('//comm1_dev.shusiou.win/?_code=eda.js&param=as');
   tSocket.getRoomClients();
-  
+  /*
   var getUniqueId = function(socket, cbk) {
       socket.emit('askUniqueId'); 
        socket.on('uniqueId', function(data){
@@ -31,9 +31,12 @@
            cbk(data);
       });  
   }
+  */
+  /*
   var clients = {NNBB : []};
   const socket = io('//comm1_dev.shusiou.win/?_code=eda.js&param=as');
-  
+  */
+  /*
   socket.on('connect', function(){
       console.log('--connnected-b->');
       console.log(socket.id);
@@ -53,26 +56,15 @@
       socket.on('hubRoomCilents', function(data){
         console.log('---hubRoomCilents--->');
         console.log(data);
-        /*
-          for (var i = 0; i < data.clients.length; i++) {
-              if (clients[data.room].indexOf(data.clients[i]) == -1) {
-                  clients[data.room].push(data.clients[i]);
-              }
-          }
-          */
       });       
 
       getUniqueId(socket, function(uuid) {
         console.log(uuid);
       });
 
-     // setInterval(
-      //    function() {
+
               socket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {}); 
-      //        console.log(clients);
-      //    }, 10000
-     // )
-         
+
     
       socket.on('clientMessage', function(data){
           console.log('=====clientMessage=====>>>');
@@ -98,9 +90,11 @@
       });
     
   });
-
+*/
+  /*
   socket.on('disconnect', function(){
     clients = {NNBB : []};
   });
+  */
 
 </script>
