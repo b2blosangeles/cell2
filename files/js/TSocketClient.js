@@ -8,7 +8,7 @@
       }
       this.getRoomClients = function() {
         var cp = new crowdProcess(), _f = {};
-       _f('A') = function(cbk) {
+       _f['A'] = function(cbk) {
           cbk(true);
        }      
        cp.serial(
