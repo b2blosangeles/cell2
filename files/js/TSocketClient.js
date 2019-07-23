@@ -24,8 +24,8 @@
     
       this.getRoomClients = function(cbk) { 
           var me = this;
-          socket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {}); 
-          this.socket.on('hubRoomCilents', function(data){
+          me.socket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {}); 
+          me.socket.on('hubRoomCilents', function(data){
              if (typeof cbk == 'function') { 
                cbk(data);
              }           
