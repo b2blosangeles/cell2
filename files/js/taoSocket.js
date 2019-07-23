@@ -5,7 +5,7 @@
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
       module.exports = obj;
   } else {
-      window.crowdProcess = function() {
+      window.taoSocket = function() {
         return obj; 
       }
   }
