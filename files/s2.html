@@ -3,7 +3,7 @@
 <head>
 <title>Page Title</title>
 <script src="/package/ioCommunication.js"></script>
-<script src="/js/TSocket.js"></script>
+<script src="/js/TSocketClient.js"></script>
 <link rel="stylesheet" href="/package/Tao.css">
 </head>
 <body class="bg-secondary">
@@ -19,6 +19,8 @@
 </body>
 </html>
 <script>
+  var tSocket = new TSocketClient();
+  tSocket.getRoomClients();
   var getUniqueId = function(socket, cbk) {
       socket.emit('askUniqueId'); 
        socket.on('uniqueId', function(data){
