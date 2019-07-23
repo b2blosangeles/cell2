@@ -21,7 +21,17 @@
 <script>
   var tSocket = new TSocketClient();
   console.log(tSocket);
-  tSocket.connection('//comm1_dev.shusiou.win/?_code=eda.js&param=as');
+  tSocket.connection('//comm1_dev.shusiou.win/?_code=eda.js&param=as',
+    function() {
+        tSocket.getUniqueId(
+            function(data){
+                console.log('--uuiddd->');
+                 cbk(data);
+            });
+        );
+    }                  
+  );
+
   tSocket.getRoomClients();
   /*
   var getUniqueId = function(socket, cbk) {
