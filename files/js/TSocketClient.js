@@ -9,8 +9,7 @@
           console.log('--connnected-b->');
           console.log(this.socket.id);
           cbk();
-        }
-        
+        });
       }
                        
       this.getUniqueId = function(cbk) {
