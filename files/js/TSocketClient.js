@@ -5,14 +5,14 @@
 
       this.connection = function(url, cbk) {
         this.socket = io(url);
-        socket.on('connect', function(){
+        this.socket.on('connect', function(){
           console.log('--connnected-b->');
           console.log(this.socket.id);
           cbk();
         }
         
       }
-    
+                       
       this.getUniqueId = function(cbk) {
         this.socket.emit('askUniqueId'); 
         this.socket.on('uniqueId', function(data){
