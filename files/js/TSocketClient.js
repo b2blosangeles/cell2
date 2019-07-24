@@ -1,6 +1,5 @@
 (function () { 
   var obj =  function () {
-      var me = this;
       this.socket = null;
       
       this.events = {
@@ -19,9 +18,19 @@
                   console.log('<<<----- hubRoomCilents---');
           }
       }
-
-      this.setUpEvent = function () {
+    
+      this.emt = function (k, data) {
         var me = this;
+        me.socket.emit(k, data, (data) => {
+          alert('after emit');
+        }); 
+      }
+      
+      this.setUpEvent = function (key, func) {
+        var me = this;
+        if (key) {
+          me.events[key] =  func;
+        }
         for (var o in me.events) {
              me.socket.on(o, function() {
                   if (typeof me.events[o] === 'function') {
@@ -35,7 +44,6 @@
         me.socket = io(url);
         me.socket.on('connect', function(){
           if (typeof cbk == 'function') { 
-            alert(789);
             cbk();
           }    
         });
