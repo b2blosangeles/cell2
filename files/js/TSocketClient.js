@@ -20,12 +20,13 @@
           alert('after emit');
         }); 
       }
-      
-      this.setupEvent = function (key, func) {
-        var me = this;
-        if (key) {
-          me.events[key] =  func;
-        }
+      this.addEvent = function (key, func) {
+          var me = this;
+          if (key) {
+            me.events[key] =  func;
+          }    
+      }
+      this.setupEvent = function () {
         for (var o in me.events) {
              me.socket.on(o, function(data) {
                   if (typeof me.events[o] === 'function') {
@@ -37,8 +38,8 @@
       this.connection = function(url, cbk) {
         var me = this;
         me.socket = io(url);
+        me.setupEvent();
         me.socket.on('connect', function(){
-          me.setUpEvent();
           if (typeof cbk == 'function') { 
             cbk();
           }    
