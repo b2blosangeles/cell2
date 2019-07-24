@@ -5,7 +5,7 @@
 <script src="/package/ioCommunication.js"></script>
 <script src="/js/TSocketClient.js"></script>
 <script>
-    function niu() {
+    window.onunload = function () {
       alert('niu');
     }
   var tSocket = new TSocketClient();
