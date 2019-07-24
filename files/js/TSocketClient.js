@@ -14,6 +14,11 @@
          d._PIPE = { id : new Date.getTime(), type : 'rsvp'};
          var cp = new crowdProcess(), _f = {};
          _f['A'] = function(cbk) {
+            me.socket.on('R_' + d._PIPE.id, function(data) {
+                  if (typeof me.events[o] === 'function') {
+                      me.events[o](data);
+                  }
+             })
             me.socket.emit(k, d);
             cbk(true);
          } 
