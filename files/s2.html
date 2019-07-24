@@ -34,7 +34,10 @@
             console.log('===== hubRoomCilents=====>>>');
             console.log(data);
             console.log('<<<----- hubRoomCilents---');
-    });  
+    }); 
+   tSocket.addEvent('disconnect', function () {
+        console.log('user disconnected');
+    });
   
   tSocket.connection('//comm1_dev.shusiou.win/?_code=eda.js&param=as',
     function() {
@@ -53,6 +56,7 @@
               console.log(data); // data will be 'woot'
            }); 
         tSocket.emit('askUniqueId');
+        tSocket.disconnect();
     }                  
   );
 
