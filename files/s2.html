@@ -5,9 +5,6 @@
 <script src="/package/ioCommunication.js"></script>
 <script src="/js/TSocketClient.js"></script>
 <script>
-    window.onunload = function () {
-      alert('niu');
-    }
   var tSocket = new TSocketClient();
 
   tSocket.addEvent( 'hubRoomCilents', function(data){
@@ -126,14 +123,14 @@
          )
          */
 
-    window.addEventListener('unload', (event) => {
+    window.addEventListener('beforeunload', (event) => {
         tSocket.disConnect();
         console.log('You have unfinished changes!');
     });
 </script>
 <link rel="stylesheet" href="/package/Tao.css">
 </head>
-<body class="bg-secondary" onunload="niu()">
+<body class="bg-secondary">
 <div class="container bg-light">
   <div class="row">
     <div class="col-sm-12 p-0 pl-2 pr-2" id="topMenu"></div>
