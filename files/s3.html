@@ -4,15 +4,10 @@
 <head>  
     <title>HTML 5 Demo</title>  
       
-<script>    
-    function niu(a) {
-      alert('niu' + a);
-    }
-window.onbeforeunload = function(event) { alert(666) };
-</script> 
+
 </head>  
   
-<body onUnload="niu(1)" onload="niu()">  
+<body onUnload="niu(1)" >  
     <div class = "GFG" onClick="niu()">GeeksforGeeks</div>  
     <aside>  
         <div>A computer science portal for geeks</div>  
@@ -20,3 +15,12 @@ window.onbeforeunload = function(event) { alert(666) };
 </body>  
   
 </html>              
+<script>    
+    function niu(a) {
+      alert('niu' + a);
+    }
+window.addEventListener('beforeunload', (event) => {
+
+    alert('You have unfinished changes!');
+});
+</script> 
