@@ -6,9 +6,7 @@
     
       this.emit = function (k, data) {
         var me = this;
-        me.socket.emit(k, data, (data) => {
-          alert('after emit');
-        }); 
+        me.socket.emit(k, data); 
       }
       this.addEvent = function (key, func) {
           var me = this;
