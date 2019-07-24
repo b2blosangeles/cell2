@@ -10,9 +10,7 @@
       }
       this.addEvent = function (key, func) {
           var me = this;
-          if (key) {
-            me.events[key] =  func;
-          }    
+          if (key) me.events[key] =  func;  
       }
       this.setupEvent = function () {
         var me = this;
