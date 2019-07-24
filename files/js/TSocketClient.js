@@ -1,6 +1,6 @@
 (function () { 
   var obj =  function () {
-    
+      var me = this;
       this.socket = null;
       
       this.events = {
@@ -28,7 +28,7 @@
         me.socket = io(url);
         me.socket.on('connect', function(){
           if (typeof cbk == 'function') { 
-            alert(123);
+            alert(456);
             cbk();
           }    
         });
