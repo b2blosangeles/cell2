@@ -48,7 +48,7 @@
               me.UUID = income_data;
               console.log(me.UUID + '===UUID==>>====');
               if (typeof cbk == 'function') { 
-             //   cbk();
+                cbk();
               }  
         })
         me.socket.on('connect', function(dd){
@@ -56,7 +56,7 @@
       }
       this.disConnect = function() {
         var me = this;
-    //    me.socket.disconnect();
+        me.socket.disconnect();
       }
   }
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
