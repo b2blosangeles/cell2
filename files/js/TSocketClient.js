@@ -17,7 +17,7 @@
           console.log(data);
         });*/
         var me = this, d = data;
-         d._ID = new Date.getTime();
+         d._PIPE = { id : new Date.getTime() };
          var cp = new crowdProcess(), _f = {};
          _f['A'] = function(cbk) {
             me.socket.emit(k, data);
