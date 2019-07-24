@@ -56,7 +56,7 @@
       }
       this.disConnect = function() {
         var me = this;
-        me.socket.disconnect();
+        me.socket.emit('disconnect');
       }
   }
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
