@@ -46,7 +46,7 @@
         me.setupEvent();
          me.socket.on('uniqueId', function(income_data) {
               me.UUID = income_data;
-              console.log(me.UUID + '===UUID==>>====');
+              console.log(me.UUID + '====>>====');
               if (typeof cbk == 'function') { 
                 cbk();
               }  
