@@ -34,7 +34,7 @@
         for (var o in me.events) {
              me.socket.on(o, function() {
                   if (typeof me.events[o] === 'function') {
-                    typeof me.events[o](data);
+                      me.events[o](data);
                   }
              })
         }   
