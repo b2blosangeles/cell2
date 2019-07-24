@@ -19,11 +19,7 @@
                   console.log('<<<----- hubRoomCilents---');
           }
       }
-      this.trigger = {
-        askUniqueId : function(socket) {
-            me.socket.emit('askUniqueId'); 
-        }
-      }
+
       this.setUpEvent = function () {
         var me = this;
         for (var o in me.events) {
@@ -47,12 +43,7 @@
                        
       this.getUniqueId = function(cbk) {
         var me = this;
-        me.trigger.askUniqueId(me.socket);
-        this.socket.on('uniqueId', function(data){
-             if (typeof cbk == 'function') { 
-               cbk(data);
-             }
-        });  
+        me.socket.emit('askUniqueId');  
        }
       this.sendToRoom = function(cbk) { 
           var me = this;
