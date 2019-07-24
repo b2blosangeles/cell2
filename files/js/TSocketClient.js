@@ -11,12 +11,7 @@
                   console.log( decodeURIComponent(data.data.text));
                   console.log('<<<-----clientMessage---');
 
-             },
-          hubRoomCilents : function(data) {
-             console.log('===== hubRoomCilents=====>>>');
-                  console.log(data);
-                  console.log('<<<----- hubRoomCilents---');
-          }
+             }
       }
     
       this.emt = function (k, data) {
