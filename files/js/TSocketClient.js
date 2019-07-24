@@ -8,8 +8,14 @@
         var me = this;
         me.socket.emit(k, data); 
       }
-    
-      this.emitFlow = function (k, data) { // TODO
+
+      this.emitFlow = function (k, data) { 
+        var me = this;
+        /*
+        me.addEvent( 'hubRoomCilents', function(data){
+          console.log('--uuiddd->');
+          console.log(data);
+        });*/
         var me = this, d = data;
          d._ID = new Date.getTime();
          var cp = new crowdProcess(), _f = {};
