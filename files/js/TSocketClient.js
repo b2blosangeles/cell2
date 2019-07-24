@@ -14,7 +14,7 @@
              }
       }
     
-      this.emt = function (k, data) {
+      this.emit = function (k, data) {
         var me = this;
         me.socket.emit(k, data, (data) => {
           alert('after emit');
@@ -27,6 +27,7 @@
           }    
       }
       this.setupEvent = function () {
+        var me = this;
         for (var o in me.events) {
              me.socket.on(o, function(data) {
                   if (typeof me.events[o] === 'function') {
