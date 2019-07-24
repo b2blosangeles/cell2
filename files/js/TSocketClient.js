@@ -1,7 +1,6 @@
 (function () { 
   var obj =  function () {
       this.socket = null;
-      
       this.events = {}
     
       this.emit = function (k, data) {
@@ -45,7 +44,11 @@
         var me = this;
         me.socket = io(url);
         me.setupEvent();
+         me.socket.on('uniqueId', function(income_data) {
+              me.UUID = income_data;
+        })
         me.socket.on('connect', function(){
+          console.log(me.UUID + '===UUID======');
           if (typeof cbk == 'function') { 
             cbk();
           }    
