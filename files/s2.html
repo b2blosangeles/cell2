@@ -38,9 +38,20 @@
   
   tSocket.connection('//comm1_dev.shusiou.win/?_code=eda.js&param=as',
     function() {
-        tSocket.socket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {
-          alert(123);
-        }); 
+        tSocket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {
+        });
+        tSocket.emit('clientRequest', {
+                cmd : 'sendToRoom',
+                room : 'NNBB',
+                data : {
+                  client_id : 1,
+                  user_name : 'John Xu',
+                  text : encodeURIComponent('how are you')
+                }
+              }, (data) => {
+              console.log("--sendToRoom------"); // data will be 'woot'
+              console.log(data); // data will be 'woot'
+           }); 
     }                  
   );
 
