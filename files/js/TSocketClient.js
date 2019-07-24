@@ -59,7 +59,7 @@
       }
       this.disConnect = function() {
         var me = this;
-        me.socket.disconnect();
+    //    me.socket.disconnect();
       }
   }
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
