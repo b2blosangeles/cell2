@@ -10,7 +10,7 @@
       }
       this.trigger = {
         askUniqueId : function(socket) {
-            this.socket.emit('askUniqueId'); 
+            me.socket.emit('askUniqueId'); 
         }
       }
       this.setUpEvent = function () {
@@ -28,7 +28,7 @@
         me.socket = io(url);
         me.socket.on('connect', function(){
           if (typeof cbk == 'function') { 
-            alert(456);
+            alert(789);
             cbk();
           }    
         });
