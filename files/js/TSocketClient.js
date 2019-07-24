@@ -56,7 +56,7 @@
       }
       this.disConnect = function() {
         var me = this;
-        me.socket.close();
+      //  me.socket.close();
        // me.socket.emit('disconnect');
       }
   }
