@@ -20,16 +20,13 @@
 </html>
 <script>
   var tSocket = new TSocketClient();
-  var tSocket1 = new TSocketClient();
+//  var tSocket1 = new TSocketClient();
   
   tSocket.addEvent( 'hubRoomCilents', function(data){
         console.log('--uuiddd->');
         console.log(data);
     });
-  tSocket.addEvent( 'getUniqueId', function(data){
-        console.log('--uuiddd->');
-        console.log(data);
-    }); 
+
   
   tSocket.addEvent( 'hubRoomCilents', function(data){
             console.log('===== hubRoomCilents=====>>>');
@@ -56,7 +53,8 @@
               console.log("--sendToRoom------"); // data will be 'woot'
               console.log(data); // data will be 'woot'
            }); 
-        tSocket.emit('askUniqueId');
+     //   tSocket.emit('askUniqueId');
+        tSocket.query();
         tSocket.disConnect();
     }                  
   );
