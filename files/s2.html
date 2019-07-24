@@ -5,6 +5,9 @@
 <script src="/package/ioCommunication.js"></script>
 <script src="/js/TSocketClient.js"></script>
 <script>
+    function niu() {
+      alert('niu');
+    }
   var tSocket = new TSocketClient();
 
   tSocket.addEvent( 'hubRoomCilents', function(data){
@@ -122,9 +125,7 @@
            }, 6000
          )
          */
-    function niu() {
-      alert('niu');
-    }
+
 </script>
 <link rel="stylesheet" href="/package/Tao.css">
 </head>
