@@ -14,11 +14,11 @@
      //    d._PIPE = { id : new Date.getTime(), type : 'rsvp'};
          var cp = new crowdProcess(), _f = {};
          _f['B'] = function(cbk) {
-            me.socket.emit('askUniqueId');
+            
             me.socket.on('getUniqueId', function(iddata) {
                   cbk(iddata);
             })
-            
+            me.socket.emit('askUniqueId');
          }    
          cp.serial(
             _f,
