@@ -26,7 +26,7 @@
         }); 
       }
       
-      this.setUpEvent = function (key, func) {
+      this.setupEvent = function (key, func) {
         var me = this;
         if (key) {
           me.events[key] =  func;
