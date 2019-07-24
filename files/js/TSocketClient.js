@@ -45,14 +45,14 @@
         me.socket = io(url);
         me.setupEvent();
          me.socket.on('uniqueId', function(income_data) {
-              me.UUID = income_data;
-           console.log(me.UUID);
-              if (typeof cbk == 'function') { 
-            //    cbk();
-              }  
-        })
+             me.UUID = income_data;
+             console.log(me.UUID);
+             if (typeof cbk == 'function') { 
+                cbk();
+             }  
+        });/*
         me.socket.on('connect', function(dd){
-        });
+        });*/
       }
       this.disConnect = function() {
         var me = this;
