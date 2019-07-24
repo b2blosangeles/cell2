@@ -15,7 +15,7 @@
          var cp = new crowdProcess(), _f = {};
          _f['B'] = function(cbk) {
             
-            me.socket.on('getUniqueId', function(iddata) {
+            me.socket.on('uniqueId', function(iddata) {
                   cbk('iddata');
             })
             me.socket.emit('askUniqueId');
