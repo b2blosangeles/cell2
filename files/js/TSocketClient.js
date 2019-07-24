@@ -11,11 +11,16 @@
     
       this.emitFlow = function (k, data) { // TODO
         var me = this, d = data;
-        d._ID = new Date.getTime();
+         d._ID = new Date.getTime();
          var cp = new crowdProcess(), _f = {};
          _f['A'] = function(cbk) {
+            me.socket.emit(k, data);
             cbk(true);
-         }      
+         } 
+         _f['B'] = function(cbk) {
+            me.socket.emit(k, data);
+            cbk(true);
+         }    
          cp.serial(
             _f,
            function() {
@@ -23,7 +28,6 @@
            }, 6000
          )
         
-        me.socket.emit(k, data); 
       }
       this.addEvent = function (key, func) {
           var me = this;
