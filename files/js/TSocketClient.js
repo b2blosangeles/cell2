@@ -47,40 +47,6 @@
         });
       }
                        
-      this.getUniqueId = function(cbk) {
-        var me = this;
-        me.socket.emit('askUniqueId');  
-       }
-      this.sendToRoom = function(cbk) { 
-          var me = this;
-          me.socket.emit('clientRequest', {
-                cmd : 'sendToRoom',
-                room : 'NNBB',
-                data : {
-                  client_id : 1,
-                  user_name : 'John Xu',
-                  text : encodeURIComponent('how are you')
-                }
-              }, (data) => {
-                console.log(data); // data will be 'woot'
-              });
-      }
-      this.sendToRoom = function(cbk) { 
-          var me = this;
-          me.socket.emit('clientRequest', {
-                cmd : 'sendToRoom',
-                room : 'NNBB',
-                data : {
-                  client_id : 1,
-                  user_name : 'John Xu',
-                  text : encodeURIComponent('how are you')
-                }
-              }, (data) => {
-              console.log("--sendToRoom------"); // data will be 'woot'
-              console.log(data); // data will be 'woot'
-           });
-      }
-    
       this.getRoomClients = function(cbk) { 
           var me = this;
           me.socket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {}); 
