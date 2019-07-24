@@ -20,14 +20,24 @@
 </html>
 <script>
   var tSocket = new TSocketClient();
+  
+  tSocket.setupEvent( 'hubRoomCilents', function(data){
+        console.log('--uuiddd->');
+        console.log(data);
+    });
+  tSocket.setupEvent( 'getUniqueId', function(data){
+        console.log('--uuiddd->');
+        console.log(data);
+    }); 
+  
+  tSocket.setupEvent( 'hubRoomCilents', function(data){
+            console.log('===== hubRoomCilents=====>>>');
+            console.log(data);
+            console.log('<<<----- hubRoomCilents---');
+    });  
+  
   tSocket.connection('//comm1_dev.shusiou.win/?_code=eda.js&param=as',
     function() {
-        tSocket.getUniqueId(
-            function(data){
-                console.log('--uuiddd->');
-                console.log(data);
-            });
-
         tSocket.getRoomClients(function(data){
             console.log('---hubRoomCilents--->');
             console.log(data);
