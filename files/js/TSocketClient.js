@@ -11,10 +11,8 @@
 
       this.query = function (k, data) { 
          me = this, d = data;
-     //    d._PIPE = { id : new Date.getTime(), type : 'rsvp'};
          var cp = new crowdProcess(), _f = {};
-         _f['B'] = function(cbk) {
-            
+         _f['A'] = function(cbk) {
             me.socket.on('uniqueId', function(iddata) {
                   cbk(iddata);
             })
