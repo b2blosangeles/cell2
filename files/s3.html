@@ -5,14 +5,14 @@
     <title>HTML 5 Demo</title>  
       
 <script>    
-    function niu() {
-      alert('niu');
+    function niu(a) {
+      alert('niu' + a);
     }
 
 </script> 
 </head>  
   
-<body onunload="niu()" onload="niu()">  
+<body onUnload="niu(1)" onload="niu()">  
     <div class = "GFG" onClick="niu()">GeeksforGeeks</div>  
     <aside>  
         <div>A computer science portal for geeks</div>  
