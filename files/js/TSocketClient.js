@@ -2,7 +2,10 @@
   var obj =  function () {
       this.socket = null;
       
-      this.events = {}
+      this.events = {
+           socket.on('disconnect', function(){
+            });
+      }
     
       this.emit = function (k, data) {
         var me = this;
@@ -32,6 +35,10 @@
             cbk();
           }    
         });
+      }
+      this.disConnect = function() {
+        var me = this;
+        me.socket.disconnect();
       }
   }
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
