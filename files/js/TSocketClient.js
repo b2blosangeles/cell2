@@ -8,6 +8,12 @@
         var me = this;
         me.socket.emit(k, data); 
       }
+    
+      this.emitFlow = function (k, data) {
+        var me = this, d = data;
+        d._ID = new Date.getTime();
+        me.socket.emit(k, data); 
+      }
       this.addEvent = function (key, func) {
           var me = this;
           if (key) me.events[key] =  func;  
