@@ -10,17 +10,11 @@
       }
 
       this.emitFlow = function (k, data) { 
-        var me = this;
-        /*
-        me.addEvent( 'hubRoomCilents', function(data){
-          console.log('--uuiddd->');
-          console.log(data);
-        });*/
-        var me = this, d = data;
-         d._PIPE = { id : new Date.getTime() };
+         me = this, d = data;
+         d._PIPE = { id : new Date.getTime(), type : 'rsvp'};
          var cp = new crowdProcess(), _f = {};
          _f['A'] = function(cbk) {
-            me.socket.emit(k, data);
+            me.socket.emit(k, d);
             cbk(true);
          } 
          _f['B'] = function(cbk) {
