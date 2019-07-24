@@ -48,7 +48,7 @@
               me.UUID = income_data;
            console.log(me.UUID);
               if (typeof cbk == 'function') { 
-                cbk();
+            //    cbk();
               }  
         })
         me.socket.on('connect', function(dd){
