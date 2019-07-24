@@ -32,7 +32,7 @@
       this.setupEvent = function () {
         var me = this;
         for (var o in me.events) {
-             me.socket.off(o);
+          //   me.socket.off(o);
              me.socket.on(o, function(data) {
                   if (typeof me.events[o] === 'function') {
                       me.events[o](data);
