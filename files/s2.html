@@ -36,7 +36,7 @@
         console.log('user disconnected');
     });
   
-  tSocket.connection('//comm1_dev.shusiou.win/?_code=eda.js&param=as',
+  tSocket.connection('//comm1_dev.shusiou.win:8080/?_code=eda.js&param=as',
     function() {
     
         tSocket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {
