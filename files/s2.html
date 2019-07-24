@@ -125,7 +125,9 @@
            }, 6000
          )
          */
-
+window.addEventListener('beforeunload', (event) => {
+     tSocket.disConnect();
+});
 </script>
 <link rel="stylesheet" href="/package/Tao.css">
 </head>
