@@ -11,25 +11,22 @@
 
       this.query = function (k, data) { 
          me = this, d = data;
-         d._PIPE = { id : new Date.getTime(), type : 'rsvp'};
+     //    d._PIPE = { id : new Date.getTime(), type : 'rsvp'};
          var cp = new crowdProcess(), _f = {};
          _f['A'] = function(cbk) {
-            me.socket.on('R_' + d._PIPE.id, function(data) {
-                  if (typeof me.events[o] === 'function') {
-                      me.events[o](data);
-                  }
+            me.socket.on('getUniqueId', function(data) {
+                  cbk(data)
              })
-            me.socket.emit(k, d);
             cbk(true);
          } 
          _f['B'] = function(cbk) {
-            me.socket.emit(k, data);
+          //  me.socket.emit('getUniqueId');
             cbk(true);
          }    
          cp.serial(
             _f,
-           function() {
-             alert('TSocketClient2');
+           function(data) {
+             alert(JSON.stringify(data));
            }, 6000
          )
         
