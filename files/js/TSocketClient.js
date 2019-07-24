@@ -32,7 +32,7 @@
           me.events[key] =  func;
         }
         for (var o in me.events) {
-             me.socket.on(o, function() {
+             me.socket.on(o, function(data) {
                   if (typeof me.events[o] === 'function') {
                       me.events[o](data);
                   }
