@@ -21,16 +21,16 @@
 <script>
   var tSocket = new TSocketClient();
   
-  tSocket.setupEvent( 'hubRoomCilents', function(data){
+  tSocket.addEvent( 'hubRoomCilents', function(data){
         console.log('--uuiddd->');
         console.log(data);
     });
-  tSocket.setupEvent( 'getUniqueId', function(data){
+  tSocket.addEvent( 'getUniqueId', function(data){
         console.log('--uuiddd->');
         console.log(data);
     }); 
   
-  tSocket.setupEvent( 'hubRoomCilents', function(data){
+  tSocket.addEvent( 'hubRoomCilents', function(data){
             console.log('===== hubRoomCilents=====>>>');
             console.log(data);
             console.log('<<<----- hubRoomCilents---');
