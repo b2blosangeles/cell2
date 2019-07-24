@@ -37,8 +37,8 @@
       this.connection = function(url, cbk) {
         var me = this;
         me.socket = io(url);
-        me.setUpEvent();
         me.socket.on('connect', function(){
+          me.setUpEvent();
           if (typeof cbk == 'function') { 
             cbk();
           }    
