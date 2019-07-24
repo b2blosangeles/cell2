@@ -4,9 +4,20 @@
       this.socket = null;
       
       this.events = {
-        uniqueId : function(data){
-          alert('--uniqueId---');
-        }
+          uniqueId : function(data){
+            alert('--uniqueId---');
+          },
+          clientMessage : function(data){
+                  console.log('=====clientMessage=====>>>');
+                  console.log( decodeURIComponent(data.data.text));
+                  console.log('<<<-----clientMessage---');
+
+             },
+          hubRoomCilents : function(data) {
+             console.log('===== hubRoomCilents=====>>>');
+                  console.log(data);
+                  console.log('<<<----- hubRoomCilents---');
+          }
       }
       this.trigger = {
         askUniqueId : function(socket) {
@@ -68,26 +79,14 @@
                   text : encodeURIComponent('how are you')
                 }
               }, (data) => {
-                console.log(data); // data will be 'woot'
-              });
-        
-           me.socket.on('clientMessage', function(data){
-                console.log('=====clientMessage=====>>>');
-                console.log( decodeURIComponent(data.data.text));
-                console.log('<<<-----clientMessage---');
-
+              console.log("--sendToRoom------"); // data will be 'woot'
+              console.log(data); // data will be 'woot'
            });
       }
     
       this.getRoomClients = function(cbk) { 
           var me = this;
           me.socket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {}); 
-          me.socket.on('hubRoomCilents', function(data){
-             if (typeof cbk == 'function') { 
-               cbk(data);
-             }           
-          })
-   
           /*
           var cp = new crowdProcess(), _f = {};
          _f['A'] = function(cbk) {
