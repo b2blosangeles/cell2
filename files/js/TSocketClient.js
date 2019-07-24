@@ -46,15 +46,12 @@
         me.setupEvent();
          me.socket.on('uniqueId', function(income_data) {
               me.UUID = income_data;
-              console.log(me.UUID + '===UUID======');
+              console.log(me.UUID + '===UUID==>>====');
               if (typeof cbk == 'function') { 
-                cbk();
+             //   cbk();
               }  
         })
         me.socket.on('connect', function(dd){
-          console.log('--->>dd');
-          console.log(dd);
-  
         });
       }
       this.disConnect = function() {
