@@ -2,19 +2,41 @@
   var obj =  function () {
     
       this.socket = null;
-
+      
+      this.events = {
+        uniqueId : function(data){
+          alert('--uniqueId---');
+        }
+      }
+      this.trigger = {
+        askUniqueId : function(socket) {
+            this.socket.emit('askUniqueId'); 
+        }
+      }
+      this.setUpEvent = function () {
+        var me = this;
+        for (var o in me.events) {
+             me.socket.on(o, function() {
+                  if (typeof me.events[o] === 'function') {
+                    typeof me.events[o](data);
+                  }
+             })
+        }   
+      }
       this.connection = function(url, cbk) {
         var me = this;
         me.socket = io(url);
         me.socket.on('connect', function(){
           if (typeof cbk == 'function') { 
+            alert(123);
             cbk();
           }    
         });
       }
                        
       this.getUniqueId = function(cbk) {
-        this.socket.emit('askUniqueId'); 
+        var me = this;
+        me.trigger.askUniqueId(me.socket);
         this.socket.on('uniqueId', function(data){
              if (typeof cbk == 'function') { 
                cbk(data);
