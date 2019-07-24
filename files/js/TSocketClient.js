@@ -13,15 +13,15 @@
          me = this, d = data;
          var cp = new crowdProcess(), _f = {};
          _f['A'] = function(cbk) {
-            me.socket.on('uniqueId', function(iddata) {
-                  cbk(iddata);
+            me.socket.on('uniqueId', function(income_data) {
+                  cbk(income_data);
             })
             me.socket.emit('askUniqueId');
          }    
          cp.serial(
             _f,
            function(data) {
-             alert(JSON.stringify(data));
+             console.log(data);
            }, 6000
          )
         
