@@ -16,7 +16,7 @@
          _f['B'] = function(cbk) {
             
             me.socket.on('uniqueId', function(iddata) {
-                  cbk('iddata');
+                  cbk(iddata);
             })
             me.socket.emit('askUniqueId');
          }    
