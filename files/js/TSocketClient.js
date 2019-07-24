@@ -2,10 +2,7 @@
   var obj =  function () {
       this.socket = null;
       
-      this.events = {
-           socket.on('disconnect', function(){
-            });
-      }
+      this.events = {}
     
       this.emit = function (k, data) {
         var me = this;
