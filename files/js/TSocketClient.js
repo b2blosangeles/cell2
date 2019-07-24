@@ -9,7 +9,7 @@
         me.socket.emit(k, data); 
       }
 
-      this.emitFlow = function (k, data) { 
+      this.query = function (k, data) { 
          me = this, d = data;
          d._PIPE = { id : new Date.getTime(), type : 'rsvp'};
          var cp = new crowdProcess(), _f = {};
