@@ -11,9 +11,9 @@
         if (data.code === 'joinRoom') {
             console.log( 'Welcome ' +  data.client_id);
         } else {
-          console.log('=====clientMessage=====>>>');
-          console.log( decodeURIComponent(data.text));
-          console.log('<<<-----clientMessage---');
+          var obj = JSON.parse(decodeURIComponent(data.data))
+          console.log( decodeURIComponent(obj.text));
+          console.log('<<<-------');
         }
       });
 
@@ -35,7 +35,7 @@
   tSocket.connection('//comm2_dev.shusiou.win/?_code=eda.js&param=as',
     function() {
         tSocket.joinRoom('PPQ', 'a1');
-        tSocket.sendToRoom('PPQ', 'a1', '学得很快!');
+        tSocket.sendToRoom('PPQ', 'a1', {text : '学得很快!'});
           
        // tSocket.query();
       //  tSocket.disConnect();
