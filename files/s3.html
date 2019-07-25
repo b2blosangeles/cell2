@@ -13,7 +13,6 @@
         } else {
           var obj = JSON.parse(decodeURIComponent(data.data))
           console.log(obj.text);
-          console.log('<<<-------');
         }
       });
 
@@ -35,7 +34,7 @@
   tSocket.connection('//comm2_dev.shusiou.win/?_code=eda.js&param=as',
     function() {
         tSocket.joinRoom('PPQ', 'a1');
-        tSocket.sendToRoom('PPQ', 'a1', {text : '学得很快!'});
+        tSocket.sendToRoom('PPQ', {text : '学得很快!'});
           
        // tSocket.query();
       //  tSocket.disConnect();
