@@ -11,7 +11,7 @@
       this.joinRoom = function (room, id) { 
          me = this, d = data;
          me.socket.emit('clientRequest', {
-                cmd : 'joinToRoom',
+                cmd : 'sendToRoom',
                 room : room,
                 data : {
                   client_id : 1,
