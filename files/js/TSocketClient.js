@@ -8,21 +8,20 @@
         me.socket.emit(k, data); 
       }
 
-      this.query = function (k, data) { 
+      this.joinRoom = function (room, id) { 
          me = this, d = data;
-         var cp = new crowdProcess(), _f = {};
-         _f['A'] = function(cbk) {
-            me.socket.on('uniqueId', function(income_data) {
-                  cbk(income_data);
-            })
-            me.socket.emit('askUniqueId');
-         }    
-         cp.serial(
-            _f,
-           function(data) {
-             console.log(data);
-           }, 6000
-         )
+         me.socket.emit('clientRequest', {
+                cmd : 'joinToRoom',
+                room : room,
+                data : {
+                  client_id : 1,
+                  user_name : 'John Xu',
+                  text : encodeURIComponent('how are you')
+                }
+              }, (data) => {
+              console.log("--sendToRoom------"); // data will be 'woot'
+              console.log(data); // data will be 'woot'
+           }); 
         
       }
     
