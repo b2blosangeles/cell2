@@ -28,7 +28,7 @@
     
       this.setClientId = function (v) {
           var me = this;
-          me.socket.emit('setClientId', v);
+       //   me.socket.emit('setClientId', v);
       }
     
       this.addEvent = function (key, func) {
