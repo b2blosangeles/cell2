@@ -14,9 +14,8 @@
                 cmd : 'sendToRoom',
                 room : room,
                 data : {
-                  client_id : 1,
-                  user_name : 'John Xu',
-                  text : encodeURIComponent('how are you')
+                  client_id : id,
+                  code : 'joinRoom
                 }
               }, (data) => {
               console.log("--sendToRoom------"); // data will be 'woot'
