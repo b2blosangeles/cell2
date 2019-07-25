@@ -44,7 +44,7 @@
                   if (typeof me.events[o] === 'function') {
                       me.events[o](data);
                   }
-             })(o))
+             }})(o))
         }   
       }
       this.connection = function(url, cbk) {
