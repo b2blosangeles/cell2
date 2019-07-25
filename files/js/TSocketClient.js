@@ -34,7 +34,7 @@
       this.addEvent = function (key, func) {
           var me = this;
           if (key) me.events[key] =  func;  
-          me.setupEvent();
+          if (me.socket) me.setupEvent();
       }
       this.setupEvent = function () {
         var me = this;
