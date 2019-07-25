@@ -15,7 +15,7 @@
                 room : room,
                 data : {
                   client_id : id,
-                  code : 'joinRoom
+                  code : 'joinRoom'
                 }
               }, (data) => {
               console.log("--sendToRoom------"); // data will be 'woot'
