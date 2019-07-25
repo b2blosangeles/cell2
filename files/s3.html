@@ -108,11 +108,11 @@
 */
 function getRoomClients() {
     tSocket.setClientId('niuB');
-    setTimeout(
-      function() {
+   // setTimeout(
+   //   function() {
             tSocket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'});
-      }, 2000
-    );
+   //   }, 2000
+  //  );
 
 }
 
