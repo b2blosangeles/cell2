@@ -19,14 +19,13 @@
                 }
               });
       }
-      
-      this.sendToRoom = function (room, id, data) { 
+      this.sendToRoom = function (room, data, id) { 
          me = this;
          me.socket.emit('clientRequest', {
                 cmd : 'sendToRoom',
                 room : room,
                 data : {
-                  client_id : id,
+                  client_id : (id) ? id : null,
                   code : 'sendData',
                   data : encodeURIComponent(JSON.stringify(data))
                 }
