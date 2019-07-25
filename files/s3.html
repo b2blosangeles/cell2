@@ -12,7 +12,7 @@
             console.log( 'Welcome ' +  data.client_id);
         } else {
           var obj = JSON.parse(decodeURIComponent(data.data))
-          console.log( decodeURIComponent(obj.text));
+          console.log(obj.text);
           console.log('<<<-------');
         }
       });
