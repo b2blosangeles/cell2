@@ -16,7 +16,7 @@
 
    tSocket.addEvent('disconnect', function (data) {
 
-        console.log('user disconnected-->');
+        console.log('user disconnected==>' + tSocket.socket.id);
         console.log(data);
         console.log('<--user disconnected');
     });
