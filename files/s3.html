@@ -7,10 +7,12 @@
 <script>
   var tSocket = new TSocketClient();
 
-  tSocket.addEvent( 'hubRoomCilents', function(data){
-        console.log('--uuiddd->');
-        console.log(data);
-    });
+    tSocket.addEvent('clientMessage', function(data){
+          console.log('=====clientMessage=====>>>');
+          console.log( decodeURIComponent(data.data.text));
+          console.log('<<<-----clientMessage---');
+      
+      });
 
   
 
