@@ -20,7 +20,7 @@
               });
       }
       
-      this.sendToRoom = function (room, id, text) { 
+      this.sendToRoom = function (room, id, data) { 
          me = this;
          me.socket.emit('clientRequest', {
                 cmd : 'sendToRoom',
@@ -28,7 +28,7 @@
                 data : {
                   client_id : id,
                   code : 'sendData',
-                  text : encodeURIComponent(text)
+                  data : encodeURIComponent(JSON.stringify(data))
                 }
               });
       }
