@@ -9,7 +9,7 @@
       }
 
       this.joinRoom = function (room, id) { 
-         me = this, d = data;
+         me = this;
          me.socket.emit('clientRequest', {
                 cmd : 'sendToRoom',
                 room : room,
