@@ -31,7 +31,7 @@
  
   tSocket.connection('//comm2_dev.shusiou.win/?_code=eda.js&param=as',
     function() {
-    
+        tSocket.joinRoom('PPQ', 'a1');
         
     /*
         tSocket.emit('clientRequest', {
@@ -116,7 +116,7 @@ function getRoomClients() {
     tSocket.setClientId('niuB');
    // setTimeout(
    //   function() {
-            tSocket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'});
+            tSocket.emit('clientRequest', {cmd: 'roomClients', room : 'PPQ'});
    //   }, 2000
   //  );
 
