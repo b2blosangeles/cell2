@@ -20,6 +20,8 @@
     }); 
  
    tSocket.addEvent('disconnect', function (data) {
+
+        console.log('user disconnected-->');
         console.log(data);
         console.log('user disconnected');
     });
