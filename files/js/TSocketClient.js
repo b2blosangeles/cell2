@@ -17,12 +17,21 @@
                   client_id : id,
                   code : 'joinRoom'
                 }
-              }, (data) => {
-              console.log("--sendToRoom------"); // data will be 'woot'
-              console.log(data); // data will be 'woot'
-           });
+              });
       }
-    
+      
+      this.sendToRoom = function (room, id, text) { 
+         me = this;
+         me.socket.emit('clientRequest', {
+                cmd : 'sendToRoom',
+                room : room,
+                data : {
+                  client_id : id,
+                  code : 'sendData',
+                  text : encodeURIComponent(text)
+                }
+              });
+      }
       this.setClientId = function (v) {
           var me = this;
           me.socket.emit('setClientId', v);
