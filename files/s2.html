@@ -7,42 +7,33 @@
 <script>
   var tSocket = new TSocketClient();
 
-  tSocket.addEvent( 'hubRoomCilents', function(data){
-        console.log('--uuiddd->');
+    tSocket.addEvent('clientMessage', function(data){
+        if (data.code === 'joinRoom') {
+            console.log( 'Welcome ' +  data.client_id);
+        } else {
+          var obj = JSON.parse(decodeURIComponent(data.data))
+          console.log(obj.text);
+        }
+      });
+
+   tSocket.addEvent('disconnect', function (data) {
+
+        console.log('user disconnected==>' + tSocket.socket.id);
         console.log(data);
+        console.log('<--user disconnected');
     });
 
-  
-  tSocket.addEvent( 'hubRoomCilents', function(data){
+    tSocket.addEvent( 'hubRoomCilents', function(data){
             console.log('===== hubRoomCilents=====>>>');
             console.log(data);
             console.log('<<<----- hubRoomCilents---');
     }); 
  
-   tSocket.addEvent('disconnect', function (data) {
-        console.log(data);
-        console.log('user disconnected');
-    });
- 
-  tSocket.connection('//comm1_dev.shusiou.win/?_code=eda.js&param=as',
+  tSocket.connection('//comm2_dev.shusiou.win/?_code=eda.js&param=as',
     function() {
-    
-        tSocket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {
-        });
-    /*
-        tSocket.emit('clientRequest', {
-                cmd : 'sendToRoom',
-                room : 'NNBB',
-                data : {
-                  client_id : 1,
-                  user_name : 'John Xu',
-                  text : encodeURIComponent('how are you')
-                }
-              }, (data) => {
-              console.log("--sendToRoom------"); // data will be 'woot'
-              console.log(data); // data will be 'woot'
-           }); 
-      */     
+        tSocket.joinRoom('PPQ', 'a2');
+        tSocket.sendToRoom('PPQ', {text : 'Thanks!'});
+          
        // tSocket.query();
       //  tSocket.disConnect();
     }                  
@@ -107,31 +98,26 @@
     
   });
 */
-  /*
-  socket.on('disconnect', function(){
-    clients = {NNBB : []};
-  });
-  */
-          /*
-          var cp = new crowdProcess(), _f = {};
-         _f['A'] = function(cbk) {
-            cbk(true);
-         }      
-         cp.serial(
-            _f,
-           function() {
-             alert('TSocketClient2');
-           }, 6000
-         )
-         */
+function getRoomClients() {
+    tSocket.setupEvent();
+    tSocket.setClientId('niuB');
+   // setTimeout(
+   //   function() {
+            tSocket.emit('clientRequest', {cmd: 'roomClients', room : 'PPQ'});
+   //   }, 2000
+  //  );
+
+}
 
 </script>
 <link rel="stylesheet" href="/package/Tao.css">
 </head>
-<body class="bg-secondary">
+<body>
 <div class="container bg-light">
   <div class="row">
-    <div class="col-sm-12 p-0 pl-2 pr-2" id="topMenu"></div>
+    <div class="col-sm-12 p-0 pl-2 pr-2" id="topMenu">
+      <a href="javascript:void(0)" onClick="getRoomClients()">getRoomClient</a>
+    </div>
   </div>
   <div class="row">
     <div class="col-sm-3 p-0 pl-2 pr-1" id="leftBox"></div>
