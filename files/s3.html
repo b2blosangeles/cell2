@@ -27,8 +27,7 @@
   tSocket.connection('//comm2_dev.shusiou.win/?_code=eda.js&param=as',
     function() {
     
-        tSocket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {
-        });
+        
     /*
         tSocket.emit('clientRequest', {
                 cmd : 'sendToRoom',
@@ -107,31 +106,20 @@
     
   });
 */
-  /*
-  socket.on('disconnect', function(){
-    clients = {NNBB : []};
-  });
-  */
-          /*
-          var cp = new crowdProcess(), _f = {};
-         _f['A'] = function(cbk) {
-            cbk(true);
-         }      
-         cp.serial(
-            _f,
-           function() {
-             alert('TSocketClient2');
-           }, 6000
-         )
-         */
+function getRoomClients() {
+    tSocket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {
+        });
+}
 
 </script>
 <link rel="stylesheet" href="/package/Tao.css">
 </head>
-<body class="bg-secondary">
+<body>
 <div class="container bg-light">
   <div class="row">
-    <div class="col-sm-12 p-0 pl-2 pr-2" id="topMenu"></div>
+    <div class="col-sm-12 p-0 pl-2 pr-2" id="topMenu">
+      <a href="JavaScript :void(0)" onClick="getRoomClients()">getRoomClient</a>
+    </div>
   </div>
   <div class="row">
     <div class="col-sm-3 p-0 pl-2 pr-1" id="leftBox"></div>
