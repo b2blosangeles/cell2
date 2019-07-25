@@ -25,6 +25,12 @@
          )
         
       }
+    
+      this.setClientId = function (v) {
+          var me = this;
+          me.socket.emit('setClientId', v);
+      }
+    
       this.addEvent = function (key, func) {
           var me = this;
           if (key) me.events[key] =  func;  
