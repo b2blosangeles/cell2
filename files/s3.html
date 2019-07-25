@@ -107,6 +107,7 @@
   });
 */
 function getRoomClients() {
+    tSocket.setClientId('niuB');
     tSocket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {
         });
 }
