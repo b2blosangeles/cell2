@@ -20,8 +20,7 @@
               }, (data) => {
               console.log("--sendToRoom------"); // data will be 'woot'
               console.log(data); // data will be 'woot'
-           }); 
-        
+           });
       }
     
       this.setClientId = function (v) {
