@@ -1,6 +1,8 @@
 (function () { 
   var obj =  function () {
+      var _ROOT = this;
       this.socket = null;
+      this._clients = {}
       this.events = { 
         roomCilents : function(data){
                 for (o in data) {
@@ -77,6 +79,11 @@
         var me = this;
       //  me.socket.close();
        // me.socket.emit('disconnect');
+      }
+    
+      this.getRoomClients = function (v) {
+          var me = this;
+          
       }
   }
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
