@@ -47,7 +47,7 @@
              me.socket.off(o);
              me.socket.on(o, (function(o) { return function(data) {
                   if (typeof me.events[o] === 'function') {
-                      me.events[o](data.data);
+                      me.events[o](data);
                   }
              }})(o))
         }   
