@@ -8,32 +8,32 @@
         me.socket.emit(k, data); 
       }
 
-      this.joinRoom = function (room, client_info) { 
+      this.joinRoom = function (room, clientInfo) { 
          me = this;
          me.socket.emit('clientRequest', {
-                cmd     : 'sendToRoom',
-                room    : room,
-                client  : client_info,
-                data    : {
-                  code  : 'joinRoom'
+                cmd         : 'sendToRoom',
+                room        : room,
+                clientInfo  : clientInfo,
+                data        : {
+                        code  : 'joinRoom'
+                  }
+              });
+      }
+      this.sendToRoom = function (room, data, clientInfo) { 
+         me = this;
+         me.socket.emit('clientRequest', {
+                cmd         : 'sendToRoom',
+                room        : room,
+                clientInfo  : clientInfo,
+                data        : {
+                        code      : 'sendData',
+                        data      : encodeURIComponent(JSON.stringify(data))
                 }
               });
       }
-      this.sendToRoom = function (room, data, client_info) { 
-         me = this;
-         me.socket.emit('clientRequest', {
-                cmd     : 'sendToRoom',
-                room    : room,
-                client  : client_info,
-                data    : {
-                  code      : 'sendData',
-                  data      : encodeURIComponent(JSON.stringify(data))
-                }
-              });
-      }
-      this.setClientId = function (v) {
+      this.setClientInfo = function (v) {
           var me = this;
-          me.socket.emit('setClientId', v);
+          me.socket.emit('setClientInfo', v);
       }
     
       this.addEvent = function (key, func) {
