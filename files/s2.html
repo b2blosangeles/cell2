@@ -24,7 +24,7 @@
         console.log('<--user disconnected');
     });
 
-    tSocket.addEvent( 'hubRoomCilents', function(data){
+    tSocket.addEvent( 'roomCilents', function(data){
           for (o in data) {
             data[o] = (data[o]) ?  JSON.parse(decodeURIComponent(data[o])) : {};
           }
