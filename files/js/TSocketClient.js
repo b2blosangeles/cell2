@@ -85,7 +85,7 @@
     
       this.getRoomClients = function (v) {
           var me = this;
-          
+          me.emit('clientRequest', {cmd: 'roomClients', room : v, request_id : new Date().getTime()});
       }
   }
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
