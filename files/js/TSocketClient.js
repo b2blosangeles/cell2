@@ -13,9 +13,10 @@
          me.socket.emit('clientRequest', {
                 cmd         : 'sendToRoom',
                 room        : room,
-                clientInfo  : clientInfo,
                 data        : {
-                        code  : 'joinRoom'
+                        code        : 'joinRoom',
+                        clientInfo  : encodeURIComponent(JSON.stringify(clientInfo))
+                        
                   }
               });
       }
@@ -24,10 +25,10 @@
          me.socket.emit('clientRequest', {
                 cmd         : 'sendToRoom',
                 room        : room,
-                clientInfo  : clientInfo,
                 data        : {
-                        code      : 'sendData',
-                        data      : encodeURIComponent(JSON.stringify(data))
+                        code        : 'sendData',
+                        clientInfo  : encodeURIComponent(JSON.stringify(clientInfo)),
+                        data        : encodeURIComponent(JSON.stringify(data))
                 }
               });
       }
