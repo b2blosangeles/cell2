@@ -34,7 +34,7 @@
       }
       this.setClientInfo = function (v) {
           var me = this;
-          me.socket.emit('setClientInfo', v);
+          me.socket.emit('setClientInfo', encodeURIComponent(JSON.stringify(v));
       }
     
       this.addEvent = function (key, func) {
