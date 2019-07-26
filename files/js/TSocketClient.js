@@ -6,9 +6,7 @@
                 for (o in data) {
                       data[o] = (data[o]) ?  JSON.parse(decodeURIComponent(data[o])) : {};
                 }
-                console.log('===== hubRoomCilents===2==>>>');
                 console.log(data);
-                console.log('<<<----- hubRoomCilents--2-');
             }
       };
     
