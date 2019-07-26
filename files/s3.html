@@ -31,8 +31,8 @@
  
   tSocket.connection('//comm1_dev.shusiou.win/?_code=eda.js&param=as',
     function() {
-        tSocket.joinRoom('PPQ', 'a3');
-        tSocket.sendToRoom('PPQ', {text : 'Thanks!'}, 'a66');
+        tSocket.joinRoom('PPQ', {id: 'a3A'});
+        tSocket.sendToRoom('PPQ', {text : 'Thanks!'}, {id: 'a66A'});
           
        // tSocket.query();
       //  tSocket.disConnect();
@@ -118,7 +118,7 @@ function getRoomClients() {
     <div class="col-sm-12 p-0 pl-2 pr-2" id="topMenu">
       <a href="javascript:void(0)" onClick="getRoomClients()">getRoomClient</a>
       <hr/>
-      <a href="javascript:void(0)" onClick="tSocket.setClientId('AK88')">set Client id</a>
+      <a href="javascript:void(0)" onClick="tSocket.setClientInfo({id: 'AK88'})">set Client id</a>
     </div>
   </div>
   <div class="row">
