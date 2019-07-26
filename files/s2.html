@@ -8,12 +8,11 @@
   var tSocket = new TSocketClient();
 
     tSocket.addEvent('clientMessage', function(data){
-        var clientInfo = JSON.parse(decodeURIComponent(data.ClientInfo))
+        var clientInfo = (data.ClientInfo) ?  JSON.parse(decodeURIComponent(data.ClientInfo)) : {};
         if (data.code === 'joinRoom') {
             console.log( 'Welcome ' +  clientInfo.id);
         } else {
           var obj = JSON.parse(decodeURIComponent(data.data))
-          
           console.log(clientInfo.id + ':' + obj.text);
         }
       });
