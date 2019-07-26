@@ -8,7 +8,7 @@
   var tSocket = new TSocketClient();
 
     tSocket.addEvent('clientMessage', function(data){
-        if (data.code === 'joinRoom') {
+        if (data.data.code === 'joinRoom') {
             console.log( 'Welcome ' +  data.clientInfo.id);
         } else {
           var obj = JSON.parse(decodeURIComponent(data.data))
