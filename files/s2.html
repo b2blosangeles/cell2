@@ -93,12 +93,12 @@
     
   });
 */
-function getRoomClients() {
+function getRoomClients(v) {
  //   tSocket.setupEvent();
  //   tSocket.setClientId('niuB');
    // setTimeout(
    //   function() {
-            tSocket.emit('clientRequest', {cmd: 'roomClients', room : 'PPQ'});
+            tSocket.emit('clientRequest', {cmd: 'roomClients', room : v});
    //   }, 2000
   //  );
 
@@ -111,7 +111,9 @@ function getRoomClients() {
 <div class="container bg-light">
   <div class="row">
     <div class="col-sm-12 p-0 pl-2 pr-2" id="topMenu">
-      <a href="javascript:void(0)" onClick="getRoomClients()">getRoomClient</a>
+      <a href="javascript:void(0)" onClick="getRoomClients('PPQ')">getRoomClient PPQ</a>
+      <hr/>
+      <a href="javascript:void(0)" onClick="getRoomClients('PPV')">getRoomClient PPV</a>
     </div>
   </div>
   <div class="row">
