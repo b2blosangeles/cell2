@@ -8,26 +8,26 @@
         me.socket.emit(k, data); 
       }
 
-      this.joinRoom = function (room, id) { 
+      this.joinRoom = function (room, client_info) { 
          me = this;
          me.socket.emit('clientRequest', {
-                cmd : 'sendToRoom',
-                room : room,
-                data : {
-                  client_id : id,
-                  code : 'joinRoom'
+                cmd     : 'sendToRoom',
+                room    : room,
+                client  : client_info,
+                data    : {
+                  code  : 'joinRoom'
                 }
               });
       }
-      this.sendToRoom = function (room, data, id) { 
+      this.sendToRoom = function (room, data, client_info) { 
          me = this;
          me.socket.emit('clientRequest', {
-                cmd : 'sendToRoom',
-                room : room,
-                data : {
-                  client_id : (id) ? id : null,
-                  code : 'sendData',
-                  data : encodeURIComponent(JSON.stringify(data))
+                cmd     : 'sendToRoom',
+                room    : room,
+                client  : client_info,
+                data    : {
+                  code      : 'sendData',
+                  data      : encodeURIComponent(JSON.stringify(data))
                 }
               });
       }
