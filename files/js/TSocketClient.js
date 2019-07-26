@@ -5,12 +5,12 @@
       this._clients = {}
       this.events = { 
         roomCilents : function(data){
-            console.log(data);
-          return true;
-                for (o in data) {
-                      data[o] = (data[o]) ?  JSON.parse(decodeURIComponent(data[o])) : {};
+            var room = data.room, clients = (!data.clients) ? {} data.clients;
+                for (o in clients) {
+                     clients[o] = (clients[o]) ?  JSON.parse(decodeURIComponent(clients[o])) : {};
                 }
-                console.log(data);
+                _ROOT._clients[room] = clients;
+                console.log( _ROOT._clients);
             }
       };
     
