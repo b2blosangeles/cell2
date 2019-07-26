@@ -34,7 +34,8 @@
             console.log('<<<----- hubRoomCilents---');
     }); 
  
-  tSocket.connection('//comm1_dev.shusiou.win/?_code=eda.js&param=as',
+  tSocket.connection('//68.183.49.110/?_code=eda.js&param=as',
+ // tSocket.connection('//comm1_dev.shusiou.win/?_code=eda.js&param=as',
     function() {
         tSocket.joinRoom('PPQ', {id: 'a3A'});
         tSocket.sendToRoom('PPQ', {text : 'Thanks!'}, {id: 'a66A'});
