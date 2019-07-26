@@ -16,7 +16,6 @@
                 data        : {
                         code        : 'joinRoom',
                         clientInfo  : encodeURIComponent(JSON.stringify(clientInfo))
-                        
                   }
               });
       }
@@ -34,7 +33,7 @@
       }
       this.setClientInfo = function (v) {
           var me = this;
-          me.socket.emit('setClientInfo', encodeURIComponent(JSON.stringify(v));
+          me.socket.emit('setClientInfo', encodeURIComponent(JSON.stringify(v)));
       }
     
       this.addEvent = function (key, func) {
