@@ -5,6 +5,8 @@
       this._clients = {}
       this.events = { 
         roomCilents : function(data){
+            console.log(data);
+          return true;
                 for (o in data) {
                       data[o] = (data[o]) ?  JSON.parse(decodeURIComponent(data[o])) : {};
                 }
