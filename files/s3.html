@@ -24,15 +24,6 @@
         console.log(data);
         console.log('<--user disconnected');
     });
-
-    tSocket.addEvent( 'roomCilents', function(data){
-          for (o in data) {
-            data[o] = (data[o]) ?  JSON.parse(decodeURIComponent(data[o])) : {};
-          }
-            console.log('===== hubRoomCilents=====>>>');
-            console.log(data);
-            console.log('<<<----- hubRoomCilents---');
-    }); 
  
     // tSocket.connection('//68.183.49.110/?_code=eda.js&param=as',
     tSocket.connection('//comm1_dev.shusiou.win/?_code=eda.js&param=as',
