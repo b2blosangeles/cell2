@@ -8,10 +8,11 @@
         roomCilents : function(data){
           
             if (!data || !data.session_id) return true;
+            var session_id = data.session_id;
             console.log(data);
             console.log(_ROOT);
             console.log('----_ROOT---->>');
-            _ROOT._sessions[data.session_id] = function() {
+            _ROOT._sessions[session_id] = function() {
               alert(123);
               /*
                   console.log(data);
@@ -25,7 +26,7 @@
                  // delete _ROOT._sessions[data.session_id];
                  */
              }
-            _ROOT._sessions[data.session_id]();
+            _ROOT._sessions[session_id]();
          //    console.log(_ROOT._sessions[data.session_id]);
 
       };
