@@ -5,7 +5,7 @@
       this._clients = {}
       this._sessions = {}
       this.events = { 
-          roomCilents : function(data){
+          roomCilents : function(data, session_id){
               if (!data || !data.session_id) return true;
               var s = data.session_id.split('.')
               _ROOT._sessions[s[1]] = function(cbk) {
@@ -71,9 +71,7 @@
              me.socket.off(o);
              me.socket.on(o, (function(o) { return function(data) {
                   if (typeof me.events[o] === 'function') {
-                     console.log('===data===>');
-                    console.log(data);
-                      me.events[o](data.data);
+                      me.events[o](data.data, data.session_id);
                   }
              }})(o))
         }   
