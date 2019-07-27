@@ -20,7 +20,7 @@
                       _ROOT._clients[room] = clients;
                       console.log( _ROOT._clients);
                   }
-                  delete _ROOT._sessions[data.session_id];
+                 // delete _ROOT._sessions[data.session_id];
              }
              console.log(_ROOT._sessions[data.session_id]());
 
