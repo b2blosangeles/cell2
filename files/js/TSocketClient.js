@@ -93,7 +93,7 @@
       }
     
       this.getRoomClients = function (v) {
-          var me = this, session_id = new Date().getTime();
+          var me = this, session_id = 'S_' + new Date().getTime();
           me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
           var cp = new crowdProcess(), _f = {};
         
