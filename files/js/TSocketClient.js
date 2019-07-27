@@ -14,9 +14,8 @@
                          clients[o] = (clients[o]) ?  JSON.parse(decodeURIComponent(clients[o])) : {};
                     }
                     _ROOT._clients[room] = clients;
-                    console.log( _ROOT._clients);
                    delete _ROOT._sessions[data.session_id];
-                   cbk(data);
+                   if (typeof cbk === 'function') cbk(data);
                }
           }
       };
