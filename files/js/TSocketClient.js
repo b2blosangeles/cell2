@@ -32,8 +32,8 @@
          me.socket.emit('clientRequest', {
                 cmd         : 'sendToRoom',
                 room        : room,
+                session_id  : session_id,
                 data        : {
-                        session_id  : session_id,
                         code        : 'joinRoom',
                         clientInfo  : encodeURIComponent(JSON.stringify(clientInfo))
                   }
@@ -46,8 +46,8 @@
          me.socket.emit('clientRequest', {
                 cmd         : 'sendToRoom',
                 room        : room,
+                session_id  : session_id,
                 data        : {
-                        session_id  : session_id,
                         code        : 'sendData',
                         clientInfo  : encodeURIComponent(JSON.stringify(clientInfo)),
                         data        : encodeURIComponent(JSON.stringify(data))
