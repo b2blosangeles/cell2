@@ -20,12 +20,10 @@
                }
           }
       };
-    
       this.emit = function (k, data) {
         var me = this;
         me.socket.emit(k, data); 
-      }
-
+      };
       this.joinRoom = function (room, clientInfo) { 
          me = this;
          me.socket.emit('clientRequest', {
@@ -36,7 +34,7 @@
                         clientInfo  : encodeURIComponent(JSON.stringify(clientInfo))
                   }
               });
-      }
+      };
       this.sendToRoom = function (room, data, clientInfo) { 
          me = this;
          me.socket.emit('clientRequest', {
@@ -48,12 +46,11 @@
                         data        : encodeURIComponent(JSON.stringify(data))
                 }
               });
-      }
+      };
       this.setClientInfo = function (v) {
           var me = this;
           me.socket.emit('setClientInfo', encodeURIComponent(JSON.stringify(v)));
-      }
-    
+      };
       this.addEvent = function (key, func) {
           var me = this;
           if (key) me.events[key] =  func;  
