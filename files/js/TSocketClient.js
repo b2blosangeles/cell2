@@ -7,7 +7,7 @@
       this.events = { 
           roomCilents : function(data){
               if (!data || !data.session_id) return true;
-              _ROOT._sessions[data.session_id] = function() {
+              _ROOT._sessions[data.session_id] = function(cbk) {
                     console.log(data);
                     var room = data.room, clients = (!data.clients) ? {} : data.clients;
                     for (o in clients) {
@@ -16,6 +16,7 @@
                     _ROOT._clients[room] = clients;
                     console.log( _ROOT._clients);
                    delete _ROOT._sessions[data.session_id];
+                   cbk(data);
                }
           }
       };
@@ -89,47 +90,20 @@
        // me.socket.emit('disconnect');
       }
     
-      this.getRoomClients = function (v) {
+      this.getRoomClients = function (v, func) {
           var me = this, session_id = 'S_' + new Date().getTime();
           me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
           var cp = new crowdProcess(), _f = {};
-              me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
-              var _ITV = setInterval(function () {
-                     console.log('=====tri 8====' + session_id + ':' + typeof _ROOT._sessions[session_id]);
-                      if (typeof _ROOT._sessions[session_id] === 'function') {
-                          console.log('=====tri 4====');
-                          clearInterval(_ITV);
-                          _ROOT._sessions[session_id]();
-                        //  cbk('BBB');
-                      }
-                    },500);
-          return true;
-        
-          _f['A'] = function(cbk) {
-              me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
-              cbk(session_id);
-          };
-         _f['B'] = function(cbk) {
-              console.log('=====tri====');
-              var _ITV = setInterval((function(root) {
-                    return function (cbk) {
-                     console.log('=====tri 7====' + session_id + ':' + typeof _ROOT._sessions[session_id]);
-                      if (typeof _ROOT._sessions[session_id] === 'function') {
-                          console.log('=====tri 4====');
-                          clearInterval(_ITV);
-                          _ROOT._sessions[session_id]();
-                          cbk('BBB');
-                      }
-                    }
-              })(_ROOT), 100);
-          };       
-  
-          cp.serial(
-            _f,
-            function(data) {
-                console.log(data);
-            }, 6000
-          )
+          me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
+          var _ITV = setInterval(function () {
+                  if (typeof _ROOT._sessions[session_id] === 'function') {
+                      clearInterval(_ITV);
+                      _ROOT._sessions[session_id](func);
+                  }
+                },50);
+          setTimeout(function() {
+              clearInterval(_ITV);
+            }, 6000);
       }
   }
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
