@@ -5,30 +5,30 @@
       this._clients = {}
       this._sessions = {}
       this.events = { 
-        roomCilents : function(data){
-          
-            if (!data || !data.session_id) return true;
-            var session_id = data.session_id;
-            console.log(data);
-            console.log(_ROOT);
-            console.log('----_ROOT---->>');
-            _ROOT._sessions[session_id] = function() {
-              alert(123);
-              /*
-                  console.log(data);
-                  var room = data.room, clients = (!data.clients) ? {} : data.clients;
-                      for (o in clients) {
-                           clients[o] = (clients[o]) ?  JSON.parse(decodeURIComponent(clients[o])) : {};
-                      }
-                      _ROOT._clients[room] = clients;
-                      console.log( _ROOT._clients);
-                  }
-                 // delete _ROOT._sessions[data.session_id];
-                 */
-             }
-            _ROOT._sessions[session_id]();
-         //    console.log(_ROOT._sessions[data.session_id]);
+          roomCilents : function(data){
 
+              if (!data || !data.session_id) return true;
+              var session_id = data.session_id;
+              console.log(data);
+              console.log(_ROOT);
+              console.log('----_ROOT---->>');
+              _ROOT._sessions[session_id] = function() {
+                alert(123);
+                /*
+                    console.log(data);
+                    var room = data.room, clients = (!data.clients) ? {} : data.clients;
+                        for (o in clients) {
+                             clients[o] = (clients[o]) ?  JSON.parse(decodeURIComponent(clients[o])) : {};
+                        }
+                        _ROOT._clients[room] = clients;
+                        console.log( _ROOT._clients);
+                    }
+                   // delete _ROOT._sessions[data.session_id];
+                   */
+               }
+              _ROOT._sessions[session_id]();
+           //    console.log(_ROOT._sessions[data.session_id]);
+          }
       };
     
       this.emit = function (k, data) {
