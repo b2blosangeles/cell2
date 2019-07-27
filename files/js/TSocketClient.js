@@ -98,7 +98,7 @@
     
       this.getRoomClients = function (v, func) {
           var me = this;
-          _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 99999) ? 1 : (_ROOT._SN + 1);
+          _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1);
           var session_id = '' + _ROOT._SN;
           me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
           var cp = new crowdProcess(), _f = {};
