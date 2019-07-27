@@ -93,7 +93,12 @@
     
   });
 */
-
+function getRoomClients(v) {
+    tSocket.getRoomClients(v, function(data) { 
+          console.log('PPQ===>');
+        console.log(data);
+    })
+}
 
 </script>
 <link rel="stylesheet" href="/package/Tao.css">
@@ -102,9 +107,9 @@
 <div class="container bg-light">
   <div class="row">
     <div class="col-sm-12 p-0 pl-2 pr-2" id="topMenu">
-      <a href="javascript:void(0)" onClick="tSocket.getRoomClients('PPQ', function() { alert(1); })">getRoomClient PPQ</a>
+      <a href="javascript:void(0)" onClick="getRoomClients('PPQ')">getRoomClient PPQ</a>
       <hr/>
-      <a href="javascript:void(0)" onClick="tSocket.getRoomClients('PPV', function() { alert(2); }">getRoomClient PPV</a>
+      <a href="javascript:void(0)" onClick="getRoomClients('PPV')">getRoomClient PPV</a>
     </div>
   </div>
   <div class="row">
