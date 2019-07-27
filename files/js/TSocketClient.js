@@ -3,6 +3,7 @@
       var _ROOT = this;
       this.socket = null;
       this._clients = {}
+      this._sessions = {}
       this.events = { 
         roomCilents : function(data){
             var room = data.room, clients = (!data.clients) ? {} : data.clients;
@@ -84,8 +85,11 @@
       }
     
       this.getRoomClients = function (v) {
-          var me = this;
-          me.emit('clientRequest', {cmd: 'roomClients', room : v, request_id : new Date().getTime()});
+          var me = this, session_id = new Date().getTime();
+          me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
+          me._sessions[session_id] = function() {
+            console.log('---session_id----' + session_id);
+          }
       }
   }
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
