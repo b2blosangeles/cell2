@@ -103,6 +103,7 @@
          _f['B'] = function(cbk) {
               var _ITV = setInterval(function() {
                   if (typeof _ROOT._sessions[session_id] === 'function') {
+                    console.log('=====tri====');
                       clearInterval(_ITV);
                       _ROOT._sessions[session_id]();
                       cbk('BBB');
