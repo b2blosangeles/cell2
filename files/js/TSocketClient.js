@@ -128,7 +128,7 @@
                   var d = list[i].split('_');
                   hosts[d[0]] = 1;
              }
-             function(Object.keys(hosts));
+             func(Object.keys(hosts));
           });
       }
   }
