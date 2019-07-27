@@ -71,6 +71,8 @@
              me.socket.off(o);
              me.socket.on(o, (function(o) { return function(data) {
                   if (typeof me.events[o] === 'function') {
+                     console.log('===data===>');
+                    console.log(data);
                       me.events[o](data.data);
                   }
              }})(o))
