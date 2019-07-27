@@ -54,7 +54,10 @@
 function getRoomClients(v) {
     tSocket.getRoomClients(v, function(data) { 
         console.log(data);
-    })
+    });
+    tSocket.getRoomHosts(v, function(data) { 
+        console.log(data);
+    });
 }
 
 </script>
