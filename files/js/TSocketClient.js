@@ -98,17 +98,15 @@
           me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
           var cp = new crowdProcess(), _f = {};
               me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
-              var _ITV = setInterval((function(root) {
-                    return function (cbk) {
-                     console.log('=====tri 9====' + session_id + ':' + typeof _ROOT._sessions[session_id]);
+              var _ITV = setInterval(function () {
+                     console.log('=====tri 8====' + session_id + ':' + typeof _ROOT._sessions[session_id]);
                       if (typeof _ROOT._sessions[session_id] === 'function') {
                           console.log('=====tri 4====');
                           clearInterval(_ITV);
                           _ROOT._sessions[session_id]();
-                          cbk('BBB');
+                        //  cbk('BBB');
                       }
-                    }
-              })(_ROOT),500);
+                    },500);
           return true;
         
           _f['A'] = function(cbk) {
