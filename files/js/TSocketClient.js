@@ -6,6 +6,7 @@
       this._sessions = {}
       this.events = { 
         roomCilents : function(data){
+            console.log(data);
             var room = data.room, clients = (!data.clients) ? {} : data.clients;
                 for (o in clients) {
                      clients[o] = (clients[o]) ?  JSON.parse(decodeURIComponent(clients[o])) : {};
