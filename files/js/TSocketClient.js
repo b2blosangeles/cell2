@@ -27,10 +27,13 @@
       };
       this.joinRoom = function (room, clientInfo) { 
          me = this;
+         _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1);
+         var session_id = '' + _ROOT._SN;
          me.socket.emit('clientRequest', {
                 cmd         : 'sendToRoom',
                 room        : room,
                 data        : {
+                        session_id  : session_id,
                         code        : 'joinRoom',
                         clientInfo  : encodeURIComponent(JSON.stringify(clientInfo))
                   }
