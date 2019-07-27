@@ -6,7 +6,9 @@
       this._sessions = {}
       this.events = { 
         roomCilents : function(data){
+          
             if (!data || !data.session_id) return true;
+          console.log(data);
              _ROOT._sessions[data.session_id] = function() {
                   console.log(data);
                   var room = data.room, clients = (!data.clients) ? {} : data.clients;
