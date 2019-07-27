@@ -8,13 +8,7 @@
           roomCilents : function(data){
 
               if (!data || !data.session_id) return true;
-              var session_id = data.session_id;
-              console.log(data);
-              console.log(_ROOT);
-              console.log('----_ROOT---->>');
-              _ROOT._sessions[session_id] = function() {
-                alert(123);
-                /*
+              _ROOT._sessions[data.session_id] = function() {
                     console.log(data);
                     var room = data.room, clients = (!data.clients) ? {} : data.clients;
                         for (o in clients) {
@@ -23,11 +17,9 @@
                         _ROOT._clients[room] = clients;
                         console.log( _ROOT._clients);
                     }
-                   // delete _ROOT._sessions[data.session_id];
-                   */
+                   delete _ROOT._sessions[data.session_id];
+                
                }
-              _ROOT._sessions[session_id]();
-           //    console.log(_ROOT._sessions[data.session_id]);
           }
       };
     
