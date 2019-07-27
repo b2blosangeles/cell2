@@ -105,7 +105,7 @@
               console.log('=====tri====');
               var _ITV = setInterval((function(root) {
                     return function (cbk) {
-                     console.log('=====tri 6====' + session_id + ':' + typeof root._sessions[session_id]);
+                     console.log('=====tri 6====' + session_id + ':' + typeof _ROOT._sessions);
                       if (typeof _ROOT._sessions[session_id] === 'function') {
                           console.log('=====tri 4====');
                           clearInterval(_ITV);
