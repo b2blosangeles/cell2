@@ -101,9 +101,10 @@
               cbk(session_id);
           };
          _f['B'] = function(cbk) {
+              console.log('=====tri====');
               var _ITV = setInterval(function() {
                   if (typeof _ROOT._sessions[session_id] === 'function') {
-                    console.log('=====tri====');
+                      console.log('=====tri 4====');
                       clearInterval(_ITV);
                       _ROOT._sessions[session_id]();
                       cbk('BBB');
