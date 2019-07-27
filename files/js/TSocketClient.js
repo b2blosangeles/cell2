@@ -7,7 +7,8 @@
       this.events = { 
           roomCilents : function(data){
               if (!data || !data.session_id) return true;
-              _ROOT._sessions[data.session_id] = function(cbk) {
+              var s = data.session_id.split('.')
+              _ROOT._sessions[s[0]] = function(cbk) {
                     var room = data.room, clients = (!data.clients) ? {} : data.clients;
                     for (o in clients) {
                         try {
@@ -15,7 +16,7 @@
                         } catch (e) {}
                     }
                     _ROOT._clients[room] = clients;
-                   delete _ROOT._sessions[data.session_id];
+                   delete _ROOT._sessions[s[0]];
                    if (typeof cbk === 'function') cbk(data);
                }
           }
@@ -96,7 +97,9 @@
       }
     
       this.getRoomClients = function (v, func) {
-          var me = this, session_id = 'S_' + new Date().getTime();
+          var me = this;
+          _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 99999) ? 1 : (_ROOT._SN + 1);
+          var session_id = '' + _ROOT._SN;
           me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
           var cp = new crowdProcess(), _f = {};
           me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
