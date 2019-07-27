@@ -17,7 +17,13 @@
         }
       });
 
+   tSocket.addEvent('hubQueryClients', function (data) {
 
+        console.log('hubQueryClients==>');
+        console.log(data);
+        console.log('<--hubQueryClients');
+    });
+  
    tSocket.addEvent('disconnect', function (data) {
 
         console.log('user disconnected==>' + tSocket.socket.id);
