@@ -33,50 +33,7 @@
       //  tSocket.disConnect();
     }                  
   );
-
-  /*
-  var clients = {NNBB : []};
-  const socket = io('//comm1_dev.shusiou.win/?_code=eda.js&param=as');
-  */
-  /*
-  socket.on('connect', function(){
-      console.log('--connnected-b->');
-      console.log(socket.id);
-  
-      socket.emit('clientRequest', {
-            cmd : 'sendToRoom',
-            room : 'NNBB',
-            data : {
-              client_id : 1,
-              user_name : 'John Xu',
-              text : encodeURIComponent('how are you')
-            }
-          }, (data) => {
-            console.log(data); // data will be 'woot'
-          });
-    
-      socket.on('hubRoomCilents', function(data){
-        console.log('---hubRoomCilents--->');
-        console.log(data);
-      });       
-
-      getUniqueId(socket, function(uuid) {
-        console.log(uuid);
-      });
-
-
-              socket.emit('clientRequest', {cmd: 'roomClients', room : 'NNBB'}, (data) => {}); 
-
-    
-      socket.on('clientMessage', function(data){
-          console.log('=====clientMessage=====>>>');
-          console.log( decodeURIComponent(data.data.text));
-          console.log('<<<-----clientMessage---');
-      
-      });
-
-
-    
+   /* 
       socket.on('clientRequestCBK', function(data){
           console.log('=====clientRequestCBK=====>>>');
           console.log(data);
@@ -95,7 +52,6 @@
 */
 function getRoomClients(v) {
     tSocket.getRoomClients(v, function(data) { 
-          console.log('PPQ===>');
         console.log(data);
     })
 }
