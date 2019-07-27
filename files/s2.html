@@ -7,7 +7,7 @@
 <script>
   var tSocket = new TSocketClient();
 
-    tSocket.addEvent('clientMessage', function(data){
+    tSocket.addEvent('clientMessage', function(data, session_id) {
         var clientInfo = (data.clientInfo) ?  JSON.parse(decodeURIComponent(data.clientInfo)) : {};
         if (data.code === 'joinRoom') {
             console.log( 'Welcome ' +  clientInfo.id);
@@ -15,7 +15,9 @@
           var obj = JSON.parse(decodeURIComponent(data.data))
           console.log(clientInfo.id + ':' + obj.text);
         }
+        console.log(data);
       });
+
 
    tSocket.addEvent('disconnect', function (data) {
 
