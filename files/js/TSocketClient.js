@@ -39,6 +39,20 @@
                   }
               });
       };
+      this.leaveRoom = function (room, clientInfo) { 
+         me = this;
+         _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1);
+         var session_id = '' + _ROOT._SN;
+         me.socket.emit('clientRequest', {
+                cmd         : 'leaveRoom',
+                room        : room,
+                session_id  : session_id,
+                data        : {
+                        code        : 'joinRoom',
+                        clientInfo  : encodeURIComponent(JSON.stringify(clientInfo))
+                  }
+              });
+      };
       this.sendToRoom = function (room, data, clientInfo) { 
          me = this;
          _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1);
