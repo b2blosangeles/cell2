@@ -8,10 +8,11 @@
           roomCilents : function(data){
               if (!data || !data.session_id) return true;
               _ROOT._sessions[data.session_id] = function(cbk) {
-                    console.log(data);
                     var room = data.room, clients = (!data.clients) ? {} : data.clients;
                     for (o in clients) {
+                        try {
                          clients[o] = (clients[o]) ?  JSON.parse(decodeURIComponent(clients[o])) : {};
+                        } catch (e) {}
                     }
                     _ROOT._clients[room] = clients;
                    delete _ROOT._sessions[data.session_id];
