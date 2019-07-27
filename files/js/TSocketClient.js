@@ -102,13 +102,15 @@
          _f['B'] = function(cbk) {
               console.log('=====tri====');
               var _ITV = setInterval((function(root) {
-                 console.log('=====tri 6====' + session_id + ':' + typeof root._sessions[session_id]);
-                  if (typeof _ROOT._sessions[session_id] === 'function') {
-                      console.log('=====tri 4====');
-                      clearInterval(_ITV);
-                      _ROOT._sessions[session_id]();
-                      cbk('BBB');
-                  }
+                    return function (cbk) {
+                     console.log('=====tri 6====' + session_id + ':' + typeof root._sessions[session_id]);
+                      if (typeof _ROOT._sessions[session_id] === 'function') {
+                          console.log('=====tri 4====');
+                          clearInterval(_ITV);
+                          _ROOT._sessions[session_id]();
+                          cbk('BBB');
+                      }
+                    }
               })(_ROOT), 100);
           };       
   
