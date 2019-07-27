@@ -8,7 +8,7 @@
           roomCilents : function(data){
               if (!data || !data.session_id) return true;
               var s = data.session_id.split('.')
-              _ROOT._sessions[s[0]] = function(cbk) {
+              _ROOT._sessions[s[1]] = function(cbk) {
                     var room = data.room, clients = (!data.clients) ? {} : data.clients;
                     for (o in clients) {
                         try {
@@ -16,7 +16,7 @@
                         } catch (e) {}
                     }
                     _ROOT._clients[room] = clients;
-                   delete _ROOT._sessions[s[0]];
+                   delete _ROOT._sessions[s[1]];
                    if (typeof cbk === 'function') cbk(data);
                }
           }
