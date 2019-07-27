@@ -22,7 +22,7 @@
                   }
                  // delete _ROOT._sessions[data.session_id];
              }
-             console.log(_ROOT._sessions[data.session_id]());
+             console.log(_ROOT._sessions[data.session_id]);
 
       };
     
