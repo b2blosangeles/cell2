@@ -13,7 +13,6 @@
             console.log( 'Welcome ' +  clientInfo.id);
         } else {
           var obj = JSON.parse(decodeURIComponent(data.data))
-          
           console.log(clientInfo.id + ':' + obj.text);
         }
       });
@@ -25,11 +24,10 @@
         console.log('<--user disconnected');
     });
  
-    // tSocket.connection('//68.183.49.110/?_code=eda.js&param=as',
-    tSocket.connection('//comm1_dev.shusiou.win/?_code=eda.js&param=as',
+  tSocket.connection('//comm2_dev.shusiou.win/?_code=eda.js&param=as',
     function() {
-        tSocket.joinRoom('PPQ', {id: 'a3A'});
-        tSocket.sendToRoom('PPQ', {text : 'Thanks!'}, {id: 'a66A'});
+        tSocket.joinRoom('PPQ', {id: 'a2A'});
+        tSocket.sendToRoom('PPQ', {text : ' 学得很快!'}, {id: 'a2A'});
           
        // tSocket.query();
       //  tSocket.disConnect();
@@ -95,15 +93,11 @@
     
   });
 */
-function getRoomClients() {
-  //  tSocket.setupEvent();
-  //  tSocket.setClientId('niuB');
-   // setTimeout(
-   //   function() {
-            tSocket.emit('clientRequest', {cmd: 'roomClients', room : 'PPQ'});
-   //   }, 2000
-  //  );
-
+function getRoomClients(v) {
+    tSocket.getRoomClients(v, function(data) { 
+          console.log('PPQ===>');
+        console.log(data);
+    })
 }
 
 </script>
@@ -113,9 +107,9 @@ function getRoomClients() {
 <div class="container bg-light">
   <div class="row">
     <div class="col-sm-12 p-0 pl-2 pr-2" id="topMenu">
-      <a href="javascript:void(0)" onClick="getRoomClients()">getRoomClient</a>
+      <a href="javascript:void(0)" onClick="getRoomClients('PPQ')">getRoomClient PPQ</a>
       <hr/>
-      <a href="javascript:void(0)" onClick="tSocket.setClientInfo({id: 'AK88'})">set Client id</a>
+      <a href="javascript:void(0)" onClick="getRoomClients('PPV')">getRoomClient PPV</a>
     </div>
   </div>
   <div class="row">
