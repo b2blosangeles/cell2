@@ -60,6 +60,9 @@ function getRoomClients(v) {
     });
 }
 
+function joinRoom(v) {
+    tSocket.joinRoom(v, {id: 'a2A'});
+}
 </script>
 <link rel="stylesheet" href="/package/Tao.css">
 </head>
@@ -70,6 +73,8 @@ function getRoomClients(v) {
       <a href="javascript:void(0)" onClick="getRoomClients('PPQ')">getRoomClient PPQ</a>
       <hr/>
       <a href="javascript:void(0)" onClick="getRoomClients('PPV')">getRoomClient PPV</a>
+    </div>
+    <a href="javascript:void(0)" onClick="joinRoom('PPV')">join room PPV</a>
     </div>
   </div>
   <div class="row">
