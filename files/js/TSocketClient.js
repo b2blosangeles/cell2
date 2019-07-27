@@ -59,6 +59,14 @@
           if (key) me.events[key] =  func;  
           if (me.socket) me.setupEvent();
       }
+      this.removeEvent = function (key) {
+          var me = this;
+          if ((key) && (me.socket)) {
+                me.socket.off(key);
+                delete me.events[key]; 
+                me.setupEvent();
+          }
+      }
       this.setupEvent = function () {
         var me = this;
         for (var o in me.events) {
