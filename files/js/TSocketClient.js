@@ -9,6 +9,7 @@
           
             if (!data || !data.session_id) return true;
           console.log(data);
+           console.log(_ROOT);
              _ROOT._sessions[data.session_id] = function() {
                   console.log(data);
                   var room = data.room, clients = (!data.clients) ? {} : data.clients;
