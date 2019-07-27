@@ -121,7 +121,7 @@
       }
       this.getRoomHosts = function (v, func) {
           var me = this;
-          me.getRoomClients(function(data) {
+          me.getRoomClients(v, function(data) {
              var list = (!data.clients) ? {} : data.clients;
              var hosts = {};
              for (var o in  list) {
