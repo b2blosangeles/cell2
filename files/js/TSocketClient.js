@@ -125,7 +125,7 @@
              var list = (!data.clients) ? {} : data.clients;
              var hosts = {};
              for (var o in  list) {
-                  var d = list[o].split('_');
+                  var d = o.split('_');
                   hosts[d[0]] = 1;
              }
              func(Object.keys(hosts));
