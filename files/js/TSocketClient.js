@@ -102,7 +102,7 @@
          _f['B'] = function(cbk) {
               console.log('=====tri====');
               var _ITV = setInterval(function() {
-                 console.log('=====tri 6====' + session_id);
+                 console.log('=====tri 6====' + session_id + ':' + typeof _ROOT._sessions[session_id]);
                   if (typeof _ROOT._sessions[session_id] === 'function') {
                       console.log('=====tri 4====');
                       clearInterval(_ITV);
