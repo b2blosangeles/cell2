@@ -6,19 +6,16 @@
       this._sessions = {}
       this.events = { 
           roomCilents : function(data){
-
               if (!data || !data.session_id) return true;
               _ROOT._sessions[data.session_id] = function() {
                     console.log(data);
                     var room = data.room, clients = (!data.clients) ? {} : data.clients;
-                        for (o in clients) {
-                             clients[o] = (clients[o]) ?  JSON.parse(decodeURIComponent(clients[o])) : {};
-                        }
-                        _ROOT._clients[room] = clients;
-                        console.log( _ROOT._clients);
+                    for (o in clients) {
+                         clients[o] = (clients[o]) ?  JSON.parse(decodeURIComponent(clients[o])) : {};
                     }
+                    _ROOT._clients[room] = clients;
+                    console.log( _ROOT._clients);
                    delete _ROOT._sessions[data.session_id];
-                
                }
           }
       };
