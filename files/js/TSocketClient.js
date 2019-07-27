@@ -98,7 +98,7 @@
           _f['A'] = function(cbk) {
               me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
               cbk(session_id);
-          });
+          };
          _f['B'] = function(cbk) {
               var _ITV = setInterval(function() {
                   if (typeof _ROOT._sessions[session_id] == 'function') {
@@ -107,7 +107,7 @@
                       cbk('BBB');
                   }
               }, 100);
-          });       
+          };       
   
           cp.serial(
             _f,
