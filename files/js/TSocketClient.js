@@ -97,6 +97,19 @@
           var me = this, session_id = 'S_' + new Date().getTime();
           me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
           var cp = new crowdProcess(), _f = {};
+              me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
+              var _ITV = setInterval((function(root) {
+                    return function (cbk) {
+                     console.log('=====tri 7====' + session_id + ':' + typeof _ROOT._sessions[session_id]);
+                      if (typeof _ROOT._sessions[session_id] === 'function') {
+                          console.log('=====tri 4====');
+                          clearInterval(_ITV);
+                          _ROOT._sessions[session_id]();
+                          cbk('BBB');
+                      }
+                    }
+              })(_ROOT), 100);
+          return true;
         
           _f['A'] = function(cbk) {
               me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
