@@ -6,14 +6,19 @@
       this._sessions = {}
       this.events = { 
         roomCilents : function(data){
-            console.log(data);
-            var room = data.room, clients = (!data.clients) ? {} : data.clients;
-                for (o in clients) {
-                     clients[o] = (clients[o]) ?  JSON.parse(decodeURIComponent(clients[o])) : {};
-                }
-                _ROOT._clients[room] = clients;
-                console.log( _ROOT._clients);
-            }
+            if (!data || !data.session_id) return true;
+             _ROOT._sessions[data.session_id] = function() {
+                  console.log(data);
+                  var room = data.room, clients = (!data.clients) ? {} : data.clients;
+                      for (o in clients) {
+                           clients[o] = (clients[o]) ?  JSON.parse(decodeURIComponent(clients[o])) : {};
+                      }
+                      _ROOT._clients[room] = clients;
+                      console.log( _ROOT._clients);
+                  }
+                  delete _ROOT._sessions[data.session_id];
+             }
+
       };
     
       this.emit = function (k, data) {
@@ -88,6 +93,27 @@
       this.getRoomClients = function (v) {
           var me = this, session_id = new Date().getTime();
           me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
+          var cp = new crowdProcess(), _f = {};
+        
+          _f['A'] = function(cbk) {
+              me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
+              cbk(session_id);
+          });
+         _f['B'] = function(cbk) {
+              var _ITV = setInterval(function() {
+                  if (typeof _ROOT._sessions[session_id] == 'function') {
+                      clearInterval(_ITV);
+                      _ROOT._sessions[session_id]();
+                  }
+              }, 100);
+          });       
+  
+          cp.serial(
+          _f,
+          function(data) {
+          console.log(data);
+          }, 6000
+          )
           me._sessions[session_id] = function() {
             console.log('---session_id----' + session_id);
           }
