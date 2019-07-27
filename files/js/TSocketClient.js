@@ -119,6 +119,18 @@
               clearInterval(_ITV);
             }, 6000);
       }
+      this.getRoomHosts = function (v, func) {
+          var me = this;
+          me.getRoomClients(function(data) {
+             var list = (!data.clients) ? [] : data.clients;
+             var hosts = {};
+             for (var i = 0; i < list.length; i ++) {
+                  var d = list[i].split('_');
+                  hosts[d[0]] = 1;
+             }
+             function(Object.keys(hosts));
+          });
+      }
   }
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
       module.exports = obj;
