@@ -104,19 +104,17 @@
                   if (typeof _ROOT._sessions[session_id] == 'function') {
                       clearInterval(_ITV);
                       _ROOT._sessions[session_id]();
+                      cbk('BBB');
                   }
               }, 100);
           });       
   
           cp.serial(
-          _f,
-          function(data) {
-          console.log(data);
-          }, 6000
+            _f,
+            function(data) {
+                console.log(data);
+            }, 6000
           )
-          me._sessions[session_id] = function() {
-            console.log('---session_id----' + session_id);
-          }
       }
   }
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
