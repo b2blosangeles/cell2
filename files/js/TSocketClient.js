@@ -44,15 +44,8 @@
                 }
            });
       };
-    
-      this.joinRoom = function (room, func) { 
-         me = this;
-         var session_id = me.getSN();
-         me.socket.emit('clientRequest', {
-                cmd         : 'joinRoom',
-                room        : room,
-                session_id  : session_id
-          });
+      this.sessionCallback = function(func) {
+          me = this;
           var _ITV = setInterval(function () {
                   if (typeof _ROOT._sessions[session_id] === 'function') {
                       clearInterval(_ITV);
@@ -61,10 +54,20 @@
                 },50);
           setTimeout(function() {
               clearInterval(_ITV);
-            }, 6000);
+            }, 6000);      
+      }
+      this.joinRoom = function (room, func) { 
+         me = this;
+         var session_id = me.getSN();
+         me.socket.emit('clientRequest', {
+                cmd         : 'joinRoom',
+                room        : room,
+                session_id  : session_id
+          });
+          this.sessionCallback(func);
       };
 
-      this.leaveRoom = function (room, clientInfo) { 
+      this.leaveRoom = function (room, func) { 
          me = this;
          var session_id = me.getSN();
          me.socket.emit('clientRequest', {
@@ -72,7 +75,9 @@
                 room        : room,
                 session_id  : session_id
               });
+        this.sessionCallback(func)
       };
+    
       this.sendToRoom = function (room, data, clientInfo) { 
          me = this;
          var session_id = me.getSN();
