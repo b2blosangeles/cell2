@@ -74,7 +74,7 @@
                 data        : {
                         code        : 'sendData',
                         clientInfo  : encodeURIComponent(JSON.stringify(clientInfo)),
-                        data        : encodeURIComponent(JSON.stringify(data))
+                        body        : encodeURIComponent(JSON.stringify(data))
                 }
               });
       };
