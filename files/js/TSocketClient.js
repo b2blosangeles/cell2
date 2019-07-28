@@ -47,11 +47,8 @@
          me.socket.emit('clientRequest', {
                 cmd         : 'joinRoom',
                 room        : room,
-                session_id  : session_id,
-                data        : {
-                        code        : 'joinRoom'
-                  }
-              });
+                session_id  : session_id
+          });
       };
       this.leaveRoom = function (room, clientInfo) { 
          me = this;
