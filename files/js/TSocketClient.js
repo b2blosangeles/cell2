@@ -74,7 +74,7 @@
                 toClient    : toClientId,
                 session_id  : session_id,
                 data        : {
-                        body  : encodeURIComponent(JSON.stringify(data.body))
+                        body  : encodeURIComponent(JSON.stringify(data))
                 }
               });
       };
