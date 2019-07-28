@@ -14,9 +14,9 @@
         } else {
           var obj = {};
           try {
-              JSON.parse(decodeURIComponent(data.body))
+             obj = JSON.parse(decodeURIComponent(data.body))
           } catch (e) {}
-          console.log(clientInfo.id + ':' + obj.text);
+          console.log( ((!clientInfo.id) ? '' : clientInfo.id)  + ':' + obj.text);
         }
       console.log(data);
       });
