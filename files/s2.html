@@ -24,13 +24,20 @@
         console.log('<--hubQueryClients');
     });
   
-   tSocket.addEvent('disconnect', function (data) {
+   tSocket.addEvent('sendToClient', function (data) {
 
-        console.log('user disconnected==>' + tSocket.socket.id);
+        console.log('sendToClient==>');
         console.log(data);
-        console.log('<--user disconnected');
+        console.log('<--sendToClient');
     });
  
+   tSocket.addEvent('disconnect', function (data) {
+
+      console.log('user disconnected==>' + tSocket.socket.id);
+      console.log(data);
+      console.log('<--user disconnected');
+  });
+  
   tSocket.connection('//comm2_dev.shusiou.win/?_code=eda.js&param=as',
     function() {
      //   tSocket.joinRoom('PPQ', {id: 'a2A'});
