@@ -12,7 +12,10 @@
         if (data.code === 'joinRoom') {
             console.log( 'Welcome ' +  clientInfo.id);
         } else {
-          var obj = JSON.parse(decodeURIComponent(data.data))
+          var obj = {};
+          try {
+              JSON.parse(decodeURIComponent(data.body))
+          } catch (e) {}
           console.log(clientInfo.id + ':' + obj.text);
         }
       console.log(data);
