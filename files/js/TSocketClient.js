@@ -44,7 +44,7 @@
                 }
            });
       };
-      this.sessionCallback = function(func) {
+      this.sessionCallback = function(session_id, func) {
           me = this;
           var _ITV = setInterval(function () {
                   if (typeof _ROOT._sessions[session_id] === 'function') {
@@ -64,7 +64,7 @@
                 room        : room,
                 session_id  : session_id
           });
-          this.sessionCallback(func);
+          this.sessionCallback(session_id, func);
       };
 
       this.leaveRoom = function (room, func) { 
@@ -75,7 +75,7 @@
                 room        : room,
                 session_id  : session_id
               });
-        this.sessionCallback(func)
+        this.sessionCallback(session_id, func)
       };
     
       this.sendToRoom = function (room, data, clientInfo) { 
