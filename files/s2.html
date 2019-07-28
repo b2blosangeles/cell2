@@ -17,7 +17,8 @@
           try {
              obj = JSON.parse(decodeURIComponent(data.body))
           } catch (e) {}
-          console.log( ((!fromClient.id) ? '' : fromClient.id)  + '->' + ((!toClient.id) ? '' : toClient.id)  + ' : ' + obj.text);
+          console.log( ((!fromClient.id) ? '' : fromClient.id)  + '->' + ((!toClient.id) ? '' : toClient.id)  + ' : ' + 
+                      obj.text);
         }
       console.log(data);
       });
@@ -38,11 +39,7 @@
   
   tSocket.connection('//comm2_dev.shusiou.win/?_code=eda.js&param=as',
     function() {
-     //   tSocket.joinRoom('PPQ', {id: 'a2A'});
-     //   tSocket.sendToRoom('PPQ', {text : ' 学得很快!'}, {id: 'a2A'});
-          
-       // tSocket.query();
-      //  tSocket.disConnect();
+        tSocket.setClientInfo({id: 'a2A'});
     }                  
   );
    /* 
@@ -84,7 +81,6 @@ function sendToRoom(v) {
 }
   
 function sendToClient(v) {
-    tSocket.setClientInfo({id: 'a2A'});
     tSocket.sendToClient(v, {text : ' 学得很快!'});
 }
   
