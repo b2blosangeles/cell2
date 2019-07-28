@@ -71,7 +71,7 @@
          var session_id = '' + _ROOT._SN;
          me.socket.emit('clientRequest', {
                 cmd         : 'sendToClient',
-                toClient    : toClientId
+                toClient    : toClientId,
                 session_id  : session_id,
                 data        : encodeURIComponent(JSON.stringify(data))
               });
