@@ -84,6 +84,11 @@ function leaveRoom(v) {
 function sendToRoom(v) {
     tSocket.sendToRoom(v, {text : ' 学得很快!'}, {id: 'a2A'});
 }
+  
+function sendToClient(v) {
+    tSocket.sendToClient(v, {text : ' 学得很快!'}, {id: 'a2A'});
+}
+  
 </script>
 <link rel="stylesheet" href="/package/Tao.css">
 </head>
@@ -102,6 +107,10 @@ function sendToRoom(v) {
     
        <hr/>
        <a href="javascript:void(0)" onClick="sendToRoom('PPV')">Send Message To Room</a>
+      
+      
+       <hr/>
+       <a href="javascript:void(0)" onClick="sendToClient('PPV')">Send To client</a>
     </div>
    
     </div>
