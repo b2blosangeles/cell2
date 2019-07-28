@@ -11,7 +11,7 @@
         var fromClient = (data.fromClient) ?  JSON.parse(decodeURIComponent(data.fromClient)) : {};
         var toClient = (data.toClient) ?  JSON.parse(decodeURIComponent(data.toClient)) : {};
         if (data.code === 'joinRoom') {
-            console.log( 'Welcome ' +  clientInfo.id);
+            console.log( 'Welcome ' +  fromClient.id);
         } else {
           var obj = {};
           try {
