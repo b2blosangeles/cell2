@@ -45,7 +45,7 @@
          _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1);
          var session_id = '' + _ROOT._SN;
          me.socket.emit('clientRequest', {
-                cmd         : 'sendToRoom',
+                cmd         : 'joinRoom',
                 room        : room,
                 session_id  : session_id,
                 data        : {
