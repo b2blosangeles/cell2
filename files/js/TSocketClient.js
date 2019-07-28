@@ -64,6 +64,19 @@
                 }
               });
       };
+    
+      this.sendToClient = function ( toClientId, data) { 
+         me = this;
+         _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1);
+         var session_id = '' + _ROOT._SN;
+         me.socket.emit('clientRequest', {
+                cmd         : 'sendToClient',
+                toClient    : toClientId
+                session_id  : session_id,
+                data        : encodeURIComponent(JSON.stringify(data))
+              });
+      };
+    
       this.setClientInfo = function (v) {
           var me = this;
           me.socket.emit('setClientInfo', encodeURIComponent(JSON.stringify(v)));
