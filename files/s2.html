@@ -80,6 +80,7 @@ function sendToRoom(v) {
 }
   
 function sendToClient(v) {
+    tSocket.setClientInfo({id: 'a2A'});
     tSocket.sendToClient(v, {text : ' 学得很快!'});
 }
   
