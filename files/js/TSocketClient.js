@@ -45,7 +45,7 @@
            });
       };
     
-      this.joinRoom = function (room) { 
+      this.joinRoom = function (room, func) { 
          me = this;
          var session_id = me.getSN();
          me.socket.emit('clientRequest', {
@@ -53,7 +53,17 @@
                 room        : room,
                 session_id  : session_id
           });
+          var _ITV = setInterval(function () {
+                  if (typeof _ROOT._sessions[session_id] === 'function') {
+                      clearInterval(_ITV);
+                      _ROOT._sessions[session_id](func);
+                  }
+                },50);
+          setTimeout(function() {
+              clearInterval(_ITV);
+            }, 6000);
       };
+
       this.leaveRoom = function (room, clientInfo) { 
          me = this;
          var session_id = me.getSN();
