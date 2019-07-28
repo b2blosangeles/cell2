@@ -14,7 +14,7 @@
         } else {
           var obj = {};
           try {
-             obj = JSON.parse(decodeURIComponent(data))
+             obj = JSON.parse(decodeURIComponent(data.body))
           } catch (e) {}
           console.log( ((!clientInfo.id) ? '' : clientInfo.id)  + ':' + obj.text);
         }
