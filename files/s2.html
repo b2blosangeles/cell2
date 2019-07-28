@@ -23,14 +23,7 @@
         console.log(data);
         console.log('<--hubQueryClients');
     });
-  /*
-   tSocket.addEvent('clientMessage', function (data) {
 
-        console.log('clientMessage==>');
-        console.log(data);
-        console.log('<--clientMessage');
-    });
- */
    tSocket.addEvent('disconnect', function (data) {
 
       console.log('user disconnected==>' + tSocket.socket.id);
