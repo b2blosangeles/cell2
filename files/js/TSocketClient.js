@@ -25,11 +25,13 @@
         var me = this;
         me.socket.emit(k, data); 
       };
-    
+      this.getSN = functiin() {
+        _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1)
+        return '' + _ROOT._SN;
+      }
       this.sendToClient = function ( toClientId, data) { 
          me = this;
-         _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1);
-         var session_id = '' + _ROOT._SN;
+         var session_id = me.getSN();
          me.socket.emit('clientRequest', {
                 cmd         : 'sendToClient',
                 toClient    : toClientId,
@@ -42,8 +44,7 @@
     
       this.joinRoom = function (room) { 
          me = this;
-         _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1);
-         var session_id = '' + _ROOT._SN;
+         var session_id = me.getSN();
          me.socket.emit('clientRequest', {
                 cmd         : 'joinRoom',
                 room        : room,
@@ -52,8 +53,7 @@
       };
       this.leaveRoom = function (room, clientInfo) { 
          me = this;
-         _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1);
-         var session_id = '' + _ROOT._SN;
+         var session_id = me.getSN();
          me.socket.emit('clientRequest', {
                 cmd         : 'leaveRoom',
                 room        : room,
@@ -62,8 +62,7 @@
       };
       this.sendToRoom = function (room, data, clientInfo) { 
          me = this;
-         _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1);
-         var session_id = '' + _ROOT._SN;
+         var session_id = me.getSN();
          me.socket.emit('clientRequest', {
                 cmd         : 'sendToRoom',
                 room        : room,
@@ -128,8 +127,7 @@
     
       this.getRoomClients = function (v, func) {
           var me = this;
-          _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1);
-          var session_id = '' + _ROOT._SN;
+          var session_id = me.getSN();
           me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
           var cp = new crowdProcess(), _f = {};
           me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
