@@ -9,6 +9,7 @@
 
     tSocket.addEvent('clientMessage', function(data, session_id) {
         var fromClient = (data.fromClient) ?  JSON.parse(decodeURIComponent(data.fromClient)) : {};
+        var toClient = (data.toClient) ?  JSON.parse(decodeURIComponent(data.toClient)) : {};
         if (data.code === 'joinRoom') {
             console.log( 'Welcome ' +  clientInfo.id);
         } else {
@@ -16,7 +17,7 @@
           try {
              obj = JSON.parse(decodeURIComponent(data.body))
           } catch (e) {}
-          console.log( ((!fromClient.id) ? '' : fromClient.id)  + ':' + obj.text);
+          console.log( ((!fromClient.id) ? '' : fromClient.id)  + '->' + ((!toClient.id) ? '' : toClient.id)  + ' : ' + obj.text);
         }
       console.log(data);
       });
