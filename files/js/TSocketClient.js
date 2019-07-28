@@ -4,6 +4,12 @@
       this.socket = null;
       this._clients = {}
       this._sessions = {}
+      
+      this.getSN = function() {
+        _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1)
+        return '' + _ROOT._SN;
+      }
+    
       this.events = { 
           roomCilents : function(data, session_id){
               if (!data || !session_id) return true;
@@ -25,10 +31,7 @@
         var me = this;
         me.socket.emit(k, data); 
       };
-      this.getSN = functiin() {
-        _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1)
-        return '' + _ROOT._SN;
-      }
+
       this.sendToClient = function ( toClientId, data) { 
          me = this;
          var session_id = me.getSN();
