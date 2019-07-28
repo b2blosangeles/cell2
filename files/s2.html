@@ -69,7 +69,9 @@ function getRoomClients(v) {
 }
 
 function joinRoom(v) {
-    tSocket.joinRoom(v);
+    tSocket.joinRoom(v, function(data) { 
+        console.log(data);
+    });
 }
   
 function leaveRoom(v) {
