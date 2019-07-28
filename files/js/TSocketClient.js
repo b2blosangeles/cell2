@@ -40,7 +40,7 @@
            });
       };
     
-      this.joinRoom = function (room, clientInfo) { 
+      this.joinRoom = function (room) { 
          me = this;
          _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1);
          var session_id = '' + _ROOT._SN;
@@ -49,8 +49,7 @@
                 room        : room,
                 session_id  : session_id,
                 data        : {
-                        code        : 'joinRoom',
-                        clientInfo  : encodeURIComponent(JSON.stringify(clientInfo))
+                        code        : 'joinRoom'
                   }
               });
       };
