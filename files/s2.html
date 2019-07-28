@@ -7,7 +7,7 @@
 <script>
   var tSocket = new TSocketClient();
 
-    tSocket.addEvent('roomMessage', function(data, session_id) {
+    tSocket.addEvent('clientMessage', function(data, session_id) {
         var clientInfo = (data.clientInfo) ?  JSON.parse(decodeURIComponent(data.clientInfo)) : {};
         if (data.code === 'joinRoom') {
             console.log( 'Welcome ' +  clientInfo.id);
@@ -23,14 +23,14 @@
         console.log(data);
         console.log('<--hubQueryClients');
     });
-  
+  /*
    tSocket.addEvent('clientMessage', function (data) {
 
         console.log('clientMessage==>');
         console.log(data);
         console.log('<--clientMessage');
     });
- 
+ */
    tSocket.addEvent('disconnect', function (data) {
 
       console.log('user disconnected==>' + tSocket.socket.id);
