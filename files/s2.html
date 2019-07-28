@@ -75,7 +75,9 @@ function joinRoom(v) {
 }
   
 function leaveRoom(v) {
-    tSocket.leaveRoom(v);
+    tSocket.leaveRoom(v, function(data) { 
+        console.log(data);
+    });
 }
   
 function sendToRoom(v) {
