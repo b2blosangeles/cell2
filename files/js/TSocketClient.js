@@ -73,7 +73,9 @@
                 cmd         : 'sendToClient',
                 toClient    : toClientId,
                 session_id  : session_id,
-                data        : encodeURIComponent(JSON.stringify(data))
+                data        : {
+                        data  : encodeURIComponent(JSON.stringify(data))
+                }
               });
       };
     
