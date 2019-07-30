@@ -67,6 +67,7 @@
           var _ITV = setInterval(function () {
                   if (typeof _ROOT._Rsessions[session_id] === 'function') {
                     console.log("==BBBB===>" + session_id)
+                    console.log('===clearInterval===='+_ITV);
                       clearInterval(_ITV);
                     console.log('===A1A===='+session_id);
                       _ROOT._Rsessions[session_id](func);
