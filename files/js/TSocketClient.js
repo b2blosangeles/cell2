@@ -177,6 +177,7 @@
           var _ITV = setInterval(function () {
                   if (typeof _ROOT._sessions[session_id] === 'function') {
                       clearInterval(_ITV);
+                      console.log('--cclleeaarr---');
                       _ROOT._sessions[session_id](func);
                   }
                 },50);
