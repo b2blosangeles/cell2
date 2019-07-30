@@ -86,13 +86,7 @@
 
       this.leaveRoom = function (room, func) { 
          me = this;
-         var session_id = me.getSN();
-         me.socket.emit('clientRequest', {
-                cmd         : 'leaveRoom',
-                room        : room,
-                session_id  : session_id
-              });
-        this.sessionCallback(session_id, func)
+         me.emit('clientRequest', {cmd : 'leaveRoom', room : room},  func);
       };
     
       this.sendToRoom = function (room, data, clientInfo) { 
