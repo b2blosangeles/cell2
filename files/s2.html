@@ -43,7 +43,7 @@
     }                  
   );
 
-   tSocket.on('clientRequestResponse', function(data){
+   tSocket.addEvent('clientRequestResponse', function(data){
           console.log('=====clientRequestResponse=====>>>');
           console.log(data);
           console.log('<<<-----clientRequestResponse---');
