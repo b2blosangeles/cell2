@@ -147,8 +147,8 @@
           var me = this;
           var session_id = me.getSN();
           me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
-          var cp = new crowdProcess(), _f = {};
-          me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
+        //  var cp = new crowdProcess(), _f = {};
+        //  me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
           var _ITV = setInterval(function () {
                   if (typeof _ROOT._sessions[session_id] === 'function') {
                       clearInterval(_ITV);
