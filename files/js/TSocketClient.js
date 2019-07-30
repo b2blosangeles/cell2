@@ -19,6 +19,7 @@
                var s = session_id.split('.');
               _ROOT._Rsessions[s[1]] = function(cbk) {
                 console.log(3344);
+                 console.log('--cclleeaarr---');
                    delete _ROOT._Rsessions[s[1]];
                    if (typeof cbk === 'function') cbk(data);
                }
@@ -179,7 +180,7 @@
           var _ITV = setInterval(function () {
                   if (typeof _ROOT._sessions[session_id] === 'function') {
                       clearInterval(_ITV);
-                      console.log('--cclleeaarr---');
+                     
                       _ROOT._sessions[session_id](func);
                   }
                 },50);
