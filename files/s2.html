@@ -42,6 +42,13 @@
         tSocket.setClientInfo({id: 'a2A'});
     }                  
   );
+
+   tSocket.on('clientRequestResponse', function(data){
+          console.log('=====clientRequestResponse=====>>>');
+          console.log(data);
+          console.log('<<<-----clientRequestResponse---');
+      
+      });
    /* 
       socket.on('clientRequestCBK', function(data){
           console.log('=====clientRequestCBK=====>>>');
