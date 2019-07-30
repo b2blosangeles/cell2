@@ -79,7 +79,7 @@
                   }
                 },50);
           setTimeout(function() {
-              if (_ITV) {
+              if ((_ITV) && typeof _ROOT._Rsessions[session_id] === 'function') {
                 clearInterval(_ITV);
                 console.log('---->2>---timeout');
               }
