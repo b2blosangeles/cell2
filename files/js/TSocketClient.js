@@ -61,12 +61,14 @@
                   if (typeof _ROOT._sessions[session_id] === 'function') {
                       clearInterval(_ITV);
                       _ROOT._sessions[session_id](func);
+                      delete _ROOT._sessions[session_id];
                   }
                 },50);
           setTimeout(function() {
               clearInterval(_ITV);
             }, 6000);      
       }
+
       this.joinRoom = function (room, func) { 
          me = this;
          var session_id = me.getSN();
