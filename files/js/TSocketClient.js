@@ -60,7 +60,7 @@
       };
       this.sessionCallback = function(session_id, func) {
           me = this;
-        console.log('===AAA====);
+        console.log('===AAA====');
           var _ITV = setInterval(function () {
                   if (typeof _ROOT._sessions[session_id] === 'function') {
                     console.log("==BBBB===>" + session_id)
@@ -68,7 +68,7 @@
                       _ROOT._sessions[session_id](func);
                       delete _ROOT._sessions[session_id];
                   } else {
-                    console.log('===ACCC====);
+                    console.log('===ACCC====');
                   }
                 },50);
           setTimeout(function() {
