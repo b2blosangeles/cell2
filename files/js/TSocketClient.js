@@ -16,10 +16,10 @@
               if (!data || !session_id) return true;
             
                console.log('===>>>' + session_id);
-            
-              _ROOT._Rsessions[session_id] = function(cbk) {
+               var s = session_id.split('.');
+              _ROOT._Rsessions[s[1]] = function(cbk) {
                 console.log(3344);
-                   delete _ROOT._Rsessions[session_id];
+                   delete _ROOT._Rsessions[s[1]];
                    if (typeof cbk === 'function') cbk(data);
                }
               console.log( _ROOT._Rsessions);
