@@ -79,8 +79,10 @@
                   }
                 },50);
           setTimeout(function() {
-              clearInterval(_ITV);
-              console.log('---->>---timeout');
+              if (_ITV) {
+                clearInterval(_ITV);
+                console.log('---->2>---timeout');
+              }
             }, 6000);      
       }
 
