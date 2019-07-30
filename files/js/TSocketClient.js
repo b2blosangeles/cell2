@@ -4,7 +4,6 @@
       this.socket = null;
       this._clients = {}
       this._sessions = {}
-      this._reqSessions = {}
     
       this.getSN = function() {
         _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1)
@@ -14,8 +13,8 @@
       this.events = { 
           callbackMessage : function(data, session_id) {
               if (!data || !session_id) return true;
-              _ROOT._ReqSessions[session_id] = function(cbk) {
-                   delete _ROOT._ReqSessions[session_id];
+              _ROOT._sessions[session_id] = function(cbk) {
+                   delete _ROOT._sessions[session_id];
                    if (typeof cbk === 'function') cbk(data);
                }
           },
@@ -72,7 +71,8 @@
                 room        : room,
                 session_id  : session_id
           });
-          this.sessionCallback(session_id, func);
+       
+          me.sessionCallback(session_id, func);
       };
 
       this.leaveRoom = function (room, func) { 
