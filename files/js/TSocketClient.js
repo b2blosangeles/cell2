@@ -13,15 +13,13 @@
     
       this.events = { 
           callbackMessage : function(data, session_id) {
-            console.log('--incomeData.session_id--->>>' + session_id);
-            console.log(data);
               if (!data || !session_id) return true;
-            console.log('--incomeData.session_id-334-->>>' + session_id);
               _ROOT._Rsessions[session_id] = function(cbk) {
                 console.log(3344);
                    delete _ROOT._Rsessions[session_id];
                    if (typeof cbk === 'function') cbk(data);
                }
+              console.log( _ROOT._Rsessions[session_id]);
           },
           roomCilents : function(data, session_id){
             /*the 
