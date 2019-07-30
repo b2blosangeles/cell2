@@ -4,13 +4,21 @@
       this.socket = null;
       this._clients = {}
       this._sessions = {}
-      
+      this._reqSessions = {}
+    
       this.getSN = function() {
         _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1)
         return '' + _ROOT._SN;
       }
     
       this.events = { 
+          callbackMessage : function(data, session_id) {
+              if (!data || !session_id) return true;
+              _ROOT._ReqSessions[session_id] = function(cbk) {
+                   delete _ROOT._ReqSessions[session_id];
+                   if (typeof cbk === 'function') cbk(data);
+               }
+          },
           roomCilents : function(data, session_id){
               if (!data || !session_id) return true;
               var s = session_id.split('.')
