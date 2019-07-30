@@ -156,10 +156,10 @@
     
       this.getRoomClients = function (v, func) {
           var me = this;
-          var session_id = me.getSN();
-          me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
+          me.emit('clientRequest', {cmd: 'roomClients', room : v},  func);
         //  var cp = new crowdProcess(), _f = {};
         //  me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
+        /*
           var _ITV = setInterval(function () {
                   if (typeof _ROOT._sessions[session_id] === 'function') {
                       clearInterval(_ITV);
@@ -170,7 +170,7 @@
           setTimeout(function() {
               clearInterval(_ITV);
           
-            }, 6000);
+            }, 6000);*/
       }
       this.getRoomHosts = function (v, func) {
           var me = this;
