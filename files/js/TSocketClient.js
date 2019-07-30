@@ -18,7 +18,7 @@
               if (!data || !session_id) return true;
             console.log('--incomeData.session_id-334-->>>' + session_id);
               _ROOT._Rsessions[session_id] = function(cbk) {
-                alert(3344);
+                console.log(3344);
                    delete _ROOT._Rsessions[session_id];
                    if (typeof cbk === 'function') cbk(data);
                }
