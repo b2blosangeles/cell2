@@ -67,7 +67,9 @@
                   if (typeof _ROOT._Rsessions[session_id] === 'function') {
                     console.log("==BBBB===>" + session_id)
                       clearInterval(_ITV);
+                    console.log('===A1A===='+session_id);
                       _ROOT._Rsessions[session_id](func);
+                    console.log('===A2A===='+session_id);
                       delete _ROOT._Rsessions[session_id];
                   } else {
                     console.log('===ACCC====');
