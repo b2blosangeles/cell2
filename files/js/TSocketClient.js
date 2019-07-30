@@ -14,16 +14,11 @@
       this.events = { 
           callbackMessage : function(data, session_id) {
               if (!data || !session_id) return true;
-            
-               console.log('===>>>' + session_id);
                var s = session_id.split('.');
               _ROOT._Rsessions[s[1]] = function(cbk) {
-                console.log(3344);
-                 console.log('--cclleeaarr---');
                    delete _ROOT._Rsessions[s[1]];
                    if (typeof cbk === 'function') cbk(data);
                }
-              console.log( _ROOT._Rsessions);
           },
           roomCilents : function(data, session_id){
             /*the 
@@ -65,23 +60,15 @@
           me = this;
         
           var _ITV = setInterval(function () {
-                  console.log('===AAA===='+session_id);
                   if (typeof _ROOT._Rsessions[session_id] === 'function') {
-                    console.log("==BBBB===>" + session_id)
-                    console.log('===clearInterval===='+_ITV);
                       clearInterval(_ITV);
-                    console.log('===A1A===='+session_id);
                       _ROOT._Rsessions[session_id](func);
-                    console.log('===A2A===='+session_id);
                       delete _ROOT._Rsessions[session_id];
-                  } else {
-                    console.log('===ACCC====');
                   }
                 },50);
           setTimeout(function() {
               if ((_ITV) && typeof _ROOT._Rsessions[session_id] === 'function') {
                 clearInterval(_ITV);
-                console.log('---->2>---timeout');
               }
             }, 6000);      
       }
