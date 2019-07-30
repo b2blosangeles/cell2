@@ -14,6 +14,9 @@
       this.events = { 
           callbackMessage : function(data, session_id) {
               if (!data || !session_id) return true;
+            
+               console.log('===>>>' + session_id);
+            
               _ROOT._Rsessions[session_id] = function(cbk) {
                 console.log(3344);
                    delete _ROOT._Rsessions[session_id];
