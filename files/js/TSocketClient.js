@@ -60,6 +60,7 @@
           me = this;
           var _ITV = setInterval(function () {
                   if (typeof _ROOT._sessions[session_id] === 'function') {
+                    console.log("==PPP===>" + session_id)
                       clearInterval(_ITV);
                       _ROOT._sessions[session_id](func);
                       delete _ROOT._sessions[session_id];
