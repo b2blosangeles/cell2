@@ -164,7 +164,7 @@
              var list = (!data.data.clients) ? {} : data.data.clients;
              var hosts = {};
              for (var o in  list) {
-                  var d = o.split('_');
+                  var d = o.split('->');
                   hosts[d[0]] = 1;
              }
              func(Object.keys(hosts));
