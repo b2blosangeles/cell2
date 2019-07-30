@@ -15,6 +15,7 @@
             console.log('--incomeData.session_id--->>>' + session_id);
             console.log(data);
               if (!data || !session_id) return true;
+            console.log('--incomeData.session_id-334-->>>' + session_id);
               _ROOT._sessions[session_id] = function(cbk) {
                 alert(3344);
                    delete _ROOT._sessions[session_id];
