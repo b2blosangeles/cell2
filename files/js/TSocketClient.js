@@ -73,6 +73,7 @@
                 },50);
           setTimeout(function() {
               clearInterval(_ITV);
+              alert('timeout');
             }, 6000);      
       }
 
@@ -179,7 +180,7 @@
                 },50);
           setTimeout(function() {
               clearInterval(_ITV);
-            alert('timeout');
+          
             }, 6000);
       }
       this.getRoomHosts = function (v, func) {
