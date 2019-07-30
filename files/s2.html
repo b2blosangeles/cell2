@@ -77,6 +77,7 @@ function getRoomClients(v) {
 
 function joinRoom(v) {
     tSocket.joinRoom(v, function(data) { 
+        console.log('after join room==>');
         console.log(data);
     });
 }
