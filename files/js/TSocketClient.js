@@ -13,6 +13,7 @@
       this.events = { 
           callbackMessage : function(data, session_id) {
             console.log('--incomeData.session_id--->>>' + session_id);
+            console.log(data);
               if (!data || !session_id) return true;
               _ROOT._sessions[session_id] = function(cbk) {
                 alert(3344);
