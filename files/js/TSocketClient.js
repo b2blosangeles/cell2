@@ -157,25 +157,11 @@
       this.getRoomClients = function (v, func) {
           var me = this;
           me.emit('clientRequest', {cmd: 'roomClients', room : v},  func);
-        //  var cp = new crowdProcess(), _f = {};
-        //  me.emit('clientRequest', {cmd: 'roomClients', room : v, session_id : session_id});
-        /*
-          var _ITV = setInterval(function () {
-                  if (typeof _ROOT._sessions[session_id] === 'function') {
-                      clearInterval(_ITV);
-                     
-                      _ROOT._sessions[session_id](func);
-                  }
-                },50);
-          setTimeout(function() {
-              clearInterval(_ITV);
-          
-            }, 6000);*/
       }
       this.getRoomHosts = function (v, func) {
           var me = this;
           me.getRoomClients(v, function(data) {
-             var list = (!data.clients) ? {} : data.clients;
+             var list = (!data.data.clients) ? {} : data.data.clients;
              var hosts = {};
              for (var o in  list) {
                   var d = o.split('_');
