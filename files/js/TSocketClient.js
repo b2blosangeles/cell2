@@ -38,17 +38,12 @@
                */
           }
       };
-      this.emitA = function (k, data, cbk) {
+      this.emit = function (k, data, cbk) {
           var me = this;
           var session_id = me.getSN();
           data.session_id  = session_id;
           me.socket.emit(k, data); 
           me.sessionCallback(session_id, cbk);
-      };
-    
-      this.emit = function (k, data) {
-        var me = this;
-        me.socket.emit(k, data); 
       };
 
       this.sendToClient = function ( toClientId, data) { 
