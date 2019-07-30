@@ -43,10 +43,10 @@
     }                  
   );
 
-   tSocket.addEvent('clientRequestResponse', function(data){
-          console.log('=====clientRequestResponse=====>>>');
+   tSocket.addEvent('callbackMessage', function(data){
+          console.log('=====callbackMessage=====>>>');
           console.log(data);
-          console.log('<<<-----clientRequestResponse---');
+          console.log('<<<-----callbackMessage---');
       
       });
    /* 
