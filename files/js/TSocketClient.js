@@ -72,7 +72,7 @@
                 },50);
           setTimeout(function() {
               clearInterval(_ITV);
-              alert('timeout');
+              console.log('---->>---timeout');
             }, 6000);      
       }
 
