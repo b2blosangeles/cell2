@@ -74,12 +74,13 @@
       this.joinRoom = function (room, func) { 
          me = this;
          var session_id = me.getSN();
+        /*
          me.socket.emit('clientRequest', {
                 cmd         : 'joinRoom',
                 room        : room,
                 session_id  : session_id
           });
-       
+       */
           me.sessionCallback(session_id, func);
       };
 
