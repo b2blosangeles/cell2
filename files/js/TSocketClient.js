@@ -59,7 +59,7 @@
       };
       this.sessionCallback = function(session_id, func) {
           me = this;
-        console.log('into me.sessionCallback(session_id, func);' + );
+        console.log('into me.sessionCallback(session_id, func);');
           var _ITV = setInterval(function () {
                   if (typeof _ROOT._sessions[session_id] === 'function') {
                     console.log("==PPP===>" + session_id)
