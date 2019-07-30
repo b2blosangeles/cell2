@@ -62,7 +62,7 @@
       };
       this.sessionCallback = function(session_id, func) {
           me = this;
-        console.log('===AAA====');
+        console.log('===AAA===='+session_id);
           var _ITV = setInterval(function () {
                   if (typeof _ROOT._Rsessions[session_id] === 'function') {
                     console.log("==BBBB===>" + session_id)
