@@ -4,6 +4,7 @@
       this.socket = null;
       this._clients = {}
       this._sessions = {}
+      this._Rsessions = {}
     
       this.getSN = function() {
         _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1)
@@ -16,9 +17,9 @@
             console.log(data);
               if (!data || !session_id) return true;
             console.log('--incomeData.session_id-334-->>>' + session_id);
-              _ROOT._sessions[session_id] = function(cbk) {
+              _ROOT._Rsessions[session_id] = function(cbk) {
                 alert(3344);
-                   delete _ROOT._sessions[session_id];
+                   delete _ROOT._Rsessions[session_id];
                    if (typeof cbk === 'function') cbk(data);
                }
           },
@@ -62,11 +63,11 @@
           me = this;
         console.log('===AAA====');
           var _ITV = setInterval(function () {
-                  if (typeof _ROOT._sessions[session_id] === 'function') {
+                  if (typeof _ROOT._Rsessions[session_id] === 'function') {
                     console.log("==BBBB===>" + session_id)
                       clearInterval(_ITV);
-                      _ROOT._sessions[session_id](func);
-                      delete _ROOT._sessions[session_id];
+                      _ROOT._Rsessions[session_id](func);
+                      delete _ROOT._Rsessions[session_id];
                   } else {
                     console.log('===ACCC====');
                   }
