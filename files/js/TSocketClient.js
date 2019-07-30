@@ -19,23 +19,6 @@
                    delete _ROOT._Rsessions[s[1]];
                    if (typeof cbk === 'function') cbk(data);
                }
-          },
-          roomCilents : function(data, session_id){
-            /*the 
-              if (!data || !session_id) return true;
-              var s = session_id.split('.')
-              _ROOT._sessions[s[1]] = function(cbk) {
-                    var room = data.room, clients = (!data.clients) ? {} : data.clients;
-                    for (o in clients) {
-                        try {
-                         clients[o] = (clients[o]) ?  JSON.parse(decodeURIComponent(clients[o])) : {};
-                        } catch (e) {}
-                    }
-                    _ROOT._clients[room] = clients;
-                   delete _ROOT._sessions[s[1]];
-                   if (typeof cbk === 'function') cbk(data);
-               }
-               */
           }
       };
       this.emit = function (k, data, cbk) {
