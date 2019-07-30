@@ -21,6 +21,7 @@
                }
           },
           roomCilents : function(data, session_id){
+            /*the 
               if (!data || !session_id) return true;
               var s = session_id.split('.')
               _ROOT._sessions[s[1]] = function(cbk) {
@@ -34,6 +35,7 @@
                    delete _ROOT._sessions[s[1]];
                    if (typeof cbk === 'function') cbk(data);
                }
+               */
           }
       };
       this.emit = function (k, data) {
