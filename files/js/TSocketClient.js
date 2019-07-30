@@ -19,7 +19,7 @@
                    delete _ROOT._Rsessions[session_id];
                    if (typeof cbk === 'function') cbk(data);
                }
-              console.log( _ROOT._Rsessions[session_id]);
+              console.log( _ROOT._Rsessions);
           },
           roomCilents : function(data, session_id){
             /*the 
