@@ -78,7 +78,7 @@
 
       this.joinRoom = function (room, func) { 
          me = this;
-         me.emitA('clientRequest', {
+         me.emit('clientRequest', {
                 cmd         : 'joinRoom',
                 room        : room
           }, func);
