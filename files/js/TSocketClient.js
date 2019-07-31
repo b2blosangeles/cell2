@@ -31,7 +31,6 @@
 
       this.sendToClient = function ( toClientId, data) { 
          me = this;
-        
          var session_id = me.getSN();
          me.socket.emit('clientRequest', {
                 cmd         : 'sendToClient',
@@ -44,7 +43,6 @@
       };
       this.sessionCallback = function(session_id, func) {
           me = this;
-        
           var _ITV = setInterval(function () {
                   if (typeof _ROOT._Rsessions[session_id] === 'function') {
                       clearInterval(_ITV);
@@ -86,9 +84,7 @@
                 }
               });
       };
-    
 
-    
       this.setClientInfo = function (v) {
           var me = this;
           me.socket.emit('setClientInfo', encodeURIComponent(JSON.stringify(v)));
