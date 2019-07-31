@@ -51,8 +51,9 @@
                   }
                 },50);
           setTimeout(function() {
-              if ((_ITV) && typeof _ROOT._Rsessions[session_id] === 'function') {
-                clearInterval(_ITV);
+              clearInterval(_ITV);
+              if (typeof _ROOT._Rsessions[session_id] === 'function') {
+                // TODO missing call back
               }
             }, 6000);      
       }
