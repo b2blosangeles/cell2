@@ -92,8 +92,8 @@ function sendToRoom(v) {
     tSocket.sendToRoom(v, {text : ' 学得很快!sendToRoom'});
 }
   
-function sendToClient(v) {
-    tSocket.sendToClient(v, {text : ' 学得很快!'});
+function clientToclient(v) {
+    tSocket.clientToclient(v, {text : ' 学得很快!'});
 }
   
 </script>
