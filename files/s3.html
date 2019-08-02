@@ -64,12 +64,14 @@ function getRoomClients(v) {
 
 function joinRoom(v) {
     tSocket.joinRoom(v, function(data) { 
+        loadList(data.data.clients);
         console.log(data);
     });
 }
   
 function leaveRoom(v) {
     tSocket.leaveRoom(v, function(data) { 
+        loadList(data.data.clients);
         console.log(data);
     });
 }
