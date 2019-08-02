@@ -7,6 +7,15 @@
 <script>
   var tSocket = new TSocketClient();
 
+  var loadList = function(clients) {
+      let str = '';
+      for (var o in clients) {
+          str += '<a href="javascript:void(0)" onClick="clientToclient(\'' + o + '\')">' + o + '<br/>';
+      }
+      $('#rightBox').html(str);
+  }  
+  
+  
     tSocket.addEvent('clientMessage', function(data, session_id) {
         var fromClient = (data.fromClient) ?  JSON.parse(decodeURIComponent(data.fromClient)) : {};
         var toClient = (data.toClient) ?  JSON.parse(decodeURIComponent(data.toClient)) : {};
@@ -37,53 +46,32 @@
       console.log('<--user disconnected');
   });
   
-  tSocket.connection('//comm2_dev.shusiou.win/?_code=eda.js&param=as',
+  tSocket.connection('//comm1_dev.shusiou.win/?_code=eda.js&param=as',
     function() {
         tSocket.setClientInfo({id: 'a2A'});
     }                  
   );
-/*
-   tSocket.addEvent('callbackMessage', function(data){
-          console.log('=====callbackMessage=====>>>');
-          console.log(data);
-          console.log('<<<-----callbackMessage---');
-      
-      });
-      */
-   /* 
-      socket.on('clientRequestCBK', function(data){
-          console.log('=====clientRequestCBK=====>>>');
-          console.log(data);
-          console.log('<<<-----clientRequestCBK---');
-      
-      });
-  
-      socket.on('ioAppError', function(data){
-          console.log('------ioAppError------>>>');
-          console.log(data);
-          console.log('<<<------------');
-      
-      });
-    
-  });
-*/
+
 function getRoomClients(v) {
     tSocket.getRoomClients(v, function(data) { 
-        console.log(data.data.clients);
+        loadList(data.data.clients);
+        console.log(data);
     });
     tSocket.getRoomHosts(v, function(data) { 
-        console.log(data);
+   //     console.log(data);
     });
 }
 
 function joinRoom(v) {
     tSocket.joinRoom(v, function(data) { 
+        loadList(data.data.clients);
         console.log(data);
     });
 }
   
 function leaveRoom(v) {
     tSocket.leaveRoom(v, function(data) { 
+        loadList(data.data.clients);
         console.log(data);
     });
 }
@@ -103,24 +91,29 @@ function clientToclient(v) {
 <div class="container bg-light">
   <div class="row">
     <div class="col-sm-12 p-0 pl-2 pr-2" id="topMenu">
-      <a href="javascript:void(0)" onClick="getRoomClients('PPQ')">getRoomClient PPQ</a>
-      <hr/>
-      <a href="javascript:void(0)" onClick="getRoomClients('PPV')">getRoomClient PPV</a>
-      <hr/>
-       <a href="javascript:void(0)" onClick="joinRoom('PPV')">join room PPV</a>
-      
-       <hr/>
-       <a href="javascript:void(0)" onClick="leaveRoom('PPV')">leave room PPV</a>
-    
-       <hr/>
-       <a href="javascript:void(0)" onClick="sendToRoom('PPV')">Send Message To Room</a>
-    </div>
-   
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-3 p-0 pl-2 pr-1" id="leftBox"></div>
-    <div class="col-sm-9 p-0 pl-1 pr-2" id="rightBox"></div>
+    <div class="col-sm-6 p-0 pl-2 pr-1" id="leftBox">
+        <a href="javascript:void(0)" onClick="getRoomClients('PPQ')">getRoomClient PPQ</a>
+        <hr/>
+        <a href="javascript:void(0)" onClick="getRoomClients('PPV')">getRoomClient PPV</a>
+        <hr/>
+        <a href="javascript:void(0)" onClick="joinRoom('PPV')">join room PPV</a>
+
+        <hr/>
+        <a href="javascript:void(0)" onClick="leaveRoom('PPV')">leave room PPV</a>
+
+        <hr/>
+        <a href="javascript:void(0)" onClick="sendToRoom('PPV')">Send Message To Room</a>
+    </div>
+    <div class="col-sm-6" id="rightBox">
+    </div>  
+  </div>
+
+      <!--div class="col-sm-9 p-0 pl-1 pr-2" id="rightBox"></div>
+      </div-->
+    
   </div>
 </div>
 </body>
