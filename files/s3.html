@@ -64,24 +64,24 @@ function getRoomClients(v) {
 
 function joinRoom(v) {
     tSocket.joinRoom(v, function(data) { 
-        loadList(data.data.clients);
-        console.log(data);
+      getRoomClients(v);
     });
 }
   
 function leaveRoom(v) {
     tSocket.leaveRoom(v, function(data) { 
-        loadList(data.data.clients);
-        console.log(data);
+        getRoomClients(v);
     });
 }
   
 function sendToRoom(v) {
     tSocket.sendToRoom(v, {text : ' 学得很快!sendToRoom'});
+    getRoomClients(v);
 }
   
 function clientToclient(v) {
     tSocket.clientToclient(v, {text : ' 学得很快!'});
+   getRoomClients(v);
 }
   
 </script>
