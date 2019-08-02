@@ -136,6 +136,7 @@
     
       this.getRoomClients = function (v, func) {
           var me = this;
+        console.log('---send getRoomClients--->')
           me.emit('clientRequest', {cmd: 'roomClients', room : v},  func);
       }
       this.getRoomHosts = function (v, func) {
