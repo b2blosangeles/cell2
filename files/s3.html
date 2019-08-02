@@ -7,6 +7,15 @@
 <script>
   var tSocket = new TSocketClient();
 
+  var loadList = function(clients) {
+      let str = '';
+      for (var o in clients) {
+          str += o;
+      }
+      $('#rightBox').html(str);
+  }  
+  
+  
     tSocket.addEvent('clientMessage', function(data, session_id) {
         var fromClient = (data.fromClient) ?  JSON.parse(decodeURIComponent(data.fromClient)) : {};
         var toClient = (data.toClient) ?  JSON.parse(decodeURIComponent(data.toClient)) : {};
@@ -42,34 +51,10 @@
         tSocket.setClientInfo({id: 'a2A'});
     }                  
   );
-/*
-   tSocket.addEvent('callbackMessage', function(data){
-          console.log('=====callbackMessage=====>>>');
-          console.log(data);
-          console.log('<<<-----callbackMessage---');
-      
-      });
-      */
-   /* 
-      socket.on('clientRequestCBK', function(data){
-          console.log('=====clientRequestCBK=====>>>');
-          console.log(data);
-          console.log('<<<-----clientRequestCBK---');
-      
-      });
-  
-      socket.on('ioAppError', function(data){
-          console.log('------ioAppError------>>>');
-          console.log(data);
-          console.log('<<<------------');
-      
-      });
-    
-  });
-*/
+
 function getRoomClients(v) {
     tSocket.getRoomClients(v, function(data) { 
-        console.log(data.data.clients);
+        loadList(data.data.clients);
     });
     tSocket.getRoomHosts(v, function(data) { 
         console.log(data);
@@ -102,7 +87,7 @@ function sendToClient(v) {
 <body>
 <div class="container bg-light">
   <div class="row">
-    <div class="col-sm-12 p-0 pl-2 pr-2" id="topMenu">
+    <div class="col-sm-6 p-0 pl-2 pr-2" id="topMenu">
       <a href="javascript:void(0)" onClick="getRoomClients('PPQ')">getRoomClient PPQ</a>
       <hr/>
       <a href="javascript:void(0)" onClick="getRoomClients('PPV')">getRoomClient PPV</a>
@@ -119,7 +104,9 @@ function sendToClient(v) {
        <hr/>
        <a href="javascript:void(0)" onClick="sendToClient('68.183.49.110->w0ZgIj6-sRdXt76XAAG9')">Send To client</a>
     </div>
-   
+     <div class="col-sm-6" id="rightMenu">
+
+    </div>  
     </div>
   </div>
   <div class="row">
