@@ -10,7 +10,7 @@
   var loadList = function(clients) {
       let str = '';
       for (var o in clients) {
-          str += '<a href="javascript:voice(0)" onClick="sendToClient(\'' + o + '\')">' + o + '<br/>';
+          str += '<a href="javascript:void(0)" onClick="sendToClient(\'' + o + '\')">' + o + '<br/>';
       }
       $('#rightBox').html(str);
   }  
@@ -46,7 +46,7 @@
       console.log('<--user disconnected');
   });
   
-  tSocket.connection('//comm2_dev.shusiou.win/?_code=eda.js&param=as',
+  tSocket.connection('//comm1_dev.shusiou.win/?_code=eda.js&param=as',
     function() {
         tSocket.setClientInfo({id: 'a2A'});
     }                  
