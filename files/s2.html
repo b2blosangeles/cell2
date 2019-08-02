@@ -15,6 +15,7 @@
       $('#rightBox').html(str);
   }  
   
+  
     tSocket.addEvent('clientMessage', function(data, session_id) {
         var fromClient = (data.fromClient) ?  JSON.parse(decodeURIComponent(data.fromClient)) : {};
         var toClient = (data.toClient) ?  JSON.parse(decodeURIComponent(data.toClient)) : {};
@@ -30,7 +31,14 @@
         }
       console.log(data);
       });
+/*
+   tSocket.addEvent('hubQueryClients', function (data) {
 
+        console.log('hubQueryClients==>');
+        console.log(data);
+        console.log('<--hubQueryClients');
+    });
+*/
    tSocket.addEvent('disconnect', function (data) {
 
       console.log('user disconnected==>' + tSocket.socket.id);
@@ -56,24 +64,24 @@ function getRoomClients(v) {
 
 function joinRoom(v) {
     tSocket.joinRoom(v, function(data) { 
-        loadList(data.data.clients);
-        console.log(data);
+      getRoomClients(v);
     });
 }
   
 function leaveRoom(v) {
     tSocket.leaveRoom(v, function(data) { 
-        loadList(data.data.clients);
-        console.log(data);
+        getRoomClients(v);
     });
 }
   
 function sendToRoom(v) {
     tSocket.sendToRoom(v, {text : ' 学得很快!sendToRoom'});
+    getRoomClients(v);
 }
   
 function clientToclient(v) {
     tSocket.clientToclient(v, {text : ' 学得很快!'});
+   getRoomClients(v);
 }
   
 </script>
@@ -100,6 +108,10 @@ function clientToclient(v) {
     <div class="col-sm-6" id="rightBox">
     </div>  
   </div>
+
+      <!--div class="col-sm-9 p-0 pl-1 pr-2" id="rightBox"></div>
+      </div-->
+    
   </div>
 </div>
 </body>
