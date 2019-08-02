@@ -29,11 +29,11 @@
           me.sessionCallback(session_id, cbk);
       };
 
-      this.sendToClient = function ( toClientId, data) { 
+      this.clientToclient = function ( toClientId, data) { 
          me = this;
          var session_id = me.getSN();
          me.socket.emit('clientRequest', {
-                cmd         : 'sendToClient',
+                cmd         : 'clientToclient',
                 toClient    : toClientId,
                 session_id  : session_id,
                 data        : {
