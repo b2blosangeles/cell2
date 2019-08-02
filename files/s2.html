@@ -53,7 +53,9 @@
   );
 
 function getRoomClients(v) {
+    console.log('---n getRoomClients1-->');
     tSocket.getRoomClients(v, function(data) { 
+       console.log('---n getRoomClients2-->');
         loadList(data.data.clients);
         console.log(data);
     });
