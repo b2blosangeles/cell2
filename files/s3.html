@@ -65,6 +65,7 @@ function getRoomClients(v) {
 function joinRoom(v) {
     tSocket.joinRoom(v, function(data) { 
       getRoomClients(v);
+      console.log(data);
     });
 }
   
