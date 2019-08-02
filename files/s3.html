@@ -10,7 +10,7 @@
   var loadList = function(clients) {
       let str = '';
       for (var o in clients) {
-          str += o + '<br/>';
+          str += '<a href="javascript:voice(0)" onClick="sendToClient(\'' + o + '\')">' + o + '<br/>';
       }
       $('#rightBox').html(str);
   }  
