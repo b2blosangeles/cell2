@@ -44,14 +44,16 @@
       this.sessionCallback = function(session_id, func) {
         console.log('--sessionCallback --->' + session_id)
           me = this;
-          var _ITV = setInterval(function () {
-                  if (typeof _ROOT._Rsessions[session_id] === 'function') {
-                      console.log('--sessionCallback done --->' + session_id)
-                      clearInterval(_ITV);
-                      _ROOT._Rsessions[session_id](func);
-                      delete _ROOT._Rsessions[session_id];
-                  }
-                },100);
+          var _ITV = setInterval((function () {
+                  return function() {
+                        if (typeof _ROOT._Rsessions[session_id] === 'function') {
+                            console.log('--sessionCallback done --->' + session_id)
+                            clearInterval(_ITV);
+                            _ROOT._Rsessions[session_id](func);
+                            delete _ROOT._Rsessions[session_id];
+                        }
+                      }
+                })(session_id),100);
           setTimeout(function() {
               clearInterval(_ITV);
               if (typeof _ROOT._Rsessions[session_id] === 'function') {
