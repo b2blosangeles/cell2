@@ -54,13 +54,15 @@
                         }
                       }
                 })(session_id),100);
-          setTimeout(function() {
-              clearInterval(_ITV);
-              if (typeof _ROOT._Rsessions[session_id] === 'function') {
-                console.log('--sessionCallback timeout--->' + session_id)
-                // TODO missing call back
+          setTimeout((function(session_id) {
+              return function() {
+                    clearInterval(_ITV);
+                    if (typeof _ROOT._Rsessions[session_id] === 'function') {
+                      console.log('--sessionCallback timeout--->' + session_id)
+                      // TODO missing call back
+                    }
               }
-            }, 6000);      
+            })(session_id), 6000);      
       }
 
       this.joinRoom = function (room, func) { 
