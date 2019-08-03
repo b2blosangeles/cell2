@@ -61,14 +61,14 @@
 
 function getRoomClients(v) {
     tSocket.getRoomClients(v, function(data) { 
-       console.log('---======callbackMessage=-33-->');
+       console.log('---======callbackMessage=-333-->');
         loadList(data.data.clients);
         console.log(data);
-          tSocket.getRoomHosts(v, function(data) { 
+
+    });
+    tSocket.getRoomHosts(v, function(data) { 
         console.log(data);
         });
-    });
-
 }
 
 function joinRoom(v) {
