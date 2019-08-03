@@ -42,6 +42,7 @@
            });
       };
       this.sessionCallback = function(session_id, func) {
+        console.log('--sessionCallback --->' + session_id)
           me = this;
           var _ITV = setInterval(function () {
                   if (typeof _ROOT._Rsessions[session_id] === 'function') {
