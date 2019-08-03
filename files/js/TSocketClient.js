@@ -51,7 +51,7 @@
                       _ROOT._Rsessions[session_id](func);
                       delete _ROOT._Rsessions[session_id];
                   }
-                },50);
+                },100);
           setTimeout(function() {
               clearInterval(_ITV);
               if (typeof _ROOT._Rsessions[session_id] === 'function') {
