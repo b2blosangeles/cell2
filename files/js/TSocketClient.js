@@ -16,7 +16,7 @@
               if (!data || !session_id) return true;
                var s = session_id.split('.');
               _ROOT._Rsessions[s[1]] = function(cbk) {
-                   console.log(s[1] ---- '--coming----');
+                   console.log(s[1] + '--coming----');
                    delete _ROOT._Rsessions[s[1]];
                    if (typeof cbk === 'function') cbk(data);
                }
