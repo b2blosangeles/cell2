@@ -16,6 +16,13 @@
   }  
   
   
+  
+      tSocket.addEvent('callbackMessage', function(data, session_id) {
+        console.log('---data--->');
+        console.log(data);
+        console.log(session_id);
+      });
+  
     tSocket.addEvent('clientMessage', function(data, session_id) {
         var fromClient = (data.fromClient) ?  JSON.parse(decodeURIComponent(data.fromClient)) : {};
         var toClient = (data.toClient) ?  JSON.parse(decodeURIComponent(data.toClient)) : {};
