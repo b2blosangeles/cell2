@@ -54,6 +54,7 @@
           setTimeout(function() {
               clearInterval(_ITV);
               if (typeof _ROOT._Rsessions[session_id] === 'function') {
+                console.log('--sessionCallback timeout--->' + session_id)
                 // TODO missing call back
               }
             }, 6000);      
