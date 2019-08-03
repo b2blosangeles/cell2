@@ -44,7 +44,7 @@
       this.sessionCallback = function(session_id, func) {
         console.log('--sessionCallback --->' + session_id)
           me = this;
-          var _ITV = setInterval((function () {
+          var _ITV = setInterval((function (session_id) {
                   return function() {
                         if (typeof _ROOT._Rsessions[session_id] === 'function') {
                             console.log('--sessionCallback done --->' + session_id)
