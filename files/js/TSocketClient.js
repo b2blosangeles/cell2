@@ -46,9 +46,9 @@
           me = this;
           var _ITV = setInterval((function (session_id) {
                   return function() {
-                        console.log('--sessionCallback done --->' + session_id)
+                        
                         if (typeof _ROOT._Rsessions[session_id] === 'function') {
-                            
+                            console.log('--sessionCallback done --->' + session_id)
                             clearInterval(_ITV);
                             _ROOT._Rsessions[session_id](func);
                             delete _ROOT._Rsessions[session_id];
