@@ -8,7 +8,7 @@
     
       this.getSN = function() {
         _ROOT._SN = (!_ROOT._SN || _ROOT._SN > 9999) ? 1 : (_ROOT._SN + 1)
-        return '' + _ROOT._SN;
+        return new Date().getTime() + '_' + _ROOT._SN;
       }
     
       this.events = { 
