@@ -58,6 +58,7 @@
                 })(session_id),100);
           setTimeout((function(session_id) {
               return function() {
+                    return true;
                     clearInterval(_ITV);
                     if (typeof _ROOT._Rsessions[session_id] === 'function') {
                       console.log('--sessionCallback timeout--->' + session_id)
