@@ -66,9 +66,14 @@ function getRoomClients(v) {
         console.log(data);
 
     });
-    tSocket.getRoomHosts(v, function(data) { 
-        console.log(data);
+    setTimeout(
+      function() {
+        tSocket.getRoomHosts(v, function(data) { 
+          console.log(data);
         });
+      }, 100
+
+    );
 }
 
 function joinRoom(v) {
