@@ -152,7 +152,7 @@
       this.getRoomHosts = function (v, func) {
           var me = this;
        // return true;
-        /*
+        
           me.getRoomClients(v, function(data) {
              var list = (!data.data.clients) ? {} : data.data.clients;
              var hosts = {};
@@ -162,7 +162,7 @@
              }
              func(Object.keys(hosts));
           });
-         */ 
+        
       }
   }
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
