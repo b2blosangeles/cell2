@@ -61,20 +61,20 @@
 
 function getRoomClients(v) {
     tSocket.getRoomClients(v, function(data) { 
-       console.log('---======callbackMessage=-555->');
+       console.log('---======callbackMessage=-666->');
         loadList(data.data.clients);
         console.log(data);
 
     });
   
-    setTimeout(
-      function() {
+   // setTimeout(
+   //   function() {
         tSocket.getRoomHosts(v, function(data) { 
           console.log(data);
         });
-      }, 100
+   //   }, 100
 
-    );
+   // );
     
 }
 
