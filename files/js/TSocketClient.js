@@ -21,8 +21,8 @@
                    if (typeof cbk === 'function') cbk(data);
                }
           },
-          incomeMessage: function(incomeData) {
-              console.log('__incomeMessage_>>');
+          _incomeMessage_: function(incomeData) {
+              console.log('__incomeMessage_>2>');
               console.log(incomeData);
           }
       };
