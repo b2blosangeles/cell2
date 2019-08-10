@@ -20,6 +20,10 @@
                    delete _ROOT._Rsessions[s[1]];
                    if (typeof cbk === 'function') cbk(data);
                }
+          },
+          _incomeMessage_: function(incomeData) {
+              console.log('__incomeMessage_');
+              console.log(incomeData);
           }
       };
       this.emit = function (k, data, cbk) {
