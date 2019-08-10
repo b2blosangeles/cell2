@@ -138,8 +138,8 @@
                 cbk();
              }  
         });
-         me.socket.on('_incomeMessage_', function(income_data) {
-              console.log('__incomeMessage_');
+         me.socket.on('incomeMessage', function(income_data) {
+              console.log('__incomeMessage_>>');
               console.log(income_data);
         });
         
