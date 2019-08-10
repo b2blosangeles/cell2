@@ -150,7 +150,7 @@
           me.emit('clientRequest', {cmd: 'roomClients', room : v},  func);
       }
     
-      this.adminSocketsPool = function (v, func) {
+      this.adminSocketsPool = function (func) {
           var me = this;
           console.log('---send adminSocketsPool--->')
           me.emit('clientRequest', {cmd: 'adminSocketsPool'},  func);
