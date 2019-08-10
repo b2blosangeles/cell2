@@ -134,8 +134,8 @@
                 cbk();
              }  
         });
-         me.socket.on('_serverMessage', function(income_data) {
-              console.log('_serverMessage__');
+         me.socket.on('_incomeMessage_', function(income_data) {
+              console.log('__incomeMessage_');
               console.log(income_data);
         });
         
