@@ -87,10 +87,10 @@ function joinRoom(v) {
 }
   
 tSocket.trigger.clientMessage = function(data) {
-  alert('clientMessage')
+  $('#rightBoxB).html('clientMessage->' + JSON.stringify(data));
 }
 tSocket.trigger.roomMessage = function(data) {
-  alert('roomMessage')
+   $('#rightBoxB).html('roomMessage->' + JSON.stringify(data));
 }
   
 function leaveRoom(v) {
