@@ -20,11 +20,9 @@
                    delete _ROOT._Rsessions[s[1]];
                    if (typeof cbk === 'function') cbk(data);
                }
-          },
-          _incomeMessagegg_: function(incomeData) {
-              console.log('__incomeMessage_>>');
-              console.log(incomeData);
           }
+      };
+      this.trigger = { 
       };
       this.emit = function (k, data, cbk) {
           var me = this;
@@ -139,8 +137,9 @@
              }  
         });
          me.socket.on('_incomeMessage_', function(income_data) {
-              console.log('__incomeMessage_>>');
-              console.log(income_data);
+            if ((me.trigger[income_data.code]) && (typeof me.trigger[income_data.code] === 'function')) {
+                me.trigger[income_data.code](income_data);
+            }
         });
         
         /*
