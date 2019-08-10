@@ -88,6 +88,7 @@ function joinRoom(v) {
   
 function leaveRoom(v) {
     tSocket.leaveRoom(v, function(data) { 
+        
         getRoomClients(v);
     });
 }
@@ -99,6 +100,7 @@ function sendToRoom(v) {
   
 function clientToclient(v) {
     tSocket.clientToclient(v, {text : ' 学得很快!'});
+    alert(v)
   // getRoomClients(v);
 }
   
