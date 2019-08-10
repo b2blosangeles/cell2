@@ -134,7 +134,13 @@
              if (typeof cbk == 'function') { 
                 cbk();
              }  
-        });/*
+        });
+         me.socket.on('_serverMessage', function(income_data) {
+              console.log('_serverMessage__');
+              console.log(income_data);
+        });
+        
+        /*
         me.socket.on('connect', function(dd){
         });*/
       }
@@ -146,13 +152,13 @@
     
       this.getRoomClients = function (v, func) {
           var me = this;
-        console.log('---send getRoomClients--->')
+      //  console.log('---send getRoomClients--->')
           me.emit('clientRequest', {cmd: 'roomClients', room : v},  func);
       }
     
       this.adminSocketsPool = function (func) {
           var me = this;
-          console.log('---send adminSocketsPool--->')
+      //    console.log('---send adminSocketsPool--->')
           me.emit('clientRequest', {cmd: 'adminSocketsPool'},  func);
       }    
     
