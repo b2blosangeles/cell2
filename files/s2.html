@@ -62,7 +62,7 @@
 function getRoomClients(v) {
     tSocket.getRoomClients(v, function(data) { 
        console.log('---======callbackMessage=-777->');
-        loadList(data.data.clients);
+        loadList(data.clients);
         console.log(data);
 
     });
