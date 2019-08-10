@@ -86,6 +86,13 @@ function joinRoom(v) {
     });
 }
   
+tSocket.trigger.clientMessage = function(data) {
+  alert('clientMessage')
+}
+tSocket.trigger.roomMessage = function(data) {
+  alert('roomMessage')
+}
+  
 function leaveRoom(v) {
     tSocket.leaveRoom(v, function(data) { 
         
