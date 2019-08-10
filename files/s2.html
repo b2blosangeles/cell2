@@ -86,6 +86,9 @@ function joinRoom(v) {
     });
 }
   
+tSocket.trigger.roomClients = function(data) {
+  $('#rightBoxB').html('clientMessage->' + JSON.stringify(data));
+}
 tSocket.trigger.clientMessage = function(data) {
   $('#rightBoxB').html('clientMessage->' + JSON.stringify(data));
 }
