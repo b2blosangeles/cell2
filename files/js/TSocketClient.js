@@ -49,7 +49,7 @@
                   return function() {
                         
                         if (typeof _ROOT._Rsessions[session_id] === 'function') {
-                            console.log('--sessionCallback done --->' + session_id)
+                    //        console.log('--sessionCallback done --->' + session_id)
                             clearInterval(_ITV);
                             _ROOT._Rsessions[session_id](func);
                             delete _ROOT._Rsessions[session_id];
@@ -61,7 +61,7 @@
                     return true;
                     clearInterval(_ITV);
                     if (typeof _ROOT._Rsessions[session_id] === 'function') {
-                      console.log('--sessionCallback timeout--->' + session_id)
+                  //    console.log('--sessionCallback timeout--->' + session_id)
                       // TODO missing call back
                     }
               }
