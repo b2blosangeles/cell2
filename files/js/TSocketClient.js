@@ -21,7 +21,7 @@
                    if (typeof cbk === 'function') cbk(data);
                }
           },
-          _incomeMessage_: function(incomeData) {
+          _incomeMessagegg_: function(incomeData) {
               console.log('__incomeMessage_>>');
               console.log(incomeData);
           }
@@ -138,7 +138,7 @@
                 cbk();
              }  
         });
-         me.socket.on('incomeMessage', function(income_data) {
+         me.socket.on('_incomeMessage_', function(income_data) {
               console.log('__incomeMessage_>>');
               console.log(income_data);
         });
