@@ -149,6 +149,13 @@
         console.log('---send getRoomClients--->')
           me.emit('clientRequest', {cmd: 'roomClients', room : v},  func);
       }
+    
+      this.adminSocketsPool = function (v, func) {
+          var me = this;
+          console.log('---send adminSocketsPool--->')
+          me.emit('clientRequest', {cmd: 'adminSocketsPool'},  func);
+      }    
+    
       this.getRoomHosts = function (v, func) {
           var me = this;
        // return true;
