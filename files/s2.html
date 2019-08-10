@@ -12,7 +12,7 @@
       for (var o in clients) {
           str += '<a href="javascript:void(0)" onClick="clientToclient(\'' + o + '\')">' + o + '<br/>';
       }
-      $('#rightBox').html(str + '-:' + new Date().getTime());
+      $('#rightBoxA').html(str + '-:' + new Date().getTime());
   }  
   
   
@@ -134,6 +134,9 @@ function adminSocketsPool() {
         <a href="javascript:void(0)" onClick="adminSocketsPool()">adminSocketsPool</a>
     </div>
     <div class="col-sm-6" id="rightBox">
+      <div id="rightBoxA"></div>
+      <hr/>
+       <div id="rightBoxB"></div>
     </div>  
   </div>
 
