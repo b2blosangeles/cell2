@@ -22,7 +22,7 @@
                }
           },
           _incomeMessage_: function(incomeData) {
-              console.log('__incomeMessage_>2>');
+              console.log('__incomeMessage_>>');
               console.log(incomeData);
           }
       };
