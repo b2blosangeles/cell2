@@ -102,6 +102,13 @@ function clientToclient(v) {
    getRoomClients(v);
 }
   
+function adminSocketsPool() {
+    tSocket.adminSocketsPool(function(data) { 
+        console.log(data)
+    });
+}
+  
+  
 </script>
 <link rel="stylesheet" href="/package/Tao.css">
 </head>
@@ -122,6 +129,9 @@ function clientToclient(v) {
 
         <hr/>
         <a href="javascript:void(0)" onClick="sendToRoom('PPV')">Send Message To Room</a>
+      
+        <hr/>
+        <a href="javascript:void(0)" onClick="adminSocketsPool()">adminSocketsPool</a>
     </div>
     <div class="col-sm-6" id="rightBox">
     </div>  
