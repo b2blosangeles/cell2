@@ -144,8 +144,8 @@
          me.socket.on('connect', function(income_data) {
             console.log('connected');
         });  
-        me.socket.on('disConnect ', function(income_data) {
-            console.log('disConnect ed');
+        me.socket.on('disconnect', function(reason) {
+            console.log(reason);
         }); 
         /*
         me.socket.on('connect', function(dd){
