@@ -3,7 +3,7 @@
         this.connection = function(cbk) {
             var me = this;
             me.socket = io(url);
-            me.setupEvent();
+          //  me.setupEvent();
             me.socket.on('uniqueId', function(income_data) {
                 me.UUID = income_data;
                 console.log(me.UUID);
