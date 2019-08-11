@@ -141,7 +141,12 @@
                 me.trigger[income_data.code](income_data);
             }
         });
-        
+         me.socket.on('connect', function(income_data) {
+            console.log('connected');
+        });  
+        me.socket.on('disConnect ', function(income_data) {
+            console.log('disConnect ed');
+        }); 
         /*
         me.socket.on('connect', function(dd){
         });*/
