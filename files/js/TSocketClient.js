@@ -1,6 +1,6 @@
 (function () { 
-    var obj =  function () {
-        this.connection = function(url, cbk) {
+    var obj =  function (url) {
+        this.connection = function(cbk) {
             var me = this;
             me.socket = io(url);
             me.setupEvent();
