@@ -86,8 +86,19 @@ function joinRoom(v) {
     });
 }
   
+tSocket.trigger.roomClients = function(data) {
+    loadList(data.clients);
+}
+tSocket.trigger.clientMessage = function(data) {
+  $('#rightBoxB').html('clientMessage->' + JSON.stringify(data));
+}
+tSocket.trigger.roomMessage = function(data) {
+   $('#rightBoxB').html('roomMessage->' + JSON.stringify(data));
+}
+  
 function leaveRoom(v) {
     tSocket.leaveRoom(v, function(data) { 
+        
         getRoomClients(v);
     });
 }
@@ -98,8 +109,7 @@ function sendToRoom(v) {
 }
   
 function clientToclient(v) {
-    tSocket.clientToclient(v, {text : ' 学得很快!'});
-   getRoomClients(v);
+    tSocket.clientToclient(v, {text : ' 学得很快2!'});
 }
   
 function adminSocketsPool() {
