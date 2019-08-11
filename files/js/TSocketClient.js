@@ -148,6 +148,7 @@
       }
       this.disConnect = function() {
         var me = this;
+        alert('disConnect--');
       //  me.socket.close();
        // me.socket.emit('disconnect');
       }
