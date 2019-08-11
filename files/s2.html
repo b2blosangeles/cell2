@@ -82,7 +82,7 @@ function getRoomClients(v) {
 
 function joinRoom(v) {
     tSocket.joinRoom(v, function(data) { 
-      getRoomClients(v);
+   //   getRoomClients(v);
     });
 }
   
@@ -101,7 +101,7 @@ tSocket.trigger.roomMessage = function(data) {
 function leaveRoom(v) {
     tSocket.leaveRoom(v, function(data) { 
         
-        getRoomClients(v);
+      //  getRoomClients(v);
     });
 }
   
