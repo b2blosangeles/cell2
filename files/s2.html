@@ -87,7 +87,7 @@ function joinRoom(v) {
 }
   
 tSocket.trigger.roomClients = function(data) {
-    loadList(data.data.clients);
+    loadList(data.clients);
 }
 tSocket.trigger.clientMessage = function(data) {
   $('#rightBoxB').html('clientMessage->' + JSON.stringify(data));
