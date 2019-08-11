@@ -21,7 +21,7 @@
             });
 
             me.socket.on('connect', function(income_data) {
-                console.log('connected');
+                console.log('connected-->');
             });  
             me.socket.on('disconnect', function(reason) {
                 console.log(reason);
