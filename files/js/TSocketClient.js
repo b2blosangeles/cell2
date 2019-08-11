@@ -30,7 +30,7 @@
             me.socket.on('connect', function(dd){
             });*/
         }
-    }
+    }   
     if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
         module.exports = obj;
     } else {
