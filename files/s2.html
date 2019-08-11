@@ -87,6 +87,8 @@ function joinRoom(v) {
 }
   
 tSocket.trigger.roomClients = function(data) {
+  console.log('==roomClients==B=coming===');
+  console.log(data);
     loadList(data.clients);
 }
 tSocket.trigger.clientMessage = function(data) {
