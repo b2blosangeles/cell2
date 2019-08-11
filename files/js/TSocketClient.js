@@ -145,6 +145,7 @@
             console.log('connected');
         });  
         me.socket.on('disconnect', function(reason) {
+          alert('reason');
             console.log(reason);
         }); 
         /*
