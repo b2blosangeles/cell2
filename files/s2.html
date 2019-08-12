@@ -10,9 +10,9 @@
   tSocket.init(function() {  });
   function addRoom() {
     tSocket.addRoom(function(data) {
+      var str = '';
       for (o in data) {
-        var str = o + '<br>';
-        
+        var str += o + '<br>';
       }
       $('#rightBoxA').html = str;
     });
