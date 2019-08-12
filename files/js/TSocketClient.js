@@ -7,7 +7,7 @@
         this.connection = function(cbk) {
             var me = this;
             me.socket = io(url);
-          //  me.setupEvent();
+            /*
             me.socket.on('uniqueId', function(income_data) {
                 me.UUID = income_data;
                 console.log(me.UUID);
@@ -15,6 +15,7 @@
                     cbk();
                 }  
             });
+            */
             me.socket.on('_incomeMessage_', function(income_data) {
                 if ((income_data) && (income_data.code) && (me.trigger[income_data.code]) && (typeof me.trigger[income_data.code] === 'function')) {
                     me.trigger[income_data.code](income_data);
