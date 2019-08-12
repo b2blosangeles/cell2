@@ -26,29 +26,17 @@
                 me._room[room] = list[Math.floor(Math.random() * list.length)];
                 func(me._room);
             });
-            /*
-            me.getCommServers(function(data) {
-                let list = data.list;
-                me._room[room] = list[Math.floor(Math.random() * list.length)];
-                func(me._room);
-            });*/
         } 
-        /*
-        this.getCommServers = function (func) {
-            var me = this;
-            me.emit('clientRequest', {cmd: 'roomServers'},  func);
-        }*/
         this.sessionCallback = function(session_id, func) {
               me = this;
-              var _ITV = setInterval((function (session_id) {
-                      return function() {
+              var _ITV = setInterval(function() {
                             if (typeof me._Rsessions[session_id] === 'function') {
                                 clearInterval(_ITV);
                                 me._Rsessions[session_id](func);
                                 delete me._Rsessions[session_id];
                             }
                           }
-                    })(session_id),100);
+                    ,100);
             
               setTimeout(function() {
                         clearInterval(_ITV);
