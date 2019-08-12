@@ -22,8 +22,6 @@
             var me = this;
             me.getCommServers(function(data) {
                 let list = data.list;
-                console.log('===callback====');
-                console.log(list);
                 me._room[room] = list[Math.floor(Math.random() * list.length)];
                 func(me._room);
             });
