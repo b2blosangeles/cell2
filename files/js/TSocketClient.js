@@ -22,6 +22,7 @@
                 let list = data.list;
                 var svr =  list[Math.floor(Math.random() * list.length)];
                 me._room[room + '_' +  svr] = svr;
+                    // new TSocketComm('');
                 func(me._room);
             });
         } 
