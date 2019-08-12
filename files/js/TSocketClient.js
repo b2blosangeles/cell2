@@ -1,5 +1,14 @@
 (function () { 
     var obj =  function (url) {
+        this._room = {};
+        
+        this.addRoom = function (room, func) {
+            var me = this;
+            me.getCommServers(function(list) {
+                me._room[room] = list[Math.floor(Math.random() * list.length)];
+                console.log(me._room);
+            });
+        }        
         this.getCommServers = function (func) {
             var me = this;
             me.socket.emit('clientRequest', {cmd: 'roomServers'},  func);
