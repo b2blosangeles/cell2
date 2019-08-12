@@ -1,18 +1,8 @@
 (function () { 
     var obj =  function (url) {
-        this._Rsessions = {}
-        
         this._room = {};
-        
-        
-        this.trigger = {
-            roomServers : function(data) {
-                 console.log('_incomeMessage_ coming---->>222>>');
-                 console.log(data)    
-            }
-        };
-        
-        
+
+        this.trigger = {};
         this.getSN = function() {
             var me = this;
             me._SN = (!me._SN || me._SN > 999999) ? 1 : (me._SN + 1)
@@ -21,6 +11,7 @@
         
         this.emit = function (k, data, cbk) {
             var me = this;
+            if (!me._Rsessions) me._Rsessions = {};
             var session_id = me.getSN();
             data.session_id  = session_id;
             me.socket.emit(k, data); 
@@ -30,7 +21,7 @@
         this.joinRoom = function (room, func) {
             var me = this;
             me.getCommServers(function(data) {
-                ;et list = data.list;
+                let list = data.list;
                 console.log('===callback====');
                 console.log(list);
                 me._room[room] = list[Math.floor(Math.random() * list.length)];
