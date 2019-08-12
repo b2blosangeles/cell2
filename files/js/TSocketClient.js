@@ -15,14 +15,6 @@
                     cbk();
                 }  
             });
-            me.socket.on('callbackMessage', function(income_data) {
-                if ((income_data) && (income_data.code) && (me.trigger[income_data.code]) && (typeof me.trigger[income_data.code] === 'function')) {
-                    me.trigger[income_data.code](income_data);
-                } else {
-                    console.log('_incomeNotice_ coming---->>111>>');
-                    console.log(income_data)      
-                }
-            });
             me.socket.on('_incomeMessage_', function(income_data) {
                 if ((income_data) && (income_data.code) && (me.trigger[income_data.code]) && (typeof me.trigger[income_data.code] === 'function')) {
                     me.trigger[income_data.code](income_data);
