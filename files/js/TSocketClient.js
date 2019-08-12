@@ -5,17 +5,16 @@
         this._room = {};
         
         this.events = { 
-          callbackMessage : function(data, session_id) {
-              var me = this;
+          callbackMessage : (function(me) { return function(data, session_id) {
               alert(777); alert(session_id); 
               if (!session_id) return true;
-               var s = session_id.split('.');
+               var s = session_id.split('_');
               me._Rsessions[s[1]] = function(cbk) {
                //    console.log(s[1] + '--coming----' + session_id);
                    delete me._Rsessions[s[1]];
                    if (typeof cbk === 'function') cbk(data);
                }
-          }
+          }})(this)
         };
         
         this.trigger = {
