@@ -17,13 +17,13 @@
         
         this.addRoom = function (func) {
             var me = this;
-            var room = new Date().getTime();
+            
             me.emit('clientRequest', {cmd: 'roomServers'}, function(data) {
                 let list = data.list;
                 var svr =  list[Math.floor(Math.random() * list.length)];
                 var link = ((data.isSSL) ? 'https://' : 'http://') + svr + '/';
-                me._room[room + '_' +  svr] = new TSocketCOMM(link);
-                    // new window.TSocketComm(url);
+               var room = new Date().getTime() + '_' +  svr;
+                me._room[room] = new TSocketCOMM(room, link);
                 func(me._room);
             });
         } 
