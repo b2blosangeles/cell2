@@ -5,6 +5,7 @@
 		"/js/jqueryui/1.12.1/jquery-ui.min.js",
 		"/js/crowdProcess/crowdProcess.js",
 		"/js/socket.io/1.7.3/socket.io.min.js",
-		"js/TSocketComm.js"
+		"/js/TSocketComm.js",
+		"/js/TSocketClient.js"
 	]
 }
