@@ -19,7 +19,7 @@
 
         }
         this.init(function() {
-            console.log(room + ' init --> ' + url);
+            console.log(' init --> ' + url);
         })
     }
     window.TSocketCOMM = obj;
