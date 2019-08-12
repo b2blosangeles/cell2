@@ -22,7 +22,8 @@
                 let list = data.list;
                 var svr =  list[Math.floor(Math.random() * list.length)];
                 var link = ((data.isSSL) ? 'https://' : 'http://') + svr + '/';
-                me._room[room + '_' +  svr] = new window.TSocketComm(url);
+                me._room[room + '_' +  svr] = link;
+                    // new window.TSocketComm(url);
                 func(me._room);
             });
         } 
