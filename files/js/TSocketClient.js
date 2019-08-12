@@ -1,5 +1,9 @@
 (function () { 
     var obj =  function (url) {
+        this.getRoomClients = function (func) {
+            var me = this;
+            me.emit('clientRequest', {cmd: 'roomServers'},  func);
+        }
         this.connection = function(cbk) {
             var me = this;
             me.socket = io(url);
