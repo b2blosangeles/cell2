@@ -5,8 +5,8 @@
         this._room = {};
         
         this.events = { 
-          callbackMessage : (function(me) { return function(data, session_id) {
-              if (!data.session_id) return true;
+          callbackMessage : (function(me) { return function(data) {
+              if (!data || !data.session_id) return true;
                var s = session_id.split('.');
               me._Rsessions[s[1]] = function(cbk) {
                //    console.log(s[1] + '--coming----' + session_id);
