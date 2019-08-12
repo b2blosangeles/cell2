@@ -2,7 +2,7 @@
     var obj =  function (url) {
         this.getRoomServers = function (func) {
             var me = this;
-            me.emit('clientRequest', {cmd: 'roomServers'},  func);
+            me.socket.emit('clientRequest', {cmd: 'roomServers'},  func);
         }
         this.connection = function(cbk) {
             var me = this;
