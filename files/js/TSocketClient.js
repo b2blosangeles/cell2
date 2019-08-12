@@ -6,7 +6,7 @@
             var me = this;
             me.getCommServers(function(list) {
                 me._room[room] = list[Math.floor(Math.random() * list.length)];
-                console.log(me._room);
+                func(me._room);
             });
         }        
         this.getCommServers = function (func) {
