@@ -44,7 +44,6 @@
             
               setTimeout((function(session_id) {
                   return function() {
-                        return true;
                         clearInterval(_ITV);
                         if (typeof me._Rsessions[session_id] === 'function') {
                           console.log('--sessionCallback timeout--->' + session_id)
@@ -66,9 +65,8 @@
                     console.log(income_data)      
                 }
             });
-            me.socket.on('_callbackMessage_', /*(function(me) { return */
-              function(data) {
-              if (!data || !data.session_id) return true;
+            me.socket.on('_callbackMessage_',function(data) {
+               if (!data || !data.session_id) return true;
               var s = data.session_id.split('.');
               me._Rsessions[s[1]] = function(cbk) {
                    delete me._Rsessions[s[1]];
@@ -76,7 +74,6 @@
                    if (typeof cbk === 'function') cbk(data);
                }
             });
-           // }})(me));
             
             me.socket.on('connect', function() {
                 if (typeof cbk === 'function') { 
