@@ -6,7 +6,7 @@
         
         this.events = { 
           callbackMessage : function(data, session_id) {
-              alert(777);
+              alert(777); alert(session_id); 
               if (!session_id) return true;
                var s = session_id.split('.');
               _ROOT._Rsessions[s[1]] = function(cbk) {
