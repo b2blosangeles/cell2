@@ -1,5 +1,5 @@
 (function () { 
-    var obj =  function (room, url) {
+    var obj =  function (url) {
 
         this.init = function(cbk) {
             var me = this;
