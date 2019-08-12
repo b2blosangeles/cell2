@@ -1,6 +1,6 @@
 (function () { 
     var obj =  function (url) {
-        this.getRoomClients = function (func) {
+        this.getRoomServers = function (func) {
             var me = this;
             me.emit('clientRequest', {cmd: 'roomServers'},  func);
         }
