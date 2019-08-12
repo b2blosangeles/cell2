@@ -1,5 +1,5 @@
 (function () { 
-    var obj =  function (url) {
+    var obj =  function (room, url) {
 
         this.init = function(cbk) {
             var me = this;
@@ -19,7 +19,7 @@
 
         }
         this.init(function() {
-            console.log('init --> ' + url);
+            console.log(room + ' init --> ' + url);
         })
     }
     window.TSocketCOMM = obj;
