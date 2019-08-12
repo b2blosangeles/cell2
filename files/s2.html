@@ -14,8 +14,8 @@
     });*/
   });
 
-  function addRoom(v) {
-    tSocket.joinRoom(v, function(data) {
+  function addRoom() {
+    tSocket.addRoom(function(data) {
       console.log(data);
     });
   }
