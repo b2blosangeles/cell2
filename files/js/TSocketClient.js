@@ -28,7 +28,7 @@
         
         this.getSN = function() {
             var me = this;
-            me._SN = (!me._SN || me._SN > 9999) ? 1 : (me._SN + 1)
+            me._SN = (!me._SN || me._SN > 999999) ? 1 : (me._SN + 1)
             return new Date().getTime() + '_' + me._SN;
         }        
         
@@ -69,6 +69,7 @@
         this.joinRoom = function (room, func) {
             var me = this;
             me.getCommServers(function(list) {
+                console.log(list);
                 me._room[room] = list[Math.floor(Math.random() * list.length)];
                 func(me._room);
             });
