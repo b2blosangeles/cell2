@@ -54,10 +54,10 @@
                 })(session_id), 6000);      
           }
         
-        this.connection = function(cbk) {
+        this.init = function(cbk) {
             var me = this;
             me.socket = io(url);
-          //  me.setupEvent();
+    
             me.socket.on('_incomeMessage_', function(income_data) {
                 if ((income_data) && (income_data.code) && (me.trigger[income_data.code]) && (typeof me.trigger[income_data.code] === 'function')) {
                     me.trigger[income_data.code](income_data);
@@ -66,11 +66,10 @@
                     console.log(income_data)      
                 }
             });
-             me.socket.on('_callbackMessage_', (function(me) { return function(data) {
+            me.socket.on('_callbackMessage_', (function(me) { return function(data) {
               if (!data || !data.session_id) return true;
-               var s = data.session_id.split('.');
+              var s = data.session_id.split('.');
               me._Rsessions[s[1]] = function(cbk) {
-               //    console.log(s[1] + '--coming----' + session_id);
                    delete me._Rsessions[s[1]];
                    delete data.session_id
                    if (typeof cbk === 'function') cbk(data);
