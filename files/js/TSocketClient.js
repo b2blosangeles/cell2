@@ -21,8 +21,8 @@
             me.emit('clientRequest', {cmd: 'roomServers'}, function(data) {
                 let list = data.list;
                 var svr =  list[Math.floor(Math.random() * list.length)];
-                me._room[room + '_' +  svr] = ((data.isSSL) ? 'https://' : 'http://') + svr + '/';
-                    // new TSocketComm('');
+                var link = ((data.isSSL) ? 'https://' : 'http://') + svr + '/';
+                me._room[room + '_' +  svr] = new TSocketComm(url);
                 func(me._room);
             });
         } 
