@@ -15,11 +15,13 @@
             me.sessionCallback(session_id, cbk);
         };      
         
-        this.addRoom = function (room, func) {
+        this.addRoom = function (func) {
             var me = this;
+            var room = new Date().getTime();
             me.emit('clientRequest', {cmd: 'roomServers'}, function(data) {
                 let list = data.list;
-                me._room[room] = list[Math.floor(Math.random() * list.length)];
+                var svr =  list[Math.floor(Math.random() * list.length)];
+                me._room[room + '_' +  svr] = svr;
                 func(me._room);
             });
         } 
