@@ -26,13 +26,12 @@
             
             me.socket.on('connect', function(income_data) {
                 console.log('connected-->');
+                console.log(income_data);
             });  
             me.socket.on('disconnect', function(reason) {
                 console.log(reason);
             }); 
-            /*
-            me.socket.on('connect', function(dd){
-            });*/
+
         }
     }   
     if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
