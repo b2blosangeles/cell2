@@ -11,11 +11,13 @@
   function addRoom() {
     tSocket.addRoom(function(data) {
       console.log(data);
+      /*
       var str = '';
       for (o in data) {
         str += o + '<br>';
       }
       $('#rightBoxA').html = str;
+      */
     });
   }
 
