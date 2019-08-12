@@ -7,13 +7,7 @@
 <script src="/js/TSocketClient.js"></script-->
 <script>
   var tSocket = new TSocketClient('//commion1_dev.shusiou.win/');
-  tSocket.init(function() {
-    /*
-    tSocket.getCommServers(function(data) {
-        console.log(data);
-    });*/
-  });
-
+  tSocket.init(function() {  });
   function addRoom() {
     tSocket.addRoom(function(data) {
       for (o in data) {
@@ -22,6 +16,7 @@
       
     });
   }
+
   
 </script>
 <link rel="stylesheet" href="/package/Tao.css">
