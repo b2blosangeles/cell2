@@ -6,7 +6,7 @@
         
         this.events = { 
           callbackMessage : (function(me) { return function(data, session_id) {
-              
+              console.log(data);
               if (!session_id) return true;
                var s = session_id.split('.');
               alert(s[1]);
