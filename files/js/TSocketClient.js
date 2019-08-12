@@ -3,6 +3,19 @@
         this._Rsessions = {}
         
         this._room = {};
+        
+        this.events = { 
+          callbackMessage : function(data, session_id) {
+              if (!data || !session_id) return true;
+               var s = session_id.split('.');
+              _ROOT._Rsessions[s[1]] = function(cbk) {
+               //    console.log(s[1] + '--coming----' + session_id);
+                   delete _ROOT._Rsessions[s[1]];
+                   if (typeof cbk === 'function') cbk(data);
+               }
+          }
+        };
+        
         this.trigger = {
             roomServers : function(data) {
                  console.log('_incomeMessage_ coming---->>222>>');
