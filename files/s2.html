@@ -8,11 +8,17 @@
 <script>
   var tSocket = new TSocketClient('//commion1_dev.shusiou.win/');
   tSocket.connection(function() {
+    /*
     tSocket.getCommServers(function(data) {
         console.log(data);
-    });
+    });*/
   });
 
+  function joinRoom(v) {
+    tSocket.joinRoom(v, function(data) {
+      console.log(data);
+    });
+  }
   
 </script>
 <link rel="stylesheet" href="/package/Tao.css">
