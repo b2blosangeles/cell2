@@ -1,5 +1,7 @@
 (function () { 
     var obj =  function (url) {
+        this._Rsessions = {}
+        
         this._room = {};
         this.trigger = {
             roomServers : function(data) {
@@ -26,6 +28,42 @@
             var me = this;
             me.socket.emit('clientRequest', {cmd: 'roomServers'},  func);
         }
+        this.sessionCallback = function(session_id, func) {
+              me = this;
+              var _ITV = setInterval((function (session_id) {
+                      return function() {
+
+                            if (typeof me._Rsessions[session_id] === 'function') {
+                        //        console.log('--sessionCallback done --->' + session_id)
+                                clearInterval(_ITV);
+                                me._Rsessions[session_id](func);
+                                delete me._Rsessions[session_id];
+                            }
+                          }
+                    })(session_id),100);
+            
+              setTimeout((function(session_id) {
+                  return function() {
+                        return true;
+                        clearInterval(_ITV);
+                        if (typeof me._Rsessions[session_id] === 'function') {
+                      //    console.log('--sessionCallback timeout--->' + session_id)
+                          // TODO missing call back
+                        }
+                  }
+                })(session_id), 6000);      
+          }
+         callbackMessage : function(data, session_id) {
+              if (!data || !session_id) return true;
+               var s = session_id.split('.');
+              _ROOT._Rsessions[s[1]] = function(cbk) {
+               //    console.log(s[1] + '--coming----' + session_id);
+                   delete me._Rsessions[s[1]];
+                   if (typeof cbk === 'function') cbk(data);
+               }
+          }
+        
+        
         this.connection = function(cbk) {
             var me = this;
             me.socket = io(url);
