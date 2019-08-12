@@ -1,6 +1,6 @@
 (function () { 
     var obj =  function (url) {
-        this.getRoomServers = function (func) {
+        this.getCommServers = function (func) {
             var me = this;
             me.socket.emit('clientRequest', {cmd: 'roomServers'},  func);
         }
