@@ -20,16 +20,23 @@
         
         this.joinRoom = function (room, func) {
             var me = this;
-            me.getCommServers(function(data) {
+            me.emit('clientRequest', {cmd: 'roomServers'}, function(data) {
                 let list = data.list;
                 me._room[room] = list[Math.floor(Math.random() * list.length)];
                 func(me._room);
             });
-        }        
+            /*
+            me.getCommServers(function(data) {
+                let list = data.list;
+                me._room[room] = list[Math.floor(Math.random() * list.length)];
+                func(me._room);
+            });*/
+        } 
+        /*
         this.getCommServers = function (func) {
             var me = this;
             me.emit('clientRequest', {cmd: 'roomServers'},  func);
-        }
+        }*/
         this.sessionCallback = function(session_id, func) {
               me = this;
               var _ITV = setInterval((function (session_id) {
