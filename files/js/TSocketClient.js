@@ -2,7 +2,7 @@
     var obj =  function (url) {
         this._room = {};
         
-        this.addRoom = function (room, func) {
+        this.joinRoom = function (room, func) {
             var me = this;
             me.getCommServers(function(list) {
                 me._room[room] = list[Math.floor(Math.random() * list.length)];
