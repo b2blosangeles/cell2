@@ -1,5 +1,6 @@
 (function () { 
     var obj =  function (url) {
+        this._link = {};
         this._room = {};
         this.trigger = {};
         this.getSN = function() {
@@ -22,9 +23,8 @@
                 let list = data.list;
                 var svr =  list[Math.floor(Math.random() * list.length)];
                 var link = ((data.isSSL) ? 'https://' : 'http://') + svr + '/';
-               var room = new Date().getTime() + '_' +  svr;
-                me._room[room] = new TSocketCOMM(room, link);
-                func(me._room);
+                me._link[svr] = (me._link[svr]) ? me._link[svr] : new TSocketCOMM(link);
+                func(me._link);
             });
         } 
         this.sessionCallback = function(session_id, func) {
