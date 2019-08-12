@@ -27,6 +27,9 @@
             
             me.socket.on('connect', function() {
                 console.log('connected-->');
+                if (typeof cbk == 'function') { 
+                    cbk();
+                } 
             });  
             me.socket.on('disconnect', function(reason) {
                 console.log(reason);
