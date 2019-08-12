@@ -16,7 +16,10 @@
 
   function addRoom() {
     tSocket.addRoom(function(data) {
-      console.log(data);
+      for (o in data) {
+        console.log(o + '---');
+      }
+      
     });
   }
   
