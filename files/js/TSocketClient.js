@@ -26,15 +26,13 @@
         }        
         this.getCommServers = function (func) {
             var me = this;
-            me.socket.emit('clientRequest', {cmd: 'roomServers'},  func);
+            me.socket.emit('clientRequest', {cmd: 'roomServers', session_id  :  me.getSN()},  func);
         }
         this.sessionCallback = function(session_id, func) {
               me = this;
               var _ITV = setInterval((function (session_id) {
                       return function() {
-
                             if (typeof me._Rsessions[session_id] === 'function') {
-                        //        console.log('--sessionCallback done --->' + session_id)
                                 clearInterval(_ITV);
                                 me._Rsessions[session_id](func);
                                 delete me._Rsessions[session_id];
@@ -47,7 +45,7 @@
                         return true;
                         clearInterval(_ITV);
                         if (typeof me._Rsessions[session_id] === 'function') {
-                      //    console.log('--sessionCallback timeout--->' + session_id)
+                          console.log('--sessionCallback timeout--->' + session_id)
                           // TODO missing call back
                         }
                   }
