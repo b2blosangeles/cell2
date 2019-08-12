@@ -1,6 +1,12 @@
 (function () { 
     var obj =  function (url) {
         this._room = {};
+        this.trigger = {
+            roomServers : function(data) {
+                 console.log('_incomeMessage_ coming---->>222>>');
+                 console.log(data)    
+            }
+        };
         
         this.joinRoom = function (room, func) {
             var me = this;
@@ -20,7 +26,7 @@
                 if ((income_data) && (income_data.code) && (me.trigger[income_data.code]) && (typeof me.trigger[income_data.code] === 'function')) {
                     me.trigger[income_data.code](income_data);
                 } else {
-                    console.log('_incomeMessage_ coming---->>111>>');
+                    console.log('incomeMessage coming--->');
                     console.log(income_data)      
                 }
             });          
