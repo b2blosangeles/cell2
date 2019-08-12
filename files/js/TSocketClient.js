@@ -8,6 +8,13 @@
             }
         };
         
+        
+        this.getSN = function() {
+            var me = this;
+            me._SN = (!me._SN || me._SN > 9999) ? 1 : (me._SN + 1)
+            return new Date().getTime() + '_' + me._SN;
+        }        
+        
         this.joinRoom = function (room, func) {
             var me = this;
             me.getCommServers(function(list) {
