@@ -4,18 +4,6 @@
         
         this._room = {};
         
-        this.events = { 
-          callbackMessage : (function(me) { return function(data) {
-              if (!data || !data.session_id) return true;
-               var s = data.session_id.split('.');
-              me._Rsessions[s[1]] = function(cbk) {
-               //    console.log(s[1] + '--coming----' + session_id);
-                   delete me._Rsessions[s[1]];
-                   delete data.session_id
-                   if (typeof cbk === 'function') cbk(data);
-               }
-          }})(this)
-        };
         
         this.trigger = {
             roomServers : function(data) {
@@ -28,7 +16,7 @@
         this.getSN = function() {
             var me = this;
             me._SN = (!me._SN || me._SN > 999999) ? 1 : (me._SN + 1)
-            return new Date().getTime() + '_' + me._SN;
+            return 'A_' + me._SN;
         }        
         
         this.emit = function (k, data, cbk) {
@@ -38,7 +26,7 @@
             me.socket.emit(k, data); 
             me.sessionCallback(session_id, cbk);
         };
-
+/*the 
       this.addEvent = function (key, func) {
           var me = this;
           if (key) me.events[key] =  func;  
@@ -52,7 +40,7 @@
                 me.setupEvent();
           }
       }
-        
+*/       
       this.setupEvent = function () {
         var me = this;
         for (var o in me.events) {
@@ -104,7 +92,7 @@
         this.connection = function(cbk) {
             var me = this;
             me.socket = io(url);
-            me.setupEvent();
+          //  me.setupEvent();
             me.socket.on('_incomeMessage_', function(income_data) {
                 if ((income_data) && (income_data.code) && (me.trigger[income_data.code]) && (typeof me.trigger[income_data.code] === 'function')) {
                     me.trigger[income_data.code](income_data);
@@ -112,7 +100,17 @@
                     console.log('incomeMessage coming--->');
                     console.log(income_data)      
                 }
-            });          
+            });
+             me.socket.on('callbackMessage', (function(me) { return function(data) {
+              if (!data || !data.session_id) return true;
+               var s = data.session_id.split('.');
+              me._Rsessions[s[1]] = function(cbk) {
+               //    console.log(s[1] + '--coming----' + session_id);
+                   delete me._Rsessions[s[1]];
+                   delete data.session_id
+                   if (typeof cbk === 'function') cbk(data);
+               }
+            }})(me));
             
             me.socket.on('connect', function() {
                 if (typeof cbk === 'function') { 
