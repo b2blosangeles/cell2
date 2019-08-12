@@ -18,6 +18,7 @@
             me.sessionCallback(session_id, cbk);
         };      
         
+        
         this.joinRoom = function (room, func) {
             var me = this;
             me.emit('clientRequest', {cmd: 'roomServers'}, function(data) {
@@ -49,15 +50,10 @@
                           }
                     })(session_id),100);
             
-              setTimeout((function(session_id) {
-                  return function() {
+              setTimeout(function() {
                         clearInterval(_ITV);
-                        if (typeof me._Rsessions[session_id] === 'function') {
-                          console.log('--sessionCallback timeout--->' + session_id)
-                          // TODO missing call back
-                        }
-                  }
-                })(session_id), 6000);      
+                        delete me._Rsessions[session_id];
+                  }, 6000);      
           }
         
         this.init = function(cbk) {
