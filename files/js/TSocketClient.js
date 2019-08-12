@@ -17,6 +17,15 @@
             return new Date().getTime() + '_' + me._SN;
         }        
         
+        this.emit = function (k, data, cbk) {
+            var me = this;
+            var session_id = me.getSN();
+            data.session_id  = session_id;
+            me.socket.emit(k, data); 
+            me.sessionCallback(session_id, cbk);
+        };
+
+        
         this.joinRoom = function (room, func) {
             var me = this;
             me.getCommServers(function(list) {
@@ -26,7 +35,7 @@
         }        
         this.getCommServers = function (func) {
             var me = this;
-            me.socket.emit('clientRequest', {cmd: 'roomServers', session_id  :  me.getSN()},  func);
+            me.emit('clientRequest', {cmd: 'roomServers'},  func);
         }
         this.sessionCallback = function(session_id, func) {
               me = this;
