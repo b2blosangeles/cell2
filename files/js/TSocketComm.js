@@ -1,5 +1,5 @@
 (function () { 
-    var obj =  function () {
+    var obj =  function (url) {
 
         this.connection = function(cbk) {
             var me = this;
