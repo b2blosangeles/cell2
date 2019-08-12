@@ -1,23 +1,19 @@
 (function () { 
     var obj =  function (url) {
         this._room = {};
-
         this.trigger = {};
         this.getSN = function() {
-            var me = this;
-            me._SN = (!me._SN || me._SN > 999999) ? 1 : (me._SN + 1)
+            var me = this; me._SN = (!me._SN || me._SN > 999999) ? 1 : (me._SN + 1)
             return 'A_' + me._SN;
         }        
         
         this.emit = function (k, data, cbk) {
-            var me = this;
-            if (!me._Rsessions) me._Rsessions = {};
+            var me = this; me._Rsessions = (!me._Rsessions)? {} : me._Rsessions = {};
             var session_id = me.getSN();
             data.session_id  = session_id;
             me.socket.emit(k, data); 
             me.sessionCallback(session_id, cbk);
         };      
-        
         
         this.joinRoom = function (room, func) {
             var me = this;
@@ -35,14 +31,13 @@
                                 me._Rsessions[session_id](func);
                                 delete me._Rsessions[session_id];
                             }
-                          }
-                    ,100);
+                          },100);
             
               setTimeout(function() {
                         clearInterval(_ITV);
                         delete me._Rsessions[session_id];
                   }, 6000);      
-          }
+        }
         
         this.init = function(cbk) {
             var me = this;
@@ -77,9 +72,5 @@
 
         }
     }   
-    if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-        module.exports = obj;
-    } else {
-        window.TSocketClient = obj; 
-    }
+    window.TSocketClient = obj; 
 })();
