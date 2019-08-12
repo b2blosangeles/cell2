@@ -22,7 +22,7 @@
                 let list = data.list;
                 var svr =  list[Math.floor(Math.random() * list.length)];
                 var link = ((data.isSSL) ? 'https://' : 'http://') + svr + '/';
-                me._room[room + '_' +  svr] = new TSocketComm(link);
+                me._room[room + '_' +  svr] = new TSocketCOMM(link);
                     // new window.TSocketComm(url);
                 func(me._room);
             });
