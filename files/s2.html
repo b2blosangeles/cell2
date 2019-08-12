@@ -7,7 +7,7 @@
 <script>
   var tSocket = new TSocketClient('//commion1_dev.shusiou.win/');
   tSocket.connection(function() {
-    tSocket.getRoomServers(function(data) {
+    tSocket.getCommServers(function(data) {
         console.log(data);
     });
   });
