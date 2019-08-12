@@ -14,7 +14,7 @@
     });*/
   });
 
-  function joinRoom(v) {
+  function addRoom(v) {
     tSocket.joinRoom(v, function(data) {
       console.log(data);
     });
@@ -33,7 +33,7 @@
     <div class="col-sm-6 p-0 pl-2 pr-1" id="leftBox">
         <a href="javascript:void(0)" onClick="getRoomClients('PPV')">getRoomClient PPV</a>
         <hr/>
-        <a href="javascript:void(0)" onClick="joinRoom('PPV')">join room PPV</a>
+        <a href="javascript:void(0)" onClick="addRoom('PPV')">add a room</a>
 
         <hr/>
         <a href="javascript:void(0)" onClick="leaveRoom('PPV')">leave room PPV</a>
