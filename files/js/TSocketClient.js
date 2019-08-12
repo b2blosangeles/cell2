@@ -15,7 +15,7 @@
             me.sessionCallback(session_id, cbk);
         };      
         
-        this.joinRoom = function (room, func) {
+        this.addRoom = function (room, func) {
             var me = this;
             me.emit('clientRequest', {cmd: 'roomServers'}, function(data) {
                 let list = data.list;
