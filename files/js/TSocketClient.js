@@ -66,7 +66,8 @@
                     console.log(income_data)      
                 }
             });
-            me.socket.on('_callbackMessage_', (function(me) { return function(data) {
+            me.socket.on('_callbackMessage_', /*(function(me) { return */
+              function(data) {
               if (!data || !data.session_id) return true;
               var s = data.session_id.split('.');
               me._Rsessions[s[1]] = function(cbk) {
@@ -74,7 +75,8 @@
                    delete data.session_id
                    if (typeof cbk === 'function') cbk(data);
                }
-            }})(me));
+            });
+           // }})(me));
             
             me.socket.on('connect', function() {
                 if (typeof cbk === 'function') { 
