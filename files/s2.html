@@ -10,6 +10,7 @@
   tSocket.init(function() {  });
   function addRoom() {
     tSocket.addRoom(function(data) {
+      console.log(data);
       var str = '';
       for (o in data) {
         str += o + '<br>';
