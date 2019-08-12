@@ -29,7 +29,8 @@
         
         this.joinRoom = function (room, func) {
             var me = this;
-            me.getCommServers(function(list) {
+            me.getCommServers(function(data) {
+                ;et list = data.list;
                 console.log('===callback====');
                 console.log(list);
                 me._room[room] = list[Math.floor(Math.random() * list.length)];
