@@ -1,7 +1,9 @@
 (function () { 
     var obj =  function (url) {
         this._link = {};
+        
         this._room = {};
+        
         this.trigger = {};
         this.getSN = function() {
             var me = this; me._SN = (!me._SN || me._SN > 999999) ? 1 : (me._SN + 1)
@@ -24,7 +26,7 @@
                 var svr =  list[Math.floor(Math.random() * list.length)];
                 var link = ((data.isSSL) ? 'https://' : 'http://') + svr + '/';
                 console.log(link);
-                me._link[svr] = (me._link[svr]) ? me._link[svr] : new TSocketCOMM(link);
+                me._link[svr] = (me._link[svr]) ? me._link[svr] : new TSocketCOMM(me, link);
                 func(me._link);
             });
         } 
