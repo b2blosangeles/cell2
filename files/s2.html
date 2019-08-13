@@ -8,8 +8,8 @@
 <script>
   var tSocket = new TSocketClient('//commion1_dev.shusiou.win/');
   tSocket.init(function() {  });
-  function addRoom() {
-    tSocket.addRoom(function(data) {
+  function createRoom() {
+    tSocket.createRoom(function(data) {
       console.log(data);
       var str = '';
       for (o in data) {
@@ -32,7 +32,7 @@
   </div>
   <div class="row">
     <div class="col-sm-6 p-0 pl-2 pr-1" id="leftBox">
-        <a href="javascript:void(0)" onClick="addRoom()">Add a Room</a>
+        <a href="javascript:void(0)" onClick="createRoom()">Add a Room</a>
         <hr/>
     </div>
     <div class="col-sm-6" id="rightBox">
