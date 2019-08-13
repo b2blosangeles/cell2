@@ -18,7 +18,7 @@
             me.sessionCallback(session_id, cbk);
         };      
         
-        this.addRoom = function (func) {
+        this.createRoom = function (func) {
             var me = this;
             
             me.emit('clientRequest', {cmd: 'roomServers'}, function(data) {
