@@ -14,7 +14,7 @@
                 } 
             });  
             me.socket.on('disconnect', function(reason) {
-                console.log(reason);
+                console.log('BBBB====>>>>' + reason);
             }); 
 
         }
