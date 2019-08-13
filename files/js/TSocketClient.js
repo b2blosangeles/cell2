@@ -20,13 +20,13 @@
         
         this.createRoom = function (func) {
             var me = this;
-            
             me.emit('clientRequest', {cmd: 'roomServers'}, function(data) {
                 let list = data.list;
                 var svr =  list[Math.floor(Math.random() * list.length)];
                 var link = ((data.isSSL) ? 'https://' : 'http://') + svr + '/';
                 console.log(link);
                 me._link[svr] = (me._link[svr]) ? me._link[svr] : new TSocketCOMM(me, link);
+                me._room[svr] = {};
                 func(me._link);
             });
         } 
