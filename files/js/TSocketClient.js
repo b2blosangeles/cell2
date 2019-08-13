@@ -72,7 +72,7 @@
                 } 
             });  
             me.socket.on('disconnect', function(reason) {
-                console.log('IO disconnected :: ' + reason);
+                console.log('IO disconnected AA:: ' + reason);
             }); 
 
         }
