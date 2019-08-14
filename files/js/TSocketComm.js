@@ -76,7 +76,7 @@
         
         this.joinRoom = function (room, func) { 
             me = this;
-            me.socket.emit('clientRequest', {
+            me.emit('clientRequest', {
                 cmd         : 'joinRoom',
                 Uroom : url + '->' + room,
                 data        : {room : room }
