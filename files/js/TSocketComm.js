@@ -6,7 +6,7 @@
             me.socket = io(url);
 
             me.socket.on('connect', function() {
-                console.log('connected-->');
+                console.log('connected-2->');
                 if (typeof cbk === 'function') { 
                     console.log('cbk---');
                     
