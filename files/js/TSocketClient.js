@@ -32,8 +32,7 @@
             if (!me._rooms[v]) {
                 me.roomLink(function(objComm) {
                     objComm.createRoom(v, function(data) {
-                        console.log(data);
-                         me._rooms[data.room] = {host: data.host, clients : data.clients};
+                         me._rooms[v] = {room: data.room, host: data.host, clients : data.clients};
                          func({rooms: me._rooms})
                     });
                 })
