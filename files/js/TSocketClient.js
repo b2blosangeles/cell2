@@ -26,7 +26,8 @@
                 var link = ((data.isSSL) ? 'https://' : 'http://') + svr + '/';
                 console.log(link);
                 me._link[svr] = (me._link[svr]) ? me._link[svr] : new TSocketCOMM(me, link);
-                me._room[svr] = {};
+                me._link[svr].joinRoom('NIU' )
+       //         me._room[svr] = {};
                 func(me._link);
             });
         } 
