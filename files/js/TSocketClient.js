@@ -37,7 +37,7 @@
                             if (typeof me._Rsessions[session_id] === 'function') {
                                 clearInterval(_ITV);
                                 me._Rsessions[session_id](func);
-                                console.log(session_id);
+                                console.log(me);
                                 delete me._Rsessions[session_id];
                             }
                           },100);
