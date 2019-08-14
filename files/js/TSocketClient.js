@@ -28,10 +28,10 @@
                  func(me._link[svr]);
              });
         };
-        this.createRoom = function (func) {
+        this.createRoom = function (v, func) {
             var me = this;
             me.roomLink(function(link) {
-                link.joinRoom('PP_' + new Date().getTime(), {});
+                link.createRoom(v + '_', {});
             })
             
         } 
