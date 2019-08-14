@@ -25,12 +25,15 @@
                 var link = ((data.isSSL) ? 'https://' : 'http://') + svr + '/';
                  me._link[svr] = (me._link[svr]) ? me._link[svr] : new TSocketCOMM(me, link);
                  me._room[svr] = {};
-                 func(me._link);
+                 func(me._link[svr]);
              });
         };
         this.createRoom = function (func) {
             var me = this;
-            me.roomLink(func)
+            me.roomLink(function(link) {
+                link.joinRoom('PP', {});
+            })
+            
         } 
         this.sessionCallback = function(session_id, func) {
               me = this;
