@@ -73,9 +73,10 @@
         this.createRoom = function (room, func) { 
             me = this;
             me.emit('clientRequest', {
-                cmd         : 'createRoom',
-                Uroom : url + '->' + room,
-                data        : {room : room }
+                cmd     : 'createRoom',
+                url     : url,
+                room    : room,
+                data    : {}
             }, func);
         };
     }
