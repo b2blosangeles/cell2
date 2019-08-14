@@ -31,7 +31,9 @@
         this.createRoom = function (v, func) {
             var me = this;
             me.roomLink(function(link) {
-                link.createRoom(v, func);
+                link.createRoom(v, function(data) {
+                     func(data)
+                });
             })
             
         } 
