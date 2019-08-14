@@ -7,7 +7,7 @@
 <script src="/js/TSocketClient.js"></script-->
 <script>
   var tSocket = new TSocketClient('//commion1_dev.shusiou.win/');
-  tSocket.init(function() {  });
+  tSocket.init(function() { console.log('connected ');  });
   function createRoom() {
     tSocket.createRoom(function(data) {
       console.log(data);
