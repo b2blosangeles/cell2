@@ -31,7 +31,7 @@
         this.createRoom = function (func) {
             var me = this;
             me.roomLink(function(link) {
-                link.joinRoom('PP', {});
+                link.joinRoom('PP_' + new Date().getTime(), {});
             })
             
         } 
