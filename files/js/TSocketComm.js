@@ -36,7 +36,8 @@
             me.socket = io(url);
 
             me.socket.on('connect', function() {
-                console.log(me.socket.rooms);
+                console.log('---me.socket.adapter.rooms--->');
+                console.log(me.socket.adapter.rooms);
                 if (typeof cbk === 'function') { 
                     cbk();
                 } 
