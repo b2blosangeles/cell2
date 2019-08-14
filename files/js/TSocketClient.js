@@ -40,8 +40,7 @@
                                 console.log(me);
                                 delete me._Rsessions[session_id];
                             }
-                            })(me)
-                          },100);
+                            })(me) ,100);
             
               setTimeout(function() {
                         clearInterval(_ITV);
