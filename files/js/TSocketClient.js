@@ -2,7 +2,7 @@
     var obj =  function (url) {
         this._link = {};
         
-        this._room = {};
+        this._rooms = {};
         
         this.trigger = {};
         this.getSN = function() {
@@ -25,14 +25,15 @@
                 var link = ((data.isSSL) ? 'https://' : 'http://') + svr + '/';
                  me._link[svr] = (me._link[svr]) ? me._link[svr] : new TSocketCOMM(me, link);
                  me._room[svr] = {};
-                 func(me._link[svr]);
+                 func(me._link[svr], svr);
              });
         };
         this.createRoom = function (v, func) {
             var me = this;
-            me.roomLink(function(link) {
-                link.createRoom(v, function(data) {
-                     func(data)
+            me.roomLink(function(objComm, svr) {
+                objComm.createRoom(v, function(data) {
+                     me._rooms[svr + '_' + data.room] = data.clients;
+                     func(me._rooms)
                 });
             })
             
