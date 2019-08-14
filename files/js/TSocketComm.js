@@ -56,6 +56,9 @@
                 }     
             });
             me.socket.on('_callbackMessage_',function(data) {
+                 console.log('_callbackMessage_>');
+                console.log(data);
+                
                if (!data || !data.session_id) return true;
               var s = data.session_id.split('.');
               me._Rsessions[s[1]] = function(cbk) {
