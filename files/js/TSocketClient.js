@@ -31,7 +31,7 @@
             var me = this;
             me.roomLink(function(objComm) {
                 objComm.createRoom(v, function(data) {
-                     me._rooms[data.svr + '_' + data.room] = data.clients;
+                     me._rooms[data.url + '_' + data.room] = data.clients;
                      func(me._rooms)
                 });
             })
