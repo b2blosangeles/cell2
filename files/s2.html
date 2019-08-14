@@ -10,6 +10,7 @@
   tSocket.init(function() { console.log('connected ');  });
   function createRoom(v) {
     tSocket.createRoom(v, function(data) {
+      console.log('---a---');
       console.log(data);
       var str = '';
       for (o in data.rooms) {
