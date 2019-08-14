@@ -17,7 +17,7 @@
                 console.log('BBBB====>>>>' + reason);
             }); 
            me.socket.on('_incomeMessage_', function(income_data) {
-                    console.log('incomeMessage coming--2->');
+                    console.log('incomeMessage coming--3->');
                     console.log(income_data)      
             });
 
