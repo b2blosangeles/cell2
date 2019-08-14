@@ -32,7 +32,7 @@
             me.roomLink(function(objComm) {
                 objComm.createRoom(v, function(data) {
                     console.log(data);
-                     me._rooms[data.url + '_' + data.room] = data.clients;
+                     me._rooms[data.host + '_' + data.room] = data.clients;
                      func({rooms: me._rooms})
                 });
             })
