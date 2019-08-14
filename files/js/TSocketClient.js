@@ -29,13 +29,17 @@
         };
         this.createRoom = function (v, func) {
             var me = this;
-            me.roomLink(function(objComm) {
-                objComm.createRoom(v, function(data) {
-                    console.log(data);
-                     me._rooms[data.host + '_' + data.room] = data.clients;
-                     func({rooms: me._rooms})
-                });
-            })
+            if ( me._rooms[data.room]) {
+                me.roomLink(function(objComm) {
+                    objComm.createRoom(v, function(data) {
+                        console.log(data);
+                         me._rooms[data.room] = {host: data.host, clients : data.clients};
+                         func({rooms: me._rooms})
+                    });
+                })
+            } else {
+                func({rooms: me._rooms});
+            }
             
         } 
         this.sessionCallback = function(session_id, func) {
