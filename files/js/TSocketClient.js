@@ -33,7 +33,7 @@
         } 
         this.sessionCallback = function(session_id, func) {
               me = this;
-              var _ITV = setInterval((function() { return function() {
+              var _ITV = setInterval((function(me) { return function() {
                             if (typeof me._Rsessions[session_id] === 'function') {
                                 clearInterval(_ITV);
                                 me._Rsessions[session_id](func);
