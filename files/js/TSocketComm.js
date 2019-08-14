@@ -17,8 +17,12 @@
                 console.log('BBBB====>>>>' + reason);
             }); 
            me.socket.on('_incomeMessage_', function(income_data) {
-                    console.log('incomeMessage coming--3->');
-                    console.log(income_data)      
+                if ((income_data) && (income_data.code) && (me.trigger[income_data.code]) && (typeof me.trigger[income_data.code] === 'function')) {
+                    me.trigger[income_data.code](income_data);
+                } else {
+                      console.log('_incomeNotice_ coming---->>777>>' + me.socket.id);
+                      console.log(income_data)      
+                }     
             });
 
         }
