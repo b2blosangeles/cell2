@@ -75,6 +75,8 @@
         
         this.createRoom = function (room, func) { 
             me = this;
+             console.log('--func--1--');
+            console.log(func);
             me.emit('clientRequest', {
                 cmd         : 'createRoom',
                 Uroom : url + '->' + room,
