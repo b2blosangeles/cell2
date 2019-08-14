@@ -31,6 +31,7 @@
             me = this;
             me.socket.emit('clientRequest', {
                 cmd         : 'joinRoom',
+                room : room,
                 data        : {room : room }
             }, func);
         };
