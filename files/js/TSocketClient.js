@@ -29,7 +29,7 @@
         };
         this.createRoom = function (v, func) {
             var me = this;
-            if ( me._rooms[v]) {
+            if (!me._rooms[v]) {
                 me.roomLink(function(objComm) {
                     objComm.createRoom(v, function(data) {
                         console.log(data);
