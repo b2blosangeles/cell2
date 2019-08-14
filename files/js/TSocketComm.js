@@ -22,6 +22,14 @@
             console.log(' init --> ' + url);
             console.log(parent._link);
         })
+        
+        this.joinRoom = function (room, func) { 
+            me = this;
+            me.emit('clientRequest', {
+                cmd         : 'joinRoom',
+                room        : room
+            }, func);
+        };
     }
     window.TSocketCOMM = obj;
 })();
