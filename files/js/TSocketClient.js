@@ -33,14 +33,15 @@
         } 
         this.sessionCallback = function(session_id, func) {
               me = this;
-              var _ITV = setInterval((function(me) { return function() {
+              var _ITV = setInterval(
+                    (function(me) { return function() {
                             if (typeof me._Rsessions[session_id] === 'function') {
                                 clearInterval(_ITV);
                                 me._Rsessions[session_id](func);
                                 console.log(me);
                                 delete me._Rsessions[session_id];
                             }
-                            })(me) ,100);
+                    } })(me), 100);
             
               setTimeout(function() {
                         clearInterval(_ITV);
