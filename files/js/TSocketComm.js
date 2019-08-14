@@ -36,10 +36,7 @@
             me.socket = io(url);
 
             me.socket.on('connect', function() {
-                console.log('connected-2->');
                 if (typeof cbk === 'function') { 
-                    console.log('cbk---');
-                    
                     cbk();
                 } 
             });  
@@ -67,14 +64,12 @@
         }
         this.init(function() {
             console.log(' init --> ' + url);
-            console.log(parent._link);
         })
         
         this.createRoom = function (room, func) { 
             me = this;
             me.emit('clientRequest', {
                 cmd     : 'createRoom',
-                svr     : svr,
                 room    : room,
                 data    : {}
             }, func);
