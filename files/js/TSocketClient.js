@@ -43,7 +43,7 @@
             
               setTimeout(function() {
                         clearInterval(_ITV);
-                        delete me._Rsessions[session_id];
+                      //  delete me._Rsessions[session_id];
                   }, 6000);      
         }
         
