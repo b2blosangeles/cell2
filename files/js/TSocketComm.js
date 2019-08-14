@@ -16,6 +16,10 @@
             me.socket.on('disconnect', function(reason) {
                 console.log('BBBB====>>>>' + reason);
             }); 
+           me.socket.on('_incomeMessage_', function(income_data) {
+                    console.log('incomeMessage coming--2->');
+                    console.log(income_data)      
+            });
 
         }
         this.init(function() {
