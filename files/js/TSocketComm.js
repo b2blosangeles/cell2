@@ -1,5 +1,5 @@
 (function () { 
-    var obj =  function (parent, url) {
+    var obj =  function (parent, url, svr) {
         
         this.getSN = function() {
             var me = this; me._SN = (!me._SN || me._SN > 999999) ? 1 : (me._SN + 1)
@@ -75,6 +75,7 @@
             me.emit('clientRequest', {
                 cmd     : 'createRoom',
                 url     : url,
+                svr     : svr, 
                 room    : room,
                 data    : {}
             }, func);
