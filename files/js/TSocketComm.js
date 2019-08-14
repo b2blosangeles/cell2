@@ -60,7 +60,15 @@
                 console.log(data);
                 
                if (!data || !data.session_id) return true;
+                
+                 console.log('_callbackMessage 2_>');
+                console.log(data);
+                
               var s = data.session_id.split('.');
+                
+                 console.log('_callbackMessage_3>');
+                console.log(data);
+                
               me._Rsessions[s[1]] = function(cbk) {
                    delete me._Rsessions[s[1]];
                    delete data.session_id
