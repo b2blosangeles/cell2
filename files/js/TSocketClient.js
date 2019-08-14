@@ -43,10 +43,10 @@
                             }
                     } })(me), 100);
             
-              setTimeout(function() {
+              setTimeout( (function(me) { return function() {
                         clearInterval(_ITV);
-                      //  delete me._Rsessions[session_id];
-                  }, 6000);      
+                        delete me._Rsessions[session_id];
+                  } })(me), 6000);      
         }
         
         this.init = function(cbk) {
