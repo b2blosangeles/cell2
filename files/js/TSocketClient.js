@@ -29,7 +29,7 @@
         };
         this.createRoom = function (v, func) {
             var me = this;
-            me.roomLink(function(objComm, svr) {
+            me.roomLink(function(objComm) {
                 objComm.createRoom(v, function(data) {
                      me._rooms[svr + '_' + data.room] = data.clients;
                      func(me._rooms)
