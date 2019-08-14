@@ -1,6 +1,37 @@
 (function () { 
     var obj =  function (parent, url) {
-
+        
+        this.getSN = function() {
+            var me = this; me._SN = (!me._SN || me._SN > 999999) ? 1 : (me._SN + 1)
+            return 'A_' + me._SN;
+        }        
+        
+        this.emit = function (k, data, cbk) {
+            var me = this; me._Rsessions = (!me._Rsessions)? {} : me._Rsessions = {};
+            var session_id = me.getSN();
+            data.session_id  = session_id;
+            me.socket.emit(k, data); 
+            me.sessionCallback(session_id, cbk);
+        };  
+        
+        this.sessionCallback = function(session_id, func) {
+              me = this;
+              var _ITV = setInterval(
+                    (function(me) { return function() {
+                            if (typeof me._Rsessions[session_id] === 'function') {
+                                clearInterval(_ITV);
+                                me._Rsessions[session_id](func);
+                                console.log(me);
+                                delete me._Rsessions[session_id];
+                            }
+                    } })(me), 100);
+            
+              setTimeout( (function(me) { return function() {
+                        clearInterval(_ITV);
+                        delete me._Rsessions[session_id];
+                  } })(me), 6000);      
+        }
+        
         this.init = function(cbk) {
             var me = this;
             me.socket = io(url);
