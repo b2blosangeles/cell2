@@ -62,6 +62,7 @@
                   me._Rsessions[s[1]] = function(cbk) {
                        delete me._Rsessions[s[1]];
                        delete data.session_id;
+                      console.log(s[1] + '====>');
                       console.log(cbk);
                        if (typeof cbk === 'function') cbk(data);
                    }
