@@ -62,8 +62,8 @@
                   me._Rsessions[s[1]] = function(cbk) {
                        delete me._Rsessions[s[1]];
                        delete data.session_id;
-                      coinsole.log(s[1]);
-                      coinsole.log(data);
+                      console.log(s[1]);
+                      console.log(data);
                        if (typeof cbk === 'function') cbk(data);
                    }
             });
