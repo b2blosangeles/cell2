@@ -31,6 +31,7 @@
             var me = this;
             me.roomLink(function(objComm) {
                 objComm.createRoom(v, function(data) {
+                    console.log(data);
                      me._rooms[data.url + '_' + data.room] = data.clients;
                      func(me._rooms)
                 });
