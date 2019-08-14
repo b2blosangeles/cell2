@@ -8,8 +8,8 @@
 <script>
   var tSocket = new TSocketClient('//commion1_dev.shusiou.win/');
   tSocket.init(function() { console.log('connected ');  });
-  function createRoom() {
-    tSocket.createRoom(function(data) {
+  function createRoom(v) {
+    tSocket.createRoom(v, function(data) {
       console.log(data);
       var str = '';
       for (o in data) {
