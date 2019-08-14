@@ -17,19 +17,19 @@
             me.socket.emit(k, data); 
             me.sessionCallback(session_id, cbk);
         };      
-        
+        this.roomLink = function (func) {
+             me.emit('clientRequest', {cmd: 'roomServers'}, function(data) {
+                let list = data.list;
+                var svr =  list[Math.floor(Math.random() * list.length)]; 
+                var link = ((data.isSSL) ? 'https://' : 'http://') + svr + '/';
+                 me._link[svr] = (me._link[svr]) ? me._link[svr] : new TSocketCOMM(me, link);
+                 me._room[svr] = {};
+                 func(me._link);
+             }
+        };
         this.createRoom = function (func) {
             var me = this;
-            me.emit('clientRequest', {cmd: 'roomServers'}, function(data) {
-                let list = data.list;
-                var svr =  list[Math.floor(Math.random() * list.length)];
-                var link = ((data.isSSL) ? 'https://' : 'http://') + svr + '/';
-                console.log(link);
-                me._link[svr] = (me._link[svr]) ? me._link[svr] : new TSocketCOMM(me, link);
-                me._link[svr].joinRoom('NIU' );
-       //         me._room[svr] = {};
-                func(me._link);
-            });
+            me.roomLink(func)
         } 
         this.sessionCallback = function(session_id, func) {
               me = this;
