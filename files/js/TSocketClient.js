@@ -18,6 +18,7 @@
             me.sessionCallback(session_id, cbk);
         };      
         this.roomLink = function (func) {
+             var me = this;
              me.emit('clientRequest', {cmd: 'roomServers'}, function(data) {
                 let list = data.list;
                 var svr =  list[Math.floor(Math.random() * list.length)]; 
