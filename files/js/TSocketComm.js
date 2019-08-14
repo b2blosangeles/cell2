@@ -9,7 +9,6 @@
         this.emit = function (k, data, cbk) {
             var me = this; me._Rsessions = (!me._Rsessions)? {} : me._Rsessions = {};
             var session_id = me.getSN();
-            console.log('session_id====>' + session_id);
             data.session_id  = session_id;
             me.socket.emit(k, data); 
             me.sessionCallback(session_id, cbk);
