@@ -24,7 +24,6 @@
                 var svr =  list[Math.floor(Math.random() * list.length)]; 
                 var link = ((data.isSSL) ? 'https://' : 'http://') + svr + '/';
                  me._link[svr] = (me._link[svr]) ? me._link[svr] : new TSocketCOMM(me, link);
-                 me._room[svr] = {};
                  func(me._link[svr], svr);
              });
         };
