@@ -23,15 +23,15 @@
                 let list = data.list;
                 var svr =  list[Math.floor(Math.random() * list.length)]; 
                 var link = ((data.isSSL) ? 'https://' : 'http://') + svr + '/';
-                 me._link[svr] = (me._link[svr]) ? me._link[svr] : new TSocketCOMM(me, link);
-                 func(me._link[svr], svr);
+                 me._link[svr] = (me._link[svr]) ? me._link[svr] : new TSocketCOMM(me, link, svr);
+                 func(me._link[svr]);
              });
         };
         this.createRoom = function (v, func) {
             var me = this;
             me.roomLink(function(objComm) {
                 objComm.createRoom(v, function(data) {
-                     me._rooms[svr + '_' + data.room] = data.clients;
+                     me._rooms[data.svr + '_' + data.room] = data.clients;
                      func(me._rooms)
                 });
             })
