@@ -36,8 +36,6 @@
             me.socket = io(url);
 
             me.socket.on('connect', function() {
-                console.log('---me.socket.adapter.rooms--->');
-                console.log(me.socket.adapter.rooms);
                 if (typeof cbk === 'function') { 
                     cbk();
                 } 
@@ -54,6 +52,7 @@
                 }     
             });
             me.socket.on('_callbackMessage_',function(data) {
+                console.log(data);
                if (!data || !data.session_id) return true;
                var s = data.session_id.split('.');
 
