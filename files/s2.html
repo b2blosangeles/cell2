@@ -15,7 +15,7 @@
         str += data.rooms[o].room + '<br>';
       }
       $('#rightBoxA').html(str);
-      
+      tSocket.sendToRoom(v, 1234);
     });
   }
 
