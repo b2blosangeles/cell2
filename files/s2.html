@@ -20,6 +20,10 @@
   }
 
   
+  function sendToRoom(v, data) {
+    tSocket.sendToRoom(v, data);
+  }
+  
 </script>
 <link rel="stylesheet" href="/package/Tao.css">
 </head>
@@ -33,7 +37,7 @@
     <div class="col-sm-6 p-0 pl-2 pr-1" id="leftBox">
         <a href="javascript:void(0)" onClick="createRoom('PP1')">Add a Room</a>
         <hr/>
-              <a href="javascript:void(0)" onClick="createRoom('PP2')">Add a Room</a>
+              <a href="javascript:void(0)" onClick="sendToRoom('PP1', 'test')">send test</a>
         <hr/>
     </div>
     <div class="col-sm-6" id="rightBox">
