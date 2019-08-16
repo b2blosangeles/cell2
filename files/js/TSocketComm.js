@@ -75,6 +75,15 @@
                 data    : {}
             }, func);
         };
+        
+        this.sendToRoom = function (room, data, func) { 
+            me = this;
+            me.emit('clientRequest', {
+                cmd     : 'sendToRoom',
+                room    : room,
+                data    : data
+            }, func);
+        };
     }
     window.TSocketCOMM = obj;
 })();
