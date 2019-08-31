@@ -11,7 +11,7 @@ TAO.pkg.fs.readFile(fn, 'utf8', function read(err, data) {
                 DR[DL[i][0].replace(/^\s+|\s+$/gm,'')] = DL[i][1].replace(/^\s+|\s+$/gm,'')
             }
       } 
-      TAO.res.send(DS);
+      TAO.res.send(DR);
     }
     
 });
