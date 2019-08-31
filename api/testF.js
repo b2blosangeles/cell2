@@ -3,10 +3,10 @@ TAO.pkg.fs.readFile(fn, 'utf8', function read(err, data) {
     if (err) {
       TAO.res.send(false);
     } else {
-      var DS = {};
-      try { DS = JSON.parse(data); } catch(e) {}
+      var DL =  [];
+      try { DL = data.split("\n"); } catch(e) {}
 
-      TAO.res.send(DS);
+      TAO.res.send(DL);
     }
     
 });
