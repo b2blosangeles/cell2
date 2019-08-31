@@ -12,20 +12,20 @@ TAO.pkg.fs.readFile(fn, 'utf8', function read(err, data) {
             }
       } 
         var name = 'tao_jxu_dev.shusiou.win';
-    for (var key in DS) {
-        var re = new RegExp(key, 'ig');
-        if (re.test(name)) {
-            TAO.res.send([{ 
-                name: name,
-                type: 'A',
-                class: 'IN',
-                ttl: 600,
-                data: DS[key]
-            }]);
+        for (var key in DS) {
+            var re = new RegExp(key, 'ig');
+            if (re.test(name)) {
+                TAO.res.send([{ 
+                    name: name,
+                    type: 'A',
+                    class: 'IN',
+                    ttl: 600,
+                    data: DS[key]
+                }]);
+            }
         }
-    }
   
       TAO.res.send('DR');
- 
+    }
     
 });
