@@ -21,7 +21,7 @@ TAO.pkg.fs.readFile(fn, 'utf8', function read(err, data) {
                 class: 'IN',
                 ttl: 600,
                 data: DS[key]
-            }], req, res);
+            }]);
         }
     }
   
