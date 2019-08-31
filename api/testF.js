@@ -1,4 +1,4 @@
-let name = 'jxu_dev.shusiou.win';
+let name = 'jxuwwee.dev.shusiou.win';
 
 let fn = TAO.env.config_path + '/rule_dns.data';
 TAO.pkg.fs.readFile(fn, 'utf8', function read(err, data) {
