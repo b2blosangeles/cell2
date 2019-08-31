@@ -5,7 +5,9 @@ TAO.pkg.fs.readFile(fn, 'utf8', function read(err, data) {
     } else {
       var DL =  [];
       try { DL = data.split("\n"); } catch(e) {}
-
+      for (var i = 0; i < DL.length; i++) {
+        DL[i] = DL[i].split('=>');
+      }  
       TAO.res.send(DL);
     }
     
