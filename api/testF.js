@@ -8,10 +8,10 @@ TAO.pkg.fs.readFile(fn, 'utf8', function read(err, data) {
       for (var i = 0; i < DL.length; i++) {
             DL[i] = DL[i].split('=>');
             if (DL[i].length == 2) {
-                DR[DL[i][0]] = DL[i][1]
+                DR[DL[i][0].replace(/^\s+|\s+$/gm,'')] = DL[i][1].replace(/^\s+|\s+$/gm,'')
             }
       } 
-      TAO.res.send(DL);
+      TAO.res.send(DS);
     }
     
 });
