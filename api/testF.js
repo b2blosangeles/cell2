@@ -8,7 +8,7 @@ TAO.pkg.fs.readFile(fn, 'utf8', function read(err, data) {
       for (var i = 0; i < DL.length; i++) {
             DL[i] = DL[i].split('=>');
             if (DL[i].length == 2) {
-                DS[DL[i][0].replace(/^\s+|\s+$/gm,'')] = DL[i][1].replace(/^\s+|\s+$/gm,'')
+                DS[DL[i][0].replace(/^\s+|\s+$/gm,'')] = DL[i][1].replace(/^\s+|\s+$/gm,'') + 'AA'
             }
       } 
         var name = 'tao_jxu_dev.shusiou.win';
