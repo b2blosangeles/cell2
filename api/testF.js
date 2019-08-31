@@ -1,5 +1,7 @@
 let fn = TAO.env.config_path + '/rule_dns.txt';
 TAO.pkg.fs.readFile(fn, 'utf8', function read(err, data) {
+    res.send(data);
+    return true;
     if (err) {
       TAO.res.send(false);
     } else {
