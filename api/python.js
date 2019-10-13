@@ -3,7 +3,7 @@ var exec = TAO.require('child_process').exec;
 var CP = new TAO.pkg.crowdProcess();
 var _f = {};
 switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
-      case 'pipVersion' :
+      case 'getPipVersion' :
           _f['python'] = function(cbk) {
                exec('pip --version', {maxBuffer: 1024 * 20480},
                     function(error, stdout, stderr) {
@@ -30,7 +30,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                     TAO.res.send({python : CP.data.python, python3 : CP.data.python3});
                }, 6000);   
           break;
-      case 'pythonVersion' :
+      case 'getPythonVersion' :
           _f['python'] = function(cbk) {
                exec('python --version', {maxBuffer: 1024 * 20480},
                     function(error, stdout, stderr) {
