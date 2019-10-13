@@ -38,7 +38,10 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
           CP.serial(
                _f,
                function(data) {
-                    TAO.res.send({python : CP.data.python, python3 : CP.data.python3});
+                    let ret = {};
+                    ret.python = (CP.data.python) ? CP.data.python : null;
+                    ret.python = (CP.data.python3) ? CP.data.python3 : null;
+                    TAO.res.send(ret);
                }, 6000);   
           break;
       case 'getPythonVersion' :
@@ -65,7 +68,10 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
           CP.serial(
                _f,
                function(data) {
-                    TAO.res.send({python : CP.data.python, python3 : CP.data.python3});
+                    let ret = {};
+                    ret.python = (CP.data.python) ? CP.data.python : null;
+                    ret.python = (CP.data.python3) ? CP.data.python3 : null;
+                    TAO.res.send(ret);
                }, 6000);   
           break;
       case 'getPackages' : 
@@ -92,7 +98,10 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
           CP.serial(
                _f,
                function(data) {
-                    TAO.res.send({python : CP.data.python, python3 : CP.data.python3});
+                    let ret = {};
+                    ret.python = (CP.data.python) ? CP.data.python : null;
+                    ret.python = (CP.data.python3) ? CP.data.python3 : null;
+                    TAO.res.send(ret);
                }, 6000);
           break;
       default:
