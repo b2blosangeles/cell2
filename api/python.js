@@ -57,7 +57,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                     TAO.res.send({python : CP.data.python, python3 : CP.data.python3});
                }, 6000);   
           break;
-      default:  
+      case 'getPackages' : 
           _f['python'] = function(cbk) {
                exec('pip list --format=json', {maxBuffer: 1024 * 20480},
                     function(error, stdout, stderr) {
@@ -83,6 +83,9 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                function(data) {
                     TAO.res.send({python : CP.data.python, python3 : CP.data.python3});
                }, 6000);
+          break;
+      default:
+         TAO.res.send({error: 'Missing or wrong code!'});
 }
           /*
 _f['python'] = function(cbk) {
