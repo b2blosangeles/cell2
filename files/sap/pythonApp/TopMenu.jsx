@@ -3,6 +3,11 @@ class TopMenu extends React.Component {
 	super(props);
 	this.props = props;
 	this.state = {list : []};
+	this.menu = [
+		{caption : 'test 1', code : 'test1'},
+		{caption : 'test 2', code : 'test2'},
+		{caption : 'test 3', code : 'test3'}
+	]
   }
   componentDidMount() {
 	var me = this;
@@ -34,10 +39,10 @@ class TopMenu extends React.Component {
 	<div className="border border-success alert-success rounded  m-0 mt-3 mb-2 p-2">
 		<h1>Python Integration</h1>
 		<p className="p-2">
-			{this.state.list.map(function(item, i){
+			{this.menu.map(function(item, i){
 				return (<span className="mr-3">
 						<a href="javascript:void(0);" onClick={me.handleClick.bind(me, item)}>
-						{item.datname}
+						{item.caption}
 						</a> 
 					</span>)
 			})}
