@@ -4,7 +4,7 @@ var CP = new TAO.pkg.crowdProcess();
 var _f = {};
 switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
       case 'getCodes' :
-            let codedir = TAO.env.site_path + '/_python/';
+            var codedir = TAO.env.site_path + '/_python/';
             exec('cd ' + codedir + ' && python test.py', {maxBuffer: 1024 * 20480},
               function(error, stdout, stderr) {
                  if (error) {
@@ -15,7 +15,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
             }); 
             break;           
       case 'runCode' :
-            let codedir = TAO.env.site_path + '/_python/';
+            var codedir = TAO.env.site_path + '/_python/';
             exec('cd ' + codedir + ' && python test.py', {maxBuffer: 1024 * 20480},
               function(error, stdout, stderr) {
                  if (error) {
