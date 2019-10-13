@@ -13,7 +13,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                  } else {
                    cbk(stdout.replace(/\n/ig, ''));
                  }	
-            }); /
+            }); */
             break;
       case 'getPipVersion' :
           _f['python'] = function(cbk) {
