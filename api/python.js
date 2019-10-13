@@ -8,9 +8,9 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
             exec('cd ' + codedir + ' && python test.py', {maxBuffer: 1024 * 20480},
               function(error, stdout, stderr) {
                  if (error) {
-                  cbk(error.message.replace(/\n/ig, ' '));
+                   TAO.res.send(error.message.replace(/\n/ig, ' '));
                  } else {
-                   cbk(stdout.replace(/\n/ig, ''));
+                   TAO.res.send(stdout.replace(/\n/ig, ''));
                  }	
             }); 
             break;
