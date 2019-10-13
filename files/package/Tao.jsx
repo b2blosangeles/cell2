@@ -1,5 +1,5 @@
 {
-	"filelist":[
+	"filelist": [
 		"/js/json2/json2.min.js",
 		"/js/jquery/3.3.1/jquery.min.js",
 		"/js/jqueryui/1.12.1/jquery-ui.min.js",
@@ -9,11 +9,11 @@
 		"/js/react/ReactRouter/3.0.2/ReactRouter.min.js",
 		"/js/socket.io/1.7.3/socket.io.min.js",
 		
-		"/js/app/TaoController.jsx",
-		"/js/app/TAORoot.jsx",
-		"/js/app/TopMenu.jsx",
-		"/js/app/LeftBox.jsx",
-		"/js/app/TaoContent.jsx",
-		"/js/app/TAOindex.jsx"
+		"/sap/pythonApp/TaoController.jsx",
+		"/sap/pythonApp/TAORoot.jsx",
+		"/sap/pythonApp/TopMenu.jsx",
+		"/sap/pythonApp/LeftBox.jsx",
+		"/sap/pythonApp/TaoContent.jsx",
+		"/sap/pythonApp/TAOindex.jsx"
 	]
 }
