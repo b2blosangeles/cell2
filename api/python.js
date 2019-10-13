@@ -87,25 +87,3 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
       default:
          TAO.res.send({error: 'Missing or wrong code!'});
 }
-          /*
-_f['python'] = function(cbk) {
-     exec('pip list', {maxBuffer: 1024 * 20480},
-          function(error, stdout, stderr) {
-             if (error) {
-              cbk(error.message.replace(/\n/ig, '++'));
-             } else {
-               cbk(stdout.replace(/\n/ig, '<br/>'));
-             }	
-     });
-}
-_f['python3'] = function(cbk) {
-     exec('pip3 list', {maxBuffer: 1024 * 20480},
-          function(error, stdout, stderr) {
-             if (error) {
-              cbk(error.message.replace(/\n/ig, '++'));
-             } else {
-               cbk(stdout.replace(/\n/ig, '<br/>'));
-             }	
-     });
-}*/
-
