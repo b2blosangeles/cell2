@@ -20,11 +20,11 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                   (TAO.req.query.pythonType) ? TAO.req.query.pythonType : 'python';
             
             if (['python', 'python3'].indexOf('pythonType') === -1) {
-                  TAO.res.send({error : 'pythonType error!')});
+                  TAO.res.send({error : 'pythonType error!'});
                   break;
             }
             if (!codefn) {
-                  TAO.res.send({error : 'missing codeFile!')});
+                  TAO.res.send({error : 'missing codeFile!'});
                   break;
             }
             exec('cd ' + codedir + ' && ' + pythonType + ' ' + codefn, {maxBuffer: 1024 * 20480},
