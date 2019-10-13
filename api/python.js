@@ -18,6 +18,15 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                   (TAO.req.query.codeFile) ? TAO.req.query.codeFile : 'test.py';
             var pythonType = (TAO.req.body.pythonType) ? TAO.req.body.pythonType : 
                   (TAO.req.query.pythonType) ? TAO.req.query.pythonType : 'python';
+            
+            if (['python', 'python3'].indexOf('pythonType') === -1) {
+                  TAO.res.send({error : 'pythonType error!')});
+                  break;
+            }
+            if (!codefn) {
+                  TAO.res.send({error : 'missing codeFile!')});
+                  break;
+            }
             exec('cd ' + codedir + ' && ' + pythonType + ' ' + codefn, {maxBuffer: 1024 * 20480},
               function(error, stdout, stderr) {
                  if (error) {
@@ -26,6 +35,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                    TAO.res.send(stdout.replace(/\n/ig, ''));
                  }	
             }); 
+
             break;
       case 'getPipVersion' :
           _f['python'] = function(cbk) {
