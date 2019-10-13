@@ -9,7 +9,7 @@ _f['python'] = function(cbk) {
              if (error) {
               cbk(error.message.replace(/\n/ig, '++'));
              } else {
-               cbk(stdout);
+               cbk(JSON.parser(stdout));
              }	
      });
 }
@@ -19,7 +19,7 @@ _f['python3'] = function(cbk) {
              if (error) {
               cbk(error.message.replace(/\n/ig, '++'));
              } else {
-               cbk(stdout);
+               cbk(JSON.parser(stdout));
              }	
      });
 }
