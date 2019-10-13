@@ -8,9 +8,9 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                exec('pip --version', {maxBuffer: 1024 * 20480},
                     function(error, stdout, stderr) {
                        if (error) {
-                        cbk(error.message.replace(/\n/ig, '++'));
+                        cbk(error.message.replace(/\n/ig, ' '));
                        } else {
-                         cbk(JSON.parse(stdout));
+                         cbk(stdout);
                        }	
                });
           }
@@ -18,9 +18,9 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                exec('pip3 --version', {maxBuffer: 1024 * 20480},
                     function(error, stdout, stderr) {
                        if (error) {
-                        cbk(error.message.replace(/\n/ig, '++'));
+                        cbk(error.message.replace(/\n/ig, ' '));
                        } else {
-                         cbk(JSON.parse(stdout));
+                         cbk(stdout);
                        }	
                });
           }
@@ -35,9 +35,9 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                exec('python --version', {maxBuffer: 1024 * 20480},
                     function(error, stdout, stderr) {
                        if (error) {
-                        cbk(error.message.replace(/\n/ig, '++'));
+                        cbk(error.message.replace(/\n/ig, ' '));
                        } else {
-                         cbk(JSON.parse(stdout));
+                         cbk(stdout);
                        }	
                });
           }
@@ -45,9 +45,9 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                exec('python3 --version', {maxBuffer: 1024 * 20480},
                     function(error, stdout, stderr) {
                        if (error) {
-                        cbk(error.message.replace(/\n/ig, '++'));
+                        cbk(error.message.replace(/\n/ig, ' '));
                        } else {
-                         cbk(JSON.parse(stdout));
+                         cbk(stdout);
                        }	
                });
           }
