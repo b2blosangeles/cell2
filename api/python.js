@@ -3,6 +3,18 @@ var exec = TAO.require('child_process').exec;
 var CP = new TAO.pkg.crowdProcess();
 var _f = {};
 switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
+      case 'runCode' :
+            TAO.res.send(TAO.env);
+            /*
+            exec('pip --version', {maxBuffer: 1024 * 20480},
+              function(error, stdout, stderr) {
+                 if (error) {
+                  cbk(error.message.replace(/\n/ig, ' '));
+                 } else {
+                   cbk(stdout.replace(/\n/ig, ''));
+                 }	
+            }); /
+            break;
       case 'getPipVersion' :
           _f['python'] = function(cbk) {
                exec('pip --version', {maxBuffer: 1024 * 20480},
