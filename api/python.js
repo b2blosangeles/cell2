@@ -3,6 +3,16 @@ var exec = TAO.require('child_process').exec;
 var CP = new TAO.pkg.crowdProcess();
 var _f = {};
 switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
+      case 'version' : 
+         exec('pip --version --format=json', {maxBuffer: 1024 * 20480},
+              function(error, stdout, stderr) {
+                 if (error) {
+                  TAO.res.send(error.message.replace(/\n/ig, '++'));
+                 } else {
+                   TAO.res.send(JSON.parse(stdout));
+                 }	
+         });    
+          break;
       default:  
           _f['python'] = function(cbk) {
                exec('pip list --format=json', {maxBuffer: 1024 * 20480},
