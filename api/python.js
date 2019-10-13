@@ -16,7 +16,9 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
       case 'runCode' :
             var codefn = (TAO.req.body.codeFile) ? TAO.req.body.codeFile : 
                   (TAO.req.query.codeFile) ? TAO.req.query.codeFile : 'test.py';
-            exec('cd ' + codedir + ' && python ' + codefn, {maxBuffer: 1024 * 20480},
+            var pythonType = (TAO.req.body.pythonType) ? TAO.req.body.pythonType : 
+                  (TAO.req.query.pythonType) ? TAO.req.query.pythonType : 'python';
+            exec('cd ' + codedir + ' && ' + pythonType + ' ' + codefn, {maxBuffer: 1024 * 20480},
               function(error, stdout, stderr) {
                  if (error) {
                    TAO.res.send({error : error.message.replace(/\n/ig, ' ')});
