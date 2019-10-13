@@ -4,9 +4,9 @@ class TopMenu extends React.Component {
 	this.props = props;
 	this.state = {list : []};
 	this.menu = [
-		{caption : 'test 1', code : 'test1'},
-		{caption : 'test 2', code : 'test2'},
-		{caption : 'test 3', code : 'test3'}
+		{caption : 'Packages', code : 'getPackages'},
+		{caption : 'Add a package', code : 'addPackage'},
+		{caption : 'Run pathon code', code : 'runCode'}
 	]
   }
   componentDidMount() {
