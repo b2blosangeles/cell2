@@ -6,7 +6,7 @@ class TopMenu extends React.Component {
 	this.menu = [
 		{caption : 'Packages', code : 'getPackages'},
 		{caption : 'Add a package', code : 'addPackage'},
-		{caption : 'Run pathon code', code : 'runCode'}
+		{caption : 'Run a python code', code : 'runCode'}
 	]
   }
   componentDidMount() {
