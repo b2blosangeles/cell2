@@ -17,6 +17,7 @@ class TopMenu extends React.Component {
   }
   handleClick(item) {
 	ReactDOM.TAO.popup({data : item.datname, closeIcon: true});
+	ReactDOM.TAO.load('leftBox', <LeftBox param={{}} />, document.getElementById('leftBox'));
   }	
   render() {
 	var me = this;

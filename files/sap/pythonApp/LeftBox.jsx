@@ -5,7 +5,8 @@ class LeftBox extends React.Component {
 	this.state = {list : []};
   }
   componentDidMount() {
-	var me = this;  
+	var me = this; 
+	/*
 	ReactDOM.TAO.dataEngine({
 	     type: 'POST',
 	     url: '/api/Tao/API_PG.api?code=PGtables',
@@ -20,7 +21,7 @@ class LeftBox extends React.Component {
 	     }, 
 	     spinner : me
 	  });   
-	  
+	 */ 
   }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
