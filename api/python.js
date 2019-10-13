@@ -2,20 +2,18 @@
 var exec = TAO.require('child_process').exec;
 var CP = new TAO.pkg.crowdProcess();
 var _f = {};
+let codedir = TAO.env.site_path + '/_python/';
 switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
       case 'getCodes' :
-            var codedir = TAO.env.site_path + '/_python/';
-            exec('cd ' + codedir + ' && python test.py', {maxBuffer: 1024 * 20480},
-              function(error, stdout, stderr) {
+            TAO.pkg.fs.readdir(codedir, (error, files) => {
                  if (error) {
                    TAO.res.send({error : error.message.replace(/\n/ig, ' ')});
                  } else {
-                   TAO.res.send(stdout.replace(/\n/ig, ''));
-                 }	
-            }); 
+                   TAO.res.send(files);
+                 }
+              });
             break;           
       case 'runCode' :
-            var codedir = TAO.env.site_path + '/_python/';
             exec('cd ' + codedir + ' && python test.py', {maxBuffer: 1024 * 20480},
               function(error, stdout, stderr) {
                  if (error) {
