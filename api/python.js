@@ -15,7 +15,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                });
           }
           _f['python3'] = function(cbk) {
-               exec('pip3n3 --version', {maxBuffer: 1024 * 20480},
+               exec('pip3 --version', {maxBuffer: 1024 * 20480},
                     function(error, stdout, stderr) {
                        if (error) {
                         cbk(error.message.replace(/\n/ig, '++'));
