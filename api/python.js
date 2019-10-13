@@ -11,8 +11,6 @@ _f['python'] = function(cbk) {
                cbk(stdout.replace(/\n/ig, '<br/>'));
              }	
      });
-
-    });
 }
 _f['python3'] = function(cbk) {
      exec('pip3 list', {maxBuffer: 1024 * 20480},
@@ -23,8 +21,6 @@ _f['python3'] = function(cbk) {
                cbk(stdout.replace(/\n/ig, '<br/>'));
              }	
      });
-
-    });
 }
 CP.serial(
      _f,
