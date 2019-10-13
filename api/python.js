@@ -5,6 +5,6 @@ exec('ls -l', {maxBuffer: 1024 * 2048},
         if (error) {
           TAO.res.send(stdout.replace(/\n/ig, '++'));
         } else {
-          TAO.res.send(stdout.replace(/\n/ig, '++'));
+          TAO.res.send(stdout.replace(/\n/ig, '<br/>'));
         }	
 });
