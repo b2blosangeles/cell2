@@ -2,7 +2,7 @@
 var exec = TAO.require('child_process').exec;
 var CP = new TAO.pkg.crowdProcess();
 var _f = {};
-switch(TAO.req.body.code) {
+switch((TAO.req.body.code) ? TAO.req.body.code : req.query.code) {
       default:  
           _f['python'] = function(cbk) {
                exec('pip list --format=json', {maxBuffer: 1024 * 20480},
