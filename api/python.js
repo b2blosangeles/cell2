@@ -69,7 +69,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
           break;
       case 'getPythonVersion' :
           _f['python'] = function(cbk) {
-               exec('python -V', {maxBuffer: 1024 * 2048},
+               exec('python --help', {maxBuffer: 1024 * 2048},
                     function(error, stdout, stderr) {
                          if (error) {
                               cbk(error.message.replace(/[^\w\s]/gi, ''));
