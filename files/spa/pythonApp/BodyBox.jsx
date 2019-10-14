@@ -90,10 +90,7 @@ class BodyBox extends React.Component {
   }
   runCode (codefn) {
 	var me = this;
-	me.setState({code : 'runCode', codeFile : codefn}, function() {
-		alert(me.state.code);
-	});
-
+	me.setState({codeFile : codefn});
   }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;

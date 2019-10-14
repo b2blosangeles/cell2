@@ -8,6 +8,11 @@ class CodeResult extends React.Component {
       var me = this;
       // me.loadData(''); 
     }
+    componentDidUpdate(prevProps, prevState) {
+        var me = this;
+        console.log('--lelvel 2-->'); 
+        console.log(me.state); 
+      }
     render() {
         var me = this;
         return(
