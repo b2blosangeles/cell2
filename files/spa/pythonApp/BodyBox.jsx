@@ -55,7 +55,7 @@ class BodyBox extends React.Component {
 				<div className="border border-warning alert-warning rounded m-0 p-2">
 				  <b>{me.state.caption}</b>
 				  <hr/>
-					<div className="container-fluid bg-light">
+					<div className="container-fluid">
 						<div className="row">
 							<div className="col-sm-6 p-0 pl-2 pr-2">
 								Python packages:
