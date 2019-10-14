@@ -51,7 +51,7 @@ class BodyBox extends React.Component {
 				  {me.state.caption}
 				  <ul>
 					{this.state.list.map(function(item, i){
-					   return (<li>{item.tablename}</li>)
+					   return (<li>{item.name} - ({item.version})</li>)
 					 })}
 				  </ul>
 				</div>
