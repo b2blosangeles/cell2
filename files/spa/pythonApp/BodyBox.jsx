@@ -28,7 +28,12 @@ class BodyBox extends React.Component {
 	var me = this;
 	console.log('---uploaded-AAA-->');
 	if (me.state._TAOTM !== prevState._TAOTM) {
-		console.log(me.state._TAOstate);
+		me.setState(me.state._TAOstate);
+	} else {
+		if (me.state.code !== prevState.code) {
+
+			console.log('load ' + me.state.code);
+		}
 	}
   }
   render() {
