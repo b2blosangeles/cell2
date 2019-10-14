@@ -33,15 +33,19 @@ class CodeResult extends React.Component {
       }
     render() {
         var me = this;
-        return(
-            <div className="m-0 p-0 bodyBox">
-              <div className="container-fluid">
-                  <div className="row">
-                    =={me.props.codeFile }==
-                    {me.state.pythonCodeResult}
-                  </div>
-              </div>
-          </div>
-        )
+        return(<div className="m-0 p-0 bodyBox">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-sm-12 p-0">
+                                {me.props.codeFile }
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-12 p-0 pl-2 pr-2">
+                                {me.state.pythonCodeResult}
+                            </div>
+                        </div>
+                    </div>
+              </div>)
     }
   }
