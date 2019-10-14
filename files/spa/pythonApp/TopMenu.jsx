@@ -18,7 +18,7 @@ class TopMenu extends React.Component {
   }
   handleClick(item) {
 	// ReactDOM.TAO.popup({data : item.datname, closeIcon: true});
-	ReactDOM.TAO.setState(['BodyBox'], item);
+	ReactDOM.TAO.setState('BodyBox', item);
   }	
   render() {
 	var me = this;

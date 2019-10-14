@@ -34,6 +34,8 @@
 						this.list[id[i]].setState({_TAOTM: new Date().getTime(), _TAOstate: data});
 					}
 				}
+			} else if (typeof this.list[id] === 'object') {
+				this.list[id].setState({_TAOTM: new Date().getTime(), _TAOstate: data});
 			}
 		},
 		loadRoot : function() {
