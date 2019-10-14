@@ -9,16 +9,8 @@ class CodeResult extends React.Component {
     }
     componentDidUpdate(prevProps, prevState) {
         var me = this;
-        console.log('--lelvel 2-->'); 
- 
-        console.log('--lelvel 21-->'); 
-        console.log(prevProps.codeFile); 
-        console.log('--lelvel 3-->'); 
-        console.log(me.props.codeFile); 
-        console.log('--lelvel 31-->'); 
-    
         if (me.props.codeFile !== prevProps.codeFile) {
-			console.log('--load--->' + me.state.codeFile );
+			console.log('--load--->' + me.props.codeFile  );
 		}
       }
     render() {
@@ -27,7 +19,7 @@ class CodeResult extends React.Component {
             <div className="m-0 p-0 bodyBox">
               <div className="container-fluid">
                   <div className="row">
-                    Test 0
+                    =={me.props.codeFile }==
                   </div>
               </div>
           </div>
