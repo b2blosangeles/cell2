@@ -71,11 +71,11 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
           _f['python'] = function(cbk) {
                exec('python --version', {maxBuffer: 1024 * 20480},
                     function(error, stdout, stderr) {
-                       if (error) {
-                        cbk(error.message.replace(/\n/ig, ' '));
-                       } else {
-                         cbk(stdout.replace(/\n/ig, ''));
-                       }	
+                         if (error) {
+                              cbk(error.message.replace(/\n/ig, ''));
+                         } else {
+                              cbk(stdout.replace(/\n/ig, ''));
+                         }	
                });
           }
           _f['python3'] = function(cbk) {
