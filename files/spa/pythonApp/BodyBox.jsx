@@ -38,7 +38,7 @@ class BodyBox extends React.Component {
     var me = this;
     return (
       <div className="border border-warning alert-warning rounded m-0 p-2">
-	ALL TABLES : {me.state.caption}
+		{me.state.caption}
         <ul>
           {this.state.list.map(function(item, i){
              return (<li>{item.tablename}</li>)
