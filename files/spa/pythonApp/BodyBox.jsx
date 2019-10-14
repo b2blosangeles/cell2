@@ -142,11 +142,11 @@ class BodyBox extends React.Component {
 		case 'getCodes' :
 					return (
 						<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
-						  <h5>{me.state.caption}</h5>
-						  <hr/>
+							<h5>{me.state.caption}</h5>
+							<hr/>
 							<div className="container-fluid">
 								<div className="row">
-									<div className="col-sm-6 p-0 pl-2 pr-2">
+									<div className="col-sm-3 p-0 pl-2 pr-2">
 									{(!this.state.pythonCodes) ? '' :
 									(<ul>
 										{this.state.pythonCodes.map(function(item, i){
@@ -155,28 +155,14 @@ class BodyBox extends React.Component {
 									</ul>)
 									}
 									</div>
-									<div className="col-sm-6 p-0 pl-2 pr-2">
-										<CodeResult/>
+									<div className="col-sm-9 p-0 pl-2 pr-2">
+										<CodeResult parent={me} />
 									</div>
 								</div>
 							</div>
 						</div>
 					  );
 					break;
-
-			case 'runCode' :
-						return (
-							<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
-								<div className="container-fluid">
-									<div className="row">
-										<div className="col-sm-10 p-0 pl-2 pr-2">
-											<CodeResult/>
-										</div>
-									</div>
-								</div>
-							</div>
-						  );
-						break;
 		default :
 			return (<div className="border border-warning alert-warning rounded m-0 p-3 bodyBox">
 					<div className="container mt-3">

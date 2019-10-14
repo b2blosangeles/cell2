@@ -6,12 +6,12 @@ class CodeResult extends React.Component {
     }
     componentDidMount() {
       var me = this;
-      me.loadData(''); 
+      // me.loadData(''); 
     }
     render() {
         var me = this;
         return(
-            <div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
+            <div className="m-0 p-2 bodyBox">
             <h5>{me.state.caption}</h5>
             <hr/>
               <div className="container-fluid">
