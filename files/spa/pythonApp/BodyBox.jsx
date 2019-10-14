@@ -6,7 +6,7 @@ class BodyBox extends React.Component {
   }
   componentDidMount() {
 	var me = this; 
-	alert(me.props.code)
+	alert(me.props.param.code)
 	ReactDOM.TAO.dataEngine({
 	     type: 'POST',
 	     url: '/api/Tao/API_PG.api?code=PGtables',
@@ -30,7 +30,7 @@ class BodyBox extends React.Component {
     var me = this;
     return (
       <div className="border border-warning alert-warning rounded m-0 p-2">
-	ALL TABLES : {me.props.code}
+	ALL TABLES : {me.props.param.code}
         <ul>
           {this.state.list.map(function(item, i){
              return (<li>{item.tablename}</li>)
