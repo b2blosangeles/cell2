@@ -13,7 +13,7 @@ class CodeResult extends React.Component {
         ReactDOM.TAO.dataEngine({
             type: 'POST',
             url: '/api/python.api',
-            data: {code : 'runCode', codeFile : me.state.codefn},
+            data: {code : 'runCode', codeFile : code},
             dataType: 'TEXT',
             timeout: (6 * 1000),
             success: function(resultData){
@@ -28,7 +28,7 @@ class CodeResult extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         var me = this;
         if (me.props.codeFile !== prevProps.codeFile) {
-			loadData(me.props.codeFile );
+			me.loadData(me.props.codeFile );
 		}
       }
     render() {
