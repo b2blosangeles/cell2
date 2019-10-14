@@ -28,7 +28,7 @@ class BodyBox extends React.Component {
 				spinner : me
 			});
 			break;
-			
+
 		case 'runCode' :
 				me.setState({pythonPackegs: null});
 				ReactDOM.TAO.dataEngine({
@@ -102,21 +102,12 @@ class BodyBox extends React.Component {
 						  <hr/>
 							<div className="container-fluid">
 								<div className="row">
-									{(!this.state.pythonPackegs || !this.state.pythonPackegs.python) ? '' :
+									{(!this.state.pythonCodes) ? '' :
 										(<div className="col-sm-6 p-0 pl-2 pr-2">
-										Python packages:
+										Python codes:
 										<ul>
-											{this.state.pythonPackegs.python.map(function(item, i){
-											return (<li>{item.name} ({item.version})</li>)
-											})}
-										</ul>
-									</div>)}
-									{(!this.state.pythonPackegs || !this.state.pythonPackegs.python3) ? '' :
-										(<div className="col-sm-6 p-0 pl-2 pr-2">
-										Python3 packages:
-										<ul>
-											{this.state.pythonPackegs.python3.map(function(item, i){
-											return (<li>{item.name} ({item.version})</li>)
+											{this.state.pythonCodes.map(function(item, i){
+											return (<li>{item}</li>)
 											})}
 										</ul>
 									</div>)}
