@@ -11,12 +11,10 @@ class CodeResult extends React.Component {
     render() {
         var me = this;
         return(
-            <div className="m-0 p-2 bodyBox">
-            <h5>{me.state.caption}</h5>
-            <hr/>
+            <div className="m-0 p-0 bodyBox">
               <div className="container-fluid">
                   <div className="row">
-                    Test
+                    Test 0
                   </div>
               </div>
           </div>
