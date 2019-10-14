@@ -11,7 +11,7 @@ class CodeResult extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         var me = this;
         console.log('--lelvel 2-->'); 
-        console.log(me.state); 
+        console.log(me.props.parent.state.codeFile); 
       }
     render() {
         var me = this;
