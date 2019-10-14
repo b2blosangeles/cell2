@@ -13,12 +13,13 @@ class BodyBox extends React.Component {
 		case 'getPackages' :
 			ReactDOM.TAO.dataEngine({
 				type: 'POST',
-				url: '/api/Tao/API_PG.api?code=PGtables',
+				url: '/api/python.api?code=getPackages',
 				data: {},
 				dataType: 'JSON',
 				timeout: (6 * 1000),
 				success: function(resultData){
-				me.setState({list : resultData.data, _TM : new Date().getTime()});
+					me.setState({list : resultData.data.python3, _TM : new Date().getTime()});
+					console.log(resultData.data.python3);
 				},
 				error : function(err) { 
 					console.log('err');
