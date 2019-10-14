@@ -153,7 +153,7 @@ class BodyBox extends React.Component {
 									}
 									</div>
 									<div className="col-sm-9 p-0 m-0">
-										<CodeResult parent={me} />
+										<CodeResult codeFile={me.state.codeFile} />
 									</div>
 								</div>
 							</div>
