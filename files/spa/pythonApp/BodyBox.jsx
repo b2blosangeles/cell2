@@ -26,7 +26,7 @@ class BodyBox extends React.Component {
   }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
-	console.log('---uploaded--->');
+	console.log('---uploaded-AAA-->');
   }
   render() {
     var me = this;
