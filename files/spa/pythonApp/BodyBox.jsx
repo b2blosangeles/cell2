@@ -80,6 +80,7 @@ class BodyBox extends React.Component {
 		me.setState(me.state._TAOstate);
 	} else {
 		if (me.state.code !== prevState.code) {
+			me.setState({codeFile : null});
 			me.loadData(me.state.code);
 		}
 	}
