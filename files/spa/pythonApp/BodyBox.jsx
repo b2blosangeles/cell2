@@ -5,7 +5,8 @@ class BodyBox extends React.Component {
 	this.state = {};
   }
   componentDidMount() {
-	var me = this; 
+	var me = this;
+	me.loadData(''); 
   }
   loadData(code) {
 	var me = this;
@@ -30,24 +31,41 @@ class BodyBox extends React.Component {
 			break;
 
 		case 'runCode' :
-				me.setState({pythonPackegs: null});
-				ReactDOM.TAO.dataEngine({
-					type: 'POST',
-					url: '/api/python.api',
-					data: {code : 'getCodes'},
-					dataType: 'JSON',
-					timeout: (6 * 1000),
-					success: function(resultData){
-						me.setState({pythonCodes: resultData});
-						
-					},
-					error : function(err) { 
-						console.log('err');
-					}, 
-					spinner : me
-				});
-				break;
+			me.setState({pythonPackegs: null});
+			ReactDOM.TAO.dataEngine({
+				type: 'POST',
+				url: '/api/python.api',
+				data: {code : 'getCodes'},
+				dataType: 'JSON',
+				timeout: (6 * 1000),
+				success: function(resultData){
+					me.setState({pythonCodes: resultData});
+					
+				},
+				error : function(err) { 
+					console.log('err');
+				}, 
+				spinner : me
+			});
+			break;
 		default :
+			me.setState({pythonVersion: null});
+			ReactDOM.TAO.dataEngine({
+				type: 'POST',
+				url: '/api/python.api',
+				data: {code : 'getPythonVersion'},
+				dataType: 'JSON',
+				timeout: (6 * 1000),
+				success: function(resultData){
+					me.setState({pythonVersion: resultData});
+					
+				},
+				error : function(err) { 
+					console.log('err');
+				}, 
+				spinner : me
+			});
+			break;
 	}
   
   }
@@ -118,7 +136,26 @@ class BodyBox extends React.Component {
 					break;
 		default :
 			return (<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
-				<h5>{me.state.caption}</h5>
+					<h5>{me.state.caption}</h5>
+					<hr/>
+					<div className="container">
+						<div className="row">
+							{(!this.state.pythonVersion) ? '' :
+								(<div className="col-sm-12 p-0 pl-2 pr-2">
+								Python version:
+								{this.state.pythonVersion.python}
+							</div>)}
+						</div>
+					</div>
+					<div className="container">
+						<div className="row">
+							{(!this.state.pythonVersion) ? '' :
+								(<div className="col-sm-12 p-0 pl-2 pr-2">
+								Python3 version:
+								{this.state.pythonVersion.python3}
+							</div>)}
+						</div>
+					</div>
 				</div>
 			);
 			break;
