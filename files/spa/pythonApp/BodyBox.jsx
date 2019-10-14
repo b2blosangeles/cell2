@@ -162,19 +162,11 @@ class BodyBox extends React.Component {
 			case 'runCode' :
 						return (
 							<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
-							  <h5>{me.state.caption}</h5>
-							  <hr/>
 								<div className="container-fluid">
 									<div className="row">
-										{(!this.state.pythonCodes) ? '' :
-											(<div className="col-sm-6 p-0 pl-2 pr-2">
-											Python codes:
-											<ul>
-												{this.state.pythonCodes.map(function(item, i){
-												return (<li><a href="javascript:void(0);" onClick={me.runCode.bind(me, item)}>{item}</a></li>)
-												})}
-											</ul>
-										</div>)}
+										<div className="col-sm-10 p-0 pl-2 pr-2">
+											{me.state.pythonCodeResult}
+										</div>
 									</div>
 								</div>
 							</div>
