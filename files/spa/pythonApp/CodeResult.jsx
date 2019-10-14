@@ -6,6 +6,8 @@ class CodeResult extends React.Component {
     }
     componentDidMount() {
       var me = this;
+      console.log('--lelvel 1-->'); 
+      console.log(me.props.parent.state.codeFile); 
       me.setState({codeFile : me.props.parent.state.codeFile});
       // me.loadData(''); 
     }
