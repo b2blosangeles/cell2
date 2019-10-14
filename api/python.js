@@ -68,16 +68,6 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                }, 6000);   
           break;
       case 'getPythonVersion' :
-               _f['python3'] = function(cbk) {
-                    exec('python3 --version', {maxBuffer: 1024 * 20480},
-                         function(error, stdout, stderr) {
-                            if (error) {
-                             cbk(error.message.replace(/\n/ig, ''));
-                            } else {
-                              cbk(stdout.replace(/\n/ig, ''));
-                            }	
-                    });
-               }
           _f['python'] = function(cbk) {
                exec('python --version', {maxBuffer: 1024 * 20480},
                     function(error, stdout, stderr) {
@@ -88,14 +78,23 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                          }	
                });
           }
-
+          _f['python3'] = function(cbk) {
+               exec('python3 --version', {maxBuffer: 1024 * 20480},
+                    function(error, stdout, stderr) {
+                       if (error) {
+                        cbk(error.message.replace(/\n/ig, ''));
+                       } else {
+                         cbk(stdout.replace(/\n/ig, ''));
+                       }	
+               });
+          }
           CP.serial(
                _f,
                function(data) {
                     let ret = {};
                     ret.python = (CP.data.python) ? CP.data.python : null;
                     ret.python3 = (CP.data.python3) ? CP.data.python3 : null;
-                    TAO.res.send(ret);
+                    TAO.res.send(data);
                }, 6000);   
           break;
       case 'getPackages' : 
