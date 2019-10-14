@@ -7,7 +7,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
       case 'getCodes' :
             TAO.pkg.fs.readdir(codedir, (error, files) => {
                  if (error) {
-                   TAO.res.send({error : error.message.replace(/\n/ig, ' ')});
+                   TAO.res.send({error : error.message.replace(/[^\w\s]/gi, ' ')});
                  } else {
                    TAO.res.send(files);
                  }
@@ -30,7 +30,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
             exec('cd ' + codedir + ' && ' + pythonType + ' ' + codefn, {maxBuffer: 1024 * 20480},
               function(error, stdout, stderr) {
                  if (error) {
-                   TAO.res.send({error : error.message.replace(/\n/ig, ' ')});
+                   TAO.res.send({error : error.message.replace(/[^\w\s]/gi, ' ')});
                  } else {
                    TAO.res.send(stdout.replace(/[^\w\s]/gi, ''));
                  }	
@@ -39,17 +39,17 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
             break;
       case 'getPipVersion' :
           _f['python'] = function(cbk) {
-               exec('pip --version', {maxBuffer: 1024 * 20480},
+               exec('pip --version', {maxBuffer: 1024 * 2048},
                     function(error, stdout, stderr) {
                        if (error) {
-                        cbk(error.message.replace(/\n/ig, ' '));
+                        cbk(error.message.replace(/[^\w\s]/gi, ' '));
                        } else {
                          cbk(stdout.replace(/[^\w\s]/gi, ''));
                        }	
                });
           }
           _f['python3'] = function(cbk) {
-               exec('pip3 --version', {maxBuffer: 1024 * 20480},
+               exec('pip3 --version', {maxBuffer: 1024 * 2048},
                     function(error, stdout, stderr) {
                        if (error) {
                         cbk(error.message.replace(/[^\w\s]/gi, ''));
@@ -69,7 +69,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
           break;
       case 'getPythonVersion' :
           _f['python'] = function(cbk) {
-               exec('python -V', {maxBuffer: 1024 * 20480},
+               exec('python -V', {maxBuffer: 1024 * 2048},
                     function(error, stdout, stderr) {
                          if (error) {
                               cbk(error.message.replace(/[^\w\s]/gi, ''));
@@ -79,7 +79,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                });
           }
           _f['python3'] = function(cbk) {
-               exec('python3 --version', {maxBuffer: 1024 * 20480},
+               exec('python3 --version', {maxBuffer: 1024 * 2048},
                     function(error, stdout, stderr) {
                        if (error) {
                         cbk(error.message.replace(/[^\w\s]/gi, ''));
