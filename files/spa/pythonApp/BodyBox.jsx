@@ -1,4 +1,4 @@
-class LeftBox extends React.Component {
+class BodyBox extends React.Component {
   constructor(props) {
 	super(props);
 	this.props = props;

@@ -9,11 +9,10 @@
 		"/js/react/ReactRouter/3.0.2/ReactRouter.min.js",
 		"/js/socket.io/1.7.3/socket.io.min.js",
 		
-		"/sap/pythonApp/TaoController.jsx",
-		"/sap/pythonApp/TAORoot.jsx",
-		"/sap/pythonApp/TopMenu.jsx",
-		"/sap/pythonApp/LeftBox.jsx",
-		"/sap/pythonApp/TaoContent.jsx",
-		"/sap/pythonApp/TAOindex.jsx"
+		"/spa/pythonApp/TaoController.jsx",
+		"/spa/pythonApp/TAORoot.jsx",
+		"/spa/pythonApp/TopMenu.jsx",
+		"/spa/pythonApp/BodyBox.jsx",
+		"/spa/pythonApp/TAOindex.jsx"
 	]
 }
