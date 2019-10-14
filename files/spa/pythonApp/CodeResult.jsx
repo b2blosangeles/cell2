@@ -7,7 +7,7 @@ class CodeResult extends React.Component {
     componentDidMount() {
       var me = this;
       console.log('--lelvel 1-->'); 
-      onsole.log(me.props.codeFile);
+      console.log(me.props.codeFile);
       
       // me.loadData(''); 
     }
