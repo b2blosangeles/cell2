@@ -74,7 +74,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                          if (error) {
                               cbk(error.message.replace(/\n/ig, ''));
                          } else {
-                              cbk("stdout.replace(/\n/ig, '')");
+                              cbk(stdout.replace(/\n/ig, '-'));
                          }	
                });
           }
