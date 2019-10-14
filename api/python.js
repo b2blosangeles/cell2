@@ -118,7 +118,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                        }	
                });
           }
-          CP.parallel(
+          CP.serial(
                _f,
                function(data) {
                     let ret = {};
