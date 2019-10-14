@@ -79,7 +79,7 @@ class BodyBox extends React.Component {
 			  );
 			break;
 		default :
-			return (<div className="border border-warning alert-warning rounded m-0 p-2">
+			return (<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
 				{me.state.caption}
 				</div>
 			);
