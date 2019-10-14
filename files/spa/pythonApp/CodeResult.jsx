@@ -28,7 +28,7 @@ class CodeResult extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         var me = this;
         if (me.props.codeFile !== prevProps.codeFile) {
-			console.log('--load--->' + me.props.codeFile  );
+			loadData(me.props.codeFile );
 		}
       }
     render() {
