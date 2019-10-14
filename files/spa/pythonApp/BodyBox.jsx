@@ -58,7 +58,7 @@ class BodyBox extends React.Component {
 					<div className="container-fluid bg-light">
 						<div className="row">
 							<div className="col-sm-6 p-0 pl-2 pr-2">
-								<b>Python packages:</b>
+								Python packages:
 								<ul>
 									{this.state.pythonPackegs.python.map(function(item, i){
 									return (<li>{item.name} ({item.version})</li>)
@@ -66,7 +66,7 @@ class BodyBox extends React.Component {
 								</ul>
 							</div>
 							<div className="col-sm-6 p-0 pl-2 pr-2">
-								<b>Python3 packages:</b>
+								Python3 packages:
 								<ul>
 									{this.state.pythonPackegs.python3.map(function(item, i){
 									return (<li>{item.name} ({item.version})</li>)
