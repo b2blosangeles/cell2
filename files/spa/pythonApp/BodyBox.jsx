@@ -55,9 +55,9 @@ class BodyBox extends React.Component {
 				<div className="border border-warning alert-warning rounded m-0 p-2">
 				  <b>{me.state.caption}</b>
 				  <hr/>
-					<div class="container bg-light">
-						<div class="row">
-							<div class="col-sm-6 p-0 pl-2 pr-2">
+					<div className="container-fluid bg-light">
+						<div className="row">
+							<div className="col-sm-6 p-0 pl-2 pr-2">
 								<b>Python packages:</b>
 								<ul>
 									{this.state.pythonPackegs.python.map(function(item, i){
@@ -65,7 +65,7 @@ class BodyBox extends React.Component {
 									})}
 								</ul>
 							</div>
-							<div class="col-sm-6 p-0 pl-2 pr-2">
+							<div className="col-sm-6 p-0 pl-2 pr-2">
 								<b>Python3 packages:</b>
 								<ul>
 									{this.state.pythonPackegs.python3.map(function(item, i){
