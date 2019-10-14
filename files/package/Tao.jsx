@@ -13,6 +13,7 @@
 		"/spa/pythonApp/TAORoot.jsx",
 		"/spa/pythonApp/TopMenu.jsx",
 		"/spa/pythonApp/BodyBox.jsx",
-		"/spa/pythonApp/TAOindex.jsx"
+		"/spa/pythonApp/TAOindex.jsx",
+		"/spa/pythonApp/CodeResult.jsx"
 	]
 }
