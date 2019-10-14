@@ -53,7 +53,7 @@ class BodyBox extends React.Component {
 			ReactDOM.TAO.dataEngine({
 				type: 'POST',
 				url: '/api/python.api',
-				data: {code : 'getPythonVersion'},
+				data: {code : 'getPipVersion'},
 				dataType: 'JSON',
 				timeout: (6 * 1000),
 				success: function(resultData){
