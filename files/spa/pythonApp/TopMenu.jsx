@@ -14,7 +14,6 @@ class TopMenu extends React.Component {
   }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
-	console.log('--upupup===>')
   }
   handleClick(item) {
 	// ReactDOM.TAO.popup({data : item.datname, closeIcon: true});
