@@ -89,6 +89,9 @@ class BodyBox extends React.Component {
 	}
   
   }
+  runCode (codefn) {
+	alert(codefn);
+  }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
 	if (me.state._TAOTM !== prevState._TAOTM) {
@@ -145,7 +148,7 @@ class BodyBox extends React.Component {
 										Python codes:
 										<ul>
 											{this.state.pythonCodes.map(function(item, i){
-											return (<li>{item}</li>)
+											return (<li><a onClick={me.runCode.bind(me, item)}>{item}</a></li>)
 											})}
 										</ul>
 									</div>)}
