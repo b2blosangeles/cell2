@@ -15,7 +15,7 @@
 					obj.type.prototype.render = function() {
 						var me = this;
 						// return <span>{ReactDOM.TAO.list.Root.showSpinner(me)}{me.preRender()}==</span>
-						return <span>=-=</span>
+						return <span>{me.preRender()}-=</span>
 					}
 				}
 				this.list[id] = ReactDOM.render(obj, pobj);
