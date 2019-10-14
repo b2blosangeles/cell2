@@ -22,7 +22,7 @@ class TopMenu extends React.Component {
   render() {
 	var me = this;
 	return (
-	<div className="border border-success alert-success rounded  m-0 mt-3 mb-2 p-2">
+	<div className="border border-success alert-success rounded  m-0 mt-2 mb-2 p-2">
 		<h1>Python Integration Tool (V1.0)</h1>
 		<p className="p-2">
 			{this.menu.map(function(item, i){
