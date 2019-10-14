@@ -19,7 +19,6 @@ class BodyBox extends React.Component {
 				dataType: 'JSON',
 				timeout: (6 * 1000),
 				success: function(resultData){
-					console.log(resultData);
 					me.setState({pythonPackegs: resultData});
 					
 				},
@@ -29,6 +28,25 @@ class BodyBox extends React.Component {
 				spinner : me
 			});
 			break;
+			
+		case 'runCode' :
+				me.setState({pythonPackegs: null});
+				ReactDOM.TAO.dataEngine({
+					type: 'POST',
+					url: '/api/python.api',
+					data: {code : 'getCodes'},
+					dataType: 'JSON',
+					timeout: (6 * 1000),
+					success: function(resultData){
+						me.setState({pythonCodes: resultData});
+						
+					},
+					error : function(err) { 
+						console.log('err');
+					}, 
+					spinner : me
+				});
+				break;
 		default :
 	}
   
@@ -76,6 +94,37 @@ class BodyBox extends React.Component {
 				</div>
 			  );
 			break;
+
+		case 'runCode' :
+					return (
+						<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
+						  <h5>{me.state.caption}</h5>
+						  <hr/>
+							<div className="container-fluid">
+								<div className="row">
+									{(!this.state.pythonPackegs || !this.state.pythonPackegs.python) ? '' :
+										(<div className="col-sm-6 p-0 pl-2 pr-2">
+										Python packages:
+										<ul>
+											{this.state.pythonPackegs.python.map(function(item, i){
+											return (<li>{item.name} ({item.version})</li>)
+											})}
+										</ul>
+									</div>)}
+									{(!this.state.pythonPackegs || !this.state.pythonPackegs.python3) ? '' :
+										(<div className="col-sm-6 p-0 pl-2 pr-2">
+										Python3 packages:
+										<ul>
+											{this.state.pythonPackegs.python3.map(function(item, i){
+											return (<li>{item.name} ({item.version})</li>)
+											})}
+										</ul>
+									</div>)}
+								</div>
+							</div>
+						</div>
+					  );
+					break;
 		default :
 			return (<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
 				<h5>{me.state.caption}</h5>
