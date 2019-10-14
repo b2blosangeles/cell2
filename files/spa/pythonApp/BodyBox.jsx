@@ -19,7 +19,7 @@ class BodyBox extends React.Component {
 				timeout: (6 * 1000),
 				success: function(resultData){
 					console.log(resultData);
-					me.setState({list : resultData.python, _TM : new Date().getTime()});
+					me.setState({pythonPackegs: resultData, _TM : new Date().getTime()});
 					
 				},
 				error : function(err) { 
@@ -49,9 +49,17 @@ class BodyBox extends React.Component {
 			return (
 				<div className="border border-warning alert-warning rounded m-0 p-2">
 				  {me.state.caption}
+				  <br/>
+				  <b>Python packages:</b>
 				  <ul>
-					{this.state.list.map(function(item, i){
-					   return (<li>{item.name} - ({item.version})</li>)
+					{this.state.pythonPackegs.python.map(function(item, i){
+					   return (<li>{item.name} ({item.version})</li>)
+					 })}
+				  </ul>
+				  <b>Python3 packages:</b>
+				  <ul>
+					{this.state.pythonPackegs.python3.map(function(item, i){
+					   return (<li>{item.name} ({item.version})</li>)
 					 })}
 				  </ul>
 				</div>

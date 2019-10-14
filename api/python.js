@@ -63,7 +63,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                function(data) {
                     let ret = {};
                     ret.python = (CP.data.python) ? CP.data.python : null;
-                    ret.python = (CP.data.python3) ? CP.data.python3 : null;
+                    ret.python3 = (CP.data.python3) ? CP.data.python3 : null;
                     TAO.res.send(ret);
                }, 6000);   
           break;
