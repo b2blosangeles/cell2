@@ -8,7 +8,7 @@ class BodyBox extends React.Component {
 	var me = this;
 	me.loadData(''); 
   }
-  loadData(code, param) {
+  loadData(code) {
 	var me = this;
 	switch (code) {
 		case 'getPackages' :
@@ -35,7 +35,7 @@ class BodyBox extends React.Component {
 			ReactDOM.TAO.dataEngine({
 				type: 'POST',
 				url: '/api/python.api',
-				data: {code : 'runCode', codefn : param.codefn},
+				data: {code : 'runCode', codeFile : me.state.codefn},
 				dataType: 'JSON',
 				timeout: (6 * 1000),
 				success: function(resultData){
@@ -89,7 +89,9 @@ class BodyBox extends React.Component {
   
   }
   runCode (codefn) {
-	me.loadData('runCode', {codefn : codefn});
+	var me = this;
+	me.setState({code : 'runCode', codeFile : codefn});
+	me.loadData('runCode');
   }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
@@ -156,6 +158,28 @@ class BodyBox extends React.Component {
 						</div>
 					  );
 					break;
+
+			case 'runCode' :
+						return (
+							<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
+							  <h5>{me.state.caption}</h5>
+							  <hr/>
+								<div className="container-fluid">
+									<div className="row">
+										{(!this.state.pythonCodes) ? '' :
+											(<div className="col-sm-6 p-0 pl-2 pr-2">
+											Python codes:
+											<ul>
+												{this.state.pythonCodes.map(function(item, i){
+												return (<li><a href="javascript:void(0);" onClick={me.runCode.bind(me, item)}>{item}</a></li>)
+												})}
+											</ul>
+										</div>)}
+									</div>
+								</div>
+							</div>
+						  );
+						break;
 		default :
 			return (<div className="border border-warning alert-warning rounded m-0 p-3 bodyBox">
 					<div className="container mt-3">
