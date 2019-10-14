@@ -49,7 +49,7 @@ class BodyBox extends React.Component {
 		case 'getPackages' :
 			return (
 				<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
-				  <h4>{me.state.caption}</h4>
+				  <h5>{me.state.caption}</h5>
 				  <hr/>
 					<div className="container-fluid">
 						<div className="row">
@@ -78,7 +78,7 @@ class BodyBox extends React.Component {
 			break;
 		default :
 			return (<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
-				<h4>{me.state.caption}</h4>
+				<h5>{me.state.caption}</h5>
 				</div>
 			);
 			break;
