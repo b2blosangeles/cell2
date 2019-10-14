@@ -52,7 +52,7 @@ class BodyBox extends React.Component {
 	switch (me.state.code) {
 		case 'getPackages' :
 			return (
-				<div className="border border-warning alert-warning rounded m-0 p-2">
+				<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
 				  <b>{me.state.caption}</b>
 				  <hr/>
 					<div className="container-fluid">
