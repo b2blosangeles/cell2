@@ -8,13 +8,15 @@ class CodeResult extends React.Component {
       var me = this;
       console.log('--lelvel 1-->'); 
       console.log(me.props.parent.state.codeFile); 
-      me.setState({codeFile : me.props.parent.state.codeFile});
+      
       // me.loadData(''); 
     }
     componentDidUpdate(prevProps, prevState) {
         var me = this;
         console.log('--lelvel 2-->'); 
-        console.log(me.props.parent.state.codeFile); 
+        if (me.props.parent.state.codeFile !== me.state.codeFil) {
+            me.setState({codeFile : me.props.parent.state.codeFile});
+        }
         console.log('--lelvel 21-->'); 
         console.log(prevProps.parent.state.codeFile); 
         console.log('--lelvel 3-->'); 
