@@ -4,6 +4,8 @@
 
         load : function(id, obj, pobj) {
 			obj.props._TAOID = id;
+			delete this.list[id];
+			console.log('--niu--');
 			if (!this.list.Root && id !== 'Root') {
 				this.loadRoot();
 			}
