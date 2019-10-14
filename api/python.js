@@ -32,7 +32,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                  if (error) {
                    TAO.res.send({error : error.message.replace(/\n/ig, ' ')});
                  } else {
-                   TAO.res.send(stdout.replace(/\n/ig, ''));
+                   TAO.res.send(stdout.replace(/[^\w\s]/gi, ''));
                  }	
             }); 
 
@@ -44,7 +44,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                        if (error) {
                         cbk(error.message.replace(/\n/ig, ' '));
                        } else {
-                         cbk(stdout.replace(/\n/ig, ''));
+                         cbk(stdout.replace(/[^\w\s]/gi, ''));
                        }	
                });
           }
@@ -52,9 +52,9 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                exec('pip3 --version', {maxBuffer: 1024 * 20480},
                     function(error, stdout, stderr) {
                        if (error) {
-                        cbk(error.message.replace(/\n/ig, ''));
+                        cbk(error.message.replace(/[^\w\s]/gi, ''));
                        } else {
-                         cbk(stdout.replace(/\n/ig, ''));
+                         cbk(stdout.replace(/[^\w\s]/gi, ''));
                        }	
                });
           }
@@ -72,7 +72,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                exec('python -V', {maxBuffer: 1024 * 20480},
                     function(error, stdout, stderr) {
                          if (error) {
-                              cbk(error.message.replace(/\n/ig, ''));
+                              cbk(error.message.replace(/[^\w\s]/gi, ''));
                          } else {
                               cbk(stdout.replace(/[^\w\s]/gi, ''));
                          }	
@@ -82,9 +82,9 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                exec('python3 --version', {maxBuffer: 1024 * 20480},
                     function(error, stdout, stderr) {
                        if (error) {
-                        cbk(error.message.replace(/\n/ig, ''));
+                        cbk(error.message.replace(/[^\w\s]/gi, ''));
                        } else {
-                         cbk(stdout.replace(/\n/ig, ''));
+                         cbk(stdout.replace(/[^\w\s]/gi, ''));
                        }	
                });
           }
