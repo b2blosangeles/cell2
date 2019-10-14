@@ -34,17 +34,25 @@ class BodyBox extends React.Component {
 		}
 	}
   }
+
   render() {
-    var me = this;
-    return (
-      <div className="border border-warning alert-warning rounded m-0 p-2">
-		{me.state.caption}
-        <ul>
-          {this.state.list.map(function(item, i){
-             return (<li>{item.tablename}</li>)
-           })}
-        </ul>
-      </div>
-    );
+	var me = this;
+	if (me.state.code === 'getPackages') {
+		return (
+			<div className="border border-warning alert-warning rounded m-0 p-2">
+			  {me.state.caption}
+			  <ul>
+				{this.state.list.map(function(item, i){
+				   return (<li>{item.tablename}</li>)
+				 })}
+			  </ul>
+			</div>
+		  );
+	} else {
+		return (<div className="border border-warning alert-warning rounded m-0 p-2">
+			  {me.state.caption}--
+			  </div>
+		  );
+	}
   }
 }
