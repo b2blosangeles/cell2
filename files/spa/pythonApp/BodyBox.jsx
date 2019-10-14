@@ -27,6 +27,9 @@ class BodyBox extends React.Component {
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
 	console.log('---uploaded-AAA-->');
+	if (me.state._TAOTM !== prevState._TAOTM) {
+		console.log(me.state._TAOstate);
+	}
   }
   render() {
     var me = this;
