@@ -6,6 +6,7 @@ class CodeResult extends React.Component {
     }
     componentDidMount() {
       var me = this;
+      me.setState({codeFile : me.props.parent.state.codeFile});
       // me.loadData(''); 
     }
     componentDidUpdate(prevProps, prevState) {
@@ -13,10 +14,7 @@ class CodeResult extends React.Component {
         console.log('--lelvel 2-->'); 
         console.log(me.props.parent.state.codeFile); 
         console.log('--lelvel 3-->'); 
-        if (me.props.parent.state.codeFile != prevProps.parent.state.codeFile) {
-            console.log('--lelvel 6-->'); 
-            me.setState({codeFile : me.props.parent.state.codeFile})
-        } 
+
         if (me.state.codeFile !== prevState.codeFile && (me.state.codeFile)) {
 			console.log('--load--->' + me.state.codeFile );
 		}
