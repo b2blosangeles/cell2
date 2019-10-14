@@ -5,11 +5,7 @@ class CodeResult extends React.Component {
       this.state = {};
     }
     componentDidMount() {
-      var me = this;
-      console.log('--lelvel 1-->'); 
-      console.log(me.props.codeFile);
-      
-      // me.loadData(''); 
+      var me = this; 
     }
     componentDidUpdate(prevProps, prevState) {
         var me = this;
@@ -20,10 +16,10 @@ class CodeResult extends React.Component {
         console.log('--lelvel 3-->'); 
         console.log(me.props.codeFile); 
         console.log('--lelvel 31-->'); 
-        /*
-        if (me.state.codeFile !== prevState.codeFile && (me.state.codeFile)) {
+    
+        if (me.props.codeFile !== prevProps.codeFile) {
 			console.log('--load--->' + me.state.codeFile );
-		}*/
+		}
       }
     render() {
         var me = this;
