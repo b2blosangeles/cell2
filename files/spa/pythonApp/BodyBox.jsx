@@ -136,14 +136,13 @@ class BodyBox extends React.Component {
 					break;
 		default :
 			return (<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
-					<h5>{me.state.caption}</h5>
-					<hr/>
-					<div className="container">
+					<div className="container mt-3">
 						<div className="row">
 							{(!this.state.pythonVersion) ? '' :
 								(<div className="col-sm-12 p-0 pl-2 pr-2">
-								Python version:
+								<h5><b>Python version:</b>
 								{this.state.pythonVersion.python}
+								</h5>
 							</div>)}
 						</div>
 					</div>
@@ -151,8 +150,10 @@ class BodyBox extends React.Component {
 						<div className="row">
 							{(!this.state.pythonVersion) ? '' :
 								(<div className="col-sm-12 p-0 pl-2 pr-2">
-								Python3 version:
+								<h5>
+								<b>Python3 version:</b>
 								{this.state.pythonVersion.python3}
+								</h5>
 							</div>)}
 						</div>
 					</div>
