@@ -18,8 +18,8 @@ class BodyBox extends React.Component {
 				dataType: 'JSON',
 				timeout: (6 * 1000),
 				success: function(resultData){
-					me.setState({list : resultData.data.python3, _TM : new Date().getTime()});
-					console.log(resultData.data.python3);
+					me.setState({list : resultData.python3, _TM : new Date().getTime()});
+					console.log(resultData.python3);
 				},
 				error : function(err) { 
 					console.log('err');
