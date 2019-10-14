@@ -6,8 +6,8 @@ class BodyBox extends React.Component {
   }
   componentDidMount() {
 	var me = this; 
-	alert(me.props.param.code)
-	/*
+	// alert(me.props.param.code)
+	
 	ReactDOM.TAO.dataEngine({
 	     type: 'POST',
 	     url: '/api/Tao/API_PG.api?code=PGtables',
@@ -22,7 +22,7 @@ class BodyBox extends React.Component {
 	     }, 
 	     spinner : me
 	  });   
-	*/
+	
   }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
