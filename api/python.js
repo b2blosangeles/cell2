@@ -74,7 +74,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                          if (error) {
                               cbk(error.message.replace(/[^\w\s]/gi, ''));
                          } else {
-                              cbk(stdout.replace(/[^\w\s]/gi, ''));
+                              cbk(stdout.replace(/(\n|\r|\t)/gi, ''));
                          }	
                });
           }
@@ -84,7 +84,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                        if (error) {
                         cbk(error.message.replace(/[^\w\s]/gi, ''));
                        } else {
-                         cbk(stdout.replace(/[^\w\s]/gi, ''));
+                         cbk(stdout.replace(/(\n|\r|\t)/gi, ''));
                        }	
                });
           }
