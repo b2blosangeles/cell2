@@ -53,26 +53,34 @@ class BodyBox extends React.Component {
 		case 'getPackages' :
 			return (
 				<div className="border border-warning alert-warning rounded m-0 p-2">
-				  {me.state.caption}
-				  <br/>
-				  <b>Python packages:</b>
-				  <ul>
-					{this.state.pythonPackegs.python.map(function(item, i){
-					   return (<li>{item.name} ({item.version})</li>)
-					 })}
-				  </ul>
-				  <b>Python3 packages:</b>
-				  <ul>
-					{this.state.pythonPackegs.python3.map(function(item, i){
-					   return (<li>{item.name} ({item.version})</li>)
-					 })}
-				  </ul>
+				  <b>{me.state.caption}</b>
+				  <hr/>
+					<div class="container-fluid bg-light">
+						<div class="row">
+							<div class="col-sm-6 p-0 pl-2 pr-2" id="topMenu">
+								<b>Python packages:</b>
+								<ul>
+									{this.state.pythonPackegs.python.map(function(item, i){
+									return (<li>{item.name} ({item.version})</li>)
+									})}
+								</ul>
+							</div>
+							<div class="col-sm-6 p-0 pl-2 pr-2" id="topMenu">
+								<b>Python3 packages:</b>
+								<ul>
+									{this.state.pythonPackegs.python3.map(function(item, i){
+									return (<li>{item.name} ({item.version})</li>)
+									})}
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
 			  );
 			break;
 		default :
 			return (<div className="border border-warning alert-warning rounded m-0 p-2">
-				{me.state.caption}-A-
+				{me.state.caption}
 				</div>
 			);
 			break;
