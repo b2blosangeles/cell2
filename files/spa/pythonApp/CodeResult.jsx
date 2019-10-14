@@ -13,7 +13,14 @@ class CodeResult extends React.Component {
         console.log('--lelvel 2-->'); 
         console.log(me.props.parent.state.codeFile); 
         console.log('--lelvel 3-->'); 
-        console.log(prevProps.parent.state.codeFile); 
+        if (prevProps.parent.state.codeFile) {
+            me.setState({codeFile : me.props.parent.state.codeFile})
+        } else {
+            me.setState({codeFile : null });
+        }
+        if (me.state.codeFile !== prevState.codeFile && (me.state.codeFile)) {
+			console.log('--load--->' + me.state.codeFile );
+		}
       }
     render() {
         var me = this;
