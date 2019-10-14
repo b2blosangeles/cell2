@@ -14,8 +14,8 @@ class BodyBox extends React.Component {
 			me.setState({pythonPackegs: null});
 			ReactDOM.TAO.dataEngine({
 				type: 'POST',
-				url: '/api/python.api?code=getPackages',
-				data: {},
+				url: '/api/python.api',
+				data: {code : 'getPackages'},
 				dataType: 'JSON',
 				timeout: (6 * 1000),
 				success: function(resultData){
