@@ -8,7 +8,7 @@ class BodyBox extends React.Component {
 	var me = this;
 	me.loadData(''); 
   }
-  loadData(code) {
+  loadData(code, param) {
 	var me = this;
 	switch (code) {
 		case 'getPackages' :
@@ -31,16 +31,15 @@ class BodyBox extends React.Component {
 			break;
 
 		case 'runCode' :
-			me.setState({pythonPackegs: null});
+			me.setState({pythonCodeResult: null});
 			ReactDOM.TAO.dataEngine({
 				type: 'POST',
 				url: '/api/python.api',
-				data: {code : 'getCodes'},
+				data: {code : 'runCode', codefn : param.codefn},
 				dataType: 'JSON',
 				timeout: (6 * 1000),
 				success: function(resultData){
-					me.setState({pythonCodes: resultData});
-					
+					me.setState({pythonCodeResult: resultData});
 				},
 				error : function(err) { 
 					console.log('err');
@@ -90,7 +89,7 @@ class BodyBox extends React.Component {
   
   }
   runCode (codefn) {
-	alert(codefn);
+	me.loadData('runCode', {codefn : codefn});
   }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
@@ -148,7 +147,7 @@ class BodyBox extends React.Component {
 										Python codes:
 										<ul>
 											{this.state.pythonCodes.map(function(item, i){
-											return (<li><a onClick={me.runCode.bind(me, item)}>{item}</a></li>)
+											return (<li><a href="javascript:void(0);" onClick={me.runCode.bind(me, item)}>{item}</a></li>)
 											})}
 										</ul>
 									</div>)}
