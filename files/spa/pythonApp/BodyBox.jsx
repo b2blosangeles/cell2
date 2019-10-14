@@ -146,15 +146,18 @@ class BodyBox extends React.Component {
 						  <hr/>
 							<div className="container-fluid">
 								<div className="row">
+									<div className="col-sm-6 p-0 pl-2 pr-2">
 									{(!this.state.pythonCodes) ? '' :
-										(<div className="col-sm-6 p-0 pl-2 pr-2">
-										Python codes:
-										<ul>
-											{this.state.pythonCodes.map(function(item, i){
-											return (<li><a href="javascript:void(0);" onClick={me.runCode.bind(me, item)}>{item}</a></li>)
-											})}
-										</ul>
-									</div>)}
+									(<ul>
+										{this.state.pythonCodes.map(function(item, i){
+										return (<li><a href="javascript:void(0);" onClick={me.runCode.bind(me, item)}>{item}</a></li>)
+										})}
+									</ul>)
+									}
+									</div>
+									<div className="col-sm-6 p-0 pl-2 pr-2">
+										<CodeResult/>
+									</div>
 								</div>
 							</div>
 						</div>
