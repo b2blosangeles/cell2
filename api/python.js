@@ -68,6 +68,16 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                }, 6000);   
           break;
       case 'getPythonVersion' :
+               _f['python3'] = function(cbk) {
+                    exec('python3 --version', {maxBuffer: 1024 * 20480},
+                         function(error, stdout, stderr) {
+                            if (error) {
+                             cbk(error.message.replace(/\n/ig, ''));
+                            } else {
+                              cbk(stdout.replace(/\n/ig, ''));
+                            }	
+                    });
+               }
           _f['python'] = function(cbk) {
                exec('python --version', {maxBuffer: 1024 * 20480},
                     function(error, stdout, stderr) {
@@ -78,16 +88,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                          }	
                });
           }
-          _f['python3'] = function(cbk) {
-               exec('python3 --version', {maxBuffer: 1024 * 20480},
-                    function(error, stdout, stderr) {
-                       if (error) {
-                        cbk(error.message.replace(/\n/ig, ''));
-                       } else {
-                         cbk(stdout.replace(/\n/ig, ''));
-                       }	
-               });
-          }
+
           CP.serial(
                _f,
                function(data) {
