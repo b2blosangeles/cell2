@@ -36,7 +36,7 @@ class BodyBox extends React.Component {
 				type: 'POST',
 				url: '/api/python.api',
 				data: {code : 'runCode', codeFile : me.state.codefn},
-				dataType: 'JSON',
+				dataType: 'TEXT',
 				timeout: (6 * 1000),
 				success: function(resultData){
 					me.setState({pythonCodeResult: resultData});
