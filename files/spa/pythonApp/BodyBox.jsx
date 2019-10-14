@@ -167,7 +167,7 @@ class BodyBox extends React.Component {
 								<div className="container-fluid">
 									<div className="row">
 										<div className="col-sm-10 p-0 pl-2 pr-2">
-											{me.state.pythonCodeResult}
+											{JSON.stringify(me.state.pythonCodeResult)}
 										</div>
 									</div>
 								</div>
