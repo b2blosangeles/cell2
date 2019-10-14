@@ -221,3 +221,5 @@ body {
 }
 
 .ui-effects-transfer { border: 2px solid #999;}
+
+#bodyBox { min-height: 30em }
