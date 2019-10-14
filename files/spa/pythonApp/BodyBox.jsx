@@ -155,7 +155,7 @@ class BodyBox extends React.Component {
 									</ul>)
 									}
 									</div>
-									<div className="col-sm-9 p-0 pl-2 pr-2">
+									<div className="col-sm-9 p-0 m-0">
 										<CodeResult parent={me} />
 									</div>
 								</div>
