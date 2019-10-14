@@ -2,12 +2,7 @@ class BodyBox extends React.Component {
   constructor(props) {
 	super(props);
 	this.props = props;
-	this.state = {
-		pythonPackegs : { 
-			python : [], 
-			python3 : []
-		}
-	};
+	this.state = {};
   }
   componentDidMount() {
 	var me = this; 
@@ -16,6 +11,7 @@ class BodyBox extends React.Component {
 	var me = this;
 	switch (code) {
 		case 'getPackages' :
+			me.setState({pythonPackegs: null});
 			ReactDOM.TAO.dataEngine({
 				type: 'POST',
 				url: '/api/python.api?code=getPackages',
@@ -24,7 +20,7 @@ class BodyBox extends React.Component {
 				timeout: (6 * 1000),
 				success: function(resultData){
 					console.log(resultData);
-					me.setState({pythonPackegs: resultData, _TM : new Date().getTime()});
+					me.setState({pythonPackegs: resultData});
 					
 				},
 				error : function(err) { 
