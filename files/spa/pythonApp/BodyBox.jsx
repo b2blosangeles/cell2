@@ -26,7 +26,6 @@ class BodyBox extends React.Component {
   }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
-	console.log('---uploaded-AAA-->');
 	if (me.state._TAOTM !== prevState._TAOTM) {
 		me.setState(me.state._TAOstate);
 	} else {
@@ -40,7 +39,7 @@ class BodyBox extends React.Component {
     var me = this;
     return (
       <div className="border border-warning alert-warning rounded m-0 p-2">
-	ALL TABLES : {me.props.param.code}
+	ALL TABLES : {me.state.caption}
         <ul>
           {this.state.list.map(function(item, i){
              return (<li>{item.tablename}</li>)
