@@ -57,22 +57,24 @@ class BodyBox extends React.Component {
 				  <hr/>
 					<div className="container-fluid">
 						<div className="row">
-							<div className="col-sm-6 p-0 pl-2 pr-2">
+							{(!this.state.pythonPackegs || !this.state.pythonPackegs.python) ? '' :
+								(<div className="col-sm-6 p-0 pl-2 pr-2">
 								Python packages:
 								<ul>
 									{this.state.pythonPackegs.python.map(function(item, i){
 									return (<li>{item.name} ({item.version})</li>)
 									})}
 								</ul>
-							</div>
-							<div className="col-sm-6 p-0 pl-2 pr-2">
+							</div>)}
+							{(!this.state.pythonPackegs || !this.state.pythonPackegs.python3) ? '' :
+								(<div className="col-sm-6 p-0 pl-2 pr-2">
 								Python3 packages:
 								<ul>
 									{this.state.pythonPackegs.python3.map(function(item, i){
 									return (<li>{item.name} ({item.version})</li>)
 									})}
 								</ul>
-							</div>
+							</div>)}
 						</div>
 					</div>
 				</div>
