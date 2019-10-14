@@ -138,25 +138,35 @@ class BodyBox extends React.Component {
 			return (<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
 					<div className="container mt-3">
 						<div className="row">
-							
-							{(!this.state.pythonVersion) ? '' :
-								(<div className="col-sm-2 p-0 pl-2 pr-2"></div><div className="col-sm-10 p-0 pl-2 pr-2">
-								<h5><b>Python version:</b>
+						{(!this.state.pythonVersion || !this.state.pythonVersion.python) ? '' :
+								(<div className="row"><div className="col-sm-2 p-0 pl-2 pr-2"></div>
+								<div className="col-sm-10 p-0 pl-2 pr-2">
+								<h5>
+								<b>Python version:</b>
 								{this.state.pythonVersion.python}
 								</h5>
-							</div>)}
-						</div>
-					</div>
-					<div className="container">
-						<div className="row">
-							{(!this.state.pythonVersion) ? '' :
-								(<div className="col-sm-2 p-0 pl-2 pr-2"></div><div className="col-sm-10 p-0 pl-2 pr-2">
+							</div></div>)}
+						{(!this.state.pythonVersion || !this.state.pythonVersion.python) ? '' :
+								(<div className="row"><div className="col-sm-2 p-0 pl-2 pr-2"></div>
+								<div className="col-sm-10 p-0 pl-2 pr-2">
 								<h5>
 								<b>Python3 version:</b>
 								{this.state.pythonVersion.python3}
 								</h5>
-							</div>)}
+							</div></div>)}
 						</div>
+					</div>
+					<div className="container">
+						
+							{(!this.state.pythonVersion) ? '' :
+								(<div className="row">
+								<div className="col-sm-2 p-0 pl-2 pr-2"></div><div className="col-sm-10 p-0 pl-2 pr-2">
+								<h5>
+								<b>Python3 version:</b>
+								{this.state.pythonVersion.python3}
+								</h5>
+							</div></div>)}
+
 					</div>
 				</div>
 			);
