@@ -50,6 +50,7 @@ class BodyBox extends React.Component {
 				break;
 
 		default :
+			/*
 			me.setState({pythonVersion: null});
 			ReactDOM.TAO.dataEngine({
 				type: 'POST',
@@ -65,7 +66,7 @@ class BodyBox extends React.Component {
 					console.log('err');
 				}, 
 				spinner : me
-			});
+			});*/
 			break;
 	}
   
