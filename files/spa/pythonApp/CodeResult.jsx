@@ -13,7 +13,7 @@ class CodeResult extends React.Component {
         ReactDOM.TAO.dataEngine({
             type: 'POST',
             url: '/api/python.api',
-            data: {code : 'runCode', codeFile : code},
+            data: {code : 'runCode', codeFile : code, pythonType : me.state.pythonType},
             dataType: 'TEXT',
             timeout: (6 * 1000),
             success: function(resultData){
@@ -27,6 +27,7 @@ class CodeResult extends React.Component {
     }
     switchPythonType(type) {
         var me = this;
+        me.setState({pythonType : type});
     }
     componentDidUpdate(prevProps, prevState) {
         var me = this;
@@ -34,11 +35,10 @@ class CodeResult extends React.Component {
             me.setState({codeFile : me.props.codeFile});
 			return true;
         }
-        if (me.state.codeFile === prevState.codeFile || !me.state.codeFile) {
-            return true;
+        if ((me.state.codeFile !== prevState.codeFile || me.state.pythonType !== prevState.pythonType) && (me.state.codeFile)) {
+            console.log('---load 23--->' + me.props.codeFile);
+            me.loadData(me.props.codeFile);
         }
-        console.log('---load 22--->' + me.props.codeFile);
-        me.loadData(me.props.codeFile);
       }
     render() {
         var me = this;
@@ -49,10 +49,10 @@ class CodeResult extends React.Component {
                                 {me.props.codeFile }
                             </div>
                             <div className="col-sm-4 p-0">
-                                Python
+                            <a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python')}>Python</a>
                             </div>
                             <div className="col-sm-4 p-0">
-                                Python3
+                            <a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python3')}>Python3</a>
                             </div>
                         </div>
                         <div className="row">
