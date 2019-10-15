@@ -35,7 +35,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                       setTimeout(
                          function() {
                               TAO.res.send(stdout.replace(/(\n|\r|\t)/gi, ''));
-                         }, 3000
+                         }, 1000
 
                       );
                    
