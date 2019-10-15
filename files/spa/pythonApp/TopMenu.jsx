@@ -2,11 +2,10 @@ class TopMenu extends React.Component {
   constructor(props) {
 	super(props);
 	this.props = props;
-	this.state = {list : []};
-	this.menu = [
+	this.state = [
+		{caption : 'Run a python code', code : 'getCodes'},
 		{caption : 'Pip packages', code : 'getPackages'},
-		{caption : 'Add a package', code : 'addPackage'},
-		{caption : 'Run a python code', code : 'getCodes'}
+		{caption : 'Add a package', code : 'addPackage'}
 	]
   }
   componentDidMount() {
