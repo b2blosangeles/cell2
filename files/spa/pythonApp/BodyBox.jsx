@@ -2,7 +2,7 @@ class BodyBox extends React.Component {
   constructor(props) {
 	super(props);
 	this.props = props;
-	this.state = {};
+	this.state = {pythonType : 'python'};
   }
   componentDidMount() {
 	var me = this;
