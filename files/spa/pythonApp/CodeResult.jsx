@@ -33,7 +33,7 @@ class CodeResult extends React.Component {
 			
         }
         if (me.state.codeFile !== prevState.codeFile && (me.state.codeFile)) {
-            console.log('---load --->' + me.props.codeFile);
+            console.log('---load 2--->' + me.props.codeFile);
             me.loadData(me.props.codeFile);
         }
       }
