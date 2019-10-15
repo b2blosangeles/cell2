@@ -34,7 +34,7 @@ class TopMenu extends React.Component {
 						{item.caption}
 						</a> 
 					</span>) : (<span className="mr-3">
-						<a className="border border-secondary bg-secondary rounded p-2">{item.caption}</a> 
+						<a className="border border-secondary bg-secondary text-warning rounded p-2">{item.caption}</a> 
 					</span>)
 			})}
 		</p>
