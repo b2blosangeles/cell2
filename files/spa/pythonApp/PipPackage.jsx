@@ -2,7 +2,7 @@ class PipPackage extends React.Component {
     constructor(props) {
       super(props);
       this.props = props;
-      this.state = {pythonType : 'python'};
+      this.state = {};
     }
     componentDidMount() {
       var me = this;
