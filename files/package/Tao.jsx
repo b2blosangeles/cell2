@@ -15,7 +15,6 @@
 		"/spa/pythonApp/BodyBox.jsx",
 		"/spa/pythonApp/TAOindex.jsx",
 		"/spa/pythonApp/RunCode.jsx",
-		"/spa/pythonApp/PipPackage.jsx",
-		"/spa/pythonApp/CodeResult.jsx"
+		"/spa/pythonApp/PipPackage.jsx"
 	]
 }
