@@ -12,6 +12,7 @@ class BodyBox extends React.Component {
 	var me = this;
 	switch (code) {
 		case 'getPackages' :
+			/*
 			me.setState({pythonPackegs: null});
 			ReactDOM.TAO.dataEngine({
 				type: 'POST',
@@ -27,7 +28,7 @@ class BodyBox extends React.Component {
 					console.log('err');
 				}, 
 				spinner : me
-			});
+			});*/
 			break;
 
 		default :
@@ -66,38 +67,8 @@ class BodyBox extends React.Component {
   render() {
 	var me = this;
 	switch (me.state.code) {
-		case 'getPackages' :
-				
+		case 'getPackages' :		
 			return(<PipPackage caption={me.state.caption} />);
-			/*
-			return (
-				<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
-				  <h5>{me.state.caption}</h5>
-				  <hr/>
-					<div className="container-fluid">
-						<div className="row">
-							{(!this.state.pythonPackegs || !this.state.pythonPackegs.python) ? '' :
-								(<div className="col-sm-6 p-0 pl-2 pr-2">
-								Python packages:
-								<ul>
-									{this.state.pythonPackegs.python.map(function(item, i){
-									return (<li>{item.name} ({item.version})</li>)
-									})}
-								</ul>
-							</div>)}
-							{(!this.state.pythonPackegs || !this.state.pythonPackegs.python3) ? '' :
-								(<div className="col-sm-6 p-0 pl-2 pr-2">
-								Python3 packages:
-								<ul>
-									{this.state.pythonPackegs.python3.map(function(item, i){
-									return (<li>{item.name} ({item.version})</li>)
-									})}
-								</ul>
-							</div>)}
-						</div>
-					</div>
-				</div>
-			  );*/
 			break;
 
 		case 'getCodes' :
