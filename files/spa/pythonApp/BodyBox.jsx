@@ -73,6 +73,7 @@ class BodyBox extends React.Component {
   runCode (codefn) {
 	var me = this;
 	me.setState({codeFile : null});
+	console.log('--00700--');
 	me.setState({codeFile : codefn});
   }
   componentDidUpdate(prevProps, prevState) {
