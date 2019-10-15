@@ -136,11 +136,13 @@ class BodyBox extends React.Component {
 										<h5>{me.state.caption}</h5>
 									</div>
 									<div className="col-sm-4 p-0">
-									<a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python')}>Python</a>
-									</div>
+									{(me.state.pythonType === 'python') ? (<b>Python</b>) : 
+									(<a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python')}>Python</a>)
+									}</div>
 									<div className="col-sm-4 p-0">
-									<a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python3')}>Python3</a>
-									</div>
+									{(me.state.pythonType === 'python3') ? (<b>Python3</b>) : 
+									(<a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python3')}>Python3</a>)
+									}</div>
 								</div>
 							</div>
 							<hr/>
