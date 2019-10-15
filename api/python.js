@@ -84,6 +84,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                          }	
                });
           }
+          /*
           _f['python3'] = function(cbk) {
                exec('python3 --version && python --version', {maxBuffer: 1024 * 20480},
                     function(error, stdout, stderr) {
@@ -93,7 +94,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                          cbk(stdout.replace(/(\n|\r|\t)/gi, ''));
                        }	
                });
-          }
+          }*/
           CP.serial(
                _f,
                function(data) {
