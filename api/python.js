@@ -17,7 +17,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
             var codefn = (TAO.req.body.codeFile) ? TAO.req.body.codeFile : 
                   (TAO.req.query.codeFile) ? TAO.req.query.codeFile : 'test.py';
             var pythonType = (TAO.req.body.pythonType) ? TAO.req.body.pythonType : 
-                  (TAO.req.query.pythonType) ? TAO.req.query.pythonType : 'python';
+                  (TAO.req.query.pythonType) ? TAO.req.query.pythonType : 'python3';
             
             if (['python', 'python3'].indexOf(pythonType) === -1) {
                   TAO.res.send({error : 'pythonType error!'});
