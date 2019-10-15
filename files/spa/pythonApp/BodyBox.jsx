@@ -6,52 +6,6 @@ class BodyBox extends React.Component {
   }
   componentDidMount() {
 	var me = this;
-	me.loadData(''); 
-  }
-  loadData(code) {
-	var me = this;
-	switch (code) {
-		case 'getPackages' :
-			/*
-			me.setState({pythonPackegs: null});
-			ReactDOM.TAO.dataEngine({
-				type: 'POST',
-				url: '/api/python.api',
-				data: {code : 'getPackages'},
-				dataType: 'JSON',
-				timeout: (6 * 1000),
-				success: function(resultData){
-					me.setState({pythonPackegs: resultData});
-					
-				},
-				error : function(err) { 
-					console.log('err');
-				}, 
-				spinner : me
-			});*/
-			break;
-
-		default :
-			/*
-			me.setState({pythonVersion: null});
-			ReactDOM.TAO.dataEngine({
-				type: 'POST',
-				url: '/api/python.api',
-				data: {code : 'getPipVersion'},
-				dataType: 'JSON',
-				timeout: (6 * 1000),
-				success: function(resultData){
-					me.setState({pythonVersion: resultData});
-					
-				},
-				error : function(err) { 
-					console.log('err');
-				}, 
-				spinner : me
-			});*/
-			break;
-	}
-  
   }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
@@ -60,7 +14,6 @@ class BodyBox extends React.Component {
 	} else {
 		if (me.state.code !== prevState.code) {
 			me.setState({codeFile : null});
-			me.loadData(me.state.code);
 		}
 	}
   }
