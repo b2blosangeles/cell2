@@ -25,6 +25,9 @@ class RunCode extends React.Component {
     }
     componentDidUpdate(prevProps, prevState) {
         var me = this;
+        if ((me.state.codeFile !== prevState.codeFile || me.state.pythonType !== prevState.pythonType) && (me.state.codeFile)) {
+            me.loadData(me.state.codeFile);
+        }
     }
     switchPythonType(type) {
         var me = this;
@@ -37,6 +40,24 @@ class RunCode extends React.Component {
             me.setState({codeFile : codefn});
         //});
     
+    }
+    loadData(code) {
+        var me = this;
+        me.setState({pythonCodeResult: null});
+        ReactDOM.TAO.dataEngine({
+            type: 'POST',
+            url: '/api/python.api',
+            data: {code : 'runCode', codeFile : code, pythonType : me.state.pythonType},
+            dataType: 'TEXT',
+            timeout: (6 * 1000),
+            success: function(resultData){
+                me.setState({pythonCodeResult: resultData});
+            },
+            error : function(err) { 
+                console.log('err');
+            }, 
+            spinner : me
+        });
     }
     render() {
         var me = this;
@@ -69,7 +90,23 @@ class RunCode extends React.Component {
                     }
                     </div>
                     <div className="col-sm-10 p-0 m-0">
-                        <CodeResult codeFile={me.state.codeFile} pythonType={me.state.pythonType} parent={me} />
+                    
+                        <div className="m-0 p-0 bodyBox">
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-sm-12 p-0">
+                                            {me.props.codeFile }
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-sm-12 p-0 pl-2 pr-2">
+                                            {me.state.pythonCodeResult}
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        {/*
+                        <CodeResult codeFile={me.state.codeFile} pythonType={me.state.pythonType} parent={me} />*/}
                     </div>
                 </div>
             </div>
