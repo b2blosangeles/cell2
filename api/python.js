@@ -15,9 +15,9 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
             break;           
       case 'runCode' :
             var codefn = (TAO.req.body.codeFile) ? TAO.req.body.codeFile : 
-                  (TAO.req.query.codeFile) ? TAO.req.query.codeFile : 'test.py';
+                  (TAO.req.query.codeFile) ? TAO.req.query.codeFile : '';
             var pythonType = (TAO.req.body.pythonType) ? TAO.req.body.pythonType : 
-                  (TAO.req.query.pythonType) ? TAO.req.query.pythonType : 'python3';
+                  (TAO.req.query.pythonType) ? TAO.req.query.pythonType : 'python';
             
             if (['python', 'python3'].indexOf(pythonType) === -1) {
                   TAO.res.send({error : 'pythonType error!'});
@@ -36,11 +36,10 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                          function() {
                               TAO.res.send({
                                    pythonType : pythonType,
-                                   data: stdout.replace(/(\n|\r|\t)/gi, '')});
+                                   data: stdout.replace(/(\n|\r|\t)/gi, '')}
+                              );
                          }, 100
-
                       );
-                   
                  }	
             }); 
 
