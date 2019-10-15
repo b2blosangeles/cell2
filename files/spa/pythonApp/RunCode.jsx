@@ -84,7 +84,8 @@ class RunCode extends React.Component {
                     {(!this.state.pythonCodes) ? '' :
                     (<ul>
                         {this.state.pythonCodes.map(function(item, i){
-                        return (<li><a href="javascript:void(0);" onClick={me.runCode.bind(me, item)}>{item}</a></li>)
+                            return (me.state.codeFile === item) ? (<li><b>{item}</b></li>) :
+                            (<li><a href="javascript:void(0);" onClick={me.runCode.bind(me, item)}>{item}</a></li>)
                         })}
                     </ul>)
                     }
@@ -105,8 +106,6 @@ class RunCode extends React.Component {
                                     </div>
                                 </div>
                         </div>
-                        {/*
-                        <CodeResult codeFile={me.state.codeFile} pythonType={me.state.pythonType} parent={me} />*/}
                     </div>
                 </div>
             </div>
