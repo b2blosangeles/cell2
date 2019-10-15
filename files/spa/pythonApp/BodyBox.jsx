@@ -29,26 +29,7 @@ class BodyBox extends React.Component {
 				spinner : me
 			});
 			break;
-
-		case 'getCodes' :
-				me.setState({pythonPackegs: null});
-				ReactDOM.TAO.dataEngine({
-					type: 'POST',
-					url: '/api/python.api',
-					data: {code : 'getCodes'},
-					dataType: 'JSON',
-					timeout: (6 * 1000),
-					success: function(resultData){
-						me.setState({pythonCodes: resultData});
-						
-					},
-					error : function(err) { 
-						console.log('err');
-					}, 
-					spinner : me
-				});
-				break;
-
+			
 		default :
 			/*
 			me.setState({pythonVersion: null});
