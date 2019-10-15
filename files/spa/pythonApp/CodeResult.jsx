@@ -25,10 +25,6 @@ class CodeResult extends React.Component {
             spinner : me
         });
     }
-    switchPythonType(type) {
-        var me = this;
-        me.setState({pythonType : type});
-    }
     componentDidUpdate(prevProps, prevState) {
         var me = this;
         if ((me.props.codeFile !== prevProps.codeFile || me.props.pythonType !== prevProps.pythonType) && (me.props.codeFile) ) {
@@ -36,7 +32,7 @@ class CodeResult extends React.Component {
 			return true;
         }
         if ((me.state.codeFile !== prevState.codeFile || me.state.pythonType !== prevState.pythonType) && (me.state.codeFile)) {
-            console.log('---load 234--->' + me.props.codeFile);
+            console.log('---load 234--->' + me.props.codeFile + '---' +  me.state.pythonType);
             me.loadData(me.props.codeFile);
         }
       }
@@ -45,14 +41,8 @@ class CodeResult extends React.Component {
         return(<div className="m-0 p-0 bodyBox">
                     <div className="container">
                         <div className="row">
-                            <div className="col-sm-4 p-0">
+                            <div className="col-sm-12 p-0">
                                 {me.props.codeFile }
-                            </div>
-                            <div className="col-sm-4 p-0">
-                            <a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python')}>Python</a>
-                            </div>
-                            <div className="col-sm-4 p-0">
-                            <a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python3')}>Python3</a>
                             </div>
                         </div>
                         <div className="row">
