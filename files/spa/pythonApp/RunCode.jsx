@@ -43,7 +43,7 @@ class RunCode extends React.Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-4 p-0">
-                        <h5>{me.state.caption}</h5>
+                        <h5>{this.props.caption}</h5>
                     </div>
                     <div className="col-sm-4 p-0">
                     {(me.state.pythonType === 'python') ? (<b>Python</b>) : 

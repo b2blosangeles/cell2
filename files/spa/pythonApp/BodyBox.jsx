@@ -128,7 +128,7 @@ class BodyBox extends React.Component {
 			break;
 
 		case 'getCodes' :
-			return(<RunCode/>);
+			return(<RunCode caption={me.state.caption} />);
 			break;
 			/*
 					return (
