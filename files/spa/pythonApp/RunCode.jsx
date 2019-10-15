@@ -97,6 +97,7 @@ class RunCode extends React.Component {
                                     <div className="row">
                                         <div className="col-sm-12 p-0">
                                             {/*me.state.codeFile */}
+                                            Python Type : 
                                             {(!me.state.pythonCodeResult) ? '' : me.state.pythonCodeResult.pythonType}
                                         </div>
                                     </div>
