@@ -32,7 +32,13 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                  if (error) {
                    TAO.res.send({error : error.message.replace(/(\n|\r|\t)/gi, ' ')});
                  } else {
-                    TAO.res.send(stdout.replace(/(\n|\r|\t)/gi, ''));
+                      setTimeout(
+                         function() {
+                              TAO.res.send(stdout.replace(/(\n|\r|\t)/gi, ''));
+                         }, 100
+
+                      );
+                   
                  }	
             }); 
 
