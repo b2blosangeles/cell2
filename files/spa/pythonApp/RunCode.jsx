@@ -48,7 +48,7 @@ class RunCode extends React.Component {
             type: 'POST',
             url: '/api/python.api',
             data: {code : 'runCode', codeFile : code, pythonType : me.state.pythonType},
-            dataType: 'TEXT',
+            dataType: 'JSON',
             timeout: (6 * 1000),
             success: function(resultData){
                 me.setState({pythonCodeResult: resultData});
@@ -97,11 +97,12 @@ class RunCode extends React.Component {
                                     <div className="row">
                                         <div className="col-sm-12 p-0">
                                             {/*me.state.codeFile */}
+                                            {me.state.pythonCodeResult.pythonType}
                                         </div>
                                     </div>
                                     <div className="row">
                                         <div className="col-sm-12 p-0 pl-2 pr-2">
-                                            {me.state.pythonCodeResult}
+                                            {me.state.pythonCodeResult.data}
                                         </div>
                                     </div>
                                 </div>
