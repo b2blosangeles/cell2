@@ -11,11 +11,13 @@ class BodyBox extends React.Component {
 	var me = this;
 	if (me.state._TAOTM !== prevState._TAOTM) {
 		me.setState(me.state._TAOstate);
-	} else {
+	} 
+	/*
+	else {
 		if (me.state.code !== prevState.code) {
 			me.setState({codeFile : null});
 		}
-	}
+	}*/
   }
   render() {
 	var me = this;
