@@ -25,25 +25,34 @@ class CodeResult extends React.Component {
             spinner : me
         });
     }
-    //  me.props.parent
+    switchPythonType(type) {
+        var me = this;
+    }
     componentDidUpdate(prevProps, prevState) {
         var me = this;
         if (me.props.codeFile !== prevProps.codeFile && (me.props.codeFile) ) {
             me.setState({codeFile : me.props.codeFile});
 			return true;
         }
-        if (me.state.codeFile !== prevState.codeFile && (me.state.codeFile)) {
-            console.log('---load 21--->' + me.props.codeFile);
-            me.loadData(me.props.codeFile);
+        if (me.state.codeFile === prevState.codeFile || !me.state.codeFile) {
+            return true;
         }
+        console.log('---load 22--->' + me.props.codeFile);
+        me.loadData(me.props.codeFile);
       }
     render() {
         var me = this;
         return(<div className="m-0 p-0 bodyBox">
                     <div className="container">
                         <div className="row">
-                            <div className="col-sm-12 p-0">
+                            <div className="col-sm-4 p-0">
                                 {me.props.codeFile }
+                            </div>
+                            <div className="col-sm-4 p-0">
+                                Python
+                            </div>
+                            <div className="col-sm-4 p-0">
+                                Python3
                             </div>
                         </div>
                         <div className="row">
