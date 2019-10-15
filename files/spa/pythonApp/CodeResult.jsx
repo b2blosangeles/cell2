@@ -22,9 +22,10 @@ class CodeResult extends React.Component {
             error : function(err) { 
                 console.log('err');
             }, 
-            spinner : me.props.parent
+            spinner : me
         });
     }
+    //  me.props.parent
     componentDidUpdate(prevProps, prevState) {
         var me = this;
         if (me.props.codeFile !== prevProps.codeFile) {
@@ -46,6 +47,7 @@ class CodeResult extends React.Component {
                             </div>
                         </div>
                     </div>
+                    {ReactDOM.TAO.list.Root.showSpinner(me)}
               </div>)
     }
   }
