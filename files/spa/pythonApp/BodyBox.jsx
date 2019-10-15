@@ -126,7 +126,7 @@ class BodyBox extends React.Component {
 							<hr/>
 							<div className="container-fluid">
 								<div className="row">
-									<div className="col-sm-3 p-0 pl-2 pr-2">
+									<div className="col-sm-2 p-0 pl-2 pr-2">
 									{(!this.state.pythonCodes) ? '' :
 									(<ul>
 										{this.state.pythonCodes.map(function(item, i){
@@ -135,7 +135,7 @@ class BodyBox extends React.Component {
 									</ul>)
 									}
 									</div>
-									<div className="col-sm-9 p-0 m-0">
+									<div className="col-sm-10 p-0 m-0">
 										<CodeResult codeFile={me.state.codeFile} parent={me} />
 									</div>
 								</div>
