@@ -5,8 +5,7 @@ class TopMenu extends React.Component {
 	this.state = {};
 	this.menu = [
 		{caption : 'Run a python code', code : 'getCodes'},
-		{caption : 'Pip packages', code : 'getPackages'},
-		{caption : 'Add a package', code : 'addPackage'}
+		{caption : 'Pip packages', code : 'getPackages'}
 	]
   }
   componentDidMount() {
@@ -17,7 +16,10 @@ class TopMenu extends React.Component {
   }
   handleClick(item) {
 	// ReactDOM.TAO.popup({data : item.datname, closeIcon: true});
-	ReactDOM.TAO.setState('BodyBox', item);
+	var me = this;
+	me.setState({menuIten : item.code}, function() {
+		ReactDOM.TAO.setState('BodyBox', item);
+	})
   }	
   render() {
 	var me = this;
@@ -26,10 +28,13 @@ class TopMenu extends React.Component {
 		<h1>Python Integration Tool (v1.0)</h1>
 		<p className="p-2">
 			{this.menu.map(function(item, i){
-				return (<span className="mr-3">
+
+				return (me.state.menuIten !== item.code) ? (<span className="mr-3">
 						<a href="javascript:void(0);"  className="border border-secondary rounded p-2" onClick={me.handleClick.bind(me, item)}>
 						{item.caption}
 						</a> 
+					</span>) : (<span className="mr-3">
+						<div className="border border-secondary bg-secondary rounded p-2">{item.caption}</div> 
 					</span>)
 			})}
 		</p>
