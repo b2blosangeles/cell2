@@ -31,12 +31,12 @@ class CodeResult extends React.Component {
     }
     componentDidUpdate(prevProps, prevState) {
         var me = this;
-        if (me.props.codeFile !== prevProps.codeFile && (me.props.codeFile) ) {
-            me.setState({codeFile : me.props.codeFile});
+        if ((me.props.codeFile !== prevProps.codeFile || me.props.pythonType !== prevProps.pythonType) && (me.props.codeFile) ) {
+            me.setState({codeFile : me.props.codeFile, pythonType : me.props.pythonType});
 			return true;
         }
         if ((me.state.codeFile !== prevState.codeFile || me.state.pythonType !== prevState.pythonType) && (me.state.codeFile)) {
-            console.log('---load 23--->' + me.props.codeFile);
+            console.log('---load 234--->' + me.props.codeFile);
             me.loadData(me.props.codeFile);
         }
       }
