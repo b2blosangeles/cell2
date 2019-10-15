@@ -128,6 +128,9 @@ class BodyBox extends React.Component {
 			break;
 
 		case 'getCodes' :
+			return(<RunCode/>);
+			break;
+			/*
 					return (
 						<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
 							<div className="container-fluid">
@@ -165,6 +168,7 @@ class BodyBox extends React.Component {
 						</div>
 					  );
 					break;
+					*/
 		default :
 			return (<div className="border border-warning alert-warning rounded m-0 p-3 bodyBox">
 					<div className="container mt-3">

@@ -14,6 +14,7 @@
 		"/spa/pythonApp/TopMenu.jsx",
 		"/spa/pythonApp/BodyBox.jsx",
 		"/spa/pythonApp/TAOindex.jsx",
+		"/spa/pythonApp/RunCode.jsx",
 		"/spa/pythonApp/CodeResult.jsx"
 	]
 }
