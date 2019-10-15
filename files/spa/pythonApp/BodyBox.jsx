@@ -78,6 +78,10 @@ class BodyBox extends React.Component {
 	//});
 
   }
+  switchPythonType(type) {
+	var me = this;
+	me.setState({pythonType : type});
+  }
   componentDidUpdate(prevProps, prevState) {
 	var me = this;
 	if (me.state._TAOTM !== prevState._TAOTM) {
@@ -126,7 +130,19 @@ class BodyBox extends React.Component {
 		case 'getCodes' :
 					return (
 						<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
-							<h5>{me.state.caption}</h5>
+							<div className="container-fluid">
+								<div className="row">
+									<div className="col-sm-4 p-0">
+										<h5>{me.state.caption}</h5>
+									</div>
+									<div className="col-sm-4 p-0">
+									<a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python')}>Python</a>
+									</div>
+									<div className="col-sm-4 p-0">
+									<a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python3')}>Python3</a>
+									</div>
+								</div>
+							</div>
 							<hr/>
 							<div className="container-fluid">
 								<div className="row">
