@@ -95,7 +95,7 @@ class RunCode extends React.Component {
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-sm-12 p-0">
-                                            {me.props.codeFile }
+                                            {me.state.codeFile }
                                         </div>
                                     </div>
                                     <div className="row">
