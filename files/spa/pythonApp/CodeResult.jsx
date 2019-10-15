@@ -22,7 +22,7 @@ class CodeResult extends React.Component {
             error : function(err) { 
                 console.log('err');
             }, 
-            spinner : me
+            spinner : me.props.parent
         });
     }
     componentDidUpdate(prevProps, prevState) {
