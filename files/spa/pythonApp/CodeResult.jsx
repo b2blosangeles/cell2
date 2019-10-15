@@ -32,7 +32,6 @@ class CodeResult extends React.Component {
 			return true;
         }
         if ((me.state.codeFile !== prevState.codeFile || me.state.pythonType !== prevState.pythonType) && (me.state.codeFile)) {
-            console.log('---load 234--->' + me.props.codeFile + '---' +  me.state.pythonType);
             me.loadData(me.props.codeFile);
         }
       }
