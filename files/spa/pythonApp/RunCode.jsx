@@ -6,6 +6,7 @@ class RunCode extends React.Component {
     }
     componentDidMount() {
       var me = this;
+      me.setState({pythonVersion: null});
       ReactDOM.TAO.dataEngine({
         type: 'POST',
         url: '/api/python.api',

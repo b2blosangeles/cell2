@@ -29,7 +29,7 @@ class BodyBox extends React.Component {
 				spinner : me
 			});
 			break;
-			
+
 		default :
 			/*
 			me.setState({pythonVersion: null});
@@ -67,6 +67,9 @@ class BodyBox extends React.Component {
 	var me = this;
 	switch (me.state.code) {
 		case 'getPackages' :
+				
+			return(<PipPackage caption={me.state.caption} />);
+			/*
 			return (
 				<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
 				  <h5>{me.state.caption}</h5>
@@ -94,7 +97,7 @@ class BodyBox extends React.Component {
 						</div>
 					</div>
 				</div>
-			  );
+			  );*/
 			break;
 
 		case 'getCodes' :
