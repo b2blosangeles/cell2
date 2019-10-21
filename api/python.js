@@ -110,7 +110,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
       case 'getPackages' : 
           _f['python'] = function(cbk) {
              
-               let ps = spawn('pip', ['list', '--format=json'], {detached: true});
+               let ps = spawn('pip', ['list', '--format=json']);  // , {detached: true}
                ps.stdout.setEncoding('utf8')
                 var retStr = '';
                 ps.stdout.on('data', (data) => {
@@ -125,8 +125,8 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                     cbk(JSON.parse(retStr));
                 });
                 setTimeout(function() {
-                    // ps.kill();
-                    process.kill(-ps.pid);
+                    ps.kill();
+                    // process.kill(-ps.pid);
                     cbk([]);
                   }, 100);
                 /*
