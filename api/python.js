@@ -113,7 +113,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                let ps = spawn('pip', ['list', '--format=json']);  // , {detached: true}
                ps.stdout.setEncoding('utf8')
                 var retStr = '';
-                /*
+               
                 ps.stdout.on('data', (data) => {
                     retStr += data;
                 });
@@ -125,7 +125,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                 ps.on('close', (code) => {
                     cbk(JSON.parse(retStr));
                 });
-               */
+              
                 setTimeout(function() {
                     ps.kill();
                     // process.kill(-ps.pid);
