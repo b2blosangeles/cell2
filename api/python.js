@@ -141,14 +141,12 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
           break;
       case 'getPackages' : 
           _f['python'] = function(cbk) {
-              /*
-               let ps = spawn('python', ['test2.py'], {detached: true});
+             
+               let ps = spawn('pip', ['list', '--format=json'], {detached: true});
                ps.stdout.setEncoding('utf8')
-
+                var str = '';
                 ps.stdout.on('data', (data) => {
-                    console.log('--niu-->');
-                    console.log('使用spawn方法输出: ' + data);
-                  // console.log(data);
+                    str += data;
                 });
 
                 ps.stderr.on('data', (data) => {
@@ -156,11 +154,9 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                 });
 
                 ps.on('close', (code) => {
-                  if (code !== 0) {
-                    console.log(`ps process exited with code ${code}`);
-                  }
+                   cbk(JSON.parse(str));
                 });
-                */
+                /*
                exec('pip list --format=json', {maxBuffer: 1024 * 2048},
                     function(error, stdout, stderr) {
                        if (error) {
@@ -168,7 +164,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                        } else {
                          cbk(JSON.parse(stdout));
                        }	
-               });
+               });*/
           }
           _f['python3'] = function(cbk) {
                exec('pip3 list --format=json', {maxBuffer: 1024 * 2048},
