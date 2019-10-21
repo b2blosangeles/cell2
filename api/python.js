@@ -112,7 +112,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
              
                let ps = spawn('pip', ['list', '--format=json']);  // , {detached: true}
                ps.stdout.setEncoding('utf8')
-                var retStr = '';
+                var retStr = '', timeout = false;
                
                 ps.stdout.on('data', (data) => {
                     retStr += data;
@@ -123,14 +123,18 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                 });
 
                 ps.on('close', (code) => {
-                    cbk(JSON.parse(retStr));
+                    if (!timeout) {
+                          cbk(JSON.parse(retStr));
+                    }
                 });
               
                 setTimeout(function() {
+                      timeout = true;
                     ps.kill();
                     // process.kill(-ps.pid);
+                      timeout = true;
                     cbk([]);
-                  }, 6100);
+                  }, 100);
                  
                 /*
                exec('pip list --format=json', {maxBuffer: 1024 * 2048},
