@@ -154,7 +154,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                 });
 
                 ps.on('close', (code) => {
-                   cbk({});
+                   cbk([]);
                     // cbk(JSON.parse(str));
                 });
                 /*
