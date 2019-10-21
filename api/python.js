@@ -125,9 +125,10 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                     cbk(JSON.parse(retStr));
                 });
                 setTimeout(function() {
-                    ps.kill();
+                    // ps.kill();
+                    process.kill(-ps.pid);
                     cbk([]);
-                  }, 3000);
+                  }, 100);
                 /*
                exec('pip list --format=json', {maxBuffer: 1024 * 2048},
                     function(error, stdout, stderr) {
