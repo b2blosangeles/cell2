@@ -144,18 +144,17 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
              
                let ps = spawn('pip', ['list', '--format=json'], {detached: true});
                ps.stdout.setEncoding('utf8')
-                var str = '';
+                var retStr = '';
                 ps.stdout.on('data', (data) => {
-                    str += data;
+                    retStr += data;
                 });
 
                 ps.stderr.on('data', (data) => {
-                  console.log(`ps stderr: ${data}`);
+                     cbk(data.replace(/(\n|\r|\t)/gi, ' '));
                 });
 
                 ps.on('close', (code) => {
-                   cbk([]);
-                    // cbk(JSON.parse(str));
+                    cbk(JSON.parse(retStr));
                 });
                 /*
                exec('pip list --format=json', {maxBuffer: 1024 * 2048},
