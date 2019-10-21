@@ -154,7 +154,8 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                 });
 
                 ps.on('close', (code) => {
-                   cbk(JSON.parse(str));
+                   cbk({});
+                    // cbk(JSON.parse(str));
                 });
                 /*
                exec('pip list --format=json', {maxBuffer: 1024 * 2048},
