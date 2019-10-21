@@ -1,36 +1,4 @@
 /*--- Python management ----*/
-
-/*
-
-const { spawn } = require('child_process');
-const ps = spawn('python', ['test2.py'], {detached: true});
-
-ps.stdout.setEncoding('utf8')
-
-ps.stdout.on('data', (data) => {
-    console.log('--niu-->');
-    console.log('使用spawn方法输出: ' + data);
-  // console.log(data);
-});
-
-ps.stderr.on('data', (data) => {
-  console.log(`ps stderr: ${data}`);
-});
-
-ps.on('close', (code) => {
-  if (code !== 0) {
-    console.log(`ps process exited with code ${code}`);
-  }
-});
-
-setTimeout(
-  function() {
-    ps.kill();
-//    process.kill(-ps.pid);
-  }, 1000
-)
-
-*/
 var exec = TAO.require('child_process').exec;
 const { spawn } = TAO.require('child_process');
 var CP = new TAO.pkg.crowdProcess();
