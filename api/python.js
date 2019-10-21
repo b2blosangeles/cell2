@@ -109,7 +109,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
           break;
       case 'getPackages' : 
           _f['python'] = function(cbk) {
-             
+             /*
                let ps = spawn('pip', ['list', '--format=json']);  // , {detached: true}
                ps.stdout.setEncoding('utf8')
                 var retStr = '';
@@ -124,13 +124,13 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                 ps.on('close', (code) => {
                     cbk(JSON.parse(retStr));
                 });
-                /*
+               */
                 setTimeout(function() {
-                    ps.kill();
+                    // ps.kill();
                     // process.kill(-ps.pid);
                     cbk([]);
                   }, 100);
-                  */
+                 
                 /*
                exec('pip list --format=json', {maxBuffer: 1024 * 2048},
                     function(error, stdout, stderr) {
