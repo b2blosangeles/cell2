@@ -134,7 +134,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                     // process.kill(-ps.pid);
                       timeout = true;
                     cbk([]);
-                  }, 100);
+                  }, 6100);
                  
                 /*
                exec('pip list --format=json', {maxBuffer: 1024 * 2048},
