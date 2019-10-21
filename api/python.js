@@ -109,10 +109,11 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
           break;
       case 'getPackages' : 
           _f['python'] = function(cbk) {
-             /*
+             
                let ps = spawn('pip', ['list', '--format=json']);  // , {detached: true}
                ps.stdout.setEncoding('utf8')
                 var retStr = '';
+                /*
                 ps.stdout.on('data', (data) => {
                     retStr += data;
                 });
@@ -126,7 +127,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                 });
                */
                 setTimeout(function() {
-                    // ps.kill();
+                    ps.kill();
                     // process.kill(-ps.pid);
                     cbk([]);
                   }, 100);
