@@ -1,1 +1,1 @@
-TAO.res.send(env);
+TAO.res.send(TAO.env);
