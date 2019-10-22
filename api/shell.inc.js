@@ -27,7 +27,7 @@
                         retStr.error.push(`ps process exited with code ${code}`);
                     }
                     retStr.data = {};
-                    // resultData = resultData.replace(/^\s+|\s+$/gm,'')
+                    resultData = resultData.replace(/^\s+|\s+$/gm,'')
                     try {
                           retStr.data = JSON.parse(resultData);
                     } catch (e) {
