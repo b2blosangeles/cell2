@@ -1,10 +1,10 @@
 
 (function () {
-      var obj =  function (TAO) {
+      var obj =  function () {
             let me = this;
             
             me.exec = function(cmd, cbk, timeout) {
-                var { spawn } = TAO.require('child_process');
+                var { spawn } = require('child_process');
                 var cmda = cmd.split(/[\s]+/), retStr = {error : []}, normalClosed = false, resultData = '';
                 var ps = spawn(cmda.shift(), cmda, {detached: true});
                 ps.stdout.setEncoding('utf8')
