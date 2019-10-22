@@ -17,7 +17,7 @@
                     retStr.error +=  `-ps stderr: ${data}`;
                 });
 
-                ps.on('exist', (code) => {
+                ps.on('error', (code) => {
                     retStr.exit += "Exited with code " + code
                 });
                   
