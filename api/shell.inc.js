@@ -6,7 +6,7 @@
             me.exec = function(cmd, cbk) {
                 var { spawn } = TAO.require('child_process');
                 var cmda = cmd.split(/[\s]+/), retStr = { data : "", error : "" };
-                var ps = spawn(cmda.shift(), cmda);
+                var ps = spawn(cmda.shift(), cmda, {detached: true});
                 ps.stdout.setEncoding('utf8')
 
                 ps.stdout.on('data', (data) => {
