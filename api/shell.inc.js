@@ -18,15 +18,13 @@
                 });
 
                 ps.on('error', (code) => {
-                 //   ((retStr.error) ? retStr.error : []).push(`ps error: ${data}`);
-                      ((retStr.error) ? retStr.error : []).push('1');
+                  retStr.error.push(`ps error: ${data}`);
                 });
                   
                 ps.on('close', (code) => {
                     normalClosed= true
                     if (code !== 0) {
-                    //   ((retStr.error) ? retStr.error : []).push(`ps process exited with code ${code}`);
-                          ((retStr.error) ? retStr.error : []).push('2');
+                        retStr.error.push(`ps process exited with code ${code}`);
                     }
                     retStr.data = {};
                     // resultData = resultData.replace(/^\s+|\s+$/gm,'')
