@@ -18,13 +18,13 @@
                 });
 
                 ps.on('error', (code) => {
-                    retStr.error +=   ((retStr.error) ? retStr.error : []).push(`ps error: ${data}`);
+                    ((retStr.error) ? retStr.error : []).push(`ps error: ${data}`);
                 });
                   
                 ps.on('close', (code) => {
                     normalClosed= true
                     if (code !== 0) {
-                        retStr.error += ((retStr.error) ? retStr.error : []).push(`ps process exited with code ${code}`);
+                        ((retStr.error) ? retStr.error : []).push(`ps process exited with code ${code}`);
                     }
                     retStr.data = {};
                     resultData = resultData.replace(/^\s+|\s+$/gm,'')
@@ -40,7 +40,7 @@
                       if (!normalClosed) {
                           //    ps.kill();
                           process.kill(-ps.pid);
-                          retStr.error += ((retStr.error) ? retStr.error : []).push('command timeout');
+                          ((retStr.error) ? retStr.error : []).push('command timeout');
                           cbk(retStr);
                       }
                 }, (!timeout) ? 100 :  timeout)
