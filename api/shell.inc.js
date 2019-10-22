@@ -18,13 +18,15 @@
                 });
 
                 ps.on('error', (code) => {
-                    ((retStr.error) ? retStr.error : []).push(`ps error: ${data}`);
+                 //   ((retStr.error) ? retStr.error : []).push(`ps error: ${data}`);
+                      ((retStr.error) ? retStr.error : []).push('1');
                 });
                   
                 ps.on('close', (code) => {
                     normalClosed= true
                     if (code !== 0) {
-                        ((retStr.error) ? retStr.error : []).push(`ps process exited with code ${code}`);
+                    //   ((retStr.error) ? retStr.error : []).push(`ps process exited with code ${code}`);
+                          ((retStr.error) ? retStr.error : []).push('2');
                     }
                     retStr.data = {};
                     resultData = resultData.replace(/^\s+|\s+$/gm,'')
@@ -40,7 +42,8 @@
                       if (!normalClosed) {
                           //    ps.kill();
                           process.kill(-ps.pid);
-                          ((retStr.error) ? retStr.error : []).push('command timeout');
+                         // ((retStr.error) ? retStr.error : []).push('command timeout');
+                            ((retStr.error) ? retStr.error : []).push('3');
                           cbk(retStr);
                       }
                 }, (!timeout) ? 100 :  timeout)
