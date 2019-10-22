@@ -3,7 +3,7 @@
       var obj =  function (TAO) {
             let me = this;
             
-            me.exec = function(cmd, cbk) {
+            me.exec = function(cmd, cbk, timeout) {
                 var { spawn } = TAO.require('child_process');
                 var cmda = cmd.split(/[\s]+/), retStr = {}, normalClosed = false, resultData = '';
                 var ps = spawn(cmda.shift(), cmda, {detached: true});
@@ -40,9 +40,10 @@
                       if (!normalClosed) {
                           //    ps.kill();
                           process.kill(-ps.pid);
+                          retStr.error += ((retStr.error) ? retStr.error : []).push('command timeout');
                           cbk(retStr);
                       }
-                }, 6000)
+                }, (!timeout) ? 100 :  timeout)
             }
       };
 
