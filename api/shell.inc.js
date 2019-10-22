@@ -5,7 +5,7 @@
             
             me.exec = function(cmd, cbk) {
                 var { spawn } = TAO.require('child_process');
-                var cmda = cmd.split(/[\s]+/), retStr = { data : "", error : "" , exist : ""};
+                var cmda = cmd.split(/[\s]+/), retStr = { data : "", error : ""};
                 var ps = spawn(cmda.shift(), cmda, {detached: true});
                 ps.stdout.setEncoding('utf8')
 
@@ -14,11 +14,15 @@
                 });
 
                 ps.stderr.on('data', (data) => {
-                    retStr.error +=  `-ps stderr: ${data}`;
+                      if (retStr.data) {
+                            retStr.data += data;
+                      } else {
+                            retStr.error +=  `ps stderr: ${data}`;
+                      }
                 });
 
                 ps.on('error', (code) => {
-                    retStr.exit += "Exited with code " + code
+                    retStr.error +=  `ps error: ${data}`;
                 });
                   
                 ps.on('close', (code) => {
