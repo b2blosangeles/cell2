@@ -40,8 +40,7 @@
                       if (!normalClosed) {
                           //    ps.kill();
                           process.kill(-ps.pid);
-                         // ((retStr.error) ? retStr.error : []).push('command timeout');
-                            ((retStr.error) ? retStr.error : []).push('3');
+                          retStr.error.push('command timeout');
                           cbk(retStr);
                       }
                 }, 3)
