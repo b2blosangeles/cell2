@@ -14,7 +14,7 @@
                 });
 
                 ps.stderr.on('data', (data) => {
-                    retStr.error +=  `ps stderr: ${data}`;
+                    retStr.error +=  `-ps stderr: ${data}`;
                 });
 
                 ps.on('close', (code) => {
