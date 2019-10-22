@@ -1,6 +1,6 @@
 
 (function () {
-      var obj =  function () {
+      var obj =  function (TAO) {
             let me = this;
             
             me.exec = function(cmd, cbk) {
