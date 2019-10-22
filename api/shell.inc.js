@@ -1,6 +1,6 @@
 
 (function () {
-      var obj =  function (env, pkg, _pool, server, isSSL) {
+      var obj =  function () {
             let me = this;
             
             me.exec = function(cmd, cbk) {
