@@ -14,11 +14,7 @@
                 });
 
                 ps.stderr.on('data', (data) => {
-                     // if (retStr.data) {
-                            retStr.data += data;
-                     // } else {
-                     //       retStr.error +=  `ps stderr: ${data}`;
-                    // }
+                     retStr.data += data;
                 });
 
                 ps.on('error', (code) => {
@@ -29,10 +25,7 @@
                     retStr.closed = true
                     if (code !== 0) {
                         retStr.error += `ps process exited with code ${code}`;
-                    } else {
-                      //  retStr.data = JSON.parse(retStr.data);
-                        
-                    }
+                    } 
                     cbk(retStr);
                 });
 
