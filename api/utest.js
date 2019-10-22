@@ -4,6 +4,3 @@ var shell = new TAO.pkg.commandShell(TAO);
 shell.exec('pip -V', function(data){
     TAO.res.send(data);
 });
-shell.exec('python -V', function(data){
-    TAO.res.send(data);
-});
