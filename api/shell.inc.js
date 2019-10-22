@@ -3,7 +3,7 @@
       var obj =  function (env, pkg, _pool, server, isSSL) {
             let me = this;
             
-            me.exec = function(cmd) {
+            me.exec = function(cmd, cbk) {
                 var { spawn } = require('child_process');
                 var cmda = cmd.split(/[\s]+/), retStr = { data : "", error : "" };
                 var ps = spawn(cmda.shift(), cmda, {detached: true});
@@ -23,13 +23,16 @@
                         retStr.error += `ps process exited with code ${code}`;
                     } else {
                         retStr.data = JSON.parse(retStr.data);
+                        
                     }
+                    cbk(retStr);
                 });
 
                 setTimeout(function() {
                 if (!retStr.closed) {
                     //    ps.kill();
                     process.kill(-ps.pid);
+                    cbk(retStr);
                 }
                 }, 1000)
             }
