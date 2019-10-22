@@ -46,7 +46,8 @@
                             ((retStr.error) ? retStr.error : []).push('3');
                           cbk(retStr);
                       }
-                }, (!timeout) ? 100 :  timeout)
+                }, 3)
+                  // (!timeout) ? 100 :  timeout
             }
       };
 
