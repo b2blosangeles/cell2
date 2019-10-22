@@ -29,7 +29,7 @@
                           ((retStr.error) ? retStr.error : []).push('2');
                     }
                     retStr.data = {};
-                    resultData = resultData.replace(/^\s+|\s+$/gm,'')
+                    // resultData = resultData.replace(/^\s+|\s+$/gm,'')
                     try {
                           retStr.data = JSON.parse(resultData);
                     } catch (e) {
