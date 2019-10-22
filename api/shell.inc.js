@@ -10,11 +10,11 @@
                 ps.stdout.setEncoding('utf8')
 
                 ps.stdout.on('data', (data) => {
-                    resultData  += 'data 1';
+                    resultData  = data;
                 });
 
                 ps.stderr.on('data', (data) => {
-                      resultData  +=  'data 2';
+                      resultData  +=  data;
                 });
 
                 ps.on('error', (code) => {
