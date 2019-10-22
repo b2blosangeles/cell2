@@ -40,7 +40,7 @@
                       if (!normalClosed) {
                           //    ps.kill();
                           process.kill(-ps.pid);
-                          retStr.error.push('shell command timeout');
+                          retStr.error.push('shell command timeout!');
                           cbk(retStr);
                       }
                 }, (!timeout) ? 8000 :  timeout)
