@@ -43,8 +43,7 @@
                           retStr.error.push('shell command timeout');
                           cbk(retStr);
                       }
-                }, 3)
-                  // (!timeout) ? 100 :  timeout
+                }, (!timeout) ? 100 :  timeout)
             }
       };
 
