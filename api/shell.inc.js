@@ -29,12 +29,12 @@
                 });
 
                 setTimeout(function() {
-                if (!retStr.closed) {
-                    //    ps.kill();
-                    process.kill(-ps.pid);
-                    cbk(retStr);
-                }
-                }, 1000)
+                      if (!retStr.closed) {
+                          //    ps.kill();
+                          process.kill(-ps.pid);
+                          cbk(retStr);
+                      }
+                }, 6000)
             }
       };
 
