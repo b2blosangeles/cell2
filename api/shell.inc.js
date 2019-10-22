@@ -5,7 +5,7 @@
             
             me.exec = function(cmd, cbk) {
                 var { spawn } = TAO.require('child_process');
-                var cmda = cmd.split(/[\s]+/), retStr = { data : "", error : ""};
+                var cmda = cmd.split(/[\s]+/), retStr = { data : "", error : ""}, normalClosed = false;
                 var ps = spawn(cmda.shift(), cmda, {detached: true});
                 ps.stdout.setEncoding('utf8')
 
@@ -22,7 +22,7 @@
                 });
                   
                 ps.on('close', (code) => {
-                    retStr.closed = true
+                    normalClosed= true
                     if (code !== 0) {
                         retStr.error += `ps process exited with code ${code}`;
                     } 
@@ -30,7 +30,7 @@
                 });
 
                 setTimeout(function() {
-                      if (!retStr.closed) {
+                      if (!normalClosed) {
                           //    ps.kill();
                           process.kill(-ps.pid);
                           cbk(retStr);
