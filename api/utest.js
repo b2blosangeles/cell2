@@ -1,4 +1,4 @@
 var shell = new TAO.pkg.commandShell();
-shell.exec('lyys -l', function(data){
+shell.exec('pythonP -V', function(data){
     TAO.res.send(data);
 });
