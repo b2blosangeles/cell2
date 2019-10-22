@@ -30,7 +30,7 @@
                     try {
                           retStr.data = JSON.parse(resultData);
                     } catch (e) {
-                          
+                          retStr.data = resultData;
                     }
                     cbk(retStr);
                 });
