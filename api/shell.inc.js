@@ -4,8 +4,6 @@
             let me = this;
             
             me.exec = function(cmd, cbk) {
-                  cbk({});
-                  return true;
                 var { spawn } = TAO.require('child_process');
                 var cmda = cmd.split(/[\s]+/), retStr = { data : "", error : "" };
                 var ps = spawn(cmda.shift(), cmda, {detached: true});
@@ -24,7 +22,7 @@
                     if (code !== 0) {
                         retStr.error += `ps process exited with code ${code}`;
                     } else {
-                        retStr.data = JSON.parse(retStr.data);
+                      //  retStr.data = JSON.parse(retStr.data);
                         
                     }
                     cbk(retStr);
