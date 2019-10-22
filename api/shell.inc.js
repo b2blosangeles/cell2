@@ -5,27 +5,33 @@
             
             me.exec = function(cmd, cbk) {
                 var { spawn } = TAO.require('child_process');
-                var cmda = cmd.split(/[\s]+/), retStr = { data : "", error : ""}, normalClosed = false;
+                var cmda = cmd.split(/[\s]+/), retStr = {}, normalClosed = false, resultData = '';
                 var ps = spawn(cmda.shift(), cmda, {detached: true});
                 ps.stdout.setEncoding('utf8')
 
                 ps.stdout.on('data', (data) => {
-                    retStr.data += data;
+                    resultData  += data;
                 });
 
                 ps.stderr.on('data', (data) => {
-                     retStr.data += data;
+                      resultData  += data;
                 });
 
                 ps.on('error', (code) => {
-                    retStr.error +=  `ps error: ${data}`;
+                    retStr.error +=   ((retStr.error) ? retStr.error : []).push(`ps error: ${data}`);
                 });
                   
                 ps.on('close', (code) => {
                     normalClosed= true
                     if (code !== 0) {
-                        retStr.error += `ps process exited with code ${code}`;
-                    } 
+                        retStr.error += ((retStr.error) ? retStr.error : []).push(`ps process exited with code ${code}`);
+                    }
+                    retStr.data = {};
+                    try {
+                          retStr.data = JSON.parse(resultData);
+                    } catch (e) {
+                          
+                    }
                     cbk(retStr);
                 });
 
