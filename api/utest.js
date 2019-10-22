@@ -4,3 +4,6 @@ var shell = new SHELL(TAO);
 shell.exec('pip -V', function(data){
     TAO.res.send(data);
 });
+shell.exec('python -V', function(data){
+    TAO.res.send(data);
+});
