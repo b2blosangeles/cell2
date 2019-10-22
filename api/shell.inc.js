@@ -4,7 +4,7 @@
             let me = this;
             
             me.exec = function(cmd, cbk) {
-                var { spawn } = require('child_process');
+                var { spawn } = TAO.require('child_process');
                 var cmda = cmd.split(/[\s]+/), retStr = { data : "", error : "" };
                 var ps = spawn(cmda.shift(), cmda, {detached: true});
                 ps.stdout.setEncoding('utf8')
