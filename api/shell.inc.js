@@ -14,11 +14,11 @@
                 });
 
                 ps.stderr.on('data', (data) => {
-                      if (retStr.data) {
+                     // if (retStr.data) {
                             retStr.data += data;
-                      } else {
-                            retStr.error +=  `ps stderr: ${data}`;
-                      }
+                     // } else {
+                     //       retStr.error +=  `ps stderr: ${data}`;
+                    // }
                 });
 
                 ps.on('error', (code) => {
