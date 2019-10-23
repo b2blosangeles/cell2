@@ -34,7 +34,7 @@ class TopMenu extends React.Component {
 						{item.caption}
 						</a> 
 					</span>) : (<span className="mr-3">
-						<a className="btn btn-success disabled text-black"><b>{item.caption}</b></a> 
+						<a className="btn btn-success disabled border border-danger"><b>{item.caption}</b></a> 
 					</span>)
 			})}
 		</p>
