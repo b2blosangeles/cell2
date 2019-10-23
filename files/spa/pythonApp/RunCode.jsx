@@ -62,7 +62,7 @@ class RunCode extends React.Component {
     }
     render() {
         var me = this;
-        return(<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
+        return(<div className="border border-warning alert-success rounded m-0 p-2 bodyBox">
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-4 ">
@@ -96,7 +96,7 @@ class RunCode extends React.Component {
                             </div>
                             
                             <div className="row">
-                                <div className="col-sm-12 p-2 border-top border-warning " style={{'min-height' : '20em'}}>
+                                <div className="col-sm-12 p-2 border-top border-warning " style={{'min-height' : '28em'}}>
                                     <b>Result : </b><br/>
                                     {(!me.state.pythonCodeResult) ? '' : JSON.stringify(me.state.pythonCodeResult.data)}
                                 </div>
