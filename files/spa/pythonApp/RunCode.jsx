@@ -88,12 +88,19 @@ class RunCode extends React.Component {
                             <div className="row">
                                 <div className="col-sm-12 p-2 bg-secondary text-right">
                                     <div className="btn-group border border-light rounded">
-                                      <button className={(me.state.pythonType === 'python') ? 'btn disabled' : 'btn btn-secondary'}
-                                           onClick={me.switchPythonType.bind(me, 'python')}>
+                                          {(me.state.pythonType === 'python') ? (<button className="btn  disabled">
                                           <i className="fa fa-check-square-o mr-2" aria-hidden="true"></i>
-                                          Python</button>
-                                      <button className={(me.state.pythonType === 'python3') ? 'btn  disabled' : 'btn btn-secondary'}
-                                           onClick={me.switchPythonType.bind(me, 'python3')}>Python3</button>
+                                          Python</button>)
+                                        :  (<button className="btn btn-secondary" 
+                                                onClick={me.switchPythonType.bind(me, 'python')}>
+                                          Python3</button>)
+                                        {(me.state.pythonType === 'python3') ? (<button className="btn  disabled">
+                                          <i className="fa fa-check-square-o mr-2" aria-hidden="true"></i>
+                                          Python3</button>)
+                                        :  (<button className="btn btn-secondary" 
+                                                onClick={me.switchPythonType.bind(me, 'python3')}>
+                                            Python3</button>)
+                                        }
                                     </div>
                                 </div>
                             </div>
