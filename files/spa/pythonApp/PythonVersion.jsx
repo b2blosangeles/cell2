@@ -49,6 +49,7 @@ class PythonVersion extends React.Component {
                             </div>
                         </div>)}
                 </div>
+                {ReactDOM.TAO.list.Root.showSpinner(me)}
             </div>);
     }
   }
