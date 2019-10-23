@@ -31,14 +31,13 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
             }
             var shell = new TAO.pkg.commandShell();
             shell.run('cd ' + codedir + ' && ' + pythonType + ' ' + codefn, function(data){
-                let ret = {};
                if (data.results.P_1.status !== 'success') {
                    TAO.res.send({error : data.results.P_1.errorMessage.join('; ')});
                } else {
                   TAO.res.send({
                        pythonType : pythonType,
                        data: data.results.P_1.data
-                  );
+                  });
                }
             });
             // .replace(/(\n|\r|\t)/gi, '')}
