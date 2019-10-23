@@ -6,7 +6,7 @@ class PythonVersion extends React.Component {
     }
     componentDidMount() {
       var me = this;
-      me.setState({pythonPackegs: null});
+      me.setState({pythonVersion: null});
       ReactDOM.TAO.dataEngine({
           type: 'POST',
           url: '/api/python.api',
@@ -14,7 +14,7 @@ class PythonVersion extends React.Component {
           dataType: 'JSON',
           timeout: (6 * 1000),
           success: function(resultData){
-              me.setState({pythonPackegs: resultData});
+              me.setState({pythonVersion: resultData});
               
           },
           error : function(err) { 
