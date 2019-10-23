@@ -31,8 +31,9 @@ class RunCode extends React.Component {
     }
     switchPythonType(type) {
         var me = this;
-        alert(me.state.pythonType + '---' + type);
-        me.setState({pythonType : type});
+        if (me.state.pythonType !== type) {
+                me.setState({pythonType : type});
+        }
     }
     runCode (codefn) {
         var me = this;
