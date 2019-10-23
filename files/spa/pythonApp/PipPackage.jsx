@@ -28,7 +28,7 @@ class PipPackage extends React.Component {
     }
     render() {
         var me = this;
-        return(<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
+        return(<div className="border border-secondary alert-secondary rounded m-0 p-2 bodyBox">
             <h5>{this.props.caption}</h5>
             <hr/>
               <div className="container-fluid">
