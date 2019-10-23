@@ -88,17 +88,17 @@ class RunCode extends React.Component {
                             <div className="row">
                                 <div className="col-sm-12 p-2 bg-light text-right rounded">
                                     <div className="btn-group border border-secondary rounded">
-                                          {(me.state.pythonType === 'python') ? (<button className="btn  disabled rounded">
+                                          {(me.state.pythonType === 'python') ? (<button className="btn  disabled rounded-left">
                                           <i className="fa fa-check-square-o mr-2" aria-hidden="true"></i>
                                           Python</button>)
-                                        :  (<button className="btn btn-secondary rounded" 
+                                        :  (<button className="btn btn-secondary rounded-left" 
                                                 onClick={me.switchPythonType.bind(me, 'python')}>
                                           Python</button>)}
                                         
-                                        {(me.state.pythonType === 'python3') ? (<button className="btn  disabled rounded">
+                                        {(me.state.pythonType === 'python3') ? (<button className="btn  disabled rounded-right">
                                           <i className="fa fa-check-square-o mr-2" aria-hidden="true"></i>
                                           Python3</button>)
-                                        :  (<button className="btn btn-secondary rounded" 
+                                        :  (<button className="btn btn-secondary rounded-right" 
                                                 onClick={me.switchPythonType.bind(me, 'python3')}>
                                             Python3</button>)}
                                     </div>
