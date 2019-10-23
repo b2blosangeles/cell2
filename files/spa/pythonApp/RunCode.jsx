@@ -68,11 +68,6 @@ class RunCode extends React.Component {
                         <h5>{this.props.caption}</h5>
                         <div className="container-fluid p-2 border border-secondary rounded">
                             <div className="row">
-                                <div className="col-sm-12 p-2 text-center">
- 
-                                </div>
-                            </div>
-                            <div className="row">
                                 <div className="col-sm-12 p-0">
                                     {(!this.state.pythonCodes) ? '' :
                                     (<ul>
@@ -91,17 +86,13 @@ class RunCode extends React.Component {
                         <div className="m-0 p-0 bodyBox">
                                 <div className="container">
                                     <div className="row">
-                                        <div className="col-sm-12 p-2">
-                                            <div className="btn-group border border-secondary rounded">
+                                        <div className="col-sm-12 p-2 text-right">
+                                            <div className="btn-group btn-block border border-secondary rounded">
                                               <button className={(me.state.pythonType === 'python') ? 'btn  btn-secondary disabled' : 'btn'}
                                                    onClick={me.switchPythonType.bind(me, 'python')}>Python</button>
                                               <button className={(me.state.pythonType === 'python3') ? 'btn  btn-secondary disabled' : 'btn'}
                                                    onClick={me.switchPythonType.bind(me, 'python3')}>Python3</button>
                                             </div>
-                                            <br/>
-                                            {/*me.state.codeFile */}
-                                            <b>Type : <b/></b>&nbsp;&nbsp;
-                                            {(!me.state.pythonCodeResult) ? '' : me.state.pythonCodeResult.pythonType}
                                         </div>
                                     </div>
                                     <div className="row">
