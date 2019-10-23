@@ -93,14 +93,14 @@ class RunCode extends React.Component {
                                           Python</button>)
                                         :  (<button className="btn btn-secondary" 
                                                 onClick={me.switchPythonType.bind(me, 'python')}>
-                                          Python3</button>)
+                                          Python3</button>)}
+                                        
                                         {(me.state.pythonType === 'python3') ? (<button className="btn  disabled">
                                           <i className="fa fa-check-square-o mr-2" aria-hidden="true"></i>
                                           Python3</button>)
                                         :  (<button className="btn btn-secondary" 
                                                 onClick={me.switchPythonType.bind(me, 'python3')}>
-                                            Python3</button>)
-                                        }
+                                            Python3</button>)}
                                     </div>
                                 </div>
                             </div>
