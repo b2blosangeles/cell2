@@ -52,8 +52,8 @@ class PipPackage extends React.Component {
                           </ul>
                       </div>)}
                   </div>
-              </div>
               {ReactDOM.TAO.list.Root.showSpinner(me)}
+              </div>
           </div>);
     }
   }
