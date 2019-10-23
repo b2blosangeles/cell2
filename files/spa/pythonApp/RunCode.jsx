@@ -51,7 +51,7 @@ class RunCode extends React.Component {
             dataType: 'JSON',
             timeout: (6 * 1000),
             success: function(resultData){
-                me.setState({pythonCodeResult: resultData});
+                me.setState({pythonCodeResult: JSON.stringify(resultData)});
             },
             error : function(err) { 
                 console.log('err');
@@ -104,7 +104,7 @@ class RunCode extends React.Component {
                                     <div className="row">
                                         <div className="col-sm-12 p-2">
                                             <b>Result : </b><br/>
-                                            {(!me.state.pythonCodeResult) ? '' : me.state.pythonCodeResult.data}
+                                            {(!me.state.pythonCodeResult) ? '' : me.state.pythonCodeResult}
                                         </div>
                                     </div>
                                 </div>
