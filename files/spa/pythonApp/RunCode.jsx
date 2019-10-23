@@ -65,7 +65,7 @@ class RunCode extends React.Component {
         return(<div className="border border-warning rounded m-0 p-2 bodyBox alert-warning">
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-sm-4 ">
+                    <div className="col-sm-3 ">
                         <h5>{this.props.caption}:</h5>
                         <div className="container-fluid p-2 rounded">
                             <div className="row">
@@ -82,7 +82,7 @@ class RunCode extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col-sm-8 p-0 border border-warning rounded">
+                    <div className="col-sm-9 p-0 border border-warning rounded">
                         <div className="container ">
                             <div className="row">
                                 <div className="col-sm-12 p-2 alert-info text-right">
