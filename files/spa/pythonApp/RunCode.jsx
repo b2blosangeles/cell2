@@ -81,6 +81,18 @@ class RunCode extends React.Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-4 p-0 pl-2 pr-2">
+                        <div className="container-fluid">
+                            <div className="row">
+                                <div className="col-sm-6 p-0">
+                                {(me.state.pythonType === 'python') ? (<b>Python</b>) : 
+                                (<a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python')}>Python</a>)
+                                }</div>
+                                <div className="col-sm-6 p-0">
+                                {(me.state.pythonType === 'python3') ? (<b>Python3</b>) : 
+                                (<a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python3')}>Python3</a>)
+                                }</div>
+                            </div>
+                        </div>
                     {(!this.state.pythonCodes) ? '' :
                     (<ul>
                         {this.state.pythonCodes.map(function(item, i){
