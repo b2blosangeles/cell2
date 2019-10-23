@@ -30,11 +30,11 @@ class TopMenu extends React.Component {
 			{this.menu.map(function(item, i){
 
 				return (me.state.menuIten !== item.code) ? (<span className="mr-3">
-						<a href="javascript:void(0);"  className="border border-secondary rounded p-2" onClick={me.handleClick.bind(me, item)}>
+						<a href="javascript:void(0);"  className="btn btn-secondary" onClick={me.handleClick.bind(me, item)}>
 						{item.caption}
 						</a> 
 					</span>) : (<span className="mr-3">
-						<a className="border border-secondary bg-secondary text-white rounded p-2">{item.caption}</a> 
+						<a className="btn btn-secondary">{item.caption}</a> 
 					</span>)
 			})}
 		</p>
