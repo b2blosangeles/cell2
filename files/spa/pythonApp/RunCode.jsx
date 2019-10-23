@@ -104,7 +104,7 @@ class RunCode extends React.Component {
                                     <div className="row">
                                         <div className="col-sm-12 p-2">
                                             <b>Result : </b><br/>
-                                            {(!me.state.pythonCodeResult) ? '' : me.state.pythonCodeResult.data}
+                                            {(!me.state.pythonCodeResult) ? '' : JSON.stringify(me.state.pythonCodeResult.data)}
                                         </div>
                                     </div>
                                 </div>
