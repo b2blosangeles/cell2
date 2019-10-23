@@ -1,7 +1,4 @@
 /*--- Python management ----*/
-
-var exec = TAO.require('child_process').exec;
-const { spawn } = TAO.require('child_process');
 var CP = new TAO.pkg.crowdProcess();
 var _f = {};
 let codedir = TAO.env.site_path + '/_python/';
