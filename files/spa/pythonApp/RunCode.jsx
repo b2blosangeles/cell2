@@ -86,7 +86,7 @@ class RunCode extends React.Component {
                     <div className="col-sm-9 p-0 border border-secondary rounded shadow-sm">
                         <div className="container ">
                             <div className="row">
-                                <div className="col-sm-12 p-2 bg-secondary text-right">
+                                <div className="col-sm-12 p-2 alert-dark text-right">
                                     <div className="btn-group border border-light rounded">
                                           {(me.state.pythonType === 'python') ? (<button className="btn  disabled">
                                           <i className="fa fa-check-square-o mr-2" aria-hidden="true"></i>
