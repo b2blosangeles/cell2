@@ -114,7 +114,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                 let ret = {};
                 ret.python = data.results.P_0.data;
                 ret.python3 = data.results.P_1.data;
-                TAO.res.send('ret');
+                TAO.res.send(ret);
             });
             return true;
           _f['python'] = function(cbk) {
