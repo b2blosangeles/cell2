@@ -83,26 +83,23 @@ class RunCode extends React.Component {
                         </div>
                     </div>
                     <div className="col-sm-8 p-0 m-0">
-                    
-                        <div className="m-0 p-0 bodyBox">
-                                <div className="container-fluid p-2 border border-secondary rounded">
-                                    <div className="row">
-                                        <div className="col-sm-12 p-2 text-right">
-                                            <div className="btn-group border border-secondary rounded">
-                                              <button className={(me.state.pythonType === 'python') ? 'btn disabled' : 'btn btn-secondary'}
-                                                   onClick={me.switchPythonType.bind(me, 'python')}>Python</button>
-                                              <button className={(me.state.pythonType === 'python3') ? 'btn  disabled' : 'btn btn-secondary'}
-                                                   onClick={me.switchPythonType.bind(me, 'python3')}>Python3</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-sm-12 p-2">
-                                            <b>Result : </b><br/>
-                                            {(!me.state.pythonCodeResult) ? '' : JSON.stringify(me.state.pythonCodeResult.data)}
-                                        </div>
+                        <div className="container-fluid p-2 border border-secondary rounded">
+                            <div className="row">
+                                <div className="col-sm-12 p-2 text-right">
+                                    <div className="btn-group border border-secondary rounded">
+                                      <button className={(me.state.pythonType === 'python') ? 'btn disabled' : 'btn btn-secondary'}
+                                           onClick={me.switchPythonType.bind(me, 'python')}>Python</button>
+                                      <button className={(me.state.pythonType === 'python3') ? 'btn  disabled' : 'btn btn-secondary'}
+                                           onClick={me.switchPythonType.bind(me, 'python3')}>Python3</button>
                                     </div>
                                 </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-sm-12 p-2">
+                                    <b>Result : </b><br/>
+                                    {(!me.state.pythonCodeResult) ? '' : JSON.stringify(me.state.pythonCodeResult.data)}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
