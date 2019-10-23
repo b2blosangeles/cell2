@@ -29,22 +29,19 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                   TAO.res.send({error : 'missing codeFile!'});
                   break;
             }
-            exec('cd ' + codedir + ' && ' + pythonType + ' ' + codefn, {maxBuffer: 1024 * 20480},
-              function(error, stdout, stderr) {
-                 if (error) {
-                   TAO.res.send({error : error.message.replace(/(\n|\r|\t)/gi, ' ')});
-                 } else {
-                      setTimeout(
-                         function() {
-                              TAO.res.send({
-                                   pythonType : pythonType,
-                                   data: stdout.replace(/(\n|\r|\t)/gi, '')}
-                              );
-                         }, 100
-                      );
-                 }	
-            }); 
-
+            var shell = new TAO.pkg.commandShell();
+            shell.run('cd ' + codedir + ' && ' + pythonType + ' ' + codefn, function(data){
+                let ret = {};
+               if (data.results.P_1.status !== 'success') {
+                   TAO.res.send({error : data.results.P_1.errorMessage.join('; ')});
+               } else {
+                  TAO.res.send({
+                       pythonType : pythonType,
+                       data: data.results.P_1.data
+                  );
+               }
+            });
+            // .replace(/(\n|\r|\t)/gi, '')}
             break;
             
       case 'getPythonVersion' : 
