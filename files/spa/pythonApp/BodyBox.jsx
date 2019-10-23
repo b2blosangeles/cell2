@@ -24,7 +24,7 @@ class BodyBox extends React.Component {
 			return(<RunCode caption={me.state.caption} />);
 			break;
 		default :
-			return(<PythonVersion caption={me.state.caption} />);
+			return(<PythonVersion />);
 			break;
 	}
   }
