@@ -64,10 +64,10 @@ class RunCode extends React.Component {
         return(<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-sm-4 p-2 border border-secondary rounded">
+                    <div className="col-sm-4 ">
                         <h5>{this.props.caption}</h5>
                         <br/>
-                        <div className="container-fluid">
+                        <div className="container-fluid p-2 border border-secondary rounded">
                             <div className="row">
                                 <div className="col-sm-6 p-0">
                                 {(me.state.pythonType === 'python') ? (<b>Python</b>) : 
@@ -78,16 +78,19 @@ class RunCode extends React.Component {
                                 (<a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python3')}>Python3</a>)
                                 }</div>
                             </div>
+                            <div className="row">
+                                <div className="col-sm-12 p-0">
+                                    {(!this.state.pythonCodes) ? '' :
+                                    (<ul>
+                                        {this.state.pythonCodes.map(function(item, i){
+                                            return (me.state.codeFile === item) ? (<li><b>{item}</b></li>) :
+                                            (<li><a href="javascript:void(0);" onClick={me.runCode.bind(me, item)}>{item}</a></li>)
+                                        })}
+                                    </ul>)
+                                    }
+                                </div>
+                            </div>
                         </div>
-                         <hr/>
-                    {(!this.state.pythonCodes) ? '' :
-                    (<ul>
-                        {this.state.pythonCodes.map(function(item, i){
-                            return (me.state.codeFile === item) ? (<li><b>{item}</b></li>) :
-                            (<li><a href="javascript:void(0);" onClick={me.runCode.bind(me, item)}>{item}</a></li>)
-                        })}
-                    </ul>)
-                    }
                     </div>
                     <div className="col-sm-8 p-0 m-0">
                     
