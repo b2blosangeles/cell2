@@ -67,7 +67,7 @@ class RunCode extends React.Component {
                 <div className="row">
                     <div className="col-sm-4 ">
                         <h5>{this.props.caption}:</h5>
-                        <div className="container-fluid p-2 border border-secondary rounded">
+                        <div className="container-fluid p-2 rounded">
                             <div className="row">
                                 <div className="col-sm-12 p-0">
                                     {(!this.state.pythonCodes) ? '' :
