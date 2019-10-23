@@ -68,7 +68,14 @@ class RunCode extends React.Component {
                         <h5>{this.props.caption}</h5>
                         <div className="container-fluid p-2 border border-secondary rounded">
                             <div className="row">
+                                <div className="col-sm-12 text-center">
+                                    <div className="btn-group">
+                                      <button type="button" className="btn btn-primary">Apple</button>
+                                      <button type="button" className="btn btn-primary">Samsung</button>
+                                    </div>
+                                </div>
                                 <div className="col-sm-6 text-center">
+
                                 {(me.state.pythonType === 'python') ? (<b>Python</b>) : 
                                 (<a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python')}>Python</a>)
                                 }</div>
