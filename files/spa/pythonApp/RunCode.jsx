@@ -66,14 +66,13 @@ class RunCode extends React.Component {
                 <div className="row">
                     <div className="col-sm-4 ">
                         <h5>{this.props.caption}</h5>
-                        <br/>
                         <div className="container-fluid p-2 border border-secondary rounded">
                             <div className="row">
-                                <div className="col-sm-6 p-0">
+                                <div className="col-sm-6">
                                 {(me.state.pythonType === 'python') ? (<b>Python</b>) : 
                                 (<a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python')}>Python</a>)
                                 }</div>
-                                <div className="col-sm-6 p-0">
+                                <div className="col-sm-6">
                                 {(me.state.pythonType === 'python3') ? (<b>Python3</b>) : 
                                 (<a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python3')}>Python3</a>)
                                 }</div>
