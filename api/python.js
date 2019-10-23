@@ -109,6 +109,14 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                }, 6000);   
           break;
       case 'getPackages' : 
+          var shell = new TAO.pkg.commandShell();
+          shell.run('pip list  --format=json && pip3 list  --format=json', function(data){
+                let ret = {};
+                ret.python = data.results.P_0.data;
+                ret.python3 = data.results.P_1.data;
+                TAO.res.send(ret);
+            });
+            return true;
           _f['python'] = function(cbk) {
              
                let ps = spawn('pip', ['list', '--format=json']);  // , {detached: true}
