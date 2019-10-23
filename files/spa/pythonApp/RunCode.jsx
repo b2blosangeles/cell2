@@ -64,22 +64,8 @@ class RunCode extends React.Component {
         return(<div className="border border-warning alert-warning rounded m-0 p-2 bodyBox">
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-sm-4 p-0">
-                        <h5>{this.props.caption}</h5>
-                    </div>
-                    <div className="col-sm-4 p-0">
-                    {(me.state.pythonType === 'python') ? (<b>Python</b>) : 
-                    (<a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python')}>Python</a>)
-                    }</div>
-                    <div className="col-sm-4 p-0">
-                    {(me.state.pythonType === 'python3') ? (<b>Python3</b>) : 
-                    (<a href="javascript:void(0);" onClick={me.switchPythonType.bind(me, 'python3')}>Python3</a>)
-                    }</div>
-                </div>
-            </div>
-            <hr/>
-            <div className="container-fluid">
-                <div className="row">
+                    <h5>{this.props.caption}</h5>
+                    <br/>
                     <div className="col-sm-4 p-0 pl-2 pr-2">
                         <div className="container-fluid">
                             <div className="row">
@@ -93,6 +79,7 @@ class RunCode extends React.Component {
                                 }</div>
                             </div>
                         </div>
+                         <hr/>
                     {(!this.state.pythonCodes) ? '' :
                     (<ul>
                         {this.state.pythonCodes.map(function(item, i){
