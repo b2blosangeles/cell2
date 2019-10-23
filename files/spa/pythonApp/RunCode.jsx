@@ -89,7 +89,9 @@ class RunCode extends React.Component {
                                 <div className="col-sm-12 p-2 bg-secondary text-right">
                                     <div className="btn-group border border-light rounded">
                                       <button className={(me.state.pythonType === 'python') ? 'btn disabled' : 'btn btn-secondary'}
-                                           onClick={me.switchPythonType.bind(me, 'python')}>Python</button>
+                                           onClick={me.switchPythonType.bind(me, 'python')}>
+                                          <input type="checkbox" className="form-check-input">
+                                          Python</button>
                                       <button className={(me.state.pythonType === 'python3') ? 'btn  disabled' : 'btn btn-secondary'}
                                            onClick={me.switchPythonType.bind(me, 'python3')}>Python3</button>
                                     </div>
