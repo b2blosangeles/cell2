@@ -108,12 +108,21 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                     TAO.res.send(data);
                }, 6000);   
           break;
+      case 'getPipVersion' : 
+          var shell = new TAO.pkg.commandShell();
+          shell.run('pip --version && pip3 --version', function(data){
+                let ret = {};
+                ret.python = (data.results.P_0.status === 'success') ? data.results.P_0.data : '';
+                ret.python3 = (data.results.P_1.status === 'success') ? data.results.P_1.data : '';
+                TAO.res.send(ret);
+            });
+          break;
       case 'getPackages' : 
           var shell = new TAO.pkg.commandShell();
           shell.run('pip list  --format=json && pip3 list  --format=json', function(data){
                 let ret = {};
-                ret.python = data.results.P_0.data;
-                ret.python3 = data.results.P_1.data;
+                ret.python = (data.results.P_0.status === 'success') ? data.results.P_0.data : [];
+                ret.python3 = (data.results.P_1.status === 'success') ? data.results.P_1.data : [];
                 TAO.res.send(ret);
             });
           break;
