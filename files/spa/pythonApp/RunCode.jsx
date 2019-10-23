@@ -63,7 +63,7 @@ class RunCode extends React.Component {
     }
     render() {
         var me = this;
-        return(<div className="border border-secondary rounded m-0 p-2 bodyBox alert-secondary">
+        return(<div className="border border-secondary rounded m-0 p-5 bodyBox alert-secondary">
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-3 ">
