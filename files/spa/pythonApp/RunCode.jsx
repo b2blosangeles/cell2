@@ -69,7 +69,7 @@ class RunCode extends React.Component {
                         <div className="container-fluid p-2 border border-secondary rounded">
                             <div className="row">
                                 <div className="col-sm-12 text-center">
-                                    <div class="container-fluid">
+                                    <div className="container-fluid">
                                         <div className="btn-group btn-block">
                                           <button className="{(me.state.pythonType === 'python') ? 'btn  btn-secondary disabled' : 'btn'}"
                                                onClick={me.switchPythonType.bind(me, 'python')}>Python</button>
