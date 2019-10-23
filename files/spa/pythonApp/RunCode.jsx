@@ -67,18 +67,12 @@ class RunCode extends React.Component {
                     <div className="col-sm-4 ">
                         <h5>{this.props.caption}</h5>
                         <div className="container-fluid p-2 border border-secondary rounded">
-                                    <div className="btn-group btn-block">
-                                      <button className="btn btn-primary {(me.state.pythonType === 'python') ? 'disabled' : ''}"
-                                           onClick={me.switchPythonType.bind(me, 'python')}>Python</button>
-                                      <button className="btn btn-primary {(me.state.pythonType === 'python3') ? 'disabled' : ''}"
-                                           onClick={me.switchPythonType.bind(me, 'python3')}>Python3</button>
-                                    </div>
                             <div className="row">
                                 <div className="col-sm-12 text-center">
                                     <div className="btn-group btn-block">
-                                      <button className="btn btn-primary {(me.state.pythonType === 'python') ? 'disabled' : ''}"
+                                      <button className="{(me.state.pythonType === 'python') ? 'btn btn-secondary disabled' : 'btn btn-secondary'}"
                                            onClick={me.switchPythonType.bind(me, 'python')}>Python</button>
-                                      <button className="btn btn-primary {(me.state.pythonType === 'python3') ? 'disabled' : ''}"
+                                      <button className="{(me.state.pythonType === 'python3') ? 'btn btn-secondary disabled' : 'btn btn-secondary'}"
                                            onClick={me.switchPythonType.bind(me, 'python3')}>Python3</button>
                                     </div>
                                 </div>
