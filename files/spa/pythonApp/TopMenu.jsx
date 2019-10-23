@@ -25,7 +25,7 @@ class TopMenu extends React.Component {
 	var me = this;
 	return (
 	<div className="border border-warning alert-warning rounded  m-0 mt-2 mb-2 p-2">
-		<h1>Python Integration Kit <h5>&alpha; 1.0</h5></h1>
+		<h1>Python Integration Kit <h5 className="inline">&alpha; 1.0</h5></h1>
 		<p className="p-2">
 			{this.menu.map(function(item, i){
 
