@@ -96,8 +96,7 @@ class RunCode extends React.Component {
                             </div>
                             
                             <div className="row">
-                                <div className="col-sm-12 p-2 border-top border-warning " style={{'min-height' : '28em'}}>
-                                    <b>Result : </b><br/>
+                                <div className="col-sm-12 p-6 border-top border-warning " style={{'min-height' : '28em'}}>
                                     {(!me.state.pythonCodeResult) ? '' : JSON.stringify(me.state.pythonCodeResult.data)}
                                 </div>
                             </div>
