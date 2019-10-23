@@ -63,7 +63,7 @@ class RunCode extends React.Component {
     }
     render() {
         var me = this;
-        return(<div className="border border-secondary rounded m-0 p-5 bodyBox alert-secondary">
+        return(<div className="border border-secondary rounded p-3 bodyBox alert-secondary">
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-3 ">
@@ -86,7 +86,7 @@ class RunCode extends React.Component {
                     <div className="col-sm-9 p-0 border border-secondary rounded shadow-sm">
                         <div className="container ">
                             <div className="row">
-                                <div className="col-sm-12 p-2 bg-secondary text-right">
+                                <div className="col-sm-12 p-2 bg-light text-right">
                                     <div className="btn-group border border-light rounded">
                                           {(me.state.pythonType === 'python') ? (<button className="btn  disabled">
                                           <i className="fa fa-check-square-o mr-2" aria-hidden="true"></i>
@@ -106,7 +106,7 @@ class RunCode extends React.Component {
                             </div>
                             
                             <div className="row">
-                                <div className="col-sm-12 p-3 border-top border-dark bg-light" style={{'min-height' : '28em'}}>
+                                <div className="col-sm-12 p-3 border-top border-dark bg-dark text-success" style={{'min-height' : '28em'}}>
                                     {(!me.state.pythonCodeResult) ? '' : JSON.stringify(me.state.pythonCodeResult.data)}
                                 </div>
                             </div>
