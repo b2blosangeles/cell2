@@ -86,19 +86,19 @@ class RunCode extends React.Component {
                     <div className="col-sm-9 p-0 border border-secondary rounded shadow-sm">
                         <div className="container ">
                             <div className="row">
-                                <div className="col-sm-12 p-2 bg-light text-right rounded-top">
+                                <div className="col-sm-12 p-2 bg-light text-right rounded">
                                     <div className="btn-group border border-secondary rounded">
-                                          {(me.state.pythonType === 'python') ? (<button className="btn  disabled">
+                                          {(me.state.pythonType === 'python') ? (<button className="btn  disabled rounded">
                                           <i className="fa fa-check-square-o mr-2" aria-hidden="true"></i>
                                           Python</button>)
-                                        :  (<button className="btn btn-secondary" 
+                                        :  (<button className="btn btn-secondary rounded" 
                                                 onClick={me.switchPythonType.bind(me, 'python')}>
                                           Python</button>)}
                                         
-                                        {(me.state.pythonType === 'python3') ? (<button className="btn  disabled">
+                                        {(me.state.pythonType === 'python3') ? (<button className="btn  disabled rounded">
                                           <i className="fa fa-check-square-o mr-2" aria-hidden="true"></i>
                                           Python3</button>)
-                                        :  (<button className="btn btn-secondary" 
+                                        :  (<button className="btn btn-secondary rounded" 
                                                 onClick={me.switchPythonType.bind(me, 'python3')}>
                                             Python3</button>)}
                                     </div>
