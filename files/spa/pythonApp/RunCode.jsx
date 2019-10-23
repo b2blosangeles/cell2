@@ -69,9 +69,9 @@ class RunCode extends React.Component {
                         <div className="container-fluid p-2 border border-secondary rounded">
                             <div className="row">
                                 <div className="col-sm-12 text-center">
-                                    <div className="btn-group">
-                                      <button type="button" className="btn btn-primary">Apple</button>
-                                      <button type="button" className="btn btn-primary">Samsung</button>
+                                    <div className="btn-group btn-fluid">
+                                      <button type="button" className="btn btn-primary">Python</button>
+                                      <button type="button" className="btn btn-primary">Python3</button>
                                     </div>
                                 </div>
                                 <div className="col-sm-6 text-center">
