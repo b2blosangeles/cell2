@@ -24,7 +24,7 @@ class BodyBox extends React.Component {
 			return(<RunCode caption={me.state.caption} />);
 			break;
 		default :
-			return (<div className="border border-warning alert-warning rounded m-0 p-3 bodyBox">
+			return (<div className="m-0 p-3 bodyBox">
 					<div className="container mt-3">
 						{(!this.state.pythonVersion || !this.state.pythonVersion.python) ? '' :
 							(<div className="row"><div className="col-sm-2 p-0 pl-2 pr-2"></div>
