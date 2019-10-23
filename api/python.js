@@ -49,7 +49,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
             
       case 'getPythonVersion' : 
           var shell = new TAO.pkg.commandShell();
-          shell.run('pip --version && pip3 --version', function(data){
+          shell.run('python --version && python3 --version', function(data){
                 let ret = {};
                 ret.python = (data.results.P_0.status === 'success') ? data.results.P_0.data : '';
                 ret.python3 = (data.results.P_1.status === 'success') ? data.results.P_1.data : '';
