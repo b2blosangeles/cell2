@@ -1,4 +1,5 @@
 /*--- Python management ----*/
+var shell = new TAO.pkg.commandShell();
 var CP = new TAO.pkg.crowdProcess();
 var _f = {};
 let codedir = TAO.env.site_path + '/_python/';
@@ -26,7 +27,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                   TAO.res.send({error : 'missing codeFile!'});
                   break;
             }
-            var shell = new TAO.pkg.commandShell();
+
             shell.run('cd ' + codedir + ' && ' + pythonType + ' ' + codefn, function(data){
                if (data.results.P_1.status !== 'success') {
                    TAO.res.send({error : data.results.P_1.errorMessage.join('; ')});
@@ -41,7 +42,6 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
             break;
             
       case 'getPythonVersion' : 
-          var shell = new TAO.pkg.commandShell();
           shell.run('python --version && python3 --version', function(data){
                 let ret = {};
                 ret.python = (data.results.P_0.status === 'success') ? data.results.P_0.data : '';
@@ -51,7 +51,6 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
           break;
             
       case 'getPipVersion' : 
-          var shell = new TAO.pkg.commandShell();
           shell.run('pip --version && pip3 --version', function(data){
                 let ret = {};
                 ret.python = (data.results.P_0.status === 'success') ? data.results.P_0.data : '';
@@ -61,7 +60,6 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
           break;
             
       case 'getPackages' : 
-          var shell = new TAO.pkg.commandShell();
           shell.run('pip list  --format=json && pip3 list  --format=json', function(data){
                 let ret = {};
                 ret.python = (data.results.P_0.status === 'success') ? data.results.P_0.data : [];
