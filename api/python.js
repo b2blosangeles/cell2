@@ -116,63 +116,6 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                 ret.python3 = data.results.P_1.data;
                 TAO.res.send(ret);
             });
-            return true;
-          _f['python'] = function(cbk) {
-             
-               let ps = spawn('pip', ['list', '--format=json']);  // , {detached: true}
-               ps.stdout.setEncoding('utf8')
-                var retStr = '', timeout = false;
-               
-                ps.stdout.on('data', (data) => {
-                    retStr += data;
-                });
-
-                ps.stderr.on('data', (data) => {
-                     cbk(data.replace(/(\n|\r|\t)/gi, ' '));
-                });
-
-                ps.on('close', (code) => {
-                    if (!timeout) {
-                          cbk(JSON.parse(retStr));
-                    }
-                });
-              
-                setTimeout(function() {
-                      timeout = true;
-                    ps.kill();
-                    // process.kill(-ps.pid);
-                      timeout = true;
-                    cbk([]);
-                  }, 6100);
-                 
-                /*
-               exec('pip list --format=json', {maxBuffer: 1024 * 2048},
-                    function(error, stdout, stderr) {
-                       if (error) {
-                        cbk(error.message.replace(/(\n|\r|\t)/gi, ' '));
-                       } else {
-                         cbk(JSON.parse(stdout));
-                       }	
-               });*/
-          }
-          _f['python3'] = function(cbk) {
-               exec('pip3 list --format=json', {maxBuffer: 1024 * 2048},
-                    function(error, stdout, stderr) {
-                       if (error) {
-                        cbk(error.message.replace(/(\n|\r|\t)/gi, ' '));
-                       } else {
-                         cbk(JSON.parse(stdout));
-                       }	
-               });
-          }
-          CP.serial(
-               _f,
-               function(data) {
-                    let ret = {};
-                    ret.python = (CP.data.python) ? CP.data.python : null;
-                    ret.python3 = (CP.data.python3) ? CP.data.python3 : null;
-                    TAO.res.send(ret);
-               }, 12000);
           break;
       default:
          TAO.res.send({error: 'Missing or wrong code!'});
