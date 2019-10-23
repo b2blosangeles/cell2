@@ -82,8 +82,8 @@ class RunCode extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col-sm-8 p-0 m-0">
-                        <div className="container p-2 border border-secondary rounded">
+                    <div className="col-sm-8">
+                        <div className="container p-2 border border-warning rounded">
                             <div className="row">
                                 <div className="col-sm-12 p-2 text-right">
                                     <div className="btn-group border border-secondary rounded">
