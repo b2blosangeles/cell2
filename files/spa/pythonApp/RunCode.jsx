@@ -69,12 +69,7 @@ class RunCode extends React.Component {
                         <div className="container-fluid p-2 border border-secondary rounded">
                             <div className="row">
                                 <div className="col-sm-12 p-2 text-center">
-                                    <div className="btn-group border border-secondary">
-                                      <button className={(me.state.pythonType === 'python') ? 'btn  btn-secondary disabled' : 'btn'}
-                                           onClick={me.switchPythonType.bind(me, 'python')}>Python</button>
-                                      <button className={(me.state.pythonType === 'python3') ? 'btn  btn-secondary disabled' : 'btn'}
-                                           onClick={me.switchPythonType.bind(me, 'python3')}>Python3</button>
-                                    </div>
+ 
                                 </div>
                             </div>
                             <div className="row">
@@ -97,6 +92,13 @@ class RunCode extends React.Component {
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-sm-12 p-2">
+                                            <div className="btn-group border border-secondary rounded">
+                                              <button className={(me.state.pythonType === 'python') ? 'btn  btn-secondary disabled' : 'btn'}
+                                                   onClick={me.switchPythonType.bind(me, 'python')}>Python</button>
+                                              <button className={(me.state.pythonType === 'python3') ? 'btn  btn-secondary disabled' : 'btn'}
+                                                   onClick={me.switchPythonType.bind(me, 'python3')}>Python3</button>
+                                            </div>
+                                            <br/>
                                             {/*me.state.codeFile */}
                                             <b>Type : <b/></b>&nbsp;&nbsp;
                                             {(!me.state.pythonCodeResult) ? '' : me.state.pythonCodeResult.pythonType}
