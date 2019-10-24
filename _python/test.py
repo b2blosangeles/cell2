@@ -1,10 +1,12 @@
 import json
+import sys
 
 # a Python object (dict):
 x = {
   "name": "John",
   "age": 30,
-  "city": "New York"
+  "city": "New York",
+  "param" : sys.argv
 }
 
 # convert into JSON:
