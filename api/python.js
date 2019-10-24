@@ -16,6 +16,8 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
       case 'runCode' :
             var codefn = (TAO.req.body.codeFile) ? TAO.req.body.codeFile : 
                   (TAO.req.query.codeFile) ? TAO.req.query.codeFile : '';
+           var params = (TAO.req.body.params) ? TAO.req.body.params : 
+                  (TAO.req.query.params) ? TAO.req.query.params : '';
             var pythonType = (TAO.req.body.pythonType) ? TAO.req.body.pythonType : 
                   (TAO.req.query.pythonType) ? TAO.req.query.pythonType : 'python';
             
@@ -28,7 +30,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                   break;
             }
 
-            shell.run('cd ' + codedir + ' && ' + pythonType + ' ' + codefn, function(data){
+            shell.run('cd ' + codedir + ' && ' + pythonType + ' ' + codefn + ' ' + params, function(data){
                if (data.results.P_1.status !== 'success') {
                    TAO.res.send({error : data.results.P_1.errorMessage.join('; ')});
                } else {
