@@ -48,7 +48,7 @@ class RunCode extends React.Component {
         ReactDOM.TAO.dataEngine({
             type: 'POST',
             url: '/api/python.api',
-            data: {code : 'runCode', codeFile : me.state.codeFile, pythonType : me.state.pythonType},
+            data: {code : 'runCode', codeFile : me.state.codeFile, pythonType : me.state.pythonType, params : me.state.params},
             dataType: 'JSON',
             timeout: (6 * 1000),
             success: function(resultData){
