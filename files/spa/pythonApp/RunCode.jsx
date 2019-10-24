@@ -26,7 +26,7 @@ class RunCode extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         var me = this;
         if ((me.state.codeFile !== prevState.codeFile || me.state.pythonType !== prevState.pythonType) && (me.state.codeFile)) {
-            me.loadData(me.state.codeFile);
+     //       me.loadData(me.state.codeFile);
         }
     }
     switchPythonType(type) {
@@ -118,13 +118,13 @@ class RunCode extends React.Component {
                                     Params
                                 </div>    
                                 <div className="col-sm-11 p-2">
-                                    <input type="text" className="form-control" value={me.state.vSpace} onChange={this.myChangeHandler.bind(me, 'vSpace')}/>
+                                    <input type="text" className="form-control" value={me.state.params} onChange={this.myChangeHandler.bind(me, 'params')}/>
                                 </div>  
                             </div>
                             <div className="row alert-secondary">
                                 <div className="col-sm-1 p-2"></div>    
                                 <div className="col-sm-10 p-2">
-                                    ***
+                                    #{me.state.pythonType + ' ' +  me.state.codeFile + ' ' + me.state.params}
                                 </div>
                                 <div className="col-sm-1 p-2">
                                     <button type="button" className="form-control btn btn-warning"  onChange={this.runCode.bind(me)}>Run</button>
