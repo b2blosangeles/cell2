@@ -128,10 +128,10 @@ class RunCode extends React.Component {
                             <div className="row alert-secondary">
                                 <div className="col-sm-1 p-2"></div>    
                                 <div className="col-sm-10 p-2">
-                                    #{me.commandLine()}
+                                    # &nbsp;{me.commandLine()}
                                 </div>
                                 <div className="col-sm-1 p-2">
-                                    <button type="button" className="form-control btn btn-warning"  onChange={this.runCode.bind(me)}>Run</button>
+                                    <button type="button" className="form-control btn btn-warning"  onChange={this.run.bind(me)}>Run</button>
                                 </div>  
                             </div>
                             <div className="row">
