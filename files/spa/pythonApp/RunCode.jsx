@@ -60,7 +60,7 @@ class RunCode extends React.Component {
             spinner : me
         });
     }
-    myChangeHandler() {
+    myChangeHandler(v) {
         var me = this;
         var obj = {}; 
         obj[v] = event.target.value;
