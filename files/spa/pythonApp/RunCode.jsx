@@ -67,6 +67,9 @@ class RunCode extends React.Component {
         obj[v] = event.target.value;
     	me.setState(obj);
     }
+    runCode() {
+        var me = this;
+    }
     render() {
         var me = this;
         return(<div className="border border-secondary rounded p-3 bodyBox alert-light">
@@ -113,6 +116,7 @@ class RunCode extends React.Component {
                                     <input type="text" className="form-control" value={me.state.vSpace} onChange={this.myChangeHandler.bind(me, 'vSpace')}/>
                                 </div>
                                 <div className="col-sm-2 p-2">
+                                     <button type="button" className="form-control"  onChange={this.runCode.bind(me)}>Run Code</button>
                                 </div>    
                             </div>
                             <div className="row">
