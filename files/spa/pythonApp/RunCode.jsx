@@ -131,8 +131,8 @@ class RunCode extends React.Component {
                                     {me.commandLine()}
                                 </div>
                                 <div className="col-sm-1 p-2">
-                                    {(!me.commandLine()) ? (<button type="button" className="form-control btn btn-warning disabled">Run</button>) : 
-                                    (<button type="button" className="form-control btn btn-warning"  onClick={this.run.bind(me)}>Run</button>)}
+                                    {(!me.commandLine()) ? (<button type="button" className="form-control btn btn-danger disabled">Run</button>) : 
+                                    (<button type="button" className="form-control btn btn-danger"  onClick={this.run.bind(me)}>Run</button>)}
                                 </div>  
                             </div>
                             <div className="row">
