@@ -112,11 +112,14 @@ class RunCode extends React.Component {
                     <div className="col-sm-9 p-0 border border-secondary rounded shadow-sm">
                         <div className="container">
                             <div className="row alert-secondary">
-                                <div className="col-sm-10 p-2">
+                                <div className="col-sm-2 p-2">
+                                    Parameters
+                                </div>    
+                                <div className="col-sm-8 p-2">
                                     <input type="text" className="form-control" value={me.state.vSpace} onChange={this.myChangeHandler.bind(me, 'vSpace')}/>
                                 </div>
                                 <div className="col-sm-2 p-2">
-                                     <button type="button" className="form-control"  onChange={this.runCode.bind(me)}>Run Code</button>
+                                     <button type="button" className="form-control"  onChange={this.runCode.bind(me)}>Run</button>
                                 </div>    
                             </div>
                             <div className="row">
