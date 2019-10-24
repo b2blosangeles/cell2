@@ -67,8 +67,10 @@ class RunCode extends React.Component {
         obj[v] = event.target.value;
     	me.setState(obj);
     }
-    runCode() {
+    run() {
         var me = this;
+        alert('test');
+        
     }
     render() {
         var me = this;
