@@ -25,7 +25,7 @@ class RunCode extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         var me = this;
         if ((me.state.codeFile !== prevState.codeFile || me.state.pythonType !== prevState.pythonType) && (me.state.codeFile)) {
-     //       me.loadData(me.state.codeFile);
+               me.setState({pythonCodeResult: null});
         }
     }
     switchPythonType(type) {
