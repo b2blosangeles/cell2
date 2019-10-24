@@ -15,7 +15,6 @@ class RunCode extends React.Component {
         timeout: (6 * 1000),
         success: function(resultData){
             me.setState({pythonCodes: resultData});
-            
         },
         error : function(err) { 
             console.log('err');
@@ -43,13 +42,13 @@ class RunCode extends React.Component {
         //});
     
     }
-    loadData(code) {
+    loadData() {
         var me = this;
         me.setState({pythonCodeResult: null});
         ReactDOM.TAO.dataEngine({
             type: 'POST',
             url: '/api/python.api',
-            data: {code : 'runCode', codeFile : code, pythonType : me.state.pythonType},
+            data: {code : 'runCode', codeFile : me.state.codeFile, pythonType : me.state.pythonType},
             dataType: 'JSON',
             timeout: (6 * 1000),
             success: function(resultData){
@@ -69,8 +68,9 @@ class RunCode extends React.Component {
     }
     run() {
         var me = this;
-        alert('test');
-        
+        if (me.commandLine()) {
+            me.loadData();
+        }
     }
     commandLine () {
         var me = this;
