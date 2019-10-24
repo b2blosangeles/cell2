@@ -33,8 +33,8 @@ class PythonVersion extends React.Component {
                 <hr/>
                 <div className="container">
                     {(!this.state.pythonVersion || !this.state.pythonVersion.python) ? '' :
-                        (<div className="row"><div className="col-sm-2 p-0 pl-2 pr-2"></div>
-                            <div className="col-sm-10 p-5">
+                        (<div className="row"><div className="col-sm-2"></div>
+                            <div className="col-sm-10 p-4">
                                 <h5>
                                     <b>Python:</b>
                                     &nbsp;{this.state.pythonVersion.python}
@@ -42,8 +42,8 @@ class PythonVersion extends React.Component {
                             </div>
                         </div>)}
                     {(!this.state.pythonVersion || !this.state.pythonVersion.python3) ? '' :
-                        (<div className="row"><div className="col-sm-2 p-0 pl-2 pr-2"></div>
-                            <div className="col-sm-10 p-5">
+                        (<div className="row"><div className="col-sm-2"></div>
+                            <div className="col-sm-10 p-4">
                                 <h5>
                                     <b>Python3:</b>
                                     &nbsp;{this.state.pythonVersion.python3}
