@@ -74,7 +74,7 @@ class RunCode extends React.Component {
     }
     commandLine () {
         var me = this;
-        return (!me.state.pythonType || !me.state.codeFile) ? '' : me.state.pythonType + ' ' +  me.state.codeFile + ' ' + me.state.params
+        return (!me.state.pythonType || !me.state.codeFile) ? '' : '# ' + me.state.pythonType + ' ' +  me.state.codeFile + ' ' + me.state.params
     }
     render() {
         var me = this;
@@ -128,10 +128,10 @@ class RunCode extends React.Component {
                             <div className="row alert-secondary">
                                 <div className="col-sm-1 p-2"></div>    
                                 <div className="col-sm-10 p-2">
-                                    # &nbsp;{me.commandLine()}
+                                    {me.commandLine()}
                                 </div>
                                 <div className="col-sm-1 p-2">
-                                    <button type="button" className="form-control btn btn-warning"  onChange={this.run.bind(me)}>Run</button>
+                                    {(me.commandLine()) ? '' : (<button type="button" className="form-control btn btn-warning"  onChange={this.run.bind(me)}>Run</button>)}
                                 </div>  
                             </div>
                             <div className="row">
