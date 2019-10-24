@@ -2,7 +2,7 @@ class RunCode extends React.Component {
     constructor(props) {
       super(props);
       this.props = props;
-      this.state = {pythonType : 'python', pythonCodeResult : {}};
+      this.state = {pythonType : 'python', pythonCodeResult : {}, params : ''};
     }
     componentDidMount() {
       var me = this;
