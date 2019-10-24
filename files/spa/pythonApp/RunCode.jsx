@@ -111,6 +111,8 @@ class RunCode extends React.Component {
                             <div className="row">
                                 <div className="col-sm-10 p-2">
                                     <input type="text" className="form-control" value={me.state.vSpace} onChange={this.myChangeHandler.bind(me, 'vSpace')}/>
+                                </div>
+                                <div className="col-sm-2 p-2">
                                 </div>    
                             </div>
                             <div className="row">
