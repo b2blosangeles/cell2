@@ -74,12 +74,7 @@ class RunCode extends React.Component {
                 <div className="row">
                     <div className="col-sm-3 ">
                         <h5>{this.props.caption}:</h5>
-                        <div className="container-fluid p-2 rounded">
-                             <div className="row">
-                                <div className="col-sm-12 p-0">
-                                    <input type="text" className="form-control" value={me.state.vSpace} onChange={this.myChangeHandler.bind(me, 'vSpace')}/>
-                                </div>    
-                            </div>     
+                        <div className="container-fluid p-2 rounded">   
                             <div className="row">
                                 <div className="col-sm-12 p-0">
                                     {(!this.state.pythonCodes) ? '' :
@@ -114,6 +109,11 @@ class RunCode extends React.Component {
                                             Python3</button>)}
                                     </div>
                                 </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-sm-12 p-0">
+                                    <input type="text" className="form-control" value={me.state.vSpace} onChange={this.myChangeHandler.bind(me, 'vSpace')}/>
+                                </div>    
                             </div>
                             
                             <div className="row">
