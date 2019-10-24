@@ -6,7 +6,7 @@ x = {
   "name": "John",
   "age": 30,
   "city": "New York",
-  "param" : sys.argv
+  "params" : sys.argv
 }
 
 # convert into JSON:
