@@ -2,7 +2,7 @@
 var shell = new TAO.pkg.commandShell();
 // var CP = new TAO.pkg.crowdProcess();
 // var _f = {};
-let codedir = TAO.env.site_path + '/_python/';
+let codedir = TAO.env.site_path + '/_ext/python/';
 switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
       case 'getCodes' :
             TAO.pkg.fs.readdir(codedir, (error, files) => {
