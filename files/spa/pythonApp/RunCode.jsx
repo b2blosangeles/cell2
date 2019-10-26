@@ -80,6 +80,7 @@ class RunCode extends React.Component {
     }
     removeCodeFolder() {
         var me = this;
+        me.setState({pythonCodeResult: null});
         ReactDOM.TAO.dataEngine({
             type: 'POST',
             url: '/api/python.api',
