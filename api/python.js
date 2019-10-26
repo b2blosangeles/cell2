@@ -15,43 +15,41 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
             break;
             
       case 'submitGithub':
-            TAO.res.send(TAO.env);
-            break;
-        var vSpaceFolder = devs_path + '/' + vSpace;
-        var branch = TAO.req.body.branch;
+            var vCodeFolder = TAO.env.site_path + '/_ext/python';
+            var branch = TAO.req.body.branch;
 
-        var CP = new TAO.pkg.crowdProcess();
-        var _f = {};
-        _f['vSpace'] = function(cbk) {
-            TAO.pkg.fs.stat(vSpaceFolder, function(err) {
-                if (!err) {
-                    CP.exit = 1;
-                    cbk({status : 'failure', errorMessage : 'Virture space ' + vSpace + ' already exists'});
-                } else if (err.code === 'ENOENT') {
-                    cbk({status : 'success'});
-                } else {
-                     CP.exit = 1;
-                     cbk({status : 'failure', errorMessage : 'API error!'});
-                }
-            });
-        }
-        _f['clone'] = function(cbk) {
-             var GitTool = TAO.require(TAO.env.root_path + '/package/gitTool/gitTool.js');
-             var git = new GitTool(vSpaceFolder);
-             var github= (!TAO.req.body.username) ? TAO.req.body.github : git.gitAddAuth(TAO.req.body.github, TAO.req.body.username, TAO.req.body.password);
-             git.gitClone(github, function(data) {
-                git.gitCheckout(branch, function(data1) {
-                    cbk(data);
-                })
-             }); 
-        }  
-      this.gitCheckout
-        CP.serial(
+            var CP = new TAO.pkg.crowdProcess();
+            var _f = {};
+            _f['vSpace'] = function(cbk) {
+                  TAO.pkg.fs.stat(vCodeFolder, function(err) {
+                      if (!err) {
+                          CP.exit = 1;
+                          cbk({status : 'failure', errorMessage : 'code folder ' +  vCodeFolder + ' already exists'});
+                      } else if (err.code === 'ENOENT') {
+                          cbk({status : 'success'});
+                      } else {
+                           CP.exit = 1;
+                           cbk({status : 'failure', errorMessage : 'API error!'});
+                      }
+                  });
+            }
+            _f['clone'] = function(cbk) {
+                   var GitTool = TAO.require(TAO.env.root_path + '/package/gitTool/gitTool.js');
+                   var git = new GitTool(vCodeFolder);
+                   var github= (!TAO.req.body.username) ? TAO.req.body.github : git.gitAddAuth(TAO.req.body.github, TAO.req.body.username, TAO.req.body.password);
+                   git.gitClone(github, function(data) {
+                      git.gitCheckout(branch, function(data1) {
+                          cbk(data);
+                      })
+                   }); 
+            }  
+            this.gitCheckout
+            CP.serial(
               _f,
               function(data) {
                   TAO.res.send((!CP.data.clone) ? CP.data.vSpace : CP.data.clone);
               }, 30000);   
-        break;   
+            break;   
       case 'getRemoteBranches':
             var GitTool = TAO.require(TAO.env.root_path + '/package/gitTool/gitTool.js');
             var git = new GitTool('');
