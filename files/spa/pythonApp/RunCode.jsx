@@ -82,6 +82,25 @@ class RunCode extends React.Component {
             me.loadData();
         }
     }
+    
+    refreshCode() {
+        var me = this;
+        me.setState({pythonCodeResult: null});
+        ReactDOM.TAO.dataEngine({
+            type: 'POST',
+            url: '/api/python.api',
+            data: {code : 'refreshCode'},
+            dataType: 'JSON',
+            timeout: (6 * 1000),
+            success: function(resultData){
+                me.getCodes();
+            },
+            error : function(err) { 
+                console.log('err');
+            }, 
+            spinner : me
+        });
+    }
     removeCodeFolder() {
         var me = this;
         me.setState({pythonCodeResult: null});
@@ -112,6 +131,7 @@ class RunCode extends React.Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-3 ">
+                        <button type="button" className="btn btn-warning m-2" onClick={me.refreshCode.bind(me)}>Refresh code</button>
                         <button type="button" className="btn btn-danger m-2" onClick={me.removeCodeFolder.bind(me)}>Remove code</button>
                         <hr/>
                         <h5>{this.props.caption}:</h5>
