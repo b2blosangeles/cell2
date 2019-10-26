@@ -78,6 +78,25 @@ class RunCode extends React.Component {
             me.loadData();
         }
     }
+    removeCodeFolder() {
+        var me = this;
+        ReactDOM.TAO.dataEngine({
+            type: 'POST',
+            url: '/api/python.api',
+            data: {code : 'removeCodeFolder'},
+            dataType: 'JSON',
+            timeout: (6 * 1000),
+            success: function(resultData){
+                if (!resultData.error) {
+                   me.setState({codeList : []});
+                }
+            },
+            error : function(err) { 
+                console.log('err');
+            }, 
+            spinner : me
+        });
+    }
     commandLine () {
         var me = this;
         return (!me.state.pythonType || !me.state.codeFile) ? '' : '# ' + me.state.pythonType + ' ' +  me.state.codeFile + ' ' + me.state.params
@@ -88,7 +107,7 @@ class RunCode extends React.Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-3 ">
-                        <button type="button" className="btn btn-danger m-2">Remove code</button>
+                        <button type="button" className="btn btn-danger m-2" onClick={me.removeCodeFolder.bind(me))>Remove code</button>
                         <hr/>
                         <h5>{this.props.caption}:</h5>
                         <hr/>
