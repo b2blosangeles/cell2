@@ -5,11 +5,17 @@ var shell = new TAO.pkg.commandShell();
 let codedir = TAO.env.site_path + '/_ext/python/';
 switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
       case 'getCodes' :
+            var list = []
             TAO.pkg.fs.readdir(codedir, (error, files) => {
                  if (error) {
                    TAO.res.send({error : error.message.replace(/(\n|\r|\t)/gi, ' ')});
                  } else {
-                   TAO.res.send(files);
+                   for (var i=0; i < files.length; i++) {
+                        if (files[i].match(/\.py$/i)) {
+                              list.push(files[i]);
+                        }
+                   }
+                   TAO.res.send(list);
                  }
               });
             break;
