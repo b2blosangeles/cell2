@@ -23,7 +23,7 @@ class GitForm extends React.Component {
 	     success: function(resultData){
 		  if (resultData.status === 'success') {
 		  	me.setState({errorMessage : 'Success submitted!', _TM : new Date().getTime()});
-			location.reload();
+			me.props.parent.getCodes();
 		  } else {
 		   	me.setState({errorMessage : resultData.errorMessage, _TM : new Date().getTime()});
 		  }
