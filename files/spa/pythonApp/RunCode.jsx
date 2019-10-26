@@ -166,7 +166,9 @@ class RunCode extends React.Component {
     }
     render() {
         var me = this;
-        return (<span>{ReactDOM.TAO.list.Root.showSpinner(me)} 
-               (!me.state.codeList.length) ? me.gitHubPage() : me.codeRunPage()</span>);
-    }
+        return (<span>
+                    {ReactDOM.TAO.list.Root.showSpinner(me)}
+                    (!me.state.codeList.length) ? me.gitHubPage() : me.codeRunPage()
+                </span>)
+     }
   }
