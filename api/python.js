@@ -54,7 +54,24 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
               function(data) {
                   TAO.res.send((!CP.data.clone) ? CP.data.vSpace : CP.data.clone);
               }, 30000);   
-            break;   
+            break;  
+      case 'refreshVSpace':
+              var vCodeFolder = TAO.env.site_path + '/_ext/python';
+              TAO.pkg.fs.stat(vCodeFolder, function(err) {
+                  if (err) {
+                         TAO.res.send({status : 'failure', errorMessage : err.message});
+                  } else {
+                      var cmd = 'cd ' + vCodeFolder + ' && git pull ';
+                      TAO.pkg.exec(cmd, function(error, stdout, stderr) {
+                          if (!error) {
+                              TAO.res.send({status : 'success'});
+                          } else {
+                              TAO.res.send({status : 'failure', errorMessage : error.message});
+                          }
+                      });  
+                  }
+              })   
+              break; 
        case 'removeCodeFolder':
               var vCodeFolder = TAO.env.site_path + '/_ext/python';
               TAO.pkg.fs.stat(vCodeFolder, function(err) {
