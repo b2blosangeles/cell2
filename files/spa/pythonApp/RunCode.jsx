@@ -82,20 +82,9 @@ class RunCode extends React.Component {
         var me = this;
         return (!me.state.pythonType || !me.state.codeFile) ? '' : '# ' + me.state.pythonType + ' ' +  me.state.codeFile + ' ' + me.state.params
     }
-    gitHubPage() {
+    codeRunPage() {
         var me = this;
         return (<div className="border border-secondary rounded p-3 bodyBox alert-light">
-                    <div className="container-fluid">
-                        <div className="col-sm-12 text-center">
-                            <button type="button" className="btn btn-warning m-2">Load github code</button>
-                        </div>     
-                    </div>
-               </div>)
-    }
-    render() {
-        var me = this;
-        return (!me.state.codeList.length) ? me.gitHubPage() :
-          : (<div className="border border-secondary rounded p-3 bodyBox alert-light">
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-3 ">
@@ -163,9 +152,21 @@ class RunCode extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
-            {ReactDOM.TAO.list.Root.showSpinner(me)}
-        </div>
-        );
+            </div></div>)
+    }
+    gitHubPage() {
+        var me = this;
+        return (<div className="border border-secondary rounded p-3 bodyBox alert-light">
+                    <div className="container-fluid">
+                        <div className="col-sm-12 text-center">
+                            <button type="button" className="btn btn-warning m-2">Load github code</button>
+                        </div>     
+                    </div>
+               </div>)
+    }
+    render() {
+        var me = this;
+        return {ReactDOM.TAO.list.Root.showSpinner(me)} 
+               (!me.state.codeList.length) ? me.gitHubPage() : me.codeRunPage();
     }
   }
