@@ -12,7 +12,17 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                    TAO.res.send(files);
                  }
               });
-            break;           
+            break;
+      case 'getRemoteBranches':
+            var GitTool = TAO.require(TAO.env.root_path + '/package/gitTool/gitTool.js');
+            var git = new GitTool('');
+
+            var gitUrl = (!TAO.req.body.username) ? TAO.req.body.gitUrl : git.gitAddAuth(TAO.req.body.gitUrl, TAO.req.body.username, TAO.req.body.password);
+
+            git.getRemoteBranches(gitUrl, function(data) {
+                  TAO.res.send(data);
+            });
+            break;
       case 'runCode' :
             var codefn = (TAO.req.body.codeFile) ? TAO.req.body.codeFile : 
                   (TAO.req.query.codeFile) ? TAO.req.query.codeFile : '';
