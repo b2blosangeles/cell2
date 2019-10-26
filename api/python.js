@@ -55,7 +55,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                   TAO.res.send((!CP.data.clone) ? CP.data.vSpace : CP.data.clone);
               }, 30000);   
             break;  
-      case 'refreshVSpace':
+      case 'refreshCode':
               var vCodeFolder = TAO.env.site_path + '/_ext/python';
               TAO.pkg.fs.stat(vCodeFolder, function(err) {
                   if (err) {
