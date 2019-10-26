@@ -182,8 +182,7 @@ class RunCode extends React.Component {
         return (<div className="border border-secondary rounded p-3 bodyBox alert-light">
                     <div className="container-fluid">
                         <div className="col-sm-12 text-center">
-
-                            <GitForm/>
+                            <GitForm parent={me} />
                         </div>     
                     </div>
                </div>)
