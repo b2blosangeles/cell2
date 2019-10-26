@@ -82,8 +82,11 @@ class RunCode extends React.Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-3 ">
-                        <h5>{this.props.caption}:</h5>
                         
+                        <h5>{this.props.caption}:</h5>
+                        <hr/>
+                        <h5>Load gitHub code:</h5>
+                        <hr/>
                         <div className="btn-group border border-dark rounded">
                               {(me.state.pythonType === 'python') ? (<button className="btn  disabled rounded-left">
                               <i className="fa fa-check-square-o mr-2" aria-hidden="true"></i>
