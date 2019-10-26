@@ -57,11 +57,11 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
             break;   
        case 'removeCodeFolder':
               var vCodeFolder = TAO.env.site_path + '/_ext/python';
-              TAO.pkg.fs.stat(vSpaceFolder, function(err) {
+              TAO.pkg.fs.stat(vCodeFolder, function(err) {
                   if (err) {
                          TAO.res.send({status : 'failure', errorMessage : err.message});
                   } else {
-                      var cmd = 'rm -fr ' + vSpaceFolder;
+                      var cmd = 'rm -fr ' + vCodeFolder;
                       TAO.pkg.exec(cmd, function(error, stdout, stderr) {
                           if (!error) {
                               TAO.res.send({status : 'success'});
