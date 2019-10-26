@@ -95,7 +95,7 @@ class GitForm extends React.Component {
   	 var me = this;
 	 var isEnabled = me.isSubmitEnabled();
 	 return (<div className="border border-secondary alert-secondary rounded shadow p-2 rightBox-containner">
-			<h3 className="p-3">Add Virtual Space</h3>	    
+			<h3 className="p-3">Parking</h3>	    
 			<hr/>			    
 			<form>
 				<div className="container container-fluid">
