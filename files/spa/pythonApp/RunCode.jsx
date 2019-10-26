@@ -82,8 +82,8 @@ class RunCode extends React.Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-3 ">
+                        <button type="button" className="btn btn-warning m-2">Load git hub code</button>
                         <hr/>
-                        <button type="button" className="btn btn-warning">Load git hub code</button>
                         <h5>{this.props.caption}:</h5>
                         <hr/>
                         <div className="btn-group border border-dark rounded">
