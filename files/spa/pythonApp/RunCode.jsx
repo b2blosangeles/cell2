@@ -82,15 +82,19 @@ class RunCode extends React.Component {
         var me = this;
         return (!me.state.pythonType || !me.state.codeFile) ? '' : '# ' + me.state.pythonType + ' ' +  me.state.codeFile + ' ' + me.state.params
     }
-    render() {
+    gitHubPage() {
         var me = this;
-        return (!me.state.codeList.length) ? (<div className="border border-secondary rounded p-3 bodyBox alert-light">
+        return (<div className="border border-secondary rounded p-3 bodyBox alert-light">
                     <div className="container-fluid">
                         <div className="col-sm-12 text-center">
                             <button type="button" className="btn btn-warning m-2">Load github code</button>
                         </div>     
                     </div>
-                git hub parking</div>)
+               </div>)
+    }
+    render() {
+        var me = this;
+        return (!me.state.codeList.length) ? me.gitHubPage() :
           : (<div className="border border-secondary rounded p-3 bodyBox alert-light">
             <div className="container-fluid">
                 <div className="row">
