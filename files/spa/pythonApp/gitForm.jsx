@@ -129,14 +129,7 @@ class GitForm extends React.Component {
 					<div className="row">
 						<div className="col-sm-2 p-3">
 							{(!me.state.gitMask) ? '' : 'Branch'}
-						 	<div className="dropdown">
-							  <button className="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-							  test A
-							  <span className="caret"></span></button>
-							  <ul className="dropdown-menu p-1 pl-3 branch_select" >
-								<li><a href="#" onClick={me.selectBranch.bind(me, 'it')}>it</a></li>
-							  </ul>
-							</div>	
+
 						</div>
 						{(!me.state.gitMask) ? (<div className="col-sm-6 p-2"></div>) : 
 						 (!me.state.branches || !me.state.branches.length) ? (
