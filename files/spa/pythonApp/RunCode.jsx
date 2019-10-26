@@ -111,7 +111,7 @@ class RunCode extends React.Component {
                         <div className="container-fluid p-2 rounded">   
                             <div className="row">
                                 <div className="col-sm-12 p-0">
-                                    {(!this.state.pythonCodes) ? '' :
+                                    {(!this.state.codeList) ? '' :
                                     (<ul>
                                         {this.state.codeList.map(function(item, i){
                                             return (me.state.codeFile === item) ? (<li><b>{item}</b></li>) :
