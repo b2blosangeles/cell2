@@ -2,7 +2,7 @@ class RunCode extends React.Component {
     constructor(props) {
       super(props);
       this.props = props;
-      this.state = {pythonType : 'python', pythonCodeResult : [], params : ''};
+      this.state = {pythonType : 'python', codeList : [], params : ''};
     }
     componentDidMount() {
       var me = this;
@@ -14,7 +14,9 @@ class RunCode extends React.Component {
         dataType: 'JSON',
         timeout: (6 * 1000),
         success: function(resultData){
-            me.setState({pythonCodes: resultData});
+            if (!resultData.error) {
+                me.setState({codeList : resultData});
+            }
         },
         error : function(err) { 
             console.log('err');
