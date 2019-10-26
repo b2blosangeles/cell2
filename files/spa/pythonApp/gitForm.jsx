@@ -139,7 +139,8 @@ class GitForm extends React.Component {
 							<div className="dropdown">
 							  <button className="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
 							  {(!me.state.branch) ? 'Select Branch' : me.state.branch}
-							  <span className="caret"></span></button>--={JSON.stringify(me.state.branches)}=--
+								  --={JSON.stringify(me.state.branches)}=--
+							  <span className="caret"></span></button>
 							  <ul className="dropdown-menu p-1 pl-3 branch_select" >
 								{me.state.branches.map(function(item){
 									return (<li><a href="#" onClick={me.selectBranch.bind(me, item)}>{item}</a></li>)
