@@ -158,7 +158,6 @@ class RunCode extends React.Component {
         return (<div className="border border-secondary rounded p-3 bodyBox alert-light">
                     <div className="container-fluid">
                         <div className="col-sm-12 text-center">
-                            <button type="button" className="btn btn-warning m-2">Load github code</button>
                             <GitForm/>
                         </div>     
                     </div>
