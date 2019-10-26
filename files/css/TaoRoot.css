@@ -84,7 +84,11 @@ body {
 
 .bg-cellBox  { background: rgba(223,227,238, 0.3); }
 
+
+.branch_select { max-height: 24em; overflow-y: scroll;} 
+
 /*---- overlay and spinner ---*/
+
 
 .spinner {
    position: absolute;
