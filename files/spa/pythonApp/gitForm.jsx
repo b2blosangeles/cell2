@@ -95,18 +95,10 @@ class GitForm extends React.Component {
   	 var me = this;
 	 var isEnabled = me.isSubmitEnabled();
 	 return (<div className="border border-secondary alert-secondary rounded shadow p-2 rightBox-containner">
-			<h3 className="p-3">Parking</h3>	    
+			<h3 className="p-3">Parking your github</h3>	    
 			<hr/>			    
 			<form>
-				<div className="container container-fluid">
-					<div className="row">
-						<div className="col-sm-2 p-3">
-							Virture Space:
-						</div>
-						<div className="col-sm-10 p-2">
-							<input type="text" className="form-control" value={me.state.vSpace} onChange={this.myChangeHandler.bind(me, 'vSpace')}/>
-						</div>
-					</div>						
+				<div className="container container-fluid">					
 					<div className="row">
 						<div className="col-sm-2 p-3">
 							Github:
