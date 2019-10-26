@@ -116,14 +116,6 @@ class GitForm extends React.Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-sm-2 p-3 test-right">
-							<input className="largerCheckbox" type="checkbox" value=""/>
-						</div>
-						<div className="col-sm-10 p-2">
-							Need Authentication?
-						</div>
-					</div>
-					<div className="row">
 						<div className="col-sm-2 p-3">
 							User:
 						</div>
