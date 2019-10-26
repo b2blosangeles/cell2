@@ -130,9 +130,6 @@ class GitForm extends React.Component {
 						<div className="col-sm-2 p-3">
 							{(!me.state.gitMask) ? '' : 'Branch'}
 						</div>
-						==
-						{JSON.stringify(me.state.branches)}
-						==
 						{(!me.state.gitMask) ? (<div className="col-sm-6 p-2"></div>) : 
 						 (!me.state.branches || !me.state.branches.length) ? (
 							<div className="col-sm-6 p-2">
@@ -142,7 +139,7 @@ class GitForm extends React.Component {
 							<div className="dropdown">
 							  <button className="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
 							  {(!me.state.branch) ? 'Select Branch' : me.state.branch}
-							  <span className="caret"></span></button>--==--
+							  <span className="caret"></span></button>--={JSON.stringify(me.state.branches)}=--
 							  <ul className="dropdown-menu p-1 pl-3 branch_select" >
 								{me.state.branches.map(function(item){
 									return (<li><a href="#" onClick={me.selectBranch.bind(me, item)}>{item}</a></li>)
@@ -151,7 +148,7 @@ class GitForm extends React.Component {
 							  </ul>
 							</div>
 						</div>)}
-						{(!me.isSubmitEnabled()) ?  '' : (<div className="col-sm-4 p-3">
+						{(!me.isSubmitEnabled()) ?  ((<div className="col-sm-4 p-3"></div>) : (<div className="col-sm-4 p-3">
 							<input type="button" className="btn btn-warning"  
 								disabled={!isEnabled} value="Submit" 
 								onClick={this.submit.bind(me)} />
