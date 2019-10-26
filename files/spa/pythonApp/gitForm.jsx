@@ -128,10 +128,10 @@ class GitForm extends React.Component {
 						</div>
 						{(!me.state.gitMask) ? (<div className="col-sm-6 p-2"></div>) : 
 						 (!me.state.branches || !me.state.branches.length) ? (
-							<div className="col-sm-6 p-2">
+							<div className="col-sm-6 p-2 text-left">
 								<input type="button" className="btn btn-warning" value="Get git branches" onClick={this.getRemoteBranches.bind(me)}/>
 							</div>) :	
-						(<div className="col-sm-6 p-3">
+						(<div className="col-sm-6 p-3 text-left">
 							<div className="dropdown">
 							  <button className="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
 							  {(!me.state.branch) ? 'Select Branch' : me.state.branch}
