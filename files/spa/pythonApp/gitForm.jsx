@@ -161,6 +161,7 @@ class GitForm extends React.Component {
 						<div className="col-sm-2 p-3"></div>
 						<div className="col-sm-10 p-3 text-danger">
 						{me.state.errorMessage}
+							<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 						</div>
 					</div>
 				</div>
