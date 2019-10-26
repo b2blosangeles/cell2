@@ -14,7 +14,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
               });
             break;
             
-      case 'submitVSpace':
+      case 'submitGithub':
         var vSpaceFolder = devs_path + '/' + vSpace;
         var branch = TAO.req.body.branch;
 
