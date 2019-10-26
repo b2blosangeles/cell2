@@ -8,6 +8,8 @@
 		"/js/react/react-cookie.0.4.9.min.js",
 		"/js/react/ReactRouter/3.0.2/ReactRouter.min.js",
 		"/js/socket.io/1.7.3/socket.io.min.js",
+		"/css/Bootstrap/v4.1.3/popper.min.js",
+		"/css/Bootstrap/v4.1.3/bootstrap.min.js",
 		
 		"/spa/pythonApp/TaoController.jsx",
 		"/spa/pythonApp/TAORoot.jsx",
