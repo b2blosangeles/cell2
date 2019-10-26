@@ -131,7 +131,6 @@ class RunCode extends React.Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-3 ">
-                        <button type="button" className="btn btn-warning m-2" onClick={me.refreshCode.bind(me)}>Refresh code</button>
                         <button type="button" className="btn btn-danger m-2" onClick={me.removeCodeFolder.bind(me)}>Remove code</button>
                         <hr/>
                         <h5>{this.props.caption}:</h5>
@@ -151,6 +150,8 @@ class RunCode extends React.Component {
                                     onClick={me.switchPythonType.bind(me, 'python3')}>
                                 Python3</button>)}
                         </div>
+                        <br/>
+                        <button type="button" className="btn btn-warning m-2" onClick={me.refreshCode.bind(me)}>Refresh code</button>
                         <br/>
                         <div className="container-fluid p-2 rounded">   
                             <div className="row">
