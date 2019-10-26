@@ -87,8 +87,7 @@ class GitForm extends React.Component {
   }
   isSubmitEnabled() {
 	let me = this;
-	return (me.isValidGitUrl() && (me.state.branch)  
-		&& me.isValidVSpace(me.state.vSpace) 
+	return (me.isValidGitUrl() && (me.state.branch) 
 		&& (me.state.branches.length)) ? true : false;
   }
   render() {
@@ -137,8 +136,6 @@ class GitForm extends React.Component {
 								<input type="button" className="btn btn-warning" value="Get git branches" onClick={this.getRemoteBranches.bind(me)}/>
 							</div>) :	
 						(<div className="col-sm-6 p-3">
-
-								
 							<div className="dropdown">
 							  <button className="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
 							  {(!me.state.branch) ? 'Select Branch' : me.state.branch}
