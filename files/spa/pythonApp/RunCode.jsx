@@ -163,7 +163,7 @@ class RunCode extends React.Component {
 							  test A
 							  <span className="caret"></span></button>
 							  <ul className="dropdown-menu p-1 pl-3 branch_select" >
-								<li><a href="#" onClick={me.selectBranch.bind(me, 'it')}>it</a></li>
+								<li><a href="#" >it</a></li>
 							  </ul>
 							</div>	
                             <GitForm/>
