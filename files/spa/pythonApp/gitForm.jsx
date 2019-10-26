@@ -148,7 +148,7 @@ class GitForm extends React.Component {
 							  </ul>
 							</div>
 						</div>)}
-						{(!me.isSubmitEnabled()) ?  ((<div className="col-sm-4 p-3"></div>) : (<div className="col-sm-4 p-3">
+						{(!me.isSubmitEnabled()) ?  (<div className="col-sm-4 p-3"></div>) : (<div className="col-sm-4 p-3">
 							<input type="button" className="btn btn-warning"  
 								disabled={!isEnabled} value="Submit" 
 								onClick={this.submit.bind(me)} />
