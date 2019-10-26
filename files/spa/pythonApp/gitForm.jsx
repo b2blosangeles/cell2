@@ -11,10 +11,6 @@ class GitForm extends React.Component {
 	let me = this, patt = /^(https|git)(:\/\/|@)([^\/:]+)[\/:]([^\/:]+)\/(.+).git$/ig;		      
 	return (!patt.test(me.state.github)) ? false : true;
   }
-  isValidVSpace() {
-	let me = this, patt = /^[a-z]([\-\_a-z0-9]+)/i;		      
-	return (!me.state.vSpace || !patt.test(me.state.vSpace)) ? false : true;
-  }
   submit() {
 	var me = this;
 	ReactDOM.TAO.dataEngine({
