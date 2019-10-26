@@ -133,8 +133,9 @@ class RunCode extends React.Component {
                     <div className="col-sm-3 ">
                         <button type="button" className="btn btn-danger m-2" onClick={me.removeCodeFolder.bind(me)}>Remove code</button>
                         <hr/>
-                        <h5>{this.props.caption}:</h5>
-                        <button type="button" className="btn btn-warning m-2" onClick={me.refreshCode.bind(me)}>Refresh code</button>
+                        <h5>{this.props.caption}
+                        <button type="button" className="btn btn-warning m-2" onClick={me.refreshCode.bind(me)}><i className="fa fa-refresh" aria-hidden="true"></i></button>
+                        :</h5>
                         <hr/>
                         <div className="btn-group border border-dark rounded">
                               {(me.state.pythonType === 'python') ? (<button className="btn  disabled rounded-left">
