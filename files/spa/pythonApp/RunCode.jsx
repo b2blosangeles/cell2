@@ -2,7 +2,7 @@ class RunCode extends React.Component {
     constructor(props) {
       super(props);
       this.props = props;
-      this.state = {pythonType : 'python', codeList : [], params : ''};
+      this.state = {pythonType : 'python', codeList : [], codeListError : false , params : ''};
     }
     componentDidMount() {
       var me = this;
@@ -16,6 +16,8 @@ class RunCode extends React.Component {
         success: function(resultData){
             if (!resultData.error) {
                 me.setState({codeList : resultData});
+            } else {
+                me.setState({codeListError : true});
             }
         },
         error : function(err) { 
@@ -83,6 +85,11 @@ class RunCode extends React.Component {
     render() {
         var me = this;
         return (!me.state.codeList.length) ? (<div className="border border-secondary rounded p-3 bodyBox alert-light">
+                    <div className="container-fluid">
+                        <div className="col-sm-12 text-center">
+                            <button type="button" className="btn btn-warning m-2">Load github code</button>
+                        </div>     
+                    </div>
                 git hub parking</div>)
           : (<div className="border border-secondary rounded p-3 bodyBox alert-light">
             <div className="container-fluid">
