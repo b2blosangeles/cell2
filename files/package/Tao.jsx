@@ -16,6 +16,7 @@
 		"/spa/pythonApp/TAOindex.jsx",
 		"/spa/pythonApp/RunCode.jsx",
 		"/spa/pythonApp/PipPackage.jsx",
-		"/spa/pythonApp/PythonVersion.jsx"
+		"/spa/pythonApp/PythonVersion.jsx",
+		"/spa/pythonApp/gitForm.jsx"
 	]
 }
