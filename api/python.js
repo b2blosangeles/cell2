@@ -43,7 +43,6 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                       })
                    }); 
             }  
-            this.gitCheckout
             CP.serial(
               _f,
               function(data) {
