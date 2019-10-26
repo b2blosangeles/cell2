@@ -16,7 +16,7 @@ class GitForm extends React.Component {
 	ReactDOM.TAO.dataEngine({
 	     type: 'POST',
 	     url: '/api/python.api',
-	     data: {code : 'submitVSpace', github : me.state.github, 
+	     data: {code : 'submitGithub', github : me.state.github, 
 		    branch : me.state.branch,  username : me.state.username,  password : me.state.password},
 	     dataType: 'JSON',
 	     timeout: (6 * 1000),
