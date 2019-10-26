@@ -6,6 +6,10 @@ class RunCode extends React.Component {
     }
     componentDidMount() {
       var me = this;
+      me.getCodes();
+    }
+    getCodes() {
+       var me = this;
       me.setState({pythonVersion: null});
       ReactDOM.TAO.dataEngine({
         type: 'POST',
@@ -24,7 +28,7 @@ class RunCode extends React.Component {
             console.log('err');
         }, 
         spinner : me
-      });
+      });   
     }
     componentDidUpdate(prevProps, prevState) {
         var me = this;
