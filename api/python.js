@@ -55,6 +55,24 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
                   TAO.res.send((!CP.data.clone) ? CP.data.vSpace : CP.data.clone);
               }, 30000);   
             break;   
+       case 'removeCodeFolder':
+              var vCodeFolder = TAO.env.site_path + '/_ext/python';
+              TAO.pkg.fs.stat(vSpaceFolder, function(err) {
+                  if (err) {
+                         TAO.res.send({status : 'failure', errorMessage : err.message});
+                  } else {
+                      var cmd = 'rm -fr ' + vSpaceFolder;
+                      TAO.pkg.exec(cmd, function(error, stdout, stderr) {
+                          if (!error) {
+                              TAO.res.send({status : 'success'});
+                          } else {
+                              TAO.res.send({status : 'failure', errorMessage : error.message});
+                          }
+                      });  
+                  }
+
+              })   
+              break; 
       case 'getRemoteBranches':
             var GitTool = TAO.require(TAO.env.root_path + '/package/gitTool/gitTool.js');
             var git = new GitTool('');
