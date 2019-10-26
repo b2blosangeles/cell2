@@ -159,13 +159,13 @@ class RunCode extends React.Component {
                     <div className="container-fluid">
                         <div className="col-sm-12 text-center">
                             <div className="dropdown">
-							  <button className="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-							  test A
-							  <span className="caret"></span></button>
-							  <ul className="dropdown-menu p-1 pl-3 branch_select" >
-								<li><a href="#" >it</a></li>
-							  </ul>
-							</div>	
+				  <button className="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+				  test A
+				  <span className="caret"></span></button>
+				  <ul className="dropdown-menu p-1 pl-3 branch_select" >
+					<li><a href="#" >it</a></li>
+				  </ul>
+				</div>	
                             <GitForm/>
                         </div>     
                     </div>
