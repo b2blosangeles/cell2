@@ -15,7 +15,7 @@ switch((TAO.req.body.code) ? TAO.req.body.code : TAO.req.query.code) {
             break;
             
       case 'submitGithub':
-            TAO.res(TAO.env);
+            TAO.res.send(TAO.env);
             break;
         var vSpaceFolder = devs_path + '/' + vSpace;
         var branch = TAO.req.body.branch;
