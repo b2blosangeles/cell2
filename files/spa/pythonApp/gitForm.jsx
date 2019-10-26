@@ -147,6 +147,7 @@ class GitForm extends React.Component {
 								{me.state.branches.map(function(item){
 									return (<li><a href="#" onClick={me.selectBranch.bind(me, item)}>{item}</a></li>)
 								 })}
+								<li><a href="#" onClick={me.selectBranch.bind(me, 'it')}>it</a></li>
 							  </ul>
 							</div>
 						</div>)}
