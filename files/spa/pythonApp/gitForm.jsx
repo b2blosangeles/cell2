@@ -42,7 +42,7 @@ class GitForm extends React.Component {
 	var me = this;
 	ReactDOM.TAO.dataEngine({
 	     type: 'POST',
-	     url: '/api/Tao/API_GIT.api',
+	     url: '/api/python.api',
 	     data: {code : 'getRemoteBranches', gitUrl : me.state.github, username : me.state.username, password : me.state.password},
 	     dataType: 'JSON',
 	     timeout: (6 * 1000),
