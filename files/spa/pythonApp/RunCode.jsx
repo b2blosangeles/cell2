@@ -112,7 +112,7 @@ class RunCode extends React.Component {
                                 <div className="col-sm-12 p-0">
                                     {(!this.state.pythonCodes) ? '' :
                                     (<ul>
-                                        {this.state.pythonCodes.map(function(item, i){
+                                        {this.state.codeList.map(function(item, i){
                                             return (me.state.codeFile === item) ? (<li><b>{item}</b></li>) :
                                             (<li><a href="javascript:void(0);" onClick={me.runCode.bind(me, item)}>{item}</a></li>)
                                         })}
