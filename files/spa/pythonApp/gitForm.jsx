@@ -130,6 +130,9 @@ class GitForm extends React.Component {
 						<div className="col-sm-2 p-3">
 							{(!me.state.gitMask) ? '' : 'Branch'}
 						</div>
+						==
+						{JSON.stringify(me.state.branches)}
+						==
 						{(!me.state.gitMask) ? (<div className="col-sm-6 p-2"></div>) : 
 						 (!me.state.branches || !me.state.branches.length) ? (
 							<div className="col-sm-6 p-2">
