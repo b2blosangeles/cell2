@@ -82,7 +82,9 @@ class RunCode extends React.Component {
     }
     render() {
         var me = this;
-        return(<div className="border border-secondary rounded p-3 bodyBox alert-light">
+        return (!me.codeList.length) ? (<div className="border border-secondary rounded p-3 bodyBox alert-light">
+                git hub parking<div>)
+          : (<div className="border border-secondary rounded p-3 bodyBox alert-light">
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-3 ">
